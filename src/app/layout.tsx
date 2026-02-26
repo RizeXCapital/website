@@ -1,0 +1,54 @@
+import type { Metadata } from "next";
+import { Space_Grotesk, Inter } from "next/font/google";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "RizeX Capital | Where Alignment Becomes Power",
+    template: "%s | RizeX Capital",
+  },
+  description:
+    "RizeX Capital is a disciplined AI product company. Our flagship, Sovereign RCM, is an on-premise AI billing appliance for medical practices. Princeton, NJ.",
+  keywords: [
+    "AI medical billing",
+    "on-premise medical billing AI",
+    "Sovereign RCM",
+    "RizeX Capital",
+    "Princeton NJ",
+    "HIPAA compliant AI",
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
+      >
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
