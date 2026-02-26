@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import SectionDivider from "@/components/SectionDivider";
 
 /* -----------------------------------------------------------------------
    Specialty benchmark data
@@ -566,8 +567,10 @@ export default function ROICalculator() {
         </div>
       </section>
 
+      <SectionDivider variant="dark" />
+
       {/* ── Methodology ───────────────────────────────────────────── */}
-      <section className="bg-white px-6 py-16 dark:bg-dark-bg lg:py-20">
+      <section className="bg-ice px-6 py-16 dark:bg-dark-surface lg:py-20">
         <div className="mx-auto max-w-3xl">
           <details className="group">
             <summary className="cursor-pointer list-none font-heading text-3xl font-bold text-navy dark:text-white [&::-webkit-details-marker]:hidden">
