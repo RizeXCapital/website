@@ -49,7 +49,8 @@ const founders = [
   {
     name: "Faizan G. Arif, MD",
     role: "Chief Executive Officer",
-    image: "",
+    image: "/FaizMD.jpeg",
+    imageClassName: "object-[46%_top]",
     credential:
       "Board-Certified Emergency Medicine Physician | Founder & CEO, ArifMED INC | Principal Investigator",
     bio: "Faizan is a board-certified Emergency Medicine physician who has worked in some of the highest-volume emergency departments in the country, including Kings County (140,000+ annual visits), NYC Elmhurst (Level 1 Trauma, 120,000+), and Mount Sinai. He founded ArifMED INC, a physician-led services company managing contracted coverage, credentialing, scheduling, compliance, and concierge care. As PI and Site Medical Lead at Clinilabs, he brings GCP-aligned research rigor, audit readiness, and sponsor-facing execution.",
@@ -74,6 +75,7 @@ const founders = [
     name: "Ghulam Shah",
     role: "Chief Technology Officer",
     image: "/GhulamPhoto.jpg",
+    imageClassName: "scale-[1.8] origin-top object-[center_20%]",
     credential:
       "Enterprise Data & AI Operator | M.S. Data Science | Snowflake, ML, Workflow Automation",
     bio: "Ghulam is an enterprise data and AI operator currently serving as Lead Data Analyst at National Grid, where he runs enablement and adoption for a Snowflake-backed Electric Data Platform. He built workflow automation (Power Apps + Power Automate) that moved safety compliance from 60% to 93%, and develops applied ML forecasting models for operational risk prevention. Prior experience includes billion-record data migration at Apple Finance and regulated compliance SaaS at RELX.",
@@ -174,13 +176,15 @@ export default function About() {
               >
                 <div className="flex shrink-0 items-center justify-center">
                   {founder.image ? (
-                    <Image
-                      src={founder.image}
-                      alt={founder.name}
-                      width={192}
-                      height={192}
-                      className="h-48 w-48 rounded-2xl object-cover dark:ring-1 dark:ring-dark-border"
-                    />
+                    <div className="h-48 w-48 overflow-hidden rounded-2xl dark:ring-1 dark:ring-dark-border">
+                      <Image
+                        src={founder.image}
+                        alt={founder.name}
+                        width={384}
+                        height={384}
+                        className={`h-full w-full object-cover ${founder.imageClassName || ""}`}
+                      />
+                    </div>
                   ) : (
                     <div className="h-48 w-48 rounded-2xl bg-ice dark:bg-dark-surface" />
                   )}

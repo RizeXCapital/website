@@ -435,7 +435,8 @@ export default function Home() {
                 name: "Faizan G. Arif, MD",
                 role: "Chief Executive Officer",
                 credential: "Physician | AI-Clinical Strategist",
-                image: "",
+                image: "/FaizMD.jpeg",
+                imageClassName: "object-[46%_top]",
                 description:
                   "The clinical visionary behind RizeX. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
               },
@@ -452,6 +453,7 @@ export default function Home() {
                 role: "Chief Technology Officer",
                 credential: "AI Architect | Data Strategist",
                 image: "/GhulamPhoto.jpg",
+                imageClassName: "scale-[1.8] origin-top object-[center_20%]",
                 description:
                   "The technical force behind RizeX. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
               },
@@ -461,13 +463,15 @@ export default function Home() {
                 className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated"
               >
                 {founder.image ? (
-                  <Image
-                    src={founder.image}
-                    alt={founder.name}
-                    width={128}
-                    height={128}
-                    className="mx-auto h-32 w-32 rounded-full object-cover dark:ring-1 dark:ring-dark-border"
-                  />
+                  <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
+                    <Image
+                      src={founder.image}
+                      alt={founder.name}
+                      width={256}
+                      height={256}
+                      className={`h-full w-full object-cover ${founder.imageClassName || ""}`}
+                    />
+                  </div>
                 ) : (
                   <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
                 )}
