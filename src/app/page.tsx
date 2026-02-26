@@ -1,4 +1,98 @@
 import Link from "next/link";
+import Image from "next/image";
+import SectionDivider from "@/components/SectionDivider";
+import { getRecentPosts, categoryLabels } from "@/lib/blog";
+
+const upcomingPosts = [
+  {
+    title: "How Much Revenue Is Your Practice Losing to Claim Denials?",
+    author: "Faizan G. Arif, MD",
+    date: "March 2026",
+  },
+  {
+    title: "What the Change Healthcare Attack Means for Your Practice",
+    author: "Navid M. Rahman, PE",
+    date: "Late March 2026",
+  },
+];
+
+function BlogPreviewSection() {
+  const posts = getRecentPosts(3);
+
+  return (
+    <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="text-center">
+          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+            From the Blog
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
+            Insights on AI medical billing, revenue cycle management, and
+            healthcare technology
+          </p>
+        </div>
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Real posts */}
+          {posts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group rounded-xl border border-gray-300 bg-white p-8 transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+            >
+              <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                {categoryLabels[post.category]}
+              </p>
+              <h3 className="mt-2 font-heading text-lg font-bold text-navy transition-colors group-hover:text-teal dark:text-white dark:group-hover:text-teal-dark">
+                {post.title}
+              </h3>
+              <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
+                {post.author} &middot;{" "}
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                {post.excerpt}
+              </p>
+            </Link>
+          ))}
+
+          {/* Upcoming post teasers to fill up to 3 */}
+          {upcomingPosts.slice(0, 3 - posts.length).map((post) => (
+            <div
+              key={post.title}
+              className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated"
+            >
+              <p className="text-xs font-medium uppercase tracking-wider text-coral">
+                Coming Soon
+              </p>
+              <h3 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
+                {post.title}
+              </h3>
+              {post.author && (
+                <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
+                  {post.author} &middot; {post.date}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* View All link */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+          >
+            View All Posts &rarr;
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -35,15 +129,17 @@ export default function Home() {
       </section>
 
       {/* 2. Triple Leak */}
-      <section className="bg-white px-6 py-20 lg:py-24">
+      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
               The Triple Leak Draining Your Practice
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
-              Most practices lose revenue in three places they never see.
-              Sovereign RCM closes all three.
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+              Most practices lose revenue in three places they never see
+            </p>
+            <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+              Sovereign RCM closes all three
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -58,7 +154,7 @@ export default function Home() {
                 title: "Undercoding Loss",
                 stat: "$30K+",
                 description:
-                  "per year lost by family physicians from systematic undercoding. AAFP estimates miscoding level 4 as level 3 costs this much annually.",
+                  "per year lost by physicians from systematic undercoding. AAFP estimates miscoding level 4 as level 3 costs this annually.",
               },
               {
                 title: "Security Exposure",
@@ -69,15 +165,15 @@ export default function Home() {
             ].map((leak) => (
               <div
                 key={leak.title}
-                className="rounded-xl border border-gray-200 bg-ice p-8"
+                className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface"
               >
-                <p className="font-heading text-4xl font-bold text-teal">
+                <p className="font-heading text-4xl font-bold text-teal dark:text-teal-dark">
                   {leak.stat}
                 </p>
-                <h3 className="mt-3 font-heading text-xl font-bold text-navy">
+                <h3 className="mt-3 font-heading text-xl font-bold text-navy dark:text-white">
                   {leak.title}
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-charcoal-light">
+                <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                   {leak.description}
                 </p>
               </div>
@@ -86,15 +182,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider: Triple Leak → Product Visual */}
+      <SectionDivider variant="light" />
+
       {/* 3. Product Visual — How It Works */}
-      <section className="bg-ice px-6 py-20 lg:py-24">
+      <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
               From Clinical Notes to Clean Claims
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
-              Sovereign RCM processes everything inside your practice — no cloud, no exposure.
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+              Sovereign RCM processes everything inside your practice
+            </p>
+            <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+              No cloud. No exposure
             </p>
           </div>
           <div className="mt-16 flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-0">
@@ -105,11 +207,11 @@ export default function Home() {
               { label: "Audit Pack", sub: "Evidence + rationale" },
             ].map((step, i) => (
               <div key={step.label} className="flex items-center gap-4">
-                <div className="flex h-28 w-44 flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-4 text-center shadow-sm">
-                  <p className="font-heading text-base font-bold text-navy">
+                <div className="flex h-28 w-44 flex-col items-center justify-center rounded-xl border border-gray-300 bg-white p-4 text-center shadow-sm dark:border-dark-border dark:bg-dark-elevated dark:shadow-none">
+                  <p className="font-heading text-base font-bold text-navy dark:text-white">
                     {step.label}
                   </p>
-                  <p className="mt-1 text-sm text-charcoal-light">
+                  <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
                     {step.sub}
                   </p>
                 </div>
@@ -135,14 +237,14 @@ export default function Home() {
       </section>
 
       {/* 4. Packages */}
-      <section className="bg-white px-6 py-20 lg:py-24">
+      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
               Built for Practices of Every Size
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
-              Three packages. Fixed pricing. No percentage of collections.
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+              Three packages. Fixed pricing. No percentage of collections
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -192,26 +294,26 @@ export default function Home() {
                 className={`rounded-xl border p-8 ${
                   i === 1
                     ? "border-teal bg-navy text-white shadow-lg"
-                    : "border-gray-200 bg-white"
+                    : "border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
                 }`}
               >
                 <p
                   className={`font-heading text-sm font-bold uppercase tracking-wider ${
-                    i === 1 ? "text-teal-light" : "text-teal"
+                    i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
                   }`}
                 >
                   {pkg.name}
                 </p>
                 <h3
                   className={`mt-2 font-heading text-2xl font-bold ${
-                    i === 1 ? "text-white" : "text-navy"
+                    i === 1 ? "text-white" : "text-navy dark:text-white"
                   }`}
                 >
                   {pkg.target}
                 </h3>
                 <p
                   className={`mt-1 text-sm ${
-                    i === 1 ? "text-gray-300" : "text-charcoal-light"
+                    i === 1 ? "text-gray-300" : "text-charcoal-light dark:text-gray-300"
                   }`}
                 >
                   {pkg.providers} &middot; {pkg.units}
@@ -221,12 +323,12 @@ export default function Home() {
                     <li
                       key={feature}
                       className={`flex items-start gap-2 text-sm ${
-                        i === 1 ? "text-gray-300" : "text-charcoal-light"
+                        i === 1 ? "text-gray-300" : "text-charcoal-light dark:text-gray-300"
                       }`}
                     >
                       <svg
                         className={`mt-0.5 h-4 w-4 shrink-0 ${
-                          i === 1 ? "text-teal-light" : "text-teal"
+                          i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
                         }`}
                         fill="none"
                         viewBox="0 0 24 24"
@@ -259,37 +361,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider: Packages → The Difference */}
+      <SectionDivider variant="light" />
+
       {/* 5. The Difference */}
-      <section className="bg-ice px-6 py-20 lg:py-24">
+      <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
               A Different Category Entirely
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
-              Sovereign RCM is not outsourced billing. It&apos;s not cloud SaaS.
-              It&apos;s an owned AI appliance with fixed pricing and zero PHI exposure.
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+              Not outsourced billing. Not cloud SaaS
+            </p>
+            <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+              An owned AI appliance with fixed pricing and zero patient data exposure
             </p>
           </div>
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[600px] text-left">
               <thead>
-                <tr className="border-b-2 border-navy">
-                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy">
+                <tr className="border-b-2 border-navy dark:border-teal-dark">
+                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy dark:text-white">
                     Feature
                   </th>
-                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy">
+                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy dark:text-white">
                     Outsourced Billing
                   </th>
-                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy">
+                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy dark:text-white">
                     Cloud SaaS
                   </th>
-                  <th className="pb-4 font-heading text-sm font-bold uppercase tracking-wider text-teal">
+                  <th className="pb-4 font-heading text-sm font-bold uppercase tracking-wider text-teal dark:text-teal-dark">
                     Sovereign RCM
                   </th>
                 </tr>
               </thead>
-              <tbody className="text-sm text-charcoal-light">
+              <tbody className="text-sm text-charcoal-light dark:text-gray-300">
                 {[
                   ["Pricing", "% of collections", "Monthly subscription", "Fixed CapEx"],
                   ["PHI Location", "Third-party servers", "Cloud-hosted", "Your building only"],
@@ -297,13 +404,13 @@ export default function Home() {
                   ["Evidence Trail", "Limited", "Varies", "Full rationale + spans"],
                   ["Data Ownership", "Vendor controls", "Vendor controls", "Practice owns 100%"],
                 ].map((row) => (
-                  <tr key={row[0]} className="border-b border-gray-200">
-                    <td className="py-4 pr-6 font-medium text-navy">
+                  <tr key={row[0]} className="border-b border-gray-300 dark:border-dark-border">
+                    <td className="py-4 pr-6 font-medium text-navy dark:text-white">
                       {row[0]}
                     </td>
                     <td className="py-4 pr-6">{row[1]}</td>
                     <td className="py-4 pr-6">{row[2]}</td>
-                    <td className="py-4 font-medium text-teal">{row[3]}</td>
+                    <td className="py-4 font-medium text-teal dark:text-teal-dark">{row[3]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -313,15 +420,14 @@ export default function Home() {
       </section>
 
       {/* 6. Meet the Team */}
-      <section className="bg-white px-6 py-20 lg:py-24">
+      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
               Meet the Founders
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
-              A physician who knows the problem. An engineer who builds the
-              solution. A PE who manages complex regulated implementations.
+            <p className="mx-auto mt-4 max-w-4xl text-lg text-charcoal-light dark:text-gray-300">
+              A physician who knows the problem. An engineer who builds the solution. A PE who executes at scale
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -330,6 +436,7 @@ export default function Home() {
                 name: "Faizan G. Arif, MD",
                 role: "Chief Executive Officer",
                 credential: "Physician | AI-Clinical Strategist",
+                image: "",
                 description:
                   "The clinical visionary behind RizeX. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
               },
@@ -337,6 +444,7 @@ export default function Home() {
                 name: "Navid M. Rahman, PE",
                 role: "Chief Operating Officer",
                 credential: "Licensed PE | Regulated Project Leader",
+                image: "",
                 description:
                   "The operational backbone of RizeX. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
               },
@@ -344,27 +452,37 @@ export default function Home() {
                 name: "Ghulam Shah",
                 role: "Chief Technology Officer",
                 credential: "AI Architect | Data Strategist",
+                image: "/GhulamPhoto.jpg",
                 description:
                   "The technical force behind RizeX. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
               },
             ].map((founder) => (
               <div
                 key={founder.name}
-                className="rounded-xl border border-gray-200 bg-white p-8"
+                className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated"
               >
-                {/* Photo placeholder */}
-                <div className="mx-auto h-32 w-32 rounded-full bg-ice" />
+                {founder.image ? (
+                  <Image
+                    src={founder.image}
+                    alt={founder.name}
+                    width={128}
+                    height={128}
+                    className="mx-auto h-32 w-32 rounded-full object-cover dark:ring-1 dark:ring-dark-border"
+                  />
+                ) : (
+                  <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
+                )}
                 <div className="mt-6 text-center">
-                  <h3 className="font-heading text-xl font-bold text-navy">
+                  <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
                     {founder.name}
                   </h3>
-                  <p className="mt-1 text-sm font-medium text-teal">
+                  <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
                     {founder.role}
                   </p>
-                  <p className="mt-1 text-xs text-charcoal-light">
+                  <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
                     {founder.credential}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-charcoal-light">
+                  <p className="mt-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {founder.description}
                   </p>
                 </div>
@@ -374,40 +492,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider: Meet the Team → Blog Preview */}
+      <SectionDivider variant="light" />
+
       {/* 7. Blog Preview */}
-      <section className="bg-ice px-6 py-20 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy sm:text-4xl">
-              From the Blog
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light">
-              Insights on AI medical billing, revenue cycle management, and
-              healthcare technology.
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              "How AI Is Changing Medical Billing for Small Practices",
-              "How Much Revenue Is Your Practice Losing to Claim Denials?",
-              "What the Change Healthcare Attack Means for Your Practice",
-            ].map((title) => (
-              <div
-                key={title}
-                className="rounded-xl border border-gray-200 bg-white p-8"
-              >
-                <div className="h-40 rounded-lg bg-gray-100" />
-                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-teal">
-                  Coming Soon
-                </p>
-                <h3 className="mt-2 font-heading text-lg font-bold text-navy">
-                  {title}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BlogPreviewSection />
 
       {/* 8. Final CTA */}
       <section className="bg-navy px-6 py-20 lg:py-24">

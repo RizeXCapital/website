@@ -5,6 +5,7 @@ const footerLinks = {
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
     { href: "/blog", label: "Blog" },
+    { href: "/privacy", label: "Privacy Policy" },
   ],
   "Sovereign RCM": [
     { href: "/sovereign-rcm", label: "Overview" },
@@ -23,7 +24,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-navy text-white">
+    <footer className="border-t border-gray-300 bg-navy text-white dark:border-dark-border dark:bg-[#080E1A]">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand column */}

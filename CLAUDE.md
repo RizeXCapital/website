@@ -59,6 +59,16 @@ This file governs how Claude Code operates within the RizeX Capital project. Eve
 5. **Document Results**: Add review section to `tasks/todo.md`
 6. **Capture Lessons**: Update `tasks/lessons.md` after corrections
 
+## Git & Version Control
+
+- **Small incremental commits**: Each commit should represent one logical change (e.g., "Add founder photos", "Update hero copy", "Fix mobile nav")
+- **Never bundle unrelated changes**: If you edited the homepage and the contact page for different reasons, those are two commits
+- **Commit before pushing**: Accumulate small, well-described commits locally, then push as a batch
+- **No commits without user approval**: Always ask before committing. Never auto-commit
+- **No co-author lines**: Keep commit messages clean — no attribution tags
+- **Commit message format**: Imperative mood, concise subject line, optional body for context
+- **Always run `npm run build`** before committing to verify no errors
+
 ---
 
 ## Core Principles
@@ -70,6 +80,152 @@ This file governs how Claude Code operates within the RizeX Capital project. Eve
 - **Discipline Over Speed**: We scale what is structured, not reactive. Build it right the first time.
 - **Build for Decades**: We build for the long term — systems that outlive any single project.
 - **Integrity Non-Negotiable**: Integrity is non-negotiable — in every decision, in every line of code.
+
+---
+
+## Brand & Design System
+
+### Colors
+- **Deep Navy** (primary): `#1B2A4A` — backgrounds, headlines, nav
+- **Electric Teal** (accent): `#2E86AB` — links, highlights, secondary buttons
+- **Light Ice** (surface): `#F0F6FA` — page backgrounds, card surfaces
+- **Warm Coral** (CTA): `#E8614D` — all CTA buttons, urgent highlights
+- **Charcoal** (body text): `#2D2D2D` — paragraphs, descriptions
+
+### Typography
+- **Headlines**: Space Grotesk (Bold) — self-hosted via `next/font`
+- **Body**: Inter (Regular + Medium) — self-hosted via `next/font`
+- **Code/Technical**: JetBrains Mono — self-hosted via `next/font`
+
+### Layout Rules
+- Max content width: 1200px (`max-w-7xl`), centered
+- Section padding: `py-16` desktop, `py-10` mobile
+- Section spacing: consistent 64px between sections
+- Cards: white bg, subtle shadow (`shadow-sm`), `rounded-xl`, `p-6`
+- CTA buttons: `bg-coral text-white rounded-lg px-8 py-4 font-semibold`
+- Mobile: single column, larger touch targets, sticky CTA footer bar
+- Images: always use `next/image` with descriptive alt text
+- Tailwind utility classes only — no separate CSS files
+
+### CTA Strategy (LOCKED)
+- **Primary CTA**: Contact form — never a calendar/scheduling link
+- **General pages**: "Get in Touch"
+- **Sovereign RCM pages**: "Request a Billing Analysis"
+- **Contact form fields**: Name (req), Email (req), Phone (opt), Practice Name (opt), Message (req)
+- **Submission**: Email notification to all 3 founders simultaneously
+- **Thank You page**: Confirms submission, shows 2-3 related blog posts
+- **Placement**: Hero section + bottom of every page + sticky mobile footer
+- **Future**: Calendly may be added alongside (not replacing) the form later
+
+### Pricing Display (LOCKED)
+- **Never show actual dollar amounts** on the website
+- Pricing page shows SR-1 / SR-2 / SR-3 feature comparison and provider counts
+- Each tier card has a "Contact for Pricing" button → routes to contact form
+- Bottom CTA: "Request a Custom Quote"
+
+---
+
+## Site Architecture
+
+### Navigation Structure
+```
+Logo (home link)
+├── Sovereign RCM (dropdown)
+│   ├── Overview
+│   ├── How It Works
+│   ├── Pricing
+│   ├── Security
+│   ├── Pilot Program
+│   └── FAQ
+├── About
+├── Blog
+├── Contact (coral button)
+```
+
+### Component Library
+Reusable components in `src/components/`:
+```
+<Navigation />      → Nav with logo, links, mobile hamburger, coral Contact button
+<Footer />          → Links, copyright, founders, contact info
+<ComingSoon />      → Stub page template for pages not yet built
+<Hero />            → Full-width, headline, subhead, CTA button
+<ContactForm />     → Standard form with validation
+<ServiceCard />     → Icon, title, description, link arrow
+<ComparisonTable /> → Feature comparison grid
+<FounderBio />      → Photo, name, role, credentials, narrative
+<PillarCard />      → Number, title, description
+<BlogPreview />     → Title, date, excerpt, read-more link
+<CTASection />      → Coral background, headline, embedded ContactForm
+<BreadcrumbNav />   → Auto-generated from URL path
+<TestimonialCard /> → Quote, attribution, practice info
+<PackageTier />     → Tier name, provider count, features, "Contact for Pricing" button
+```
+
+---
+
+## Product Knowledge — Sovereign RCM
+
+### The Problem (Triple Leak)
+1. **Cost leak**: Outsourced billing charges ~5% of collections (MGMA benchmark)
+2. **Revenue leak**: Physician undercoding costs $30K+/year per provider (AAFP)
+3. **Security leak**: Cloud billing = PHI exposure risk (Change Healthcare attack hit 50% of U.S. claims)
+
+### The Solution
+On-premise, air-gapped AI appliance. PHI never leaves the building.
+Multi-agent pipeline: Chart Reader → Procedure Specialist → Payer Logic Bot → Denial Analyst.
+Drafts compliant 837P claims from clinical notes.
+
+### Packages
+- **SR-1**: 1-3 providers (solo/small practices)
+- **SR-2**: 4-10 providers (group practices)
+- **SR-3**: 11-25 providers (multi-specialty groups)
+- Payment structure: 50% deposit, 40% installation, 10% acceptance
+
+### Beachhead Specialties
+1. Emergency Medicine (Faizan's domain authority)
+2. Orthopedics (procedure-heavy, modifier-intensive)
+3. Cardiology (complex E/M + procedures)
+4. Pain Management (high documentation burden)
+5. Dermatology (high volume, undercoding risk)
+6. Multi-specialty groups (SR-2/SR-3 fit)
+- **DENTAL EXCLUDED** — uses CDT codes + 837D (different system)
+
+### Competitive Positioning
+- vs. outsourced billing: Fixed CapEx, no % of collections, PHI stays on-premise
+- vs. cloud SaaS: Air-gapped, no subscription, owned not rented, offline inference
+- Category of one: No Princeton AI company targets small medical practices
+
+### 90-Day Pilot
+- Shadow mode alongside existing billing
+- Proves: clean-claim rate, denial rate delta, days-in-A/R, undercoding recapture
+- Exit criteria: ≥95% clean-claim rate, ≥30% coder touch time reduction
+
+---
+
+## Content Rules
+
+- Blog posts are Markdown files in `/content/blog/` with YAML frontmatter
+- Required frontmatter: title, date, author, category, excerpt, slug, keywords
+- Categories: sovereign-rcm, ai-insights, practice-management, company-news
+- Homepage auto-pulls 3 most recent posts
+- Blog listing page has category filter
+- RSS feed auto-generated
+- Every blog post ends with a CTA linking to contact or pilot program
+
+---
+
+## Hard Rules (NEVER violate)
+
+- Never use `localStorage` or `sessionStorage`
+- Never show actual prices ($29.5K, $69K, $149K) on the website
+- Never use Google Fonts CDN — fonts are self-hosted via `next/font`
+- Never create separate CSS files — Tailwind utility classes only
+- Never add a scheduling/calendar widget unless explicitly told to
+- Never use stock phrases: "cutting-edge", "leverage", "revolutionize", "game-changing"
+- Never hardcode content that should come from a data file or component prop
+- Never build a page without SEO metadata (title, description, OG tags, canonical)
+- Never skip mobile responsiveness testing
+- Never commit without running `npm run build` to verify no errors
 
 ---
 
