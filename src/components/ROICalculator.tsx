@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import SectionDivider from "@/components/SectionDivider";
 
 /* -----------------------------------------------------------------------
    Specialty benchmark data
@@ -230,22 +229,25 @@ export default function ROICalculator() {
         }
       `}</style>
 
-      {/* ── Inputs Section ──────────────────────────────────────── */}
+      {/* ── Calculator Section ────────────────────────────────────── */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
-        <div className="mx-auto max-w-2xl">
-          <h2 className="font-heading text-2xl font-bold text-navy dark:text-white">
-            Your Practice Details
-          </h2>
-          <p className="mt-2 text-sm text-charcoal-light dark:text-gray-300">
-            Adjust values to match your practice. Results update instantly.
-          </p>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {/* Column 1 — Inputs */}
+            <div className="min-w-0">
+              <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
+                Your Practice Details
+              </h2>
+              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-300">
+                Adjust values to match your practice.
+              </p>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-6 space-y-4">
                 {/* Specialty */}
                 <div>
                   <label
                     htmlFor="roi-specialty"
-                    className="block text-sm font-medium text-navy dark:text-white"
+                    className="block text-xs font-medium text-navy dark:text-white"
                   >
                     Specialty
                   </label>
@@ -255,7 +257,7 @@ export default function ROICalculator() {
                     onChange={(e) =>
                       handleSpecialtyChange(e.target.value as SpecialtyKey)
                     }
-                    className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
+                    className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
                   >
                     {Object.keys(SPECIALTIES).map((s) => (
                       <option key={s} value={s}>
@@ -267,14 +269,14 @@ export default function ROICalculator() {
 
                 {/* Providers */}
                 <div>
-                  <label className="block text-sm font-medium text-navy dark:text-white">
-                    Number of Providers
+                  <label className="block text-xs font-medium text-navy dark:text-white">
+                    Providers
                   </label>
-                  <div className="mt-1 flex items-center gap-3">
+                  <div className="mt-1 flex items-center gap-2">
                     <button
                       type="button"
                       onClick={() => setProviders(Math.max(1, providers - 1))}
-                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 text-lg text-navy transition-colors hover:bg-ice dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
+                      className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-300 text-sm text-navy transition-colors hover:bg-ice dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
                       aria-label="Decrease providers"
                     >
                       &minus;
@@ -289,12 +291,12 @@ export default function ROICalculator() {
                           Math.max(1, Math.min(25, parseInt(e.target.value) || 1)),
                         )
                       }
-                      className="w-20 rounded-lg border border-gray-300 bg-white px-3 py-2 text-center text-sm text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
+                      className="w-14 rounded-lg border border-gray-300 bg-white px-2 py-1.5 text-center text-xs text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
                     />
                     <button
                       type="button"
                       onClick={() => setProviders(Math.min(25, providers + 1))}
-                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 text-lg text-navy transition-colors hover:bg-ice dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
+                      className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-300 text-sm text-navy transition-colors hover:bg-ice dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
                       aria-label="Increase providers"
                     >
                       +
@@ -304,8 +306,8 @@ export default function ROICalculator() {
 
                 {/* Annual Collections / Provider */}
                 <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
-                    <span>Annual Collections / Provider</span>
+                  <label className="flex items-center justify-between text-xs font-medium text-navy dark:text-white">
+                    <span>Collections / Provider</span>
                     <span className="font-mono text-teal dark:text-teal-dark">
                       {formatCurrency(collectionsPerProvider)}
                     </span>
@@ -320,10 +322,10 @@ export default function ROICalculator() {
                       markOverride("collections");
                       setCollectionsPerProvider(parseInt(e.target.value));
                     }}
-                    className="mt-2"
+                    className="mt-1.5"
                     style={sliderBg(collectionsPerProvider, 200000, 1200000)}
                   />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                  <div className="mt-0.5 flex justify-between text-[10px] text-charcoal-light dark:text-gray-400">
                     <span>$200K</span>
                     <span>$1.2M</span>
                   </div>
@@ -331,8 +333,8 @@ export default function ROICalculator() {
 
                 {/* Billing Cost % */}
                 <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
-                    <span>Billing Cost (% of collections)</span>
+                  <label className="flex items-center justify-between text-xs font-medium text-navy dark:text-white">
+                    <span>Billing Cost (%)</span>
                     <span className="font-mono text-teal dark:text-teal-dark">
                       {billingCostPct}%
                     </span>
@@ -346,10 +348,10 @@ export default function ROICalculator() {
                     onChange={(e) =>
                       setBillingCostPct(parseFloat(e.target.value))
                     }
-                    className="mt-2"
+                    className="mt-1.5"
                     style={sliderBg(billingCostPct, 2, 12)}
                   />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                  <div className="mt-0.5 flex justify-between text-[10px] text-charcoal-light dark:text-gray-400">
                     <span>2%</span>
                     <span>12%</span>
                   </div>
@@ -357,7 +359,7 @@ export default function ROICalculator() {
 
                 {/* Denial Rate */}
                 <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
+                  <label className="flex items-center justify-between text-xs font-medium text-navy dark:text-white">
                     <span>Denial Rate</span>
                     <span className="font-mono text-teal dark:text-teal-dark">
                       {denialRatePct}%
@@ -373,10 +375,10 @@ export default function ROICalculator() {
                       markOverride("denialRate");
                       setDenialRatePct(parseFloat(e.target.value));
                     }}
-                    className="mt-2"
+                    className="mt-1.5"
                     style={sliderBg(denialRatePct, 2, 20)}
                   />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                  <div className="mt-0.5 flex justify-between text-[10px] text-charcoal-light dark:text-gray-400">
                     <span>2%</span>
                     <span>20%</span>
                   </div>
@@ -384,7 +386,7 @@ export default function ROICalculator() {
 
                 {/* Undercoding Rate */}
                 <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
+                  <label className="flex items-center justify-between text-xs font-medium text-navy dark:text-white">
                     <span>Undercoding Rate</span>
                     <span className="font-mono text-teal dark:text-teal-dark">
                       {undercodingPct}%
@@ -400,10 +402,10 @@ export default function ROICalculator() {
                       markOverride("undercodingRate");
                       setUndercodingPct(parseInt(e.target.value));
                     }}
-                    className="mt-2"
+                    className="mt-1.5"
                     style={sliderBg(undercodingPct, 5, 35)}
                   />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                  <div className="mt-0.5 flex justify-between text-[10px] text-charcoal-light dark:text-gray-400">
                     <span>5%</span>
                     <span>35%</span>
                   </div>
@@ -413,163 +415,150 @@ export default function ROICalculator() {
                 <button
                   type="button"
                   onClick={resetDefaults}
-                  className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+                  className="text-xs font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
                 >
                   Reset to Defaults
                 </button>
               </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="light" />
-
-      {/* ── Results Section ──────────────────────────────────────── */}
-      <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center font-heading text-2xl font-bold text-navy dark:text-white sm:text-3xl">
-            Your Revenue Impact
-          </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-charcoal-light dark:text-gray-300">
-            Based on industry benchmarks for{" "}
-            {specialty.toLowerCase()} practices
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Total Annual Leakage */}
-            <div className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
-              <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                Total Annual Leakage
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-teal dark:text-teal-dark">
-                {formatCurrency(results.totalLeakage)}
-              </p>
-              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                per year
-              </p>
             </div>
 
-            {/* Recoverable Revenue */}
-            <div className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
-              <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                Recoverable Revenue
+            {/* Column 2 — Revenue Impact */}
+            <div className="min-w-0">
+              <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
+                Your Revenue Impact
+              </h2>
+              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-300">
+                For {specialty.toLowerCase()} practices
               </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-coral">
-                {formatCurrency(results.recoverableRevenue)}
-              </p>
-              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                with optimized billing
-              </p>
-            </div>
 
-            {/* Per-Provider Impact */}
-            <div className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
-              <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                Per-Provider Impact
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-navy dark:text-white">
-                {formatCurrency(results.perProviderLeakage)}
-              </p>
-              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                leakage per provider / year
-              </p>
-            </div>
-
-            {/* Monthly Impact */}
-            <div className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
-              <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                Monthly Impact
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-navy dark:text-white">
-                {formatCurrency(results.monthlyImpact)}
-              </p>
-              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                lost every month
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="light" />
-
-      {/* ── Breakdown Section ─────────────────────────────────────── */}
-      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-center font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            Where the Money Goes
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-charcoal-light dark:text-gray-300">
-            The three leaks draining your practice revenue
-          </p>
-
-          <div className="mx-auto mt-12 max-w-3xl">
-            {/* Stacked bar */}
-            <div className="flex h-12 overflow-hidden rounded-lg">
-              <div
-                className="flex items-center justify-center bg-navy text-xs font-medium text-white transition-all duration-300"
-                style={{ width: `${barSegments.billing}%` }}
-              >
-                {barSegments.billing >= 15 && `${barSegments.billing.toFixed(0)}%`}
-              </div>
-              <div
-                className="flex items-center justify-center bg-coral text-xs font-medium text-white transition-all duration-300"
-                style={{ width: `${barSegments.denials}%` }}
-              >
-                {barSegments.denials >= 15 && `${barSegments.denials.toFixed(0)}%`}
-              </div>
-              <div
-                className="flex items-center justify-center bg-teal text-xs font-medium text-white transition-all duration-300"
-                style={{ width: `${barSegments.undercoding}%` }}
-              >
-                {barSegments.undercoding >= 15 &&
-                  `${barSegments.undercoding.toFixed(0)}%`}
-              </div>
-            </div>
-
-            {/* Legend */}
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-              <div className="flex items-start gap-3">
-                <div className="mt-1 h-4 w-4 shrink-0 rounded bg-navy" />
-                <div>
-                  <p className="text-sm font-medium text-navy dark:text-white">
-                    Billing Overhead
+              <div className="mt-6 space-y-3">
+                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                  <p className="text-xs font-medium text-charcoal-light dark:text-gray-400">
+                    Total Annual Leakage
                   </p>
-                  <p className="font-heading text-xl font-bold text-navy dark:text-white">
-                    {formatCurrency(results.billingCost)}
+                  <p className="mt-1 font-heading text-xl font-bold text-teal dark:text-teal-dark">
+                    {formatCurrency(results.totalLeakage)}
                   </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    {barSegments.billing.toFixed(0)}% of total leakage
+                  <p className="text-[10px] text-charcoal-light dark:text-gray-400">
+                    per year
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                  <p className="text-xs font-medium text-charcoal-light dark:text-gray-400">
+                    Recoverable Revenue
+                  </p>
+                  <p className="mt-1 font-heading text-xl font-bold text-coral">
+                    {formatCurrency(results.recoverableRevenue)}
+                  </p>
+                  <p className="text-[10px] text-charcoal-light dark:text-gray-400">
+                    with optimized billing
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                  <p className="text-xs font-medium text-charcoal-light dark:text-gray-400">
+                    Per-Provider Impact
+                  </p>
+                  <p className="mt-1 font-heading text-xl font-bold text-navy dark:text-white">
+                    {formatCurrency(results.perProviderLeakage)}
+                  </p>
+                  <p className="text-[10px] text-charcoal-light dark:text-gray-400">
+                    leakage per provider / year
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                  <p className="text-xs font-medium text-charcoal-light dark:text-gray-400">
+                    Monthly Impact
+                  </p>
+                  <p className="mt-1 font-heading text-xl font-bold text-navy dark:text-white">
+                    {formatCurrency(results.monthlyImpact)}
+                  </p>
+                  <p className="text-[10px] text-charcoal-light dark:text-gray-400">
+                    lost every month
                   </p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-start gap-3">
-                <div className="mt-1 h-4 w-4 shrink-0 rounded bg-coral" />
-                <div>
-                  <p className="text-sm font-medium text-navy dark:text-white">
-                    Unrecovered Denials
-                  </p>
-                  <p className="font-heading text-xl font-bold text-coral">
-                    {formatCurrency(results.unrecoveredLoss)}
-                  </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    {barSegments.denials.toFixed(0)}% of total leakage
-                  </p>
+            {/* Column 3 — Where the Money Goes */}
+            <div className="min-w-0">
+              <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
+                Where the Money Goes
+              </h2>
+              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-300">
+                The three leaks draining your revenue
+              </p>
+
+              {/* Stacked bar */}
+              <div className="mt-6 flex h-9 overflow-hidden rounded-lg">
+                <div
+                  className="flex items-center justify-center bg-navy text-[10px] font-medium text-white transition-all duration-300"
+                  style={{ width: `${barSegments.billing}%` }}
+                >
+                  {barSegments.billing >= 18 && `${barSegments.billing.toFixed(0)}%`}
+                </div>
+                <div
+                  className="flex items-center justify-center bg-coral text-[10px] font-medium text-white transition-all duration-300"
+                  style={{ width: `${barSegments.denials}%` }}
+                >
+                  {barSegments.denials >= 18 && `${barSegments.denials.toFixed(0)}%`}
+                </div>
+                <div
+                  className="flex items-center justify-center bg-teal text-[10px] font-medium text-white transition-all duration-300"
+                  style={{ width: `${barSegments.undercoding}%` }}
+                >
+                  {barSegments.undercoding >= 18 &&
+                    `${barSegments.undercoding.toFixed(0)}%`}
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="mt-1 h-4 w-4 shrink-0 rounded bg-teal" />
-                <div>
-                  <p className="text-sm font-medium text-navy dark:text-white">
-                    Undercoding Loss
-                  </p>
-                  <p className="font-heading text-xl font-bold text-teal dark:text-teal-dark">
-                    {formatCurrency(results.undercodingLoss)}
-                  </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    {barSegments.undercoding.toFixed(0)}% of total leakage
-                  </p>
+              {/* Legend */}
+              <div className="mt-8 space-y-8">
+                <div className="flex items-start gap-2.5">
+                  <div className="mt-2 h-4 w-4 shrink-0 rounded bg-navy" />
+                  <div>
+                    <p className="text-base font-medium text-navy dark:text-white">
+                      Billing Overhead
+                    </p>
+                    <p className="font-heading text-2xl font-bold text-navy dark:text-white">
+                      {formatCurrency(results.billingCost)}
+                    </p>
+                    <p className="text-sm text-charcoal-light dark:text-gray-400">
+                      {barSegments.billing.toFixed(0)}% of total
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <div className="mt-2 h-4 w-4 shrink-0 rounded bg-coral" />
+                  <div>
+                    <p className="text-base font-medium text-navy dark:text-white">
+                      Unrecovered Denials
+                    </p>
+                    <p className="font-heading text-2xl font-bold text-coral">
+                      {formatCurrency(results.unrecoveredLoss)}
+                    </p>
+                    <p className="text-sm text-charcoal-light dark:text-gray-400">
+                      {barSegments.denials.toFixed(0)}% of total
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2.5">
+                  <div className="mt-2 h-4 w-4 shrink-0 rounded bg-teal" />
+                  <div>
+                    <p className="text-base font-medium text-navy dark:text-white">
+                      Undercoding Loss
+                    </p>
+                    <p className="font-heading text-2xl font-bold text-teal dark:text-teal-dark">
+                      {formatCurrency(results.undercodingLoss)}
+                    </p>
+                    <p className="text-sm text-charcoal-light dark:text-gray-400">
+                      {barSegments.undercoding.toFixed(0)}% of total
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -581,7 +570,7 @@ export default function ROICalculator() {
       <section className="bg-white px-6 py-16 dark:bg-dark-bg lg:py-20">
         <div className="mx-auto max-w-3xl">
           <details className="group">
-            <summary className="cursor-pointer list-none font-heading text-lg font-bold text-navy dark:text-white [&::-webkit-details-marker]:hidden">
+            <summary className="cursor-pointer list-none font-heading text-3xl font-bold text-navy dark:text-white [&::-webkit-details-marker]:hidden">
               <span className="flex items-center gap-2">
                 <svg
                   className="h-5 w-5 text-teal transition-transform group-open:rotate-90 dark:text-teal-dark"
@@ -599,7 +588,7 @@ export default function ROICalculator() {
                 How We Calculate These Estimates
               </span>
             </summary>
-            <div className="mt-4 space-y-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
               <p>
                 These projections use specialty-adjusted industry benchmarks
                 from leading healthcare analytics organizations:
