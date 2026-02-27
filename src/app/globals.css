@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-navy: #1B2A4A;
   --color-navy-light: #243556;
