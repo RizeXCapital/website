@@ -35,6 +35,7 @@ interface Tier {
   providers: string;
   description: string;
   features: string[];
+  excluded?: string[];
   highlighted?: boolean;
 }
 
@@ -50,10 +51,14 @@ const tiers: Tier[] = [
       "Air-gapped PHI processing",
       "Multi-agent claim pipeline",
       "837P claim generation",
-      "Per-claim evidence trail",
       "Single specialty configuration",
       "EHR read-only integration",
       "Standard support",
+    ],
+    excluded: [
+      "Multi-specialty configuration",
+      "Denial pattern analysis",
+      "Undercoding recapture alerts",
     ],
   },
   {
@@ -66,14 +71,15 @@ const tiers: Tier[] = [
       "Everything in SR-1",
       "Multi-specialty configuration",
       "Denial pattern analysis",
-      "Payer-specific optimization",
       "Undercoding recapture alerts",
       "Priority support",
       "Quarterly performance reviews",
-      "Custom payer rule sets",
-      "Batch processing for full-day encounters",
-      "Staff workflow documentation",
       "Practice analytics dashboard",
+    ],
+    excluded: [
+      "Custom EHR integrations",
+      "Multi-location deployment",
+      "Dedicated account manager",
     ],
     highlighted: true,
   },
@@ -91,11 +97,7 @@ const tiers: Tier[] = [
       "Monthly performance reviews",
       "Staff training program",
       "Custom reporting and analytics",
-      "Priority denial resolution support",
       "Advanced payer contract analysis",
-      "Workflow optimization consulting",
-      "Volume-based processing optimization",
-      "Cross-location performance benchmarking",
       "Compliance audit preparation",
       "Dedicated support line",
     ],
@@ -218,19 +220,19 @@ const scenarios = [
     tier: "SR-1",
     title: "Solo & Small Practice",
     description:
-      "You are a solo physician or small group with 1–3 providers in a single specialty. You want to own your billing infrastructure, eliminate the percentage drain to an outsourced company, and keep patient data in your building. Standard support is sufficient for your needs.",
+      "You are a solo physician or small group with 1–3 providers in a single specialty. You want to own your billing infrastructure, eliminate the percentage drain, and keep patient data in your building.",
   },
   {
     tier: "SR-2",
     title: "Group Practice",
     description:
-      "You run a group practice with 4–10 providers, possibly across multiple specialties. You need denial analysis, payer optimization, and undercoding recapture to maximize revenue. Priority support and quarterly reviews keep your billing performance on track.",
+      "You run a group practice with 4–10 providers across multiple specialties. You need denial analysis, payer optimization, and undercoding recapture to maximize revenue. Priority support keeps billing on track.",
   },
   {
     tier: "SR-3",
     title: "Multi-Specialty Group",
     description:
-      "You manage a multi-specialty group with 11–25 providers across multiple locations. You need custom integrations, a dedicated account manager, staff training, and monthly performance reviews. Enterprise-grade support ensures nothing falls through the cracks.",
+      "You manage a multi-specialty group with 11–25 providers across multiple locations. You need custom integrations, a dedicated account manager, and monthly performance reviews with enterprise-grade support.",
   },
 ];
 
@@ -340,7 +342,7 @@ export default function Pricing() {
             {tiers.map((tier) => (
               <StaggerItem key={tier.id}>
                 <HoverCard
-                  className={`relative h-full rounded-xl border bg-white p-6 dark:bg-dark-elevated ${
+                  className={`relative flex h-full flex-col rounded-xl border bg-white p-6 dark:bg-dark-elevated ${
                     tier.highlighted
                       ? "border-2 border-teal dark:border-teal-dark"
                       : "border-gray-300 dark:border-dark-border"
@@ -389,8 +391,29 @@ export default function Pricing() {
                         </span>
                       </li>
                     ))}
+                    {tier.excluded?.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 opacity-40">
+                        <svg
+                          className="mt-0.5 h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M6 18 18 6M6 6l12 12"
+                          />
+                        </svg>
+                        <span className="text-sm text-charcoal-light line-through dark:text-gray-400">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
                   </ul>
-                  <div className="mt-8">
+                  <div className="mt-auto pt-8">
                     <Link
                       href="/contact"
                       className="block rounded-lg bg-coral px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-coral-hover"

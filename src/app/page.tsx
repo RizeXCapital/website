@@ -342,7 +342,7 @@ export default function Home() {
             ].map((pkg, i) => (
               <StaggerItem key={pkg.name}>
                 <HoverCard
-                  className={`h-full rounded-xl border p-8 ${
+                  className={`flex h-full flex-col rounded-xl border p-8 ${
                     i === 1
                       ? "border-teal bg-navy text-white shadow-lg"
                       : "border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
@@ -398,7 +398,7 @@ export default function Home() {
                   </ul>
                   <Link
                     href="/contact"
-                    className={`mt-8 block rounded-lg px-6 py-3 text-center text-sm font-medium transition-colors ${
+                    className={`mt-auto block rounded-lg px-6 py-3 text-center text-sm font-medium transition-colors ${
                       i === 1
                         ? "bg-coral text-white hover:bg-coral-hover"
                         : "border border-navy bg-navy text-white hover:bg-navy-light"
