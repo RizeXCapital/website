@@ -250,344 +250,348 @@ export default function ROICalculator() {
       `}</style>
 
       {/* ── Calculator Section ────────────────────────────────────── */}
-      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
+      <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3 lg:gap-16">
-            {/* Column 1 — Inputs */}
-            <div className="min-w-0 max-w-xs">
-              <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
-                Your Practice Details
-              </h2>
-              <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
-                Adjust values to match your practice.
-              </p>
+          <div className="rounded-2xl border border-gray-300 bg-white p-6 shadow-sm sm:p-8 lg:p-10 dark:border-dark-border dark:bg-dark-elevated">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-10">
+              {/* Left — Inputs */}
+              <div className="min-w-0">
+                <div className="rounded-xl bg-ice p-6 dark:bg-dark-surface">
+                  <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
+                    Your Practice Details
+                  </h2>
+                  <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
+                    Adjust values to match your practice.
+                  </p>
 
-              <div className="mt-6 space-y-5">
-                {/* Specialty */}
-                <div>
-                  <label
-                    htmlFor="roi-specialty"
-                    className="block text-sm font-medium text-navy dark:text-white"
-                  >
-                    <Tooltip text="Selecting a specialty auto-fills industry benchmarks for denial rate, undercoding, and collections">
-                      Specialty
-                    </Tooltip>
-                  </label>
-                  <select
-                    id="roi-specialty"
-                    value={specialty}
-                    onChange={(e) =>
-                      handleSpecialtyChange(e.target.value as SpecialtyKey)
-                    }
-                    className="mt-1.5 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
-                  >
-                    {Object.keys(SPECIALTIES).map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="mt-6 space-y-5">
+                    {/* Specialty */}
+                    <div>
+                      <label
+                        htmlFor="roi-specialty"
+                        className="block text-sm font-medium text-navy dark:text-white"
+                      >
+                        <Tooltip text="Selecting a specialty auto-fills industry benchmarks for denial rate, undercoding, and collections">
+                          Specialty
+                        </Tooltip>
+                      </label>
+                      <select
+                        id="roi-specialty"
+                        value={specialty}
+                        onChange={(e) =>
+                          handleSpecialtyChange(e.target.value as SpecialtyKey)
+                        }
+                        className="mt-1.5 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-charcoal focus:ring-2 focus:ring-teal/20 dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
+                      >
+                        {Object.keys(SPECIALTIES).map((s) => (
+                          <option key={s} value={s}>
+                            {s}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Providers */}
+                    <div>
+                      <label className="block text-sm font-medium text-navy dark:text-white">
+                        Providers
+                      </label>
+                      <div className="mt-1.5 flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setProviders(Math.max(1, providers - 1))}
+                          className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 text-base text-navy transition-colors hover:bg-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
+                          aria-label="Decrease providers"
+                        >
+                          &minus;
+                        </button>
+                        <input
+                          type="number"
+                          min={1}
+                          max={25}
+                          value={providers}
+                          onChange={(e) =>
+                            setProviders(
+                              Math.max(1, Math.min(25, parseInt(e.target.value) || 1)),
+                            )
+                          }
+                          className="w-16 rounded-lg border border-gray-300 bg-white px-2 py-2 text-center text-sm text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setProviders(Math.min(25, providers + 1))}
+                          className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 text-base text-navy transition-colors hover:bg-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
+                          aria-label="Increase providers"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Annual Collections / Provider */}
+                    <div>
+                      <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
+                        <Tooltip text="Total annual collections per provider before billing costs — includes all payer sources">
+                          Collections / Provider
+                        </Tooltip>
+                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                          {formatCurrency(collectionsPerProvider)}
+                        </span>
+                      </label>
+                      <input
+                        type="range"
+                        min={200000}
+                        max={1200000}
+                        step={10000}
+                        value={collectionsPerProvider}
+                        onChange={(e) => {
+                          markOverride("collections");
+                          setCollectionsPerProvider(parseInt(e.target.value));
+                        }}
+                        className="mt-2"
+                        style={sliderBg(collectionsPerProvider, 200000, 1200000)}
+                      />
+                      <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                        <span>$200K</span>
+                        <span>$1.2M</span>
+                      </div>
+                    </div>
+
+                    {/* Billing Cost % */}
+                    <div>
+                      <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
+                        <Tooltip text="Percentage of collections paid to your billing company — MGMA benchmark: 4.8–5.2% for outsourced billing">
+                          Billing Cost (%)
+                        </Tooltip>
+                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                          {billingCostPct}%
+                        </span>
+                      </label>
+                      <input
+                        type="range"
+                        min={2}
+                        max={12}
+                        step={0.5}
+                        value={billingCostPct}
+                        onChange={(e) =>
+                          setBillingCostPct(parseFloat(e.target.value))
+                        }
+                        className="mt-2"
+                        style={sliderBg(billingCostPct, 2, 12)}
+                      />
+                      <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                        <span>2%</span>
+                        <span>12%</span>
+                      </div>
+                    </div>
+
+                    {/* Denial Rate */}
+                    <div>
+                      <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
+                        <Tooltip text="Percentage of claims denied on first submission — industry average is 6–13% depending on specialty">
+                          Denial Rate
+                        </Tooltip>
+                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                          {denialRatePct}%
+                        </span>
+                      </label>
+                      <input
+                        type="range"
+                        min={2}
+                        max={20}
+                        step={0.5}
+                        value={denialRatePct}
+                        onChange={(e) => {
+                          markOverride("denialRate");
+                          setDenialRatePct(parseFloat(e.target.value));
+                        }}
+                        className="mt-2"
+                        style={sliderBg(denialRatePct, 2, 20)}
+                      />
+                      <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                        <span>2%</span>
+                        <span>20%</span>
+                      </div>
+                    </div>
+
+                    {/* Undercoding Rate */}
+                    <div>
+                      <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
+                        <Tooltip text="Percentage of visits where documented services are billed at a lower level than supported — AAFP estimates $30K+ lost per provider annually">
+                          Undercoding Rate
+                        </Tooltip>
+                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                          {undercodingPct}%
+                        </span>
+                      </label>
+                      <input
+                        type="range"
+                        min={5}
+                        max={35}
+                        step={1}
+                        value={undercodingPct}
+                        onChange={(e) => {
+                          markOverride("undercodingRate");
+                          setUndercodingPct(parseInt(e.target.value));
+                        }}
+                        className="mt-2"
+                        style={sliderBg(undercodingPct, 5, 35)}
+                      />
+                      <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
+                        <span>5%</span>
+                        <span>35%</span>
+                      </div>
+                    </div>
+
+                    {/* Reset */}
+                    <div className="flex items-center justify-end">
+                      <button
+                        type="button"
+                        onClick={resetDefaults}
+                        className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+                      >
+                        Reset to Defaults
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right — Results & Breakdown */}
+              <div className="min-w-0 lg:col-span-2">
+                {/* Top row: Featured metrics */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {/* Total Annual Leakage */}
+                  <div className="rounded-xl border-2 border-teal bg-white p-6 dark:border-teal-dark dark:bg-dark-surface">
+                    <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
+                      Total Annual Leakage
+                    </p>
+                    <p className="mt-1 font-heading text-4xl font-bold text-teal dark:text-teal-dark">
+                      {formatCurrency(results.totalLeakage)}
+                    </p>
+                    <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
+                      per year
+                    </p>
+                  </div>
+
+                  {/* Recoverable Revenue */}
+                  <div className="rounded-xl border-2 border-coral bg-white p-6 dark:border-coral dark:bg-dark-surface">
+                    <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
+                      Recoverable Revenue
+                    </p>
+                    <p className="mt-1 font-heading text-4xl font-bold text-coral">
+                      {formatCurrency(results.recoverableRevenue)}
+                    </p>
+                    <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
+                      with optimized billing
+                    </p>
+                  </div>
                 </div>
 
-                {/* Providers */}
-                <div>
-                  <label className="block text-sm font-medium text-navy dark:text-white">
-                    Providers
-                  </label>
-                  <div className="mt-1.5 flex items-center gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setProviders(Math.max(1, providers - 1))}
-                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 text-base text-navy transition-colors hover:bg-ice dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
-                      aria-label="Decrease providers"
+                {/* Secondary metrics row */}
+                <div className="mt-4 grid grid-cols-2 gap-4">
+                  <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                    <p className="text-xs font-medium text-charcoal-light dark:text-gray-400">
+                      Per-Provider Impact
+                    </p>
+                    <p className="mt-1 font-heading text-2xl font-bold text-navy dark:text-white">
+                      {formatCurrency(results.perProviderLeakage)}
+                    </p>
+                    <p className="text-xs text-charcoal-light dark:text-gray-400">
+                      per provider / year
+                    </p>
+                  </div>
+
+                  <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                    <p className="text-xs font-medium text-charcoal-light dark:text-gray-400">
+                      Monthly Impact
+                    </p>
+                    <p className="mt-1 font-heading text-2xl font-bold text-navy dark:text-white">
+                      {formatCurrency(results.monthlyImpact)}
+                    </p>
+                    <p className="text-xs text-charcoal-light dark:text-gray-400">
+                      lost every month
+                    </p>
+                  </div>
+                </div>
+
+                {/* Breakdown: bar + legend */}
+                <div className="mt-8">
+                  <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
+                    Where the Money Goes
+                  </h3>
+                  <p className="mt-1 text-xs text-charcoal-light dark:text-gray-300">
+                    The three leaks draining your revenue
+                  </p>
+
+                  {/* Stacked bar */}
+                  <div className="mt-4 flex h-12 overflow-hidden rounded-xl">
+                    <div
+                      className="flex items-center justify-center bg-navy text-[10px] font-semibold text-white transition-all duration-300"
+                      style={{ width: `${barSegments.billing}%` }}
                     >
-                      &minus;
-                    </button>
-                    <input
-                      type="number"
-                      min={1}
-                      max={25}
-                      value={providers}
-                      onChange={(e) =>
-                        setProviders(
-                          Math.max(1, Math.min(25, parseInt(e.target.value) || 1)),
-                        )
-                      }
-                      className="w-16 rounded-lg border border-gray-300 bg-white px-2 py-2 text-center text-sm text-charcoal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setProviders(Math.min(25, providers + 1))}
-                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 text-base text-navy transition-colors hover:bg-ice dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
-                      aria-label="Increase providers"
+                      {`${barSegments.billing.toFixed(0)}%`}
+                    </div>
+                    <div
+                      className="flex items-center justify-center bg-coral text-[10px] font-semibold text-white transition-all duration-300"
+                      style={{ width: `${barSegments.denials}%` }}
                     >
-                      +
-                    </button>
+                      {`${barSegments.denials.toFixed(0)}%`}
+                    </div>
+                    <div
+                      className="flex items-center justify-center bg-teal text-[10px] font-semibold text-white transition-all duration-300"
+                      style={{ width: `${barSegments.undercoding}%` }}
+                    >
+                      {`${barSegments.undercoding.toFixed(0)}%`}
+                    </div>
                   </div>
-                </div>
 
-                {/* Annual Collections / Provider */}
-                <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
-                    <Tooltip text="Total annual collections per provider before billing costs — includes all payer sources">
-                      Collections / Provider
-                    </Tooltip>
-                    <span className="font-mono text-base text-teal dark:text-teal-dark">
-                      {formatCurrency(collectionsPerProvider)}
-                    </span>
-                  </label>
-                  <input
-                    type="range"
-                    min={200000}
-                    max={1200000}
-                    step={10000}
-                    value={collectionsPerProvider}
-                    onChange={(e) => {
-                      markOverride("collections");
-                      setCollectionsPerProvider(parseInt(e.target.value));
-                    }}
-                    className="mt-2"
-                    style={sliderBg(collectionsPerProvider, 200000, 1200000)}
-                  />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
-                    <span>$200K</span>
-                    <span>$1.2M</span>
-                  </div>
-                </div>
+                  {/* Legend — horizontal row */}
+                  <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                      <div className="flex items-center gap-2">
+                        <div className="h-3 w-3 shrink-0 rounded-full bg-navy" />
+                        <p className="text-sm font-medium text-navy dark:text-white">
+                          Billing Overhead
+                        </p>
+                      </div>
+                      <p className="mt-1 font-heading text-xl font-bold text-navy dark:text-white">
+                        {formatCurrency(results.billingCost)}
+                      </p>
+                      <p className="text-xs text-charcoal-light dark:text-gray-400">
+                        {barSegments.billing.toFixed(0)}% of total
+                      </p>
+                    </div>
 
-                {/* Billing Cost % */}
-                <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
-                    <Tooltip text="Percentage of collections paid to your billing company — MGMA benchmark: 4.8–5.2% for outsourced billing">
-                      Billing Cost (%)
-                    </Tooltip>
-                    <span className="font-mono text-base text-teal dark:text-teal-dark">
-                      {billingCostPct}%
-                    </span>
-                  </label>
-                  <input
-                    type="range"
-                    min={2}
-                    max={12}
-                    step={0.5}
-                    value={billingCostPct}
-                    onChange={(e) =>
-                      setBillingCostPct(parseFloat(e.target.value))
-                    }
-                    className="mt-2"
-                    style={sliderBg(billingCostPct, 2, 12)}
-                  />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
-                    <span>2%</span>
-                    <span>12%</span>
-                  </div>
-                </div>
+                    <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                      <div className="flex items-center gap-2">
+                        <div className="h-3 w-3 shrink-0 rounded-full bg-coral" />
+                        <p className="text-sm font-medium text-navy dark:text-white">
+                          Unrecovered Denials
+                        </p>
+                      </div>
+                      <p className="mt-1 font-heading text-xl font-bold text-coral">
+                        {formatCurrency(results.unrecoveredLoss)}
+                      </p>
+                      <p className="text-xs text-charcoal-light dark:text-gray-400">
+                        {barSegments.denials.toFixed(0)}% of total
+                      </p>
+                    </div>
 
-                {/* Denial Rate */}
-                <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
-                    <Tooltip text="Percentage of claims denied on first submission — industry average is 6–13% depending on specialty">
-                      Denial Rate
-                    </Tooltip>
-                    <span className="font-mono text-base text-teal dark:text-teal-dark">
-                      {denialRatePct}%
-                    </span>
-                  </label>
-                  <input
-                    type="range"
-                    min={2}
-                    max={20}
-                    step={0.5}
-                    value={denialRatePct}
-                    onChange={(e) => {
-                      markOverride("denialRate");
-                      setDenialRatePct(parseFloat(e.target.value));
-                    }}
-                    className="mt-2"
-                    style={sliderBg(denialRatePct, 2, 20)}
-                  />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
-                    <span>2%</span>
-                    <span>20%</span>
-                  </div>
-                </div>
-
-                {/* Undercoding Rate */}
-                <div>
-                  <label className="flex items-center justify-between text-sm font-medium text-navy dark:text-white">
-                    <Tooltip text="Percentage of visits where documented services are billed at a lower level than supported — AAFP estimates $30K+ lost per provider annually">
-                      Undercoding Rate
-                    </Tooltip>
-                    <span className="font-mono text-base text-teal dark:text-teal-dark">
-                      {undercodingPct}%
-                    </span>
-                  </label>
-                  <input
-                    type="range"
-                    min={5}
-                    max={35}
-                    step={1}
-                    value={undercodingPct}
-                    onChange={(e) => {
-                      markOverride("undercodingRate");
-                      setUndercodingPct(parseInt(e.target.value));
-                    }}
-                    className="mt-2"
-                    style={sliderBg(undercodingPct, 5, 35)}
-                  />
-                  <div className="mt-1 flex justify-between text-xs text-charcoal-light dark:text-gray-400">
-                    <span>5%</span>
-                    <span>35%</span>
-                  </div>
-                </div>
-
-                {/* Reset */}
-                <button
-                  type="button"
-                  onClick={resetDefaults}
-                  className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
-                >
-                  Reset to Defaults
-                </button>
-              </div>
-            </div>
-
-            {/* Column 2 — Revenue Impact */}
-            <div className="min-w-0 max-w-sm">
-              <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
-                Your Revenue Impact
-              </h2>
-              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-300">
-                For {specialty.toLowerCase()} practices
-              </p>
-
-              <div className="mt-6 space-y-3">
-                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                    Total Annual Leakage
-                  </p>
-                  <p className="mt-1 font-heading text-3xl font-bold text-teal dark:text-teal-dark">
-                    {formatCurrency(results.totalLeakage)}
-                  </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    per year
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                    Recoverable Revenue
-                  </p>
-                  <p className="mt-1 font-heading text-3xl font-bold text-coral">
-                    {formatCurrency(results.recoverableRevenue)}
-                  </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    with optimized billing
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                    Per-Provider Impact
-                  </p>
-                  <p className="mt-1 font-heading text-3xl font-bold text-navy dark:text-white">
-                    {formatCurrency(results.perProviderLeakage)}
-                  </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    leakage per provider / year
-                  </p>
-                </div>
-
-                <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                    Monthly Impact
-                  </p>
-                  <p className="mt-1 font-heading text-3xl font-bold text-navy dark:text-white">
-                    {formatCurrency(results.monthlyImpact)}
-                  </p>
-                  <p className="text-xs text-charcoal-light dark:text-gray-400">
-                    lost every month
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Column 3 — Where the Money Goes */}
-            <div className="min-w-0">
-              <h2 className="font-heading text-lg font-bold text-navy dark:text-white">
-                Where the Money Goes
-              </h2>
-              <p className="mt-1 text-xs text-charcoal-light dark:text-gray-300">
-                The three leaks draining your revenue
-              </p>
-
-              {/* Stacked bar */}
-              <div className="mt-6 flex h-9 overflow-hidden rounded-lg">
-                <div
-                  className="flex items-center justify-center bg-navy text-xs font-medium text-white transition-all duration-300"
-                  style={{ width: `${barSegments.billing}%` }}
-                >
-                  {barSegments.billing >= 18 && `${barSegments.billing.toFixed(0)}%`}
-                </div>
-                <div
-                  className="flex items-center justify-center bg-coral text-xs font-medium text-white transition-all duration-300"
-                  style={{ width: `${barSegments.denials}%` }}
-                >
-                  {barSegments.denials >= 18 && `${barSegments.denials.toFixed(0)}%`}
-                </div>
-                <div
-                  className="flex items-center justify-center bg-teal text-xs font-medium text-white transition-all duration-300"
-                  style={{ width: `${barSegments.undercoding}%` }}
-                >
-                  {barSegments.undercoding >= 18 &&
-                    `${barSegments.undercoding.toFixed(0)}%`}
-                </div>
-              </div>
-
-              {/* Legend */}
-              <div className="mt-8 space-y-8">
-                <div className="flex items-start gap-2.5">
-                  <div className="mt-2 h-4 w-4 shrink-0 rounded bg-navy" />
-                  <div>
-                    <p className="text-lg font-medium text-navy dark:text-white">
-                      Billing Overhead
-                    </p>
-                    <p className="font-heading text-3xl font-bold text-navy dark:text-white">
-                      {formatCurrency(results.billingCost)}
-                    </p>
-                    <p className="text-base text-charcoal-light dark:text-gray-400">
-                      {barSegments.billing.toFixed(0)}% of total
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
-                  <div className="mt-2 h-4 w-4 shrink-0 rounded bg-coral" />
-                  <div>
-                    <p className="text-lg font-medium text-navy dark:text-white">
-                      Unrecovered Denials
-                    </p>
-                    <p className="font-heading text-3xl font-bold text-coral">
-                      {formatCurrency(results.unrecoveredLoss)}
-                    </p>
-                    <p className="text-base text-charcoal-light dark:text-gray-400">
-                      {barSegments.denials.toFixed(0)}% of total
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
-                  <div className="mt-2 h-4 w-4 shrink-0 rounded bg-teal" />
-                  <div>
-                    <p className="text-lg font-medium text-navy dark:text-white">
-                      Undercoding Loss
-                    </p>
-                    <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
-                      {formatCurrency(results.undercodingLoss)}
-                    </p>
-                    <p className="text-base text-charcoal-light dark:text-gray-400">
-                      {barSegments.undercoding.toFixed(0)}% of total
-                    </p>
+                    <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
+                      <div className="flex items-center gap-2">
+                        <div className="h-3 w-3 shrink-0 rounded-full bg-teal" />
+                        <p className="text-sm font-medium text-navy dark:text-white">
+                          Undercoding Loss
+                        </p>
+                      </div>
+                      <p className="mt-1 font-heading text-xl font-bold text-teal dark:text-teal-dark">
+                        {formatCurrency(results.undercodingLoss)}
+                      </p>
+                      <p className="text-xs text-charcoal-light dark:text-gray-400">
+                        {barSegments.undercoding.toFixed(0)}% of total
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -596,10 +600,8 @@ export default function ROICalculator() {
         </div>
       </section>
 
-      <SectionDivider variant="dark" />
-
       {/* ── Methodology ───────────────────────────────────────────── */}
-      <section className="bg-ice px-6 py-16 dark:bg-dark-surface lg:py-20">
+      <section className="bg-ice px-6 pt-16 pb-16 dark:bg-dark-surface lg:pt-20 lg:pb-20">
         <div className="mx-auto max-w-3xl">
           <div>
             <h2 className="text-center font-heading text-3xl font-bold text-navy dark:text-white">
@@ -654,6 +656,8 @@ export default function ROICalculator() {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="dark" />
     </>
   );
 }

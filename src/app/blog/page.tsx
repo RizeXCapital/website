@@ -206,7 +206,7 @@ export default async function Blog({
       <SectionDivider variant="light" />
 
       {/* CTA */}
-      <section className="bg-navy px-6 py-20 lg:py-24">
+      <section className="bg-navy px-6 py-16 lg:py-20">
         <FadeIn>
           <div className="mx-auto max-w-5xl text-center">
             <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
@@ -215,7 +215,7 @@ export default async function Blog({
             <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-300">
               Find out how much revenue your practice could recover with on-premise AI billing.
             </p>
-            <div className="mt-10">
+            <div className="mt-8">
               <Link
                 href="/contact"
                 className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"

@@ -48,7 +48,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var c=document.cookie.match(/(?:^|;)\\s*theme=(\\w+)/);var t=c?c[1]:null;if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
+            __html: `(function(){try{var c=document.cookie.match(/(?:^|;)\\s*theme=(\\w+)/);var t=c?c[1]:null;if(t==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();`,
           }}
         />
       </head>
