@@ -47,33 +47,46 @@ function BlogPreviewSection() {
             <StaggerItem key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block h-full rounded-xl border border-gray-300 bg-white p-8 transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+                className="group block h-full overflow-hidden rounded-xl border border-gray-300 bg-white transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
               >
-                <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
-                  {categoryLabels[post.category]}
-                </p>
-                <h3 className="mt-2 font-heading text-lg font-bold text-navy transition-colors group-hover:text-teal dark:text-white dark:group-hover:text-teal-dark">
-                  {post.title}
-                </h3>
-                <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                  {post.author} &middot;{" "}
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {post.excerpt}
-                </p>
+                {post.image && (
+                  <div className="aspect-[21/9] overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={600}
+                      height={257}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="p-8">
+                  <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                    {categoryLabels[post.category]}
+                  </p>
+                  <h3 className="mt-2 font-heading text-lg font-bold text-navy transition-colors group-hover:text-teal dark:text-white dark:group-hover:text-teal-dark">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
+                    {post.author} &middot;{" "}
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                    {post.excerpt}
+                  </p>
+                </div>
               </Link>
             </StaggerItem>
           ))}
 
           {/* Upcoming post teasers to fill up to 3 */}
           {upcomingPosts.slice(0, 3 - posts.length).map((post) => (
-            <StaggerItem key={post.title}>
-              <div className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+            <StaggerItem key={post.title} className="self-center">
+              <div className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                 <p className="text-xs font-medium uppercase tracking-wider text-coral">
                   Coming Soon
                 </p>

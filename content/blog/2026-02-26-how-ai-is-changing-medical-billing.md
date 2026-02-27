@@ -11,6 +11,7 @@ keywords:
   - AI billing small practices
   - medical undercoding
 featured: true
+image: "/blog/ai-medical-billing-hero.svg"
 ---
 
 Small medical practices lose an estimated 15-20% of their revenue to billing errors, denied claims, and undercoding. AI medical billing tools are emerging as a serious answer to this problem — but the path forward is not as simple as subscribing to a cloud platform and hoping for the best. The technology matters. Where it runs matters more.
@@ -44,6 +45,8 @@ What is driving the increase? Several factors are converging:
 **Timely filing windows are tightening.** Some payers have shortened filing deadlines from 12 months to 90 days. When a claim is denied and the appeal window is narrow, the rework must happen immediately or the revenue is permanently lost.
 
 The denial problem is not going away on its own. The trend lines are all moving in the wrong direction for small practices operating with lean billing staff.
+
+![Why denials are getting worse — rising rates, compounding factors, and the cost per claim](/blog/denial-trend.svg)
 
 ## The Undercoding Problem No One Talks About
 
@@ -98,6 +101,8 @@ This shift from reactive denial management to proactive denial prevention is one
 A 2024 analysis from the Brookings Institution estimated that AI-driven automation could reduce healthcare administrative costs by up to 30% across the full administrative workflow — billing, coding, and claims management combined (Brookings, 2024). Actual results vary by practice size and implementation quality, but even a fraction of that reduction is meaningful. For a small practice spending $150,000-$300,000 annually on billing operations, a 15-20% reduction represents enough savings to fund a clinical hire or invest in patient care infrastructure.
 
 Not all AI medical billing tools deliver equal results. The implementation model — particularly where inference runs and how the system learns from your practice's specific patterns — matters as much as the underlying technology.
+
+![How AI catches revenue leaks — the four-step pipeline from clinical note to clean claim](/blog/ai-billing-pipeline.svg)
 
 ## The Security Question
 

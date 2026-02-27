@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
+import MobileCTA from "@/components/MobileCTA";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -52,9 +55,12 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
       >
+        <ScrollProgress />
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
+        <MobileCTA />
       </body>
     </html>
   );

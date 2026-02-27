@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 
 const navLinks = [
@@ -57,23 +58,25 @@ function MobileNavLink({
   label,
   index,
   isOpen,
+  isActive,
   onClose,
 }: {
   href: string;
   label: string;
   index: number;
   isOpen: boolean;
+  isActive: boolean;
   onClose: () => void;
 }) {
   const prefersReduced = useReducedMotion();
 
+  const linkClass = isActive
+    ? "text-sm font-medium text-teal dark:text-teal-dark"
+    : "text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark";
+
   if (prefersReduced) {
     return (
-      <Link
-        href={href}
-        className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
-        onClick={onClose}
-      >
+      <Link href={href} className={linkClass} onClick={onClose}>
         {label}
       </Link>
     );
@@ -88,11 +91,7 @@ function MobileNavLink({
           : { opacity: 0, x: -10, transition: { duration: 0.15 } }
       }
     >
-      <Link
-        href={href}
-        className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
-        onClick={onClose}
-      >
+      <Link href={href} className={linkClass} onClick={onClose}>
         {label}
       </Link>
     </motion.div>
@@ -101,6 +100,12 @@ function MobileNavLink({
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  function isActive(href: string) {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-sm dark:border-dark-border dark:bg-dark-bg/95">
@@ -114,15 +119,22 @@ export default function Navigation() {
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="relative text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-teal after:transition-all after:duration-200 hover:after:w-full dark:after:bg-teal-dark"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-teal after:transition-all after:duration-200 dark:after:bg-teal-dark ${
+                  active
+                    ? "text-teal after:w-full dark:text-teal-dark"
+                    : "text-charcoal-light hover:text-teal after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-teal-dark"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <ThemeToggle />
           <Link
             href="/contact"
@@ -178,6 +190,7 @@ export default function Navigation() {
                   label={link.label}
                   index={i}
                   isOpen={mobileOpen}
+                  isActive={isActive(link.href)}
                   onClose={() => setMobileOpen(false)}
                 />
               ))}

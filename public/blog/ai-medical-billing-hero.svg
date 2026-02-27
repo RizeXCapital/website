@@ -1,0 +1,164 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1B2A4A"/>
+
+  <!-- Warm background gradients -->
+  <circle cx="300" cy="315" r="400" fill="#2E86AB" opacity="0.05"/>
+  <circle cx="900" cy="300" r="380" fill="#5BACCC" opacity="0.04"/>
+  <circle cx="600" cy="500" r="250" fill="#E8614D" opacity="0.03"/>
+
+  <!-- ===== LEFT SIDE: The Problem — Revenue Leaking ===== -->
+
+  <!-- Practice building icon -->
+  <g transform="translate(100, 180)">
+    <!-- Building -->
+    <rect x="30" y="60" width="120" height="100" rx="4" fill="#243B5E" stroke="#3A5A8A" stroke-width="1"/>
+    <!-- Roof / cross -->
+    <rect x="70" y="40" width="40" height="20" rx="2" fill="#243B5E" stroke="#3A5A8A" stroke-width="1"/>
+    <rect x="85" y="28" width="10" height="20" rx="1" fill="#5BACCC" opacity="0.6"/>
+    <rect x="79" y="38" width="22" height="6" rx="1" fill="#5BACCC" opacity="0.6"/>
+    <!-- Windows -->
+    <rect x="48" y="80" width="18" height="16" rx="2" fill="#5BACCC" opacity="0.15"/>
+    <rect x="78" y="80" width="18" height="16" rx="2" fill="#5BACCC" opacity="0.15"/>
+    <rect x="108" y="80" width="18" height="16" rx="2" fill="#5BACCC" opacity="0.15"/>
+    <rect x="48" y="110" width="18" height="16" rx="2" fill="#5BACCC" opacity="0.15"/>
+    <rect x="78" y="110" width="18" height="16" rx="2" fill="#5BACCC" opacity="0.15"/>
+    <rect x="108" y="110" width="18" height="16" rx="2" fill="#5BACCC" opacity="0.15"/>
+    <!-- Door -->
+    <rect x="78" y="136" width="24" height="24" rx="2" fill="#1B2A4A"/>
+  </g>
+
+  <!-- Revenue leak arrows dripping down -->
+  <g transform="translate(130, 350)" opacity="0.6">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="11" fill="#E8614D" font-weight="600">$30K+ lost / yr</text>
+    <text x="5" y="18" font-family="system-ui, sans-serif" font-size="9" fill="#8BA4C4" opacity="0.7">per provider undercoding</text>
+  </g>
+
+  <!-- Denied claims stack -->
+  <g transform="translate(90, 400)">
+    <!-- Stacked papers with X marks -->
+    <rect x="4" y="4" width="100" height="30" rx="4" fill="#1B2030" opacity="0.3"/>
+    <rect x="2" y="2" width="100" height="30" rx="4" fill="#243B5E" stroke="#E8614D" stroke-width="0.8" opacity="0.6"/>
+    <rect x="0" y="0" width="100" height="30" rx="4" fill="#243B5E" stroke="#E8614D" stroke-width="1"/>
+    <!-- X mark -->
+    <line x1="75" y1="9" x2="85" y2="21" stroke="#E8614D" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="85" y1="9" x2="75" y2="21" stroke="#E8614D" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Text lines -->
+    <rect x="10" y="10" width="50" height="3" rx="1" fill="#8BA4C4" opacity="0.3"/>
+    <rect x="10" y="18" width="35" height="3" rx="1" fill="#8BA4C4" opacity="0.2"/>
+    <text x="50" y="52" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" opacity="0.8" text-anchor="middle" font-weight="500">11.8% denial rate</text>
+  </g>
+
+  <!-- ===== CENTER: The AI Transformation Arrow ===== -->
+
+  <!-- Large flowing arrow -->
+  <g transform="translate(310, 230)">
+    <!-- Arrow body with gradient feel -->
+    <path d="M0 85 C60 85, 80 40, 140 40 L140 35 L160 47 L140 59 L140 54 C80 54, 60 99, 0 99 Z" fill="url(#arrowGrad)" opacity="0.6"/>
+    <!-- Label -->
+    <text x="80" y="130" font-family="system-ui, sans-serif" font-size="13" fill="#5BACCC" text-anchor="middle" font-weight="600" letter-spacing="0.5">AI-POWERED</text>
+    <text x="80" y="148" font-family="system-ui, sans-serif" font-size="13" fill="#5BACCC" text-anchor="middle" font-weight="600" letter-spacing="0.5">BILLING</text>
+  </g>
+
+  <!-- Small icons along the arrow path -->
+  <!-- Scan icon -->
+  <g transform="translate(340, 280)">
+    <circle cx="12" cy="12" r="12" fill="#2E86AB" opacity="0.15"/>
+    <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="#5BACCC" stroke-width="1.2"/>
+    <line x1="8" y1="12" x2="16" y2="12" stroke="#5BACCC" stroke-width="1" opacity="0.6"/>
+  </g>
+  <!-- Check icon -->
+  <g transform="translate(400, 258)">
+    <circle cx="12" cy="12" r="12" fill="#2E86AB" opacity="0.15"/>
+    <path d="M6 12 L10 16 L18 8" stroke="#5BACCC" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Shield icon -->
+  <g transform="translate(430, 290)">
+    <circle cx="12" cy="12" r="12" fill="#2E86AB" opacity="0.15"/>
+    <path d="M12 4 L18 7 L18 13 C18 17 12 20 12 20 C12 20 6 17 6 13 L6 7 Z" fill="none" stroke="#5BACCC" stroke-width="1.2"/>
+  </g>
+
+  <!-- ===== RIGHT SIDE: The Results — Revenue Recovered ===== -->
+
+  <!-- Clean claims flowing up -->
+  <g transform="translate(540, 120)">
+    <!-- Upward trend line -->
+    <path d="M30 180 C60 160, 100 100, 140 80 C180 60, 220 30, 260 10" stroke="#5BACCC" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Arrow tip -->
+    <path d="M254 18 L262 8 L258 22" fill="#5BACCC"/>
+
+    <!-- Gradient area under curve -->
+    <path d="M30 180 C60 160, 100 100, 140 80 C180 60, 220 30, 260 10 L260 180 Z" fill="url(#chartGrad)" opacity="0.15"/>
+
+    <!-- Data points -->
+    <circle cx="30" cy="180" r="4" fill="#5BACCC" opacity="0.4"/>
+    <circle cx="90" cy="130" r="4" fill="#5BACCC" opacity="0.5"/>
+    <circle cx="140" cy="80" r="5" fill="#5BACCC" opacity="0.6"/>
+    <circle cx="200" cy="42" r="5" fill="#5BACCC" opacity="0.7"/>
+    <circle cx="260" cy="10" r="6" fill="#5BACCC"/>
+  </g>
+
+  <!-- Revenue recovered highlight card -->
+  <g transform="translate(580, 320)">
+    <rect x="0" y="0" width="220" height="80" rx="12" fill="#1F3355" stroke="#2E86AB" stroke-width="1.5"/>
+    <text x="20" y="28" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.6" letter-spacing="1" font-weight="500">REVENUE RECOVERED</text>
+    <text x="20" y="56" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="white">15–20%</text>
+    <text x="148" y="56" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" opacity="0.7">per year</text>
+  </g>
+
+  <!-- Clean claim rate card -->
+  <g transform="translate(620, 420)">
+    <rect x="0" y="0" width="190" height="68" rx="12" fill="#1F3355" stroke="#2E86AB" stroke-width="1"/>
+    <!-- Checkmark -->
+    <circle cx="30" cy="34" r="14" fill="#2E86AB" opacity="0.15"/>
+    <path d="M22 34 L27 39 L38 28" stroke="#5BACCC" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="54" y="30" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.6" letter-spacing="0.5">CLEAN CLAIM RATE</text>
+    <text x="54" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="white">95%+</text>
+  </g>
+
+  <!-- On-premise security badge -->
+  <g transform="translate(840, 250)">
+    <rect x="0" y="0" width="200" height="68" rx="12" fill="#1F3355" stroke="#2E86AB" stroke-width="1"/>
+    <!-- Lock icon -->
+    <rect x="22" y="30" width="16" height="14" rx="2" fill="none" stroke="#5BACCC" stroke-width="1.5"/>
+    <path d="M25 30 L25 24 C25 20 35 20 35 24 L35 30" fill="none" stroke="#5BACCC" stroke-width="1.5"/>
+    <circle cx="30" cy="38" r="2" fill="#5BACCC"/>
+    <text x="50" y="32" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.6" letter-spacing="0.5">ON-PREMISE AI</text>
+    <text x="50" y="50" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">PHI Never Leaves</text>
+  </g>
+
+  <!-- Time saved card -->
+  <g transform="translate(860, 340)">
+    <rect x="0" y="0" width="180" height="68" rx="12" fill="#1F3355" stroke="#2E86AB" stroke-width="1"/>
+    <!-- Clock icon -->
+    <circle cx="30" cy="34" r="13" fill="none" stroke="#5BACCC" stroke-width="1.2"/>
+    <line x1="30" y1="34" x2="30" y2="26" stroke="#5BACCC" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="30" y1="34" x2="36" y2="37" stroke="#5BACCC" stroke-width="1.2" stroke-linecap="round"/>
+    <text x="52" y="30" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.6" letter-spacing="0.5">CODER TIME</text>
+    <text x="52" y="48" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="white">-30%</text>
+  </g>
+
+  <!-- Small practice focus text -->
+  <g transform="translate(870, 430)">
+    <rect x="0" y="0" width="200" height="48" rx="10" fill="#2E86AB" opacity="0.1"/>
+    <text x="100" y="22" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.7" text-anchor="middle" letter-spacing="0.5">BUILT FOR SMALL PRACTICES</text>
+    <text x="100" y="38" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.5" text-anchor="middle">1–25 providers</text>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="280" cy="160" r="2" fill="#5BACCC" opacity="0.2"/>
+  <circle cx="520" cy="500" r="2" fill="#2E86AB" opacity="0.15"/>
+  <circle cx="1100" cy="180" r="2" fill="#5BACCC" opacity="0.15"/>
+  <circle cx="1050" cy="500" r="2" fill="#2E86AB" opacity="0.12"/>
+
+  <defs>
+    <linearGradient id="arrowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8614D" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#2E86AB"/>
+      <stop offset="100%" stop-color="#5BACCC"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#2E86AB" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2E86AB" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+</svg>

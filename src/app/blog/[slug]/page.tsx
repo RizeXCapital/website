@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   getAllPosts,
@@ -56,6 +57,9 @@ export async function generateMetadata({
       url: `https://rizexcapital.com/blog/${post.slug}`,
       publishedTime: post.date,
       authors: [post.author],
+      ...(post.image && {
+        images: [{ url: `https://rizexcapital.com${post.image}`, width: 1200, height: 630 }],
+      }),
     },
     alternates: {
       canonical: `https://rizexcapital.com/blog/${post.slug}`,
@@ -151,6 +155,20 @@ export default async function BlogPost({
             {post.author} &middot; {formattedDate} &middot; {post.readingTime}{" "}
             min read
           </p>
+
+          {/* Hero Image */}
+          {post.image && (
+            <div className="mt-8 overflow-hidden rounded-xl">
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={1200}
+                height={630}
+                className="h-auto w-full"
+                priority
+              />
+            </div>
+          )}
 
           {/* Article Body */}
           <div

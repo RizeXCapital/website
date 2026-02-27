@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   getAllPosts,
   getPostsByCategory,
@@ -91,37 +92,52 @@ export default async function Blog({
               {posts.map((post) => (
                 <StaggerItem key={post.slug}>
                 <article
-                  className="rounded-xl border border-gray-300 bg-white p-8 transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+                  className="group overflow-hidden rounded-xl border border-gray-300 bg-white transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
                 >
-                  <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
-                    {categoryLabels[post.category]}
-                  </p>
-                  <h2 className="mt-2 font-heading text-xl font-bold text-navy dark:text-white">
+                  {post.image && (
+                    <Link href={`/blog/${post.slug}`} className="block">
+                      <div className="aspect-[21/9] overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          width={600}
+                          height={257}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    </Link>
+                  )}
+                  <div className="p-8">
+                    <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                      {categoryLabels[post.category]}
+                    </p>
+                    <h2 className="mt-2 font-heading text-xl font-bold text-navy dark:text-white">
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="transition-colors hover:text-teal dark:hover:text-teal-dark"
+                      >
+                        {post.title}
+                      </Link>
+                    </h2>
+                    <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
+                      {post.author} &middot;{" "}
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}{" "}
+                      &middot; {post.readingTime} min read
+                    </p>
+                    <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                      {post.excerpt}
+                    </p>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="transition-colors hover:text-teal dark:hover:text-teal-dark"
+                      className="mt-4 inline-block text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
                     >
-                      {post.title}
+                      Read More &rarr;
                     </Link>
-                  </h2>
-                  <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                    {post.author} &middot;{" "}
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}{" "}
-                    &middot; {post.readingTime} min read
-                  </p>
-                  <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="mt-4 inline-block text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
-                  >
-                    Read More &rarr;
-                  </Link>
+                  </div>
                 </article>
                 </StaggerItem>
               ))}
@@ -141,9 +157,9 @@ export default async function Blog({
                       date: "Late March 2026",
                     },
                   ].map((upcoming) => (
-                    <StaggerItem key={upcoming.title}>
+                    <StaggerItem key={upcoming.title} className="self-center">
                     <article
-                      className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated"
+                      className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated"
                     >
                       <p className="text-xs font-medium uppercase tracking-wider text-coral">
                         Coming Soon

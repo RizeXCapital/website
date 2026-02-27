@@ -214,3 +214,52 @@ h1, h2, h3, h4, h5, h6 {
 .dark .blog-content img {
   opacity: 0.9;
 }
+
+/* -----------------------------------------------------------------------
+   Button micro-interactions — subtle press effect on CTA buttons
+   ----------------------------------------------------------------------- */
+
+a[class*="bg-coral"],
+button[class*="bg-coral"] {
+  transition: background-color 150ms, transform 100ms;
+}
+
+a[class*="bg-coral"]:active,
+button[class*="bg-coral"]:active {
+  transform: scale(0.97);
+}
+
+/* Form input focus glow */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.15);
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  box-shadow: 0 0 0 3px rgba(91, 172, 204, 0.15);
+}
+
+/* -----------------------------------------------------------------------
+   View Transitions — subtle page-level fade on client-side navigation
+   ----------------------------------------------------------------------- */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+::view-transition-old(root) {
+  animation: fade-out 150ms ease-out;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 150ms ease-in;
+}

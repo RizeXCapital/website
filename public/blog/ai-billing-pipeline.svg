@@ -1,0 +1,159 @@
+<svg width="1200" height="440" viewBox="0 0 1200 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="440" rx="16" fill="#1B2A4A"/>
+
+  <!-- Title -->
+  <text x="600" y="46" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle" letter-spacing="0.3">How AI Catches Revenue Leaks Before Claims Leave Your Practice</text>
+  <text x="600" y="68" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" text-anchor="middle" opacity="0.6">Four layers of intelligence working on every claim</text>
+
+  <!-- ===== STEP 1: Clinical Note ===== -->
+  <g transform="translate(42, 105)">
+    <rect x="0" y="0" width="210" height="220" rx="14" fill="#1F3355" stroke="#3A5A8A" stroke-width="1.5"/>
+
+    <!-- Step number -->
+    <circle cx="105" cy="-2" r="16" fill="#1B2A4A" stroke="#2E86AB" stroke-width="1.5"/>
+    <text x="105" y="4" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" text-anchor="middle" font-weight="700">1</text>
+
+    <!-- Icon: document -->
+    <rect x="72" y="30" width="66" height="80" rx="6" fill="#243B5E" stroke="#5BACCC" stroke-width="1"/>
+    <!-- Text lines inside doc -->
+    <rect x="82" y="44" width="46" height="3" rx="1.5" fill="#5BACCC" opacity="0.3"/>
+    <rect x="82" y="52" width="36" height="3" rx="1.5" fill="#5BACCC" opacity="0.25"/>
+    <rect x="82" y="60" width="42" height="3" rx="1.5" fill="#5BACCC" opacity="0.28"/>
+    <rect x="82" y="68" width="30" height="3" rx="1.5" fill="#5BACCC" opacity="0.2"/>
+    <rect x="82" y="80" width="46" height="3" rx="1.5" fill="#5BACCC" opacity="0.3"/>
+    <rect x="82" y="88" width="38" height="3" rx="1.5" fill="#5BACCC" opacity="0.22"/>
+    <rect x="82" y="96" width="28" height="3" rx="1.5" fill="#5BACCC" opacity="0.2"/>
+
+    <!-- Label -->
+    <text x="105" y="140" font-family="system-ui, sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="600">Clinical Note</text>
+    <text x="105" y="158" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">Physician</text>
+    <text x="105" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">documentation</text>
+
+    <!-- Subtext -->
+    <rect x="20" y="188" width="170" height="22" rx="6" fill="#2E86AB" opacity="0.08"/>
+    <text x="105" y="203" font-family="system-ui, sans-serif" font-size="9" fill="#5BACCC" text-anchor="middle" opacity="0.6">HPI, Exam, MDM, A&amp;P</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <g transform="translate(256, 200)">
+    <line x1="0" y1="15" x2="48" y2="15" stroke="#2E86AB" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M44 10 L54 15 L44 20" fill="#2E86AB" opacity="0.7"/>
+  </g>
+
+  <!-- ===== STEP 2: AI Coding ===== -->
+  <g transform="translate(312, 105)">
+    <rect x="0" y="0" width="210" height="220" rx="14" fill="#1F3355" stroke="#2E86AB" stroke-width="1.5"/>
+
+    <!-- Step number -->
+    <circle cx="105" cy="-2" r="16" fill="#1B2A4A" stroke="#2E86AB" stroke-width="1.5"/>
+    <text x="105" y="4" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" text-anchor="middle" font-weight="700">2</text>
+
+    <!-- Icon: AI brain scanning codes -->
+    <circle cx="105" cy="66" r="30" fill="#2E86AB" opacity="0.08" stroke="#2E86AB" stroke-width="1"/>
+    <!-- Brain nodes -->
+    <circle cx="95" cy="56" r="4" fill="#5BACCC" opacity="0.7"/>
+    <circle cx="115" cy="56" r="4" fill="#5BACCC" opacity="0.7"/>
+    <circle cx="105" cy="72" r="4" fill="#5BACCC" opacity="0.7"/>
+    <line x1="95" y1="59" x2="105" y2="69" stroke="#5BACCC" stroke-width="1" opacity="0.5"/>
+    <line x1="115" y1="59" x2="105" y2="69" stroke="#5BACCC" stroke-width="1" opacity="0.5"/>
+    <line x1="95" y1="56" x2="115" y2="56" stroke="#5BACCC" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- Code badges floating around -->
+    <rect x="16" y="42" width="46" height="18" rx="4" fill="#2E86AB" opacity="0.15" stroke="#2E86AB" stroke-width="0.8"/>
+    <text x="39" y="54" font-family="monospace" font-size="9" fill="#5BACCC" text-anchor="middle" font-weight="600">99214</text>
+
+    <rect x="148" y="42" width="46" height="18" rx="4" fill="#2E86AB" opacity="0.15" stroke="#2E86AB" stroke-width="0.8"/>
+    <text x="171" y="54" font-family="monospace" font-size="9" fill="#5BACCC" text-anchor="middle" font-weight="600">ICD-10</text>
+
+    <!-- Label -->
+    <text x="105" y="124" font-family="system-ui, sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="600">Intelligent Coding</text>
+    <text x="105" y="142" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">AI reads the note and</text>
+    <text x="105" y="156" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">suggests correct codes</text>
+
+    <!-- Highlight -->
+    <rect x="20" y="170" width="170" height="38" rx="6" fill="#2E86AB" opacity="0.08"/>
+    <text x="105" y="186" font-family="system-ui, sans-serif" font-size="9" fill="#5BACCC" text-anchor="middle" font-weight="500">Catches undercoding:</text>
+    <text x="105" y="200" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" text-anchor="middle" font-weight="600">99213 → 99214</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <g transform="translate(526, 200)">
+    <line x1="0" y1="15" x2="48" y2="15" stroke="#2E86AB" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M44 10 L54 15 L44 20" fill="#2E86AB" opacity="0.7"/>
+  </g>
+
+  <!-- ===== STEP 3: Claim Scrubbing ===== -->
+  <g transform="translate(582, 105)">
+    <rect x="0" y="0" width="210" height="220" rx="14" fill="#1F3355" stroke="#2E86AB" stroke-width="1.5"/>
+
+    <!-- Step number -->
+    <circle cx="105" cy="-2" r="16" fill="#1B2A4A" stroke="#2E86AB" stroke-width="1.5"/>
+    <text x="105" y="4" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" text-anchor="middle" font-weight="700">3</text>
+
+    <!-- Icon: checklist with magnifier -->
+    <rect x="68" y="30" width="56" height="68" rx="6" fill="#243B5E" stroke="#5BACCC" stroke-width="1"/>
+    <!-- Checklist items -->
+    <path d="M78 48 L82 52 L90 44" stroke="#5BACCC" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="96" y="47" width="20" height="3" rx="1.5" fill="#5BACCC" opacity="0.3"/>
+    <path d="M78 62 L82 66 L90 58" stroke="#5BACCC" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="96" y="61" width="20" height="3" rx="1.5" fill="#5BACCC" opacity="0.3"/>
+    <path d="M78 76 L82 80 L90 72" stroke="#5BACCC" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="96" y="75" width="20" height="3" rx="1.5" fill="#5BACCC" opacity="0.3"/>
+    <!-- Magnifier overlay -->
+    <circle cx="134" cy="78" r="14" fill="#1B2A4A" stroke="#2E86AB" stroke-width="1.5" opacity="0.9"/>
+    <line x1="143" y1="88" x2="152" y2="96" stroke="#2E86AB" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Label -->
+    <text x="105" y="126" font-family="system-ui, sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="600">Claim Scrubbing</text>
+    <text x="105" y="144" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">Pre-submission review</text>
+    <text x="105" y="158" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">catches errors before filing</text>
+
+    <!-- Items checked -->
+    <rect x="20" y="170" width="170" height="38" rx="6" fill="#2E86AB" opacity="0.08"/>
+    <text x="105" y="186" font-family="system-ui, sans-serif" font-size="9" fill="#5BACCC" text-anchor="middle" opacity="0.7">Dx/CPT match, modifiers,</text>
+    <text x="105" y="200" font-family="system-ui, sans-serif" font-size="9" fill="#5BACCC" text-anchor="middle" opacity="0.7">NCCI edits, payer rules</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <g transform="translate(796, 200)">
+    <line x1="0" y1="15" x2="48" y2="15" stroke="#2E86AB" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M44 10 L54 15 L44 20" fill="#2E86AB" opacity="0.7"/>
+  </g>
+
+  <!-- ===== STEP 4: Clean Claim Output ===== -->
+  <g transform="translate(852, 105)">
+    <rect x="0" y="0" width="210" height="220" rx="14" fill="#1F3355" stroke="#5BACCC" stroke-width="1.5"/>
+
+    <!-- Step number -->
+    <circle cx="105" cy="-2" r="16" fill="#1B2A4A" stroke="#5BACCC" stroke-width="1.5"/>
+    <text x="105" y="4" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" text-anchor="middle" font-weight="700">4</text>
+
+    <!-- Icon: document with checkmark -->
+    <rect x="72" y="30" width="66" height="56" rx="6" fill="#243B5E" stroke="#5BACCC" stroke-width="1.5"/>
+    <path d="M90 54 L100 64 L120 42" stroke="#5BACCC" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Shield below -->
+    <path d="M105 96 L120 102 L120 114 C120 122 105 128 105 128 C105 128 90 122 90 114 L90 102 Z" fill="#2E86AB" opacity="0.1" stroke="#2E86AB" stroke-width="1"/>
+    <path d="M99 110 L103 114 L111 106" stroke="#5BACCC" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Label -->
+    <text x="105" y="150" font-family="system-ui, sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="600">Clean Claim</text>
+    <text x="105" y="168" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">Submitted with</text>
+    <text x="105" y="182" font-family="system-ui, sans-serif" font-size="10" fill="#8BA4C4" text-anchor="middle" opacity="0.6">confidence, paid faster</text>
+
+    <!-- Result stat -->
+    <rect x="20" y="194" width="170" height="20" rx="6" fill="#5BACCC" opacity="0.08"/>
+    <text x="105" y="208" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" text-anchor="middle" font-weight="600">Target: 95%+ first-pass rate</text>
+  </g>
+
+  <!-- Bottom bar: On-premise callout -->
+  <g transform="translate(60, 355)">
+    <rect x="0" y="0" width="1080" height="56" rx="12" fill="#2E86AB" opacity="0.1" stroke="#2E86AB" stroke-width="0.8"/>
+    <!-- Lock icon -->
+    <rect x="30" y="18" width="14" height="12" rx="2" fill="none" stroke="#5BACCC" stroke-width="1.2"/>
+    <path d="M33 18 L33 14 C33 10 41 10 41 14 L41 18" fill="none" stroke="#5BACCC" stroke-width="1.2"/>
+    <circle cx="37" cy="25" r="1.5" fill="#5BACCC"/>
+    <text x="56" y="32" font-family="system-ui, sans-serif" font-size="12" fill="white" font-weight="600">All four steps run on-premise.</text>
+    <text x="310" y="32" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" opacity="0.6">PHI never leaves the building. No cloud dependency. No shared infrastructure risk.</text>
+  </g>
+</svg>

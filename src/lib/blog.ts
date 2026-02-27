@@ -30,6 +30,7 @@ export interface BlogPost {
   excerpt: string;
   keywords: string[];
   featured?: boolean;
+  image?: string; // path to hero/preview image
   content?: string; // HTML — only populated by getPostBySlug
   readingTime: number; // minutes
 }
@@ -67,6 +68,7 @@ export function getAllPosts(): BlogPost[] {
       excerpt: data.excerpt as string,
       keywords: (data.keywords as string[]) ?? [],
       featured: (data.featured as boolean) ?? false,
+      image: (data.image as string) ?? undefined,
       readingTime: computeReadingTime(content),
     };
   });
