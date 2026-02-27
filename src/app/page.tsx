@@ -2,6 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
 import { getRecentPosts, categoryLabels } from "@/lib/blog";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  CountUp,
+  HoverCard,
+  AnimatedHero,
+} from "@/components/motion";
 
 const upcomingPosts = [
   {
@@ -22,73 +30,77 @@ function BlogPreviewSection() {
   return (
     <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            From the Blog
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-            Insights on AI medical billing, revenue cycle management, and
-            healthcare technology
-          </p>
-        </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <FadeIn>
+          <div className="text-center">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              From the Blog
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
+              Insights on AI medical billing, revenue cycle management, and
+              healthcare technology
+            </p>
+          </div>
+        </FadeIn>
+        <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Real posts */}
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group rounded-xl border border-gray-300 bg-white p-8 transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
-            >
-              <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
-                {categoryLabels[post.category]}
-              </p>
-              <h3 className="mt-2 font-heading text-lg font-bold text-navy transition-colors group-hover:text-teal dark:text-white dark:group-hover:text-teal-dark">
-                {post.title}
-              </h3>
-              <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                {post.author} &middot;{" "}
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                {post.excerpt}
-              </p>
-            </Link>
+            <StaggerItem key={post.slug}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group block h-full rounded-xl border border-gray-300 bg-white p-8 transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+              >
+                <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                  {categoryLabels[post.category]}
+                </p>
+                <h3 className="mt-2 font-heading text-lg font-bold text-navy transition-colors group-hover:text-teal dark:text-white dark:group-hover:text-teal-dark">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
+                  {post.author} &middot;{" "}
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                  {post.excerpt}
+                </p>
+              </Link>
+            </StaggerItem>
           ))}
 
           {/* Upcoming post teasers to fill up to 3 */}
           {upcomingPosts.slice(0, 3 - posts.length).map((post) => (
-            <div
-              key={post.title}
-              className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated"
-            >
-              <p className="text-xs font-medium uppercase tracking-wider text-coral">
-                Coming Soon
-              </p>
-              <h3 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
-                {post.title}
-              </h3>
-              {post.author && (
-                <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                  {post.author} &middot; {post.date}
+            <StaggerItem key={post.title}>
+              <div className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+                <p className="text-xs font-medium uppercase tracking-wider text-coral">
+                  Coming Soon
                 </p>
-              )}
-            </div>
+                <h3 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
+                  {post.title}
+                </h3>
+                {post.author && (
+                  <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
+                    {post.author} &middot; {post.date}
+                  </p>
+                )}
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* View All link */}
-        <div className="mt-10 text-center">
-          <Link
-            href="/blog"
-            className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
-          >
-            View All Posts &rarr;
-          </Link>
-        </div>
+        <FadeIn delay={0.3}>
+          <div className="mt-10 text-center">
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+            >
+              View All Posts &rarr;
+            </Link>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -98,87 +110,105 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero */}
-      <section className="bg-navy px-6 py-24 lg:py-32">
+      <AnimatedHero className="bg-navy px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Your Practice&apos;s Billing, Powered by On-Premise AI
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300 sm:text-xl">
-              Sovereign RCM is an AI appliance that lives inside your practice.
-              It drafts compliant claims, catches undercoding, and builds
-              audit-ready evidence packs — without your patient data ever
-              leaving the building.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="rounded-lg bg-coral px-8 py-4 text-center text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Get in Touch
-              </Link>
-              <Link
-                href="/sovereign-rcm"
-                className="rounded-lg border border-white/20 px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-teal hover:text-teal"
-              >
-                Learn More
-              </Link>
-            </div>
+            <FadeIn>
+              <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Your Practice&apos;s Billing, Powered by On-Premise AI
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <p className="mt-6 text-lg leading-relaxed text-gray-300 sm:text-xl">
+                Sovereign RCM is an AI appliance that lives inside your practice.
+                It drafts compliant claims, catches undercoding, and builds
+                audit-ready evidence packs — without your patient data ever
+                leaving the building.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="rounded-lg bg-coral px-8 py-4 text-center text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                >
+                  Get in Touch
+                </Link>
+                <Link
+                  href="/sovereign-rcm"
+                  className="rounded-lg border border-white/20 px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-teal hover:text-teal"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* 2. Triple Leak */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              The Triple Leak Draining Your Practice
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
-              Most practices lose revenue in three places they never see
-            </p>
-            <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
-              Sovereign RCM closes all three
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                The Triple Leak Draining Your Practice
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+                Most practices lose revenue in three places they never see
+              </p>
+              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+                Sovereign RCM closes all three
+              </p>
+            </div>
+          </FadeIn>
+          <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
                 title: "Billing Cost",
-                stat: "~5%",
+                statPrefix: "~",
+                statEnd: 5,
+                statSuffix: "%",
                 description:
                   "of collections go to billing and RCM overhead. Sovereign RCM reduces rework, denials, and manual coding labor.",
               },
               {
                 title: "Undercoding Loss",
-                stat: "$30K+",
+                statPrefix: "$",
+                statEnd: 30,
+                statSuffix: "K+",
                 description:
                   "per year lost by physicians from systematic undercoding. AAFP estimates miscoding level 4 as level 3 costs this annually.",
               },
               {
                 title: "Security Exposure",
-                stat: "~50%",
+                statPrefix: "~",
+                statEnd: 50,
+                statSuffix: "%",
                 description:
                   "of U.S. claims processing was disrupted by the Change Healthcare cyberattack. Sovereign RCM keeps all PHI local.",
               },
             ].map((leak) => (
-              <div
-                key={leak.title}
-                className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface"
-              >
-                <p className="font-heading text-4xl font-bold text-teal dark:text-teal-dark">
-                  {leak.stat}
-                </p>
-                <h3 className="mt-3 font-heading text-xl font-bold text-navy dark:text-white">
-                  {leak.title}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {leak.description}
-                </p>
-              </div>
+              <StaggerItem key={leak.title}>
+                <HoverCard className="h-full rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
+                  <p className="font-heading text-4xl font-bold text-teal dark:text-teal-dark">
+                    <CountUp
+                      prefix={leak.statPrefix}
+                      end={leak.statEnd}
+                      suffix={leak.statSuffix}
+                      duration={1.5}
+                    />
+                  </p>
+                  <h3 className="mt-3 font-heading text-xl font-bold text-navy dark:text-white">
+                    {leak.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                    {leak.description}
+                  </p>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -188,32 +218,39 @@ export default function Home() {
       {/* 3. Product Visual — How It Works */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              From Clinical Notes to Clean Claims
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
-              Sovereign RCM processes everything inside your practice
-            </p>
-            <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
-              No cloud. No exposure
-            </p>
-          </div>
-          <div className="mt-16 flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6">
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                From Clinical Notes to Clean Claims
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+                Sovereign RCM processes everything inside your practice
+              </p>
+              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+                No cloud. No exposure
+              </p>
+            </div>
+          </FadeIn>
+          <StaggerContainer
+            staggerDelay={0.15}
+            className="mt-16 flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6"
+          >
             {[
               { label: "EHR", sub: "Signed clinical notes" },
               { label: "Sovereign RCM", sub: "On-premise AI enclave" },
               { label: "837P Claims", sub: "Compliant output" },
               { label: "Audit Pack", sub: "Evidence + rationale" },
             ].flatMap((step, i, arr) => [
-              <div key={step.label} className="flex h-28 w-44 flex-col items-center justify-center rounded-xl border border-gray-300 bg-white p-4 text-center shadow-sm dark:border-dark-border dark:bg-dark-elevated dark:shadow-none">
-                <p className="font-heading text-base font-bold text-navy dark:text-white">
-                  {step.label}
-                </p>
-                <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
-                  {step.sub}
-                </p>
-              </div>,
+              <StaggerItem key={step.label}>
+                <div className="flex h-28 w-44 flex-col items-center justify-center rounded-xl border border-gray-300 bg-white p-4 text-center shadow-sm dark:border-dark-border dark:bg-dark-elevated dark:shadow-none">
+                  <p className="font-heading text-base font-bold text-navy dark:text-white">
+                    {step.label}
+                  </p>
+                  <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
+                    {step.sub}
+                  </p>
+                </div>
+              </StaggerItem>,
               i < arr.length - 1 && (
                 <svg
                   key={`arrow-${i}`}
@@ -231,22 +268,24 @@ export default function Home() {
                 </svg>
               ),
             ])}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* 4. Packages */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              Built for Practices of Every Size
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
-              Three packages. Fixed pricing. No percentage of collections
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                Built for Practices of Every Size
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+                Three packages. Fixed pricing. No percentage of collections
+              </p>
+            </div>
+          </FadeIn>
+          <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
                 name: "SR-1",
@@ -288,75 +327,76 @@ export default function Home() {
                 ],
               },
             ].map((pkg, i) => (
-              <div
-                key={pkg.name}
-                className={`rounded-xl border p-8 ${
-                  i === 1
-                    ? "border-teal bg-navy text-white shadow-lg"
-                    : "border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
-                }`}
-              >
-                <p
-                  className={`font-heading text-sm font-bold uppercase tracking-wider ${
-                    i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
-                  }`}
-                >
-                  {pkg.name}
-                </p>
-                <h3
-                  className={`mt-2 font-heading text-2xl font-bold ${
-                    i === 1 ? "text-white" : "text-navy dark:text-white"
-                  }`}
-                >
-                  {pkg.target}
-                </h3>
-                <p
-                  className={`mt-1 text-sm ${
-                    i === 1 ? "text-gray-300" : "text-charcoal-light dark:text-gray-300"
-                  }`}
-                >
-                  {pkg.providers} &middot; {pkg.units}
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {pkg.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className={`flex items-start gap-2 text-sm ${
-                        i === 1 ? "text-gray-300" : "text-charcoal-light dark:text-gray-300"
-                      }`}
-                    >
-                      <svg
-                        className={`mt-0.5 h-4 w-4 shrink-0 ${
-                          i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 12.75l6 6 9-13.5"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className={`mt-8 block rounded-lg px-6 py-3 text-center text-sm font-medium transition-colors ${
+              <StaggerItem key={pkg.name}>
+                <HoverCard
+                  className={`h-full rounded-xl border p-8 ${
                     i === 1
-                      ? "bg-coral text-white hover:bg-coral-hover"
-                      : "border border-navy bg-navy text-white hover:bg-navy-light"
+                      ? "border-teal bg-navy text-white shadow-lg"
+                      : "border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
                   }`}
                 >
-                  Contact for Pricing
-                </Link>
-              </div>
+                  <p
+                    className={`font-heading text-sm font-bold uppercase tracking-wider ${
+                      i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
+                    }`}
+                  >
+                    {pkg.name}
+                  </p>
+                  <h3
+                    className={`mt-2 font-heading text-2xl font-bold ${
+                      i === 1 ? "text-white" : "text-navy dark:text-white"
+                    }`}
+                  >
+                    {pkg.target}
+                  </h3>
+                  <p
+                    className={`mt-1 text-sm ${
+                      i === 1 ? "text-gray-300" : "text-charcoal-light dark:text-gray-300"
+                    }`}
+                  >
+                    {pkg.providers} &middot; {pkg.units}
+                  </p>
+                  <ul className="mt-6 space-y-3">
+                    {pkg.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className={`flex items-start gap-2 text-sm ${
+                          i === 1 ? "text-gray-300" : "text-charcoal-light dark:text-gray-300"
+                        }`}
+                      >
+                        <svg
+                          className={`mt-0.5 h-4 w-4 shrink-0 ${
+                            i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 12.75l6 6 9-13.5"
+                          />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className={`mt-8 block rounded-lg px-6 py-3 text-center text-sm font-medium transition-colors ${
+                      i === 1
+                        ? "bg-coral text-white hover:bg-coral-hover"
+                        : "border border-navy bg-navy text-white hover:bg-navy-light"
+                    }`}
+                  >
+                    Contact for Pricing
+                  </Link>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -366,70 +406,91 @@ export default function Home() {
       {/* 5. The Difference */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              A Different Category Entirely
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
-              Not outsourced billing. Not cloud SaaS
-            </p>
-            <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
-              An owned AI appliance with fixed pricing and zero patient data exposure
-            </p>
-          </div>
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full min-w-[600px] text-left">
-              <thead>
-                <tr className="border-b-2 border-navy dark:border-teal-dark">
-                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy dark:text-white">
-                    Feature
-                  </th>
-                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy dark:text-white">
-                    Outsourced Billing
-                  </th>
-                  <th className="pb-4 pr-6 font-heading text-sm font-bold uppercase tracking-wider text-navy dark:text-white">
-                    Cloud SaaS
-                  </th>
-                  <th className="pb-4 font-heading text-sm font-bold uppercase tracking-wider text-teal dark:text-teal-dark">
-                    Sovereign RCM
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-sm text-charcoal-light dark:text-gray-300">
-                {[
-                  ["Pricing", "% of collections", "Monthly subscription", "Fixed CapEx"],
-                  ["PHI Location", "Third-party servers", "Cloud-hosted", "Your building only"],
-                  ["AI Inference", "None or cloud", "Cloud-hosted", "On-premise, air-gapped"],
-                  ["Evidence Trail", "Limited", "Varies", "Full rationale + spans"],
-                  ["Data Ownership", "Vendor controls", "Vendor controls", "Practice owns 100%"],
-                ].map((row) => (
-                  <tr key={row[0]} className="border-b border-gray-300 dark:border-dark-border">
-                    <td className="py-4 pr-6 font-medium text-navy dark:text-white">
-                      {row[0]}
-                    </td>
-                    <td className="py-4 pr-6">{row[1]}</td>
-                    <td className="py-4 pr-6">{row[2]}</td>
-                    <td className="py-4 font-medium text-teal dark:text-teal-dark">{row[3]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                A Different Category Entirely
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
+                Not outsourced billing. Not cloud SaaS
+              </p>
+              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+                An owned AI appliance with fixed pricing and zero patient data exposure
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="mx-auto mt-12 max-w-4xl overflow-x-auto">
+              <div className="overflow-hidden rounded-xl border border-gray-300 dark:border-dark-border">
+                <table className="w-full min-w-[600px] text-center">
+                  <thead>
+                    <tr className="bg-navy dark:bg-navy-light">
+                      <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-white">
+                        Feature
+                      </th>
+                      <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-gray-300">
+                        Outsourced Billing
+                      </th>
+                      <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-gray-300">
+                        Cloud SaaS
+                      </th>
+                      <th className="bg-teal/20 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-teal-light">
+                        Sovereign RCM
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm">
+                    {[
+                      ["Pricing", "% of collections", "Monthly subscription", "Fixed CapEx"],
+                      ["PHI Location", "Third-party servers", "Cloud-hosted", "Your building only"],
+                      ["AI Inference", "None or cloud", "Cloud-hosted", "On-premise, air-gapped"],
+                      ["Evidence Trail", "Limited", "Varies", "Full rationale + spans"],
+                      ["Data Ownership", "Vendor controls", "Vendor controls", "Practice owns 100%"],
+                    ].map((row, i) => (
+                      <tr
+                        key={row[0]}
+                        className={
+                          i % 2 === 0
+                            ? "bg-white dark:bg-dark-elevated"
+                            : "bg-ice dark:bg-dark-surface"
+                        }
+                      >
+                        <td className="px-6 py-4 font-medium text-navy dark:text-white">
+                          {row[0]}
+                        </td>
+                        <td className="px-6 py-4 text-charcoal-light dark:text-gray-400">
+                          {row[1]}
+                        </td>
+                        <td className="px-6 py-4 text-charcoal-light dark:text-gray-400">
+                          {row[2]}
+                        </td>
+                        <td className="bg-teal/5 px-6 py-4 font-semibold text-teal dark:bg-teal/10 dark:text-teal-dark">
+                          {row[3]}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* 6. Meet the Team */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              Meet the Founders
-            </h2>
-            <p className="mx-auto mt-4 max-w-4xl text-lg text-charcoal-light dark:text-gray-300">
-              A physician who knows the problem. An engineer who builds the solution. A PE who executes at scale
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                Meet the Founders
+              </h2>
+              <p className="mx-auto mt-4 max-w-4xl text-lg text-charcoal-light dark:text-gray-300">
+                A physician who knows the problem. An engineer who builds the solution. A PE who executes at scale
+              </p>
+            </div>
+          </FadeIn>
+          <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
                 name: "Faizan G. Arif, MD",
@@ -462,43 +523,42 @@ export default function Home() {
                   "The technical force behind RizeX. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
               },
             ].map((founder) => (
-              <div
-                key={founder.name}
-                className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated"
-              >
-                {founder.image ? (
-                  <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
-                    <div className="h-full w-full" style={founder.imageStyle}>
-                      <Image
-                        src={founder.image}
-                        alt={founder.name}
-                        width={256}
-                        height={256}
-                        className="h-full w-full object-cover"
-                        style={{ objectPosition: founder.imageObjectPosition }}
-                      />
+              <StaggerItem key={founder.name}>
+                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+                  {founder.image ? (
+                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
+                      <div className="h-full w-full" style={founder.imageStyle}>
+                        <Image
+                          src={founder.image}
+                          alt={founder.name}
+                          width={256}
+                          height={256}
+                          className="h-full w-full object-cover"
+                          style={{ objectPosition: founder.imageObjectPosition }}
+                        />
+                      </div>
                     </div>
+                  ) : (
+                    <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
+                  )}
+                  <div className="mt-6 text-center">
+                    <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
+                      {founder.name}
+                    </h3>
+                    <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
+                      {founder.role}
+                    </p>
+                    <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
+                      {founder.credential}
+                    </p>
+                    <p className="mt-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                      {founder.description}
+                    </p>
                   </div>
-                ) : (
-                  <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
-                )}
-                <div className="mt-6 text-center">
-                  <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
-                    {founder.name}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
-                    {founder.role}
-                  </p>
-                  <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                    {founder.credential}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                    {founder.description}
-                  </p>
-                </div>
-              </div>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -511,21 +571,23 @@ export default function Home() {
       {/* 8. Final CTA */}
       <section className="bg-navy px-6 py-20 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
-            See How Much Revenue You&apos;re Leaving on the Table
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-            Every day without optimized billing is revenue lost. Let&apos;s talk
-            about what Sovereign RCM can do for your practice.
-          </p>
-          <div className="mt-10">
-            <Link
-              href="/contact"
-              className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-            >
-              Get in Touch
-            </Link>
-          </div>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
+              See How Much Revenue You&apos;re Leaving on the Table
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+              Every day without optimized billing is revenue lost. Let&apos;s talk
+              about what Sovereign RCM can do for your practice.
+            </p>
+            <div className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

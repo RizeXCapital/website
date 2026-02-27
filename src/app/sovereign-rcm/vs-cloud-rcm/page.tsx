@@ -3,6 +3,12 @@ import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import Tooltip from "@/components/Tooltip";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  HoverCard,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "On-Premise AI vs. Cloud SaaS Billing — Sovereign RCM",
@@ -159,13 +165,17 @@ export default function VsCloudRCM() {
       <section className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              On-Premise AI vs. Cloud SaaS Billing
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
-              Why practices are choosing to own their billing infrastructure
-              instead of renting it.
-            </p>
+            <FadeIn>
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                On-Premise AI vs. Cloud SaaS Billing
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <p className="mt-6 text-lg leading-relaxed text-gray-300">
+                Why practices are choosing to own their billing infrastructure
+                instead of renting it.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -173,32 +183,33 @@ export default function VsCloudRCM() {
       {/* The Cloud Problem */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            The Cloud Problem
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-            Cloud RCM platforms centralize your most sensitive data on
-            infrastructure you don&apos;t control. That creates three compounding
-            risks.
-          </p>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              The Cloud Problem
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
+              Cloud RCM platforms centralize your most sensitive data on
+              infrastructure you don&apos;t control. That creates three compounding
+              risks.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {cloudProblems.map((problem) => (
-              <div
-                key={problem.title}
-                className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated"
-              >
-                <p className="text-3xl" aria-hidden="true">
-                  {problem.icon}
-                </p>
-                <h3 className="mt-4 font-heading text-xl font-bold text-navy dark:text-white">
-                  {problem.title}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {problem.description}
-                </p>
-              </div>
+              <StaggerItem key={problem.title}>
+                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                  <p className="text-3xl" aria-hidden="true">
+                    {problem.icon}
+                  </p>
+                  <h3 className="mt-4 font-heading text-xl font-bold text-navy dark:text-white">
+                    {problem.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                    {problem.description}
+                  </p>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -207,94 +218,100 @@ export default function VsCloudRCM() {
       {/* Side-by-Side Comparison */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            Side-by-Side Comparison
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-            How Sovereign RCM compares to cloud SaaS billing platforms across the
-            dimensions that matter most.
-          </p>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              Side-by-Side Comparison
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
+              How Sovereign RCM compares to cloud SaaS billing platforms across the
+              dimensions that matter most.
+            </p>
+          </FadeIn>
 
           {/* Desktop Table */}
-          <div className="mt-12 hidden rounded-xl border border-gray-300 dark:border-dark-border md:block">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="bg-navy text-white">
-                  <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide">
-                    Category
-                  </th>
-                  <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide">
-                    Sovereign RCM
-                  </th>
-                  <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide">
-                    Cloud SaaS
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map((row, i) => (
-                  <tr
-                    key={row.category}
-                    className={
-                      i % 2 === 0
-                        ? "bg-white dark:bg-dark-bg"
-                        : "bg-ice dark:bg-dark-surface"
-                    }
-                  >
-                    <td className="px-6 py-4 font-heading text-sm font-bold text-navy dark:text-white">
-                      {row.tooltip ? (
-                        <Tooltip text={row.tooltip}>{row.category}</Tooltip>
-                      ) : (
-                        row.category
-                      )}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-charcoal dark:text-dark-text">
-                      {row.sovereign}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-charcoal-light dark:text-gray-300">
-                      {row.cloud}
-                    </td>
+          <FadeIn delay={0.2}>
+            <div className="mt-12 hidden overflow-hidden rounded-xl border border-gray-300 dark:border-dark-border md:block">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="bg-navy">
+                    <th className="w-[18%] px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white">
+                      Category
+                    </th>
+                    <th className="bg-teal/20 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-teal-light">
+                      Sovereign RCM
+                    </th>
+                    <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
+                      Cloud SaaS
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, i) => (
+                    <tr
+                      key={row.category}
+                      className={
+                        i % 2 === 0
+                          ? "bg-white dark:bg-dark-bg"
+                          : "bg-ice dark:bg-dark-surface"
+                      }
+                    >
+                      <td className="px-6 py-4 font-heading text-sm font-bold text-navy dark:text-white">
+                        {row.tooltip ? (
+                          <Tooltip text={row.tooltip}>{row.category}</Tooltip>
+                        ) : (
+                          row.category
+                        )}
+                      </td>
+                      <td className="bg-teal/5 px-6 py-4 text-sm font-medium text-teal dark:bg-teal/10 dark:text-teal-dark">
+                        {row.sovereign}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-charcoal-light dark:text-gray-300">
+                        {row.cloud}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
 
           {/* Mobile Stacked Cards */}
-          <div className="mt-12 space-y-4 md:hidden">
-            {comparisonRows.map((row) => (
-              <div
-                key={row.category}
-                className="rounded-xl border border-gray-300 bg-white p-5 dark:border-dark-border dark:bg-dark-elevated"
-              >
-                <p className="font-heading text-sm font-bold uppercase tracking-wide text-navy dark:text-white">
-                  {row.tooltip ? (
-                    <Tooltip text={row.tooltip}>{row.category}</Tooltip>
-                  ) : (
-                    row.category
-                  )}
-                </p>
-                <div className="mt-3 space-y-2">
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-teal dark:text-teal-dark">
-                      Sovereign RCM
-                    </p>
-                    <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
-                      {row.sovereign}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wide text-charcoal-light dark:text-gray-400">
-                      Cloud SaaS
-                    </p>
-                    <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
-                      {row.cloud}
-                    </p>
+          <FadeIn delay={0.2}>
+            <div className="mt-12 space-y-4 md:hidden">
+              {comparisonRows.map((row) => (
+                <div
+                  key={row.category}
+                  className="rounded-xl border border-gray-300 bg-white p-5 dark:border-dark-border dark:bg-dark-elevated"
+                >
+                  <p className="font-heading text-sm font-bold uppercase tracking-wide text-navy dark:text-white">
+                    {row.tooltip ? (
+                      <Tooltip text={row.tooltip}>{row.category}</Tooltip>
+                    ) : (
+                      row.category
+                    )}
+                  </p>
+                  <div className="mt-3 space-y-2">
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wide text-teal dark:text-teal-dark">
+                        Sovereign RCM
+                      </p>
+                      <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
+                        {row.sovereign}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wide text-charcoal-light dark:text-gray-400">
+                        Cloud SaaS
+                      </p>
+                      <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
+                        {row.cloud}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -302,7 +319,7 @@ export default function VsCloudRCM() {
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <div>
+            <FadeIn direction="left">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
                 Security: Breach Risk Comparison
               </h2>
@@ -320,52 +337,54 @@ export default function VsCloudRCM() {
                 entirely. Your data sits on a local appliance — a breach at
                 another organization has no impact on your practice.
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
-              <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
-                2024 Healthcare Breach Data
-              </h3>
-              <ul className="mt-4 space-y-3 text-base text-charcoal dark:text-dark-text">
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    <strong>725</strong> major breach incidents reported to HHS
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    <strong>275M+</strong> patient records exposed
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    <strong>192.7M</strong> records from Change Healthcare alone
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    <strong>40%</strong> of U.S. claims disrupted for weeks
-                  </span>
-                </li>
-              </ul>
-              <Link
-                href="/sovereign-rcm/security"
-                className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
-              >
-                Full security architecture details
-              </Link>
-            </div>
+            </FadeIn>
+            <FadeIn direction="right">
+              <div className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
+                <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
+                  2024 Healthcare Breach Data
+                </h3>
+                <ul className="mt-4 space-y-3 text-base text-charcoal dark:text-dark-text">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      <strong>725</strong> major breach incidents reported to HHS
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      <strong>275M+</strong> patient records exposed
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      <strong>192.7M</strong> records from Change Healthcare alone
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      <strong>40%</strong> of U.S. claims disrupted for weeks
+                    </span>
+                  </li>
+                </ul>
+                <Link
+                  href="/sovereign-rcm/security"
+                  className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                >
+                  Full security architecture details
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -376,7 +395,7 @@ export default function VsCloudRCM() {
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1">
+            <FadeIn direction="right" className="order-2 lg:order-1">
               <div className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
                 <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
                   Cloud RCM Cost Benchmarks
@@ -424,8 +443,8 @@ export default function VsCloudRCM() {
                   Model the numbers for your practice
                 </Link>
               </div>
-            </div>
-            <div className="order-1 lg:order-2">
+            </FadeIn>
+            <FadeIn direction="left" className="order-1 lg:order-2">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
                 Cost: Ownership vs. Subscription
               </h2>
@@ -444,7 +463,7 @@ export default function VsCloudRCM() {
                 within 18–24 months through eliminated billing fees and
                 recaptured revenue from reduced undercoding.
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -453,7 +472,7 @@ export default function VsCloudRCM() {
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <div>
+            <FadeIn direction="left">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
                 Data Ownership: Your Practice, Your Data
               </h2>
@@ -471,44 +490,46 @@ export default function VsCloudRCM() {
                 can hold your data hostage, raise prices, or discontinue a
                 product and leave you scrambling.
               </p>
-            </div>
-            <div className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
-              <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
-                Cloud Vendor Lock-In Costs
-              </h3>
-              <ul className="mt-4 space-y-3 text-base text-charcoal dark:text-dark-text">
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    <strong>$50K–$250K+</strong> typical migration cost
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    <strong>3–6 months</strong> average transition timeline
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>Staff retraining, workflow disruption, revenue dips</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 shrink-0 text-coral">
-                    &bull;
-                  </span>
-                  <span>
-                    Proprietary data formats that resist clean export
-                  </span>
-                </li>
-              </ul>
-            </div>
+            </FadeIn>
+            <FadeIn direction="right">
+              <div className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
+                <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
+                  Cloud Vendor Lock-In Costs
+                </h3>
+                <ul className="mt-4 space-y-3 text-base text-charcoal dark:text-dark-text">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      <strong>$50K–$250K+</strong> typical migration cost
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      <strong>3–6 months</strong> average transition timeline
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>Staff retraining, workflow disruption, revenue dips</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-coral">
+                      &bull;
+                    </span>
+                    <span>
+                      Proprietary data formats that resist clean export
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -519,7 +540,7 @@ export default function VsCloudRCM() {
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-            <div className="order-2 lg:order-1">
+            <FadeIn direction="right" className="order-2 lg:order-1">
               <div className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
                 <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
                   Cloud Outage Impact
@@ -560,8 +581,8 @@ export default function VsCloudRCM() {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="order-1 lg:order-2">
+            </FadeIn>
+            <FadeIn direction="left" className="order-1 lg:order-2">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
                 Uptime: No Internet, No Problem
               </h2>
@@ -579,7 +600,7 @@ export default function VsCloudRCM() {
                 claims whenever your staff is ready — no external dependencies,
                 no waiting on someone else&apos;s infrastructure.
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -587,32 +608,36 @@ export default function VsCloudRCM() {
       {/* FAQs */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            Frequently Asked Questions
-          </h2>
-          <p className="mt-4 text-lg text-charcoal-light dark:text-gray-300">
-            Common questions from practices evaluating on-premise AI billing
-            versus cloud SaaS platforms.
-          </p>
-          <div className="mt-12 space-y-4">
-            {faqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
-          </div>
-          <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
-            Have a question not covered here?{" "}
-            <Link
-              href="/contact"
-              className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
-            >
-              Reach out directly
-            </Link>
-            .
-          </p>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 text-lg text-charcoal-light dark:text-gray-300">
+              Common questions from practices evaluating on-premise AI billing
+              versus cloud SaaS platforms.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="mt-12 space-y-4">
+              {faqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              ))}
+            </div>
+            <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
+              Have a question not covered here?{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+              >
+                Reach out directly
+              </Link>
+              .
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -621,22 +646,24 @@ export default function VsCloudRCM() {
       {/* CTA */}
       <section className="bg-navy px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-bold text-white">
-            Ready to Own Your Billing Infrastructure?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-            Stop paying rent on your billing system. Sovereign RCM gives your
-            practice full control — security, cost, data, and uptime — with no
-            recurring platform fees.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-            >
-              Request a Billing Analysis
-            </Link>
-          </div>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-white">
+              Ready to Own Your Billing Infrastructure?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+              Stop paying rent on your billing system. Sovereign RCM gives your
+              practice full control — security, cost, data, and uptime — with no
+              recurring platform fees.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+              >
+                Request a Billing Analysis
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

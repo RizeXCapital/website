@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import SectionDivider from "@/components/SectionDivider";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -67,6 +68,7 @@ export default function Contact() {
   if (submitted) {
     return (
       <section className="flex min-h-[70vh] items-center justify-center px-6">
+        <FadeIn>
         <div className="max-w-lg text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
             <svg
@@ -95,6 +97,7 @@ export default function Contact() {
             for insights on AI medical billing.
           </p>
         </div>
+        </FadeIn>
       </section>
     );
   }
@@ -105,12 +108,16 @@ export default function Contact() {
       <section className="bg-navy px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-5xl">
-            <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Get in Touch
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-gray-300">
-              Whether you&apos;re a practice exploring AI billing or a partner looking to collaborate — we&apos;d like to hear from you.
-            </p>
+            <FadeIn>
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Get in Touch
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <p className="mt-4 text-lg leading-relaxed text-gray-300">
+                Whether you&apos;re a practice exploring AI billing or a partner looking to collaborate — we&apos;d like to hear from you.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -121,12 +128,15 @@ export default function Contact() {
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
             {/* Form column */}
             <div>
-              <h2 className="font-heading text-2xl font-bold text-navy dark:text-white">
-                Send Us a Message
-              </h2>
-              <p className="mt-2 text-base text-charcoal-light dark:text-gray-300">
-                All fields marked with * are required.
-              </p>
+              <FadeIn>
+                <h2 className="font-heading text-2xl font-bold text-navy dark:text-white">
+                  Send Us a Message
+                </h2>
+                <p className="mt-2 text-base text-charcoal-light dark:text-gray-300">
+                  All fields marked with * are required.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.15}>
               <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                 {/* Honeypot — invisible to real users, bots auto-fill it */}
                 <div className="absolute -left-[9999px]" aria-hidden="true">
@@ -242,14 +252,17 @@ export default function Contact() {
                   {submitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
+              </FadeIn>
             </div>
 
             {/* Info column */}
             <div className="lg:pl-8">
-              <h2 className="font-heading text-2xl font-bold text-navy dark:text-white">
-                What Happens Next
-              </h2>
-              <div className="mt-8 space-y-8">
+              <FadeIn>
+                <h2 className="font-heading text-2xl font-bold text-navy dark:text-white">
+                  What Happens Next
+                </h2>
+              </FadeIn>
+              <StaggerContainer className="mt-8 space-y-8">
                 {[
                   {
                     step: "1",
@@ -270,22 +283,25 @@ export default function Contact() {
                       "If there's a fit, we'll schedule a call to discuss your practice's needs in detail.",
                   },
                 ].map((item) => (
-                  <div key={item.step} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy font-heading text-sm font-bold text-white">
-                      {item.step}
+                  <StaggerItem key={item.step}>
+                    <div className="flex gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy font-heading text-sm font-bold text-white">
+                        {item.step}
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-base font-bold text-navy dark:text-white">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-heading text-base font-bold text-navy dark:text-white">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
 
+              <FadeIn delay={0.3}>
               <div className="mt-12 rounded-xl bg-ice p-8 dark:bg-dark-surface">
                 <h3 className="font-heading text-base font-bold text-navy dark:text-white">
                   Based in Princeton, NJ
@@ -296,6 +312,7 @@ export default function Contact() {
                   practice — wherever you are.
                 </p>
               </div>
+              </FadeIn>
             </div>
           </div>
         </div>

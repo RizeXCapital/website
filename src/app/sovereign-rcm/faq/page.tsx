@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "FAQ — Sovereign RCM",
@@ -135,13 +136,17 @@ export default function FAQ() {
       <section className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Frequently Asked Questions
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
-              Everything you need to know about Sovereign RCM — from how it
-              works to what it costs.
-            </p>
+            <FadeIn>
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Frequently Asked Questions
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <p className="mt-6 text-lg leading-relaxed text-gray-300">
+                Everything you need to know about Sovereign RCM — from how it
+                works to what it costs.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -149,9 +154,9 @@ export default function FAQ() {
       {/* FAQ Sections */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-3xl">
-          <div className="space-y-16">
+          <StaggerContainer staggerDelay={0.15} className="space-y-16">
             {faqCategories.map((category) => (
-              <div key={category.heading}>
+              <StaggerItem key={category.heading}>
                 <h2 className="font-heading text-2xl font-bold text-navy dark:text-white">
                   {category.heading}
                 </h2>
@@ -164,11 +169,12 @@ export default function FAQ() {
                     />
                   ))}
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
           {/* Security link + more coming */}
+          <FadeIn>
           <div className="mt-16 rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface">
             <p className="font-heading text-base font-bold text-navy dark:text-white">
               Looking for security and HIPAA questions?
@@ -184,6 +190,7 @@ export default function FAQ() {
               page covering data protection, compliance, and breach prevention.
             </p>
           </div>
+          </FadeIn>
 
           <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
             More questions coming. Don&apos;t see what you need?{" "}
@@ -202,23 +209,25 @@ export default function FAQ() {
 
       {/* CTA */}
       <section className="bg-navy px-6 py-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-bold text-white">
-            Still Have Questions?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-            Every practice is different. Tell us about yours and we&apos;ll walk
-            you through how Sovereign RCM fits.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-            >
-              Get in Touch
-            </Link>
+        <FadeIn>
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-heading text-3xl font-bold text-white">
+              Still Have Questions?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+              Every practice is different. Tell us about yours and we&apos;ll walk
+              you through how Sovereign RCM fits.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+              >
+                Get in Touch
+              </Link>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </section>
     </>
   );

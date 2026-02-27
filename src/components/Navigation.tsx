@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,8 +22,12 @@ function ThemeToggle({ className = "" }: { className?: string }) {
   function toggle() {
     const next = !dark;
     setDark(next);
+    document.documentElement.classList.add("theme-transitioning");
     document.documentElement.classList.toggle("dark", next);
     document.cookie = `theme=${next ? "dark" : "light"};path=/;max-age=${60 * 60 * 24 * 365};SameSite=Lax`;
+    setTimeout(() => {
+      document.documentElement.classList.remove("theme-transitioning");
+    }, 350);
   }
 
   return (
@@ -47,6 +52,53 @@ function ThemeToggle({ className = "" }: { className?: string }) {
   );
 }
 
+function MobileNavLink({
+  href,
+  label,
+  index,
+  isOpen,
+  onClose,
+}: {
+  href: string;
+  label: string;
+  index: number;
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return (
+      <Link
+        href={href}
+        className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+        onClick={onClose}
+      >
+        {label}
+      </Link>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -10 }}
+      animate={
+        isOpen
+          ? { opacity: 1, x: 0, transition: { delay: index * 0.05, duration: 0.25 } }
+          : { opacity: 0, x: -10, transition: { duration: 0.15 } }
+      }
+    >
+      <Link
+        href={href}
+        className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+        onClick={onClose}
+      >
+        {label}
+      </Link>
+    </motion.div>
+  );
+}
+
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -66,7 +118,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+              className="relative text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-teal after:transition-all after:duration-200 hover:after:w-full dark:after:bg-teal-dark"
             >
               {link.label}
             </Link>
@@ -119,15 +171,15 @@ export default function Navigation() {
         <div className="overflow-hidden">
           <div className="border-t border-gray-300 bg-white px-6 py-4 dark:border-dark-border dark:bg-dark-bg">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
+              {navLinks.map((link, i) => (
+                <MobileNavLink
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
+                  label={link.label}
+                  index={i}
+                  isOpen={mobileOpen}
+                  onClose={() => setMobileOpen(false)}
+                />
               ))}
               <div className="flex items-center gap-3">
                 <ThemeToggle />

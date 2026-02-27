@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  HoverCard,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "About — Founders & Philosophy",
@@ -86,7 +92,7 @@ const founders = [
     impact:
       "Ghulam is the technical architect behind RizeX's AI products. His experience building enterprise data platforms, ML models, and workflow automation — combined with regulated environments, data governance, and adoption-first design — makes him the builder who translates Sovereign RCM from concept to deployed product. Led teams up to 42 people; $2M+ B2B revenue at Apple.",
     awards:
-      "60%→93% compliance | 384 hrs/yr saved | $2M+ revenue | 17% productivity gain | M.S. Data Science (Eastern); B.A. Mathematics (SNHU)",
+      "60%→93% compliance | 384 hrs/yr saved | $2M+ revenue | 17% productivity gain",
   },
 ];
 
@@ -97,14 +103,18 @@ export default function About() {
       <section className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Built on Alignment, Discipline, and Long-Term Thinking
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
-              RizeX Capital is a disciplined collective of three founders. We
-              operate a hub-and-spoke model: RizeX Capital is the hub, and each
-              venture is an independent spoke unified by a shared philosophy.
-            </p>
+            <FadeIn>
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Built on Alignment, Discipline, and Long-Term Thinking
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <p className="mt-6 text-lg leading-relaxed text-gray-300">
+                RizeX Capital is a disciplined collective of three founders. We
+                operate a hub-and-spoke model: RizeX Capital is the hub, and each
+                venture is an independent spoke unified by a shared philosophy.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -112,27 +122,28 @@ export default function About() {
       {/* Five Pillars */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            Our Five Pillars
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-5">
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              Our Five Pillars
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-5">
             {pillars.map((pillar) => (
-              <div
-                key={pillar.number}
-                className="rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface"
-              >
-                <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
-                  {pillar.number}
-                </p>
-                <h3 className="mt-3 font-heading text-base font-bold text-navy dark:text-white">
-                  {pillar.name}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {pillar.description}
-                </p>
-              </div>
+              <StaggerItem key={pillar.number}>
+                <HoverCard className="h-full rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface">
+                  <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
+                    {pillar.number}
+                  </p>
+                  <h3 className="mt-3 font-heading text-base font-bold text-navy dark:text-white">
+                    {pillar.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                    {pillar.description}
+                  </p>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -141,83 +152,91 @@ export default function About() {
       {/* Values */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            What We Believe
-          </h2>
-          <div className="mt-12 space-y-6">
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              What We Believe
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="mt-12 space-y-6">
             {values.map((value) => (
-              <div
-                key={value}
-                className="flex items-start gap-4 rounded-lg bg-white p-6 dark:bg-dark-elevated"
-              >
-                <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-teal" />
-                <p className="text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                  {value}
-                </p>
-              </div>
+              <StaggerItem key={value}>
+                <div className="flex items-start gap-4 rounded-lg bg-white p-6 dark:bg-dark-elevated">
+                  <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-teal" />
+                  <p className="text-lg leading-relaxed text-charcoal dark:text-dark-text">
+                    {value}
+                  </p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Founders */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            The Founding Team
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-            A physician who knows the problem. An engineer who builds the
-            solution. A PE who manages complex regulated implementations.
-          </p>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              The Founding Team
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
+              A physician who knows the problem. An engineer who builds the
+              solution. A PE who manages complex regulated implementations.
+            </p>
+          </FadeIn>
           <div className="mt-16 space-y-16">
             {founders.map((founder, i) => (
-              <div
+              <FadeIn
                 key={founder.name}
-                className={`flex flex-col gap-8 lg:flex-row ${
-                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
+                direction={i % 2 === 0 ? "left" : "right"}
+                delay={0.1}
               >
-                <div className="flex shrink-0 items-center justify-center">
-                  {founder.image ? (
-                    <div className="h-48 w-48 overflow-hidden rounded-2xl dark:ring-1 dark:ring-dark-border">
-                      <div className="h-full w-full" style={founder.imageStyle}>
-                        <Image
-                          src={founder.image}
-                          alt={founder.name}
-                          width={384}
-                          height={384}
-                          className="h-full w-full object-cover"
-                          style={{ objectPosition: founder.imageObjectPosition }}
-                        />
+                <div
+                  className={`flex flex-col gap-8 lg:flex-row ${
+                    i % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                  <div className="flex shrink-0 items-center justify-center">
+                    {founder.image ? (
+                      <div className="h-48 w-48 overflow-hidden rounded-2xl dark:ring-1 dark:ring-dark-border">
+                        <div className="h-full w-full" style={founder.imageStyle}>
+                          <Image
+                            src={founder.image}
+                            alt={founder.name}
+                            width={384}
+                            height={384}
+                            className="h-full w-full object-cover"
+                            style={{ objectPosition: founder.imageObjectPosition }}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ) : (
-                    <div className="h-48 w-48 rounded-2xl bg-ice dark:bg-dark-surface" />
-                  )}
+                    ) : (
+                      <div className="h-48 w-48 rounded-2xl bg-ice dark:bg-dark-surface" />
+                    )}
+                  </div>
+                  {/* Bio */}
+                  <div className="flex-1">
+                    <h3 className="font-heading text-2xl font-bold text-navy dark:text-white">
+                      {founder.name}
+                    </h3>
+                    <p className="mt-1 text-base font-medium text-teal dark:text-teal-dark">
+                      {founder.role}
+                    </p>
+                    <p className="mt-1 text-sm text-charcoal-light dark:text-gray-400">
+                      {founder.credential}
+                    </p>
+                    <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                      {founder.bio}
+                    </p>
+                    <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                      {founder.impact}
+                    </p>
+                    <p className="mt-4 text-sm italic text-charcoal-light dark:text-gray-400">
+                      {founder.awards}
+                    </p>
+                  </div>
                 </div>
-                {/* Bio */}
-                <div className="flex-1">
-                  <h3 className="font-heading text-2xl font-bold text-navy dark:text-white">
-                    {founder.name}
-                  </h3>
-                  <p className="mt-1 text-base font-medium text-teal dark:text-teal-dark">
-                    {founder.role}
-                  </p>
-                  <p className="mt-1 text-sm text-charcoal-light dark:text-gray-400">
-                    {founder.credential}
-                  </p>
-                  <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                    {founder.bio}
-                  </p>
-                  <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                    {founder.impact}
-                  </p>
-                  <p className="mt-4 text-sm italic text-charcoal-light dark:text-gray-400">
-                    {founder.awards}
-                  </p>
-                </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -228,21 +247,23 @@ export default function About() {
       {/* CTA */}
       <section className="bg-navy px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-bold text-white">
-            Ready to Work With Us?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-            We build for the long term — systems that outlive any single
-            project. Let&apos;s talk.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-            >
-              Get in Touch
-            </Link>
-          </div>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-white">
+              Ready to Work With Us?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+              We build for the long term — systems that outlive any single
+              project. Let&apos;s talk.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

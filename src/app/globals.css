@@ -34,13 +34,19 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition-property: color, background-color;
-  transition-duration: 300ms;
 }
 
 .dark body {
   background: var(--color-dark-bg);
   color: var(--color-dark-text);
+}
+
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: color 300ms ease, background-color 300ms ease,
+    border-color 300ms ease, box-shadow 300ms ease, opacity 300ms ease !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

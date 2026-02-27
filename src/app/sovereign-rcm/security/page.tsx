@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  HoverCard,
+} from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Security & HIPAA — Sovereign RCM",
@@ -95,12 +101,16 @@ export default function Security() {
       <section className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Security &amp; HIPAA
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-gray-300">
-              On-premise. Air-gapped. Your data never leaves your building.
-            </p>
+            <FadeIn>
+              <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Security &amp; HIPAA
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <p className="mt-6 text-lg leading-relaxed text-gray-300">
+                On-premise. Air-gapped. Your data never leaves your building.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -108,32 +118,33 @@ export default function Security() {
       {/* Security Architecture */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            Security Architecture
-          </h2>
-          <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-            Sovereign RCM eliminates cloud risk at the architectural level.
-            Patient data stays inside your facility because the system was
-            designed that way from day one.
-          </p>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              Security Architecture
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
+              Sovereign RCM eliminates cloud risk at the architectural level.
+              Patient data stays inside your facility because the system was
+              designed that way from day one.
+            </p>
+          </FadeIn>
+          <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {securityFeatures.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated"
-              >
-                <p className="text-3xl" aria-hidden="true">
-                  {feature.icon}
-                </p>
-                <h3 className="mt-4 font-heading text-xl font-bold text-navy dark:text-white">
-                  {feature.title}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {feature.description}
-                </p>
-              </div>
+              <StaggerItem key={feature.title}>
+                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                  <p className="text-3xl" aria-hidden="true">
+                    {feature.icon}
+                  </p>
+                  <h3 className="mt-4 font-heading text-xl font-bold text-navy dark:text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                    {feature.description}
+                  </p>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -142,63 +153,69 @@ export default function Security() {
       {/* Change Healthcare Context */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              Why This Matters Now
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-              In February 2024, the Change Healthcare attack exposed 192.7
-              million patient records and disrupted claims processing for roughly
-              40% of U.S. healthcare transactions. Practices lost weeks of
-              revenue. Patients had prescriptions delayed. The root cause was
-              architectural: all that data was centralized in cloud
-              infrastructure.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-              Sovereign RCM is the architectural answer. When patient data never
-              leaves your building, a breach at a clearinghouse or cloud vendor
-              has zero impact on your practice. This isn&apos;t a feature
-              checkbox — it&apos;s a fundamentally different approach to medical
-              billing infrastructure.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/sovereign-rcm"
-                className="rounded-lg border border-navy/20 px-6 py-3 text-center text-base font-medium text-navy transition-colors hover:bg-navy hover:text-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
-              >
-                Sovereign RCM Overview
-              </Link>
-              <Link
-                href="/sovereign-rcm/pilot-program"
-                className="rounded-lg border border-navy/20 px-6 py-3 text-center text-base font-medium text-navy transition-colors hover:bg-navy hover:text-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
-              >
-                90-Day Pilot Program
-              </Link>
+          <FadeIn direction="left">
+            <div className="max-w-3xl">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                Why This Matters Now
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-charcoal dark:text-dark-text">
+                In February 2024, the Change Healthcare attack exposed 192.7
+                million patient records and disrupted claims processing for roughly
+                40% of U.S. healthcare transactions. Practices lost weeks of
+                revenue. Patients had prescriptions delayed. The root cause was
+                architectural: all that data was centralized in cloud
+                infrastructure.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
+                Sovereign RCM is the architectural answer. When patient data never
+                leaves your building, a breach at a clearinghouse or cloud vendor
+                has zero impact on your practice. This isn&apos;t a feature
+                checkbox — it&apos;s a fundamentally different approach to medical
+                billing infrastructure.
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/sovereign-rcm"
+                  className="rounded-lg border border-navy/20 px-6 py-3 text-center text-base font-medium text-navy transition-colors hover:bg-navy hover:text-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
+                >
+                  Sovereign RCM Overview
+                </Link>
+                <Link
+                  href="/sovereign-rcm/pilot-program"
+                  className="rounded-lg border border-navy/20 px-6 py-3 text-center text-base font-medium text-navy transition-colors hover:bg-navy hover:text-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
+                >
+                  90-Day Pilot Program
+                </Link>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* FAQs */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-            Security FAQs
-          </h2>
-          <p className="mt-4 text-lg text-charcoal-light dark:text-gray-300">
-            Common questions from physicians and practice managers about data
-            security, HIPAA compliance, and how Sovereign RCM protects patient
-            information.
-          </p>
-          <div className="mt-12 space-y-4">
-            {faqs.map((faq) => (
-              <FaqItem
-                key={faq.question}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
-          </div>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+              Security FAQs
+            </h2>
+            <p className="mt-4 text-lg text-charcoal-light dark:text-gray-300">
+              Common questions from physicians and practice managers about data
+              security, HIPAA compliance, and how Sovereign RCM protects patient
+              information.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="mt-12 space-y-4">
+              {faqs.map((faq) => (
+                <FaqItem
+                  key={faq.question}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              ))}
+            </div>
+          </FadeIn>
           <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
             More questions coming. Have a specific security concern?{" "}
             <Link
@@ -217,22 +234,24 @@ export default function Security() {
       {/* CTA */}
       <section className="bg-navy px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-heading text-3xl font-bold text-white">
-            Have a Security Question?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-            We built Sovereign RCM for practices that take patient data
-            seriously. If you have compliance requirements or security concerns,
-            we&apos;re happy to walk through the architecture.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-            >
-              Get in Touch
-            </Link>
-          </div>
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold text-white">
+              Have a Security Question?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+              We built Sovereign RCM for practices that take patient data
+              seriously. If you have compliance requirements or security concerns,
+              we&apos;re happy to walk through the architecture.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>
