@@ -112,33 +112,38 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="border-t border-gray-300 bg-white px-6 py-4 dark:border-dark-border dark:bg-dark-bg md:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-in-out md:hidden"
+        style={{ gridTemplateRows: mobileOpen ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <div className="border-t border-gray-300 bg-white px-6 py-4 dark:border-dark-border dark:bg-dark-bg">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <span className="text-sm text-charcoal-light dark:text-gray-400">Toggle theme</span>
+              </div>
               <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+                href="/contact"
+                className="mt-2 rounded-lg bg-coral px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-coral-hover"
                 onClick={() => setMobileOpen(false)}
               >
-                {link.label}
+                Get in Touch
               </Link>
-            ))}
-            <div className="flex items-center gap-3">
-              <ThemeToggle />
-              <span className="text-sm text-charcoal-light dark:text-gray-400">Toggle theme</span>
             </div>
-            <Link
-              href="/contact"
-              className="mt-2 rounded-lg bg-coral px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-coral-hover"
-              onClick={() => setMobileOpen(false)}
-            >
-              Get in Touch
-            </Link>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
