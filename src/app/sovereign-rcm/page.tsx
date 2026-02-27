@@ -7,6 +7,8 @@ import {
   StaggerContainer,
   StaggerItem,
   HoverCard,
+  AnimatedHero,
+  AnimatedPipeline,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -324,14 +326,6 @@ const subPages: SubPage[] = [
   },
 ];
 
-const pipelineSteps = [
-  "Clinical Notes",
-  "Chart Reader",
-  "Procedure Specialist",
-  "Payer Logic Bot",
-  "Denial Analyst",
-  "837P Claim + Audit Pack",
-];
 
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */
@@ -341,7 +335,7 @@ export default function SovereignRCM() {
   return (
     <>
       {/* ── 1. Hero (navy) ───────────────────────────────────────── */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -375,7 +369,7 @@ export default function SovereignRCM() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* ── 2. The Problem — Triple Leak (white) ─────────────────── */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
@@ -445,25 +439,8 @@ export default function SovereignRCM() {
             ))}
           </StaggerContainer>
 
-          {/* Pipeline flow visualization */}
-          <FadeIn delay={0.2}>
-            <div className="mt-12 overflow-x-auto">
-              <div className="flex min-w-max items-center justify-center gap-3 text-base font-medium text-navy dark:text-white">
-                {pipelineSteps.map((step, i) => (
-                  <span key={step} className="flex items-center gap-3">
-                    <span className={i === 0 || i === pipelineSteps.length - 1 ? "font-bold" : ""}>
-                      {step}
-                    </span>
-                    {i < pipelineSteps.length - 1 && (
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5 shrink-0 text-teal">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    )}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
+          {/* Animated pipeline flow visualization */}
+          <AnimatedPipeline compact />
         </div>
       </section>
 

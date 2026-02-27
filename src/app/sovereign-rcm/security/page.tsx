@@ -3,10 +3,12 @@ import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import {
+  AnimatedHero,
   FadeIn,
   StaggerContainer,
   StaggerItem,
   HoverCard,
+  DataFlowVisualization,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -98,7 +100,7 @@ export default function Security() {
       />
 
       {/* Hero */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -113,7 +115,7 @@ export default function Security() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* Security Architecture */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
@@ -151,10 +153,11 @@ export default function Security() {
       <SectionDivider variant="light" />
 
       {/* Change Healthcare Context */}
-      <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
+        <DataFlowVisualization />
+        <div className="relative z-10 mx-auto max-w-7xl">
           <FadeIn direction="left">
-            <div className="max-w-3xl">
+            <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
                 Why This Matters Now
               </h2>
@@ -170,10 +173,10 @@ export default function Security() {
                 Sovereign RCM is the architectural answer. When patient data never
                 leaves your building, a breach at a clearinghouse or cloud vendor
                 has zero impact on your practice. This isn&apos;t a feature
-                checkbox — it&apos;s a fundamentally different approach to medical
-                billing infrastructure.
+                checkbox — it&apos;s a fundamentally different approach to billing
+                infrastructure.
               </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
                   href="/sovereign-rcm"
                   className="rounded-lg border border-navy/20 px-6 py-3 text-center text-base font-medium text-navy transition-colors hover:bg-navy hover:text-white dark:border-dark-border dark:text-white dark:hover:bg-dark-elevated"
@@ -217,7 +220,7 @@ export default function Security() {
             </div>
           </FadeIn>
           <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
-            More questions coming. Have a specific security concern?{" "}
+            Have a specific security concern not covered here?{" "}
             <Link
               href="/contact"
               className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
@@ -229,31 +232,6 @@ export default function Security() {
         </div>
       </section>
 
-      <SectionDivider variant="dark" />
-
-      {/* CTA */}
-      <section className="bg-navy px-6 py-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <FadeIn>
-            <h2 className="font-heading text-3xl font-bold text-white">
-              Have a Security Question?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-              We built Sovereign RCM for practices that take patient data
-              seriously. If you have compliance requirements or security concerns,
-              we&apos;re happy to walk through the architecture.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
     </>
   );
 }

@@ -7,6 +7,7 @@ import {
   StaggerContainer,
   StaggerItem,
   HoverCard,
+  AnimatedHero,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -117,7 +118,7 @@ export default function About() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* Five Pillars */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
@@ -160,8 +161,8 @@ export default function About() {
           <StaggerContainer className="mt-12 space-y-6">
             {values.map((value) => (
               <StaggerItem key={value}>
-                <div className="flex items-start gap-4 rounded-lg bg-white p-6 dark:bg-dark-elevated">
-                  <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-teal" />
+                <div className="flex items-center gap-4 rounded-lg bg-white p-6 dark:bg-dark-elevated">
+                  <div className="h-2 w-2 shrink-0 rounded-full bg-teal" />
                   <p className="text-lg leading-relaxed text-charcoal dark:text-dark-text">
                     {value}
                   </p>
@@ -181,7 +182,9 @@ export default function About() {
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
               A physician who knows the problem. An engineer who builds the
-              solution. A PE who manages complex regulated implementations.
+              solution.
+              <br />
+              A PE who manages complex regulated implementations.
             </p>
           </FadeIn>
           <div className="mt-16 space-y-16">

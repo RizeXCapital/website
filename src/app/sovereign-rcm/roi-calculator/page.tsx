@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
-import { FadeIn } from "@/components/motion";
+import { AnimatedHero, FadeIn } from "@/components/motion";
 import ROICalculator from "@/components/ROICalculator";
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function ROICalculatorPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-24 lg:py-32">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
@@ -40,7 +40,7 @@ export default function ROICalculatorPage() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       <ROICalculator />
 

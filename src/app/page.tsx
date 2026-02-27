@@ -9,6 +9,7 @@ import {
   CountUp,
   HoverCard,
   AnimatedHero,
+  AnimatedPipeline,
 } from "@/components/motion";
 
 const upcomingPosts = [
@@ -16,11 +17,13 @@ const upcomingPosts = [
     title: "How Much Revenue Is Your Practice Losing to Claim Denials?",
     author: "Faizan G. Arif, MD",
     date: "March 2026",
+    image: "/blog/revenue-leak-funnel.svg",
   },
   {
     title: "What the Change Healthcare Attack Means for Your Practice",
     author: "Navid M. Rahman, PE",
     date: "Late March 2026",
+    image: "/blog/cloud-vs-onpremise.svg",
   },
 ];
 
@@ -85,19 +88,30 @@ function BlogPreviewSection() {
 
           {/* Upcoming post teasers to fill up to 3 */}
           {upcomingPosts.slice(0, 3 - posts.length).map((post) => (
-            <StaggerItem key={post.title} className="self-center">
-              <div className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
-                <p className="text-xs font-medium uppercase tracking-wider text-coral">
-                  Coming Soon
-                </p>
-                <h3 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
-                  {post.title}
-                </h3>
-                {post.author && (
+            <StaggerItem key={post.title}>
+              <div className="h-full overflow-hidden rounded-xl border border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated">
+                {post.image && (
+                  <div className="aspect-[21/9] overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={600}
+                      height={257}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-8">
+                  <p className="text-xs font-medium uppercase tracking-wider text-coral">
+                    Coming Soon
+                  </p>
+                  <h3 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
+                    {post.title}
+                  </h3>
                   <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
                     {post.author} &middot; {post.date}
                   </p>
-                )}
+                </div>
               </div>
             </StaggerItem>
           ))}
@@ -123,7 +137,7 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero */}
-      <AnimatedHero className="bg-navy px-6 py-24 lg:py-32">
+      <AnimatedHero className="bg-navy px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -244,44 +258,15 @@ export default function Home() {
               </p>
             </div>
           </FadeIn>
-          <StaggerContainer
-            staggerDelay={0.15}
-            className="mt-16 flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6"
-          >
-            {[
-              { label: "EHR", sub: "Signed clinical notes" },
-              { label: "Sovereign RCM", sub: "On-premise AI enclave" },
-              { label: "837P Claims", sub: "Compliant output" },
-              { label: "Audit Pack", sub: "Evidence + rationale" },
-            ].flatMap((step, i, arr) => [
-              <StaggerItem key={step.label}>
-                <div className="flex h-28 w-44 flex-col items-center justify-center rounded-xl border border-gray-300 bg-white p-4 text-center shadow-sm dark:border-dark-border dark:bg-dark-elevated dark:shadow-none">
-                  <p className="font-heading text-base font-bold text-navy dark:text-white">
-                    {step.label}
-                  </p>
-                  <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
-                    {step.sub}
-                  </p>
-                </div>
-              </StaggerItem>,
-              i < arr.length - 1 && (
-                <svg
-                  key={`arrow-${i}`}
-                  className="hidden h-6 w-6 shrink-0 text-teal md:block"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              ),
-            ])}
-          </StaggerContainer>
+          <AnimatedPipeline
+            className="mt-16"
+            steps={[
+              { label: "EHR", sub: "Signed clinical notes", type: "input" },
+              { label: "Sovereign RCM", sub: "On-premise AI enclave", type: "agent" },
+              { label: "837P Claims", sub: "Compliant output", type: "output" },
+              { label: "Audit Pack", sub: "Evidence + rationale", type: "output" },
+            ]}
+          />
         </div>
       </section>
 

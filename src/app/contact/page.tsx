@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import SectionDivider from "@/components/SectionDivider";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion";
+import { FadeIn, StaggerContainer, StaggerItem, AnimatedHero } from "@/components/motion";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -105,7 +105,7 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 lg:py-20">
+      <AnimatedHero className="bg-navy px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-5xl">
             <FadeIn>
@@ -120,7 +120,7 @@ export default function Contact() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* Form */}
       <section className="bg-white px-6 py-16 dark:bg-dark-bg lg:py-20">

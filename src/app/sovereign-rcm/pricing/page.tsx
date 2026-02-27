@@ -3,10 +3,12 @@ import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import {
+  AnimatedHero,
   FadeIn,
   StaggerContainer,
   StaggerItem,
   HoverCard,
+  AnimatedPipeline,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -287,7 +289,7 @@ export default function Pricing() {
       />
 
       {/* ── 1. Hero (navy) ───────────────────────────────────────── */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto text-center">
             <FadeIn>
@@ -319,7 +321,7 @@ export default function Pricing() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* ── 2. Tier Cards (white) ────────────────────────────────── */}
       <section
@@ -555,23 +557,15 @@ export default function Pricing() {
                 <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
                   Payment Structure
                 </h3>
-                <div className="mt-5 space-y-5">
-                  {paymentSteps.map((step) => (
-                    <div key={step.step} className="flex items-start gap-4">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy font-heading text-sm font-bold text-white dark:bg-teal">
-                        {step.step}
-                      </span>
-                      <div>
-                        <p className="font-heading text-base font-bold text-navy dark:text-white">
-                          {step.label}
-                        </p>
-                        <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <AnimatedPipeline
+                  compact
+                  className="mt-5"
+                  steps={[
+                    { label: "50% Deposit", sub: "Reserve slot + provision hardware" },
+                    { label: "40% Install", sub: "Configured + EHR connected" },
+                    { label: "10% Accept", sub: "Confirmed working" },
+                  ]}
+                />
                 <Link
                   href="/sovereign-rcm/pilot-program"
                   className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"

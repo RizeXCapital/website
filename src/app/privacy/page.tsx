@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
+import { AnimatedHero } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -14,7 +15,7 @@ export default function Privacy() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy px-6 py-16 lg:py-20">
+      <AnimatedHero className="bg-navy px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -29,7 +30,7 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* Content */}
       <section className="bg-white px-6 py-16 dark:bg-dark-bg lg:py-20">

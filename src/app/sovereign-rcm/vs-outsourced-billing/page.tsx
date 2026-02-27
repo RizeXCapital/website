@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
-import Tooltip from "@/components/Tooltip";
 import {
+  AnimatedHero,
   FadeIn,
   StaggerContainer,
   StaggerItem,
   HoverCard,
+  AnimatedComparisonTable,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -175,7 +176,7 @@ export default function VsOutsourcedBilling() {
       />
 
       {/* Hero */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -192,7 +193,7 @@ export default function VsOutsourcedBilling() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* The Outsourced Billing Problem */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
@@ -242,90 +243,15 @@ export default function VsOutsourcedBilling() {
             </p>
           </FadeIn>
 
-          {/* Desktop Table */}
-          <FadeIn delay={0.2}>
-            <div className="mt-12 hidden overflow-hidden rounded-xl border border-gray-300 dark:border-dark-border md:block">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="bg-navy">
-                    <th className="w-[18%] px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white">
-                      Category
-                    </th>
-                    <th className="bg-teal/20 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-teal-light">
-                      Sovereign RCM
-                    </th>
-                    <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
-                      Outsourced Billing
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr
-                      key={row.category}
-                      className={
-                        i % 2 === 0
-                          ? "bg-white dark:bg-dark-bg"
-                          : "bg-ice dark:bg-dark-surface"
-                      }
-                    >
-                      <td className="px-6 py-4 font-heading text-sm font-bold text-navy dark:text-white">
-                        {row.tooltip ? (
-                          <Tooltip text={row.tooltip}>{row.category}</Tooltip>
-                        ) : (
-                          row.category
-                        )}
-                      </td>
-                      <td className="bg-teal/5 px-6 py-4 text-sm font-medium text-teal dark:bg-teal/10 dark:text-teal-dark">
-                        {row.sovereign}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-charcoal-light dark:text-gray-300">
-                        {row.outsourced}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </FadeIn>
-
-          {/* Mobile Stacked Cards */}
-          <FadeIn delay={0.2}>
-            <div className="mt-12 space-y-4 md:hidden">
-              {comparisonRows.map((row) => (
-                <div
-                  key={row.category}
-                  className="rounded-xl border border-gray-300 bg-white p-5 dark:border-dark-border dark:bg-dark-elevated"
-                >
-                  <p className="font-heading text-sm font-bold uppercase tracking-wide text-navy dark:text-white">
-                    {row.tooltip ? (
-                      <Tooltip text={row.tooltip}>{row.category}</Tooltip>
-                    ) : (
-                      row.category
-                    )}
-                  </p>
-                  <div className="mt-3 space-y-2">
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-teal dark:text-teal-dark">
-                        Sovereign RCM
-                      </p>
-                      <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
-                        {row.sovereign}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-charcoal-light dark:text-gray-400">
-                        Outsourced Billing
-                      </p>
-                      <p className="mt-1 text-sm text-charcoal-light dark:text-gray-300">
-                        {row.outsourced}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
+          <AnimatedComparisonTable
+            rows={comparisonRows.map((r) => ({
+              category: r.category,
+              tooltip: r.tooltip,
+              sovereign: r.sovereign,
+              competitor: r.outsourced,
+            }))}
+            competitorLabel="Outsourced Billing"
+          />
         </div>
       </section>
 

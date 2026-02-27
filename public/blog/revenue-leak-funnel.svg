@@ -1,0 +1,143 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="520" rx="16" fill="#F0F6FA"/>
+
+  <!-- Subtle background circles -->
+  <circle cx="600" cy="260" r="320" fill="#2E86AB" opacity="0.04"/>
+  <circle cx="200" cy="400" r="200" fill="#E8614D" opacity="0.03"/>
+  <circle cx="1000" cy="150" r="180" fill="#2E86AB" opacity="0.03"/>
+
+  <!-- ===== CENTER: Revenue Funnel ===== -->
+
+  <!-- Funnel shape -->
+  <path d="M400 80 L800 80 L700 440 L500 440 Z" fill="white" stroke="#C8D9E6" stroke-width="1.5"/>
+
+  <!-- Funnel stage dividers -->
+  <line x1="420" y1="170" x2="780" y2="170" stroke="#2E86AB" stroke-width="0.8" opacity="0.15" stroke-dasharray="4 4"/>
+  <line x1="445" y1="260" x2="755" y2="260" stroke="#2E86AB" stroke-width="0.8" opacity="0.15" stroke-dasharray="4 4"/>
+  <line x1="470" y1="350" x2="730" y2="350" stroke="#2E86AB" stroke-width="0.8" opacity="0.15" stroke-dasharray="4 4"/>
+
+  <!-- Claims entering top -->
+  <g transform="translate(520, 40)">
+    <rect x="0" y="0" width="160" height="28" rx="6" fill="#2E86AB" opacity="0.1" stroke="#2E86AB" stroke-width="1"/>
+    <text x="80" y="19" font-family="system-ui, sans-serif" font-size="12" fill="#2E86AB" text-anchor="middle" font-weight="600">CLAIMS SUBMITTED</text>
+  </g>
+
+  <!-- Downward flow arrows inside funnel -->
+  <path d="M600 75 L600 95" stroke="#2E86AB" stroke-width="1.5" opacity="0.3" marker-end="url(#arrowTeal)"/>
+  <path d="M600 170 L600 185" stroke="#2E86AB" stroke-width="1.5" opacity="0.25" marker-end="url(#arrowTeal)"/>
+  <path d="M600 260 L600 275" stroke="#2E86AB" stroke-width="1.5" opacity="0.2" marker-end="url(#arrowTeal)"/>
+
+  <!-- Stage 1: Coding Errors -->
+  <text x="600" y="130" font-family="system-ui, sans-serif" font-size="14" fill="#1B2A4A" text-anchor="middle" font-weight="600">Coding Errors</text>
+  <text x="600" y="150" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A" text-anchor="middle">Modifier mismatches, undercoding</text>
+
+  <!-- Stage 2: Missing Documentation -->
+  <text x="600" y="220" font-family="system-ui, sans-serif" font-size="14" fill="#1B2A4A" text-anchor="middle" font-weight="600">Missing Documentation</text>
+  <text x="600" y="240" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A" text-anchor="middle">Insufficient clinical evidence</text>
+
+  <!-- Stage 3: Payer Rejections -->
+  <text x="600" y="310" font-family="system-ui, sans-serif" font-size="14" fill="#1B2A4A" text-anchor="middle" font-weight="600">Payer Rejections</text>
+  <text x="600" y="330" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A" text-anchor="middle">Policy rules, timely filing</text>
+
+  <!-- Revenue collected at bottom -->
+  <g transform="translate(530, 450)">
+    <rect x="0" y="0" width="140" height="28" rx="6" fill="#2E86AB" opacity="0.4" stroke="#2E86AB" stroke-width="1"/>
+    <text x="70" y="19" font-family="system-ui, sans-serif" font-size="11" fill="#2E86AB" text-anchor="middle" font-weight="500" opacity="0.6">REVENUE COLLECTED</text>
+  </g>
+
+  <!-- ===== LEFT SIDE: Leak arrows with dollar amounts ===== -->
+
+  <!-- Leak 1: Coding errors — arrow going left -->
+  <path d="M410 125 C370 125, 340 125, 300 130" stroke="#E8614D" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+  <path d="M308 126 L298 130 L306 136" fill="#E8614D" opacity="0.8"/>
+
+  <!-- Dollar drops for leak 1 -->
+  <text x="270" y="118" font-family="system-ui, sans-serif" font-size="16" fill="#E8614D" text-anchor="end" font-weight="700">$30K+</text>
+  <text x="270" y="136" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" text-anchor="end" opacity="0.7">per provider / year</text>
+
+  <!-- Leak card 1 -->
+  <g transform="translate(60, 95)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="white" stroke="#E8614D" stroke-width="1"/>
+    <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" letter-spacing="0.5" font-weight="600">UNDERCODING LOSS</text>
+    <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A">AAFP: Level 4 coded as 3</text>
+  </g>
+
+  <!-- Leak 2: Missing docs — arrow going left -->
+  <path d="M435 215 C395 215, 360 220, 320 230" stroke="#E8614D" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M328 226 L318 230 L326 237" fill="#E8614D" opacity="0.7"/>
+
+  <text x="290" y="218" font-family="system-ui, sans-serif" font-size="16" fill="#E8614D" text-anchor="end" font-weight="700">$25–118</text>
+  <text x="290" y="236" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" text-anchor="end" opacity="0.6">per rework event</text>
+
+  <!-- Leak card 2 -->
+  <g transform="translate(60, 200)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="white" stroke="#E8614D" stroke-width="1" opacity="0.9"/>
+    <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" letter-spacing="0.5" font-weight="600">REWORK COST</text>
+    <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A">MGMA 2024 benchmark</text>
+  </g>
+
+  <!-- Leak 3: Payer rejections — arrow going left -->
+  <path d="M460 305 C430 305, 395 315, 355 325" stroke="#E8614D" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M363 321 L353 326 L361 332" fill="#E8614D" opacity="0.6"/>
+
+  <text x="325" y="318" font-family="system-ui, sans-serif" font-size="16" fill="#E8614D" text-anchor="end" font-weight="700" opacity="0.9">5–8%</text>
+  <text x="325" y="336" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" text-anchor="end" opacity="0.6">of gross revenue</text>
+
+  <!-- Leak card 3 -->
+  <g transform="translate(60, 305)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="white" stroke="#E8614D" stroke-width="1" opacity="0.85"/>
+    <text x="16" y="24" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" letter-spacing="0.5" font-weight="600">WRITE-OFF LOSSES</text>
+    <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A">Denials never resubmitted</text>
+  </g>
+
+  <!-- ===== RIGHT SIDE: Impact Summary ===== -->
+
+  <!-- Current state card -->
+  <g transform="translate(870, 90)">
+    <rect x="0" y="0" width="260" height="100" rx="12" fill="white" stroke="#E8614D" stroke-width="1.2"/>
+    <text x="24" y="28" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" letter-spacing="1" font-weight="600">INDUSTRY DENIAL RATE</text>
+    <text x="24" y="60" font-family="system-ui, sans-serif" font-size="32" font-weight="700" fill="#1B2A4A">11.8%</text>
+    <text x="24" y="82" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A">and rising year over year</text>
+    <!-- Trend arrow up -->
+    <path d="M220 70 L230 50 L240 70" stroke="#E8614D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="230" y1="50" x2="230" y2="82" stroke="#E8614D" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Practice impact card -->
+  <g transform="translate(870, 220)">
+    <rect x="0" y="0" width="260" height="90" rx="12" fill="white" stroke="#C8D9E6" stroke-width="1"/>
+    <text x="24" y="28" font-family="system-ui, sans-serif" font-size="10" fill="#2E86AB" letter-spacing="1" font-weight="600">SMALL PRACTICE IMPACT</text>
+    <text x="24" y="54" font-family="system-ui, sans-serif" font-size="11" fill="#1B2A4A" font-weight="500">3,000–5,000 claims/year</text>
+    <text x="24" y="74" font-family="system-ui, sans-serif" font-size="11" fill="#E8614D">300–500 rework events annually</text>
+  </g>
+
+  <!-- Annual cost card -->
+  <g transform="translate(870, 340)">
+    <rect x="0" y="0" width="260" height="90" rx="12" fill="#E8614D" opacity="0.06"/>
+    <rect x="0" y="0" width="260" height="90" rx="12" fill="none" stroke="#E8614D" stroke-width="1"/>
+    <text x="24" y="28" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" letter-spacing="1" font-weight="600">TOTAL ANNUAL COST</text>
+    <text x="24" y="58" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#1B2A4A">$50K–$150K+</text>
+    <text x="24" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#5A6B7A">in lost + leaked revenue per practice</text>
+  </g>
+
+  <!-- Dripping dollar signs along funnel edges -->
+  <text x="390" y="155" font-family="system-ui, sans-serif" font-size="14" fill="#E8614D" opacity="0.3">$</text>
+  <text x="375" y="200" font-family="system-ui, sans-serif" font-size="12" fill="#E8614D" opacity="0.25">$</text>
+  <text x="415" y="250" font-family="system-ui, sans-serif" font-size="16" fill="#E8614D" opacity="0.25">$</text>
+  <text x="440" y="300" font-family="system-ui, sans-serif" font-size="11" fill="#E8614D" opacity="0.2">$</text>
+  <text x="455" y="370" font-family="system-ui, sans-serif" font-size="13" fill="#E8614D" opacity="0.2">$</text>
+
+  <text x="810" y="145" font-family="system-ui, sans-serif" font-size="13" fill="#E8614D" opacity="0.25">$</text>
+  <text x="795" y="210" font-family="system-ui, sans-serif" font-size="15" fill="#E8614D" opacity="0.22">$</text>
+  <text x="770" y="280" font-family="system-ui, sans-serif" font-size="11" fill="#E8614D" opacity="0.18">$</text>
+  <text x="750" y="340" font-family="system-ui, sans-serif" font-size="14" fill="#E8614D" opacity="0.15">$</text>
+
+  <!-- Source footnote -->
+  <text x="600" y="500" font-family="system-ui, sans-serif" font-size="9" fill="#5A6B7A" opacity="0.4" text-anchor="middle">Sources: AAFP, MGMA 2024 DataDive, Experian Health State of Claims 2025</text>
+
+  <defs>
+    <marker id="arrowTeal" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="#2E86AB" opacity="0.4"/>
+    </marker>
+  </defs>
+</svg>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqFilter from "@/components/FaqFilter";
-import { FadeIn } from "@/components/motion";
+import { AnimatedHero, FadeIn } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "FAQ — Sovereign RCM",
@@ -245,7 +245,7 @@ export default function FAQ() {
       />
 
       {/* Hero */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -261,7 +261,7 @@ export default function FAQ() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* Filter + FAQ List */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">

@@ -4,10 +4,12 @@ import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import {
+  AnimatedHero,
   FadeIn,
   StaggerContainer,
   StaggerItem,
   HoverCard,
+  AnimatedPipeline,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -378,7 +380,7 @@ export default function HowItWorks() {
       />
 
       {/* ── 1. Hero (navy) ───────────────────────────────────────── */}
-      <section className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <FadeIn>
@@ -413,7 +415,7 @@ export default function HowItWorks() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </AnimatedHero>
 
       {/* ── 2. The Complete Pipeline (white) ─────────────────────── */}
       <section id="pipeline" className="scroll-mt-24 bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
@@ -428,6 +430,8 @@ export default function HowItWorks() {
               nothing is assumed.
             </p>
           </FadeIn>
+
+          <AnimatedPipeline compact className="mt-12" />
 
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {pipelineSteps.map((step) => (

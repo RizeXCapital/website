@@ -3,3 +3,8 @@ export { StaggerContainer, StaggerItem } from "./Stagger";
 export { CountUp } from "./CountUp";
 export { HoverCard } from "./HoverCard";
 export { AnimatedHero } from "./AnimatedHero";
+export { AnimatedPipeline } from "./AnimatedPipeline";
+export { AnimatedComparisonTable } from "./AnimatedComparisonTable";
+export { AnimatedTimeline } from "./AnimatedTimeline";
+export { SecurityArchitecture } from "./SecurityArchitecture";
+export { DataFlowVisualization } from "./DataFlowVisualization";
