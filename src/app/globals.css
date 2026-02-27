@@ -157,6 +157,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2rem 0;
 }
 
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 2rem 0;
+}
+
 /* Dark mode variants */
 .dark .blog-content h2,
 .dark .blog-content h3 {
@@ -192,4 +199,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark .blog-content hr {
   border-top-color: var(--color-dark-border);
+}
+
+.dark .blog-content img {
+  opacity: 0.9;
 }

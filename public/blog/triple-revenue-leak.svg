@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" fill="none">
+  <!-- Background -->
+  <rect width="800" height="340" rx="16" fill="#F0F6FA"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#1B2A4A">The Three Revenue Leaks</text>
+
+  <!-- Column 1: Billing Overhead (Navy) -->
+  <rect x="40" y="70" width="220" height="240" rx="12" fill="#ffffff" stroke="#1B2A4A" stroke-width="2"/>
+  <!-- Dollar icon -->
+  <circle cx="150" cy="122" r="32" fill="#1B2A4A" opacity="0.1"/>
+  <text x="150" y="133" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="28" fill="#1B2A4A">$</text>
+  <!-- Label -->
+  <text x="150" y="180" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#1B2A4A">Billing Overhead</text>
+  <!-- Stat -->
+  <text x="150" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#1B2A4A">4-10%</text>
+  <text x="150" y="236" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#6B7280">of collections lost to</text>
+  <text x="150" y="254" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#6B7280">outsourced billing fees</text>
+  <!-- Source -->
+  <text x="150" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9CA3AF">AMA, 2024</text>
+
+  <!-- Column 2: Claim Denials (Coral) -->
+  <rect x="290" y="70" width="220" height="240" rx="12" fill="#ffffff" stroke="#E8614D" stroke-width="2"/>
+  <!-- X icon -->
+  <circle cx="400" cy="122" r="32" fill="#E8614D" opacity="0.1"/>
+  <text x="400" y="135" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="30" fill="#E8614D">!</text>
+  <!-- Label -->
+  <text x="400" y="180" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#E8614D">Claim Denials</text>
+  <!-- Stat -->
+  <text x="400" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#E8614D">11.8%</text>
+  <text x="400" y="236" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#6B7280">average denial rate,</text>
+  <text x="400" y="254" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#6B7280">$25-$118 rework per claim</text>
+  <!-- Source -->
+  <text x="400" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9CA3AF">Experian Health, 2025</text>
+
+  <!-- Column 3: Undercoding (Teal) -->
+  <rect x="540" y="70" width="220" height="240" rx="12" fill="#ffffff" stroke="#2E86AB" stroke-width="2"/>
+  <!-- Down arrow icon -->
+  <circle cx="650" cy="122" r="32" fill="#2E86AB" opacity="0.1"/>
+  <path d="M640 115 L650 130 L660 115" stroke="#2E86AB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="650" y1="108" x2="650" y2="128" stroke="#2E86AB" stroke-width="3" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="650" y="180" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#2E86AB">Undercoding</text>
+  <!-- Stat -->
+  <text x="650" y="212" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#2E86AB">$30K+</text>
+  <text x="650" y="236" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#6B7280">per provider per year</text>
+  <text x="650" y="254" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#6B7280">in lost revenue</text>
+  <!-- Source -->
+  <text x="650" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9CA3AF">AAFP, 2023</text>
+</svg>

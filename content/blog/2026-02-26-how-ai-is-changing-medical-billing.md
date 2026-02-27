@@ -15,6 +15,8 @@ featured: true
 
 Small medical practices lose an estimated 15-20% of their revenue to billing errors, denied claims, and undercoding. AI medical billing tools are emerging as a serious answer to this problem — but the path forward is not as simple as subscribing to a cloud platform and hoping for the best. The technology matters. Where it runs matters more.
 
+![The three revenue leaks draining small medical practices](/blog/triple-revenue-leak.svg)
+
 ## The Billing Crisis Small Practices Face
 
 The administrative burden of billing has reached a tipping point that threatens the financial viability of independent medicine. According to the American Medical Association, administrative costs consume an average of 15.5% of net patient revenue across all practice sizes. For solo practitioners, billing-specific costs can reach 10.9% of collections (AMA, 2024 Practice Benchmark Survey). When you account for outsourced billing fees — which typically range from 4-10% of collections depending on specialty and volume — the math gets even worse for small practices that lack the patient volume to negotiate favorable rates.
@@ -100,6 +102,8 @@ Not all AI medical billing tools deliver equal results. The implementation model
 ## The Security Question
 
 Before any practice adopts an AI billing system, there is a question that deserves more attention than it typically receives: where does the data go?
+
+![Cloud billing vs on-premise AI comparison](/blog/cloud-vs-onpremise.svg)
 
 Medical billing data is among the most sensitive information in healthcare. It contains the complete patient record — diagnoses, procedures, medications, insurance details, Social Security numbers, and financial information. A billing system processes every patient encounter the practice generates. Compromising a billing system means compromising the entire patient population.
 

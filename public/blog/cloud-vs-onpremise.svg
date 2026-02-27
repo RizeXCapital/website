@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" fill="none">
+  <!-- Background -->
+  <rect width="800" height="380" rx="16" fill="#F0F6FA"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#1B2A4A">Where Does Your Patient Data Go?</text>
+
+  <!-- Left Panel: Cloud (Coral/Warning) -->
+  <rect x="30" y="65" width="355" height="290" rx="12" fill="#ffffff" stroke="#E8614D" stroke-width="2"/>
+  <rect x="30" y="65" width="355" height="48" rx="12" fill="#E8614D"/>
+  <rect x="30" y="95" width="355" height="18" fill="#E8614D"/>
+  <text x="207" y="96" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#ffffff">Cloud-Based Billing</text>
+
+  <!-- Cloud icon -->
+  <path d="M175 165 C175 148 190 135 208 135 C212 125 225 118 240 120 C255 118 268 128 268 142 C280 142 290 152 290 165 C290 178 280 188 268 188 L175 188 C163 188 153 178 153 165 Z" fill="#E8614D" opacity="0.12" stroke="#E8614D" stroke-width="1.5"/>
+
+  <!-- Data flowing out arrows -->
+  <line x1="208" y1="195" x2="208" y2="225" stroke="#E8614D" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="203,225 208,235 213,225" fill="#E8614D"/>
+
+  <line x1="178" y1="200" x2="155" y2="230" stroke="#E8614D" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="149,227 153,237 160,228" fill="#E8614D"/>
+
+  <line x1="238" y1="200" x2="261" y2="230" stroke="#E8614D" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="256,228 263,237 267,227" fill="#E8614D"/>
+
+  <!-- External servers label -->
+  <text x="208" y="256" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#6B7280">PHI sent to external servers</text>
+
+  <!-- Warning icon -->
+  <circle cx="208" cy="290" r="18" fill="#E8614D" opacity="0.12"/>
+  <text x="208" y="297" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#E8614D">!</text>
+
+  <!-- Risk labels -->
+  <text x="208" y="326" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#E8614D">Single point of failure</text>
+  <text x="208" y="344" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#6B7280">192.7M records breached in 2024</text>
+
+  <!-- Right Panel: On-Premise (Teal/Safe) -->
+  <rect x="415" y="65" width="355" height="290" rx="12" fill="#ffffff" stroke="#2E86AB" stroke-width="2"/>
+  <rect x="415" y="65" width="355" height="48" rx="12" fill="#2E86AB"/>
+  <rect x="415" y="95" width="355" height="18" fill="#2E86AB"/>
+  <text x="592" y="96" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="16" fill="#ffffff">On-Premise AI</text>
+
+  <!-- Building icon -->
+  <rect x="565" y="140" width="54" height="52" rx="4" fill="#2E86AB" opacity="0.12" stroke="#2E86AB" stroke-width="1.5"/>
+  <rect x="574" y="150" width="10" height="10" rx="1" fill="#2E86AB" opacity="0.3"/>
+  <rect x="600" y="150" width="10" height="10" rx="1" fill="#2E86AB" opacity="0.3"/>
+  <rect x="574" y="168" width="10" height="10" rx="1" fill="#2E86AB" opacity="0.3"/>
+  <rect x="600" y="168" width="10" height="10" rx="1" fill="#2E86AB" opacity="0.3"/>
+  <!-- Door -->
+  <rect x="586" y="176" width="12" height="16" rx="1" fill="#2E86AB" opacity="0.5"/>
+
+  <!-- Circular arrows (data stays inside) -->
+  <path d="M555 174 A40 40 0 0 1 570 138" stroke="#2E86AB" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <polygon points="567,138 575,138 570,130" fill="#2E86AB"/>
+
+  <path d="M630 174 A40 40 0 0 0 615 138" stroke="#2E86AB" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <polygon points="618,138 610,138 615,130" fill="#2E86AB"/>
+
+  <!-- Data stays label -->
+  <text x="592" y="216" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#6B7280">PHI never leaves the building</text>
+
+  <!-- Shield icon -->
+  <path d="M592 240 L574 250 L574 268 C574 282 592 294 592 294 C592 294 610 282 610 268 L610 250 Z" fill="#2E86AB" opacity="0.12" stroke="#2E86AB" stroke-width="1.5"/>
+  <!-- Checkmark inside shield -->
+  <polyline points="583,266 589,274 602,258" stroke="#2E86AB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Safety labels -->
+  <text x="592" y="318" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#2E86AB">Air-gapped processing</text>
+  <text x="592" y="336" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#6B7280">Zero external attack surface</text>
+
+  <!-- VS divider -->
+  <circle cx="400" cy="210" r="20" fill="#1B2A4A"/>
+  <text x="400" y="216" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="14" fill="#ffffff">VS</text>
+</svg>
