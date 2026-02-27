@@ -50,7 +50,8 @@ const founders = [
     name: "Faizan G. Arif, MD",
     role: "Chief Executive Officer",
     image: "/FaizMD.jpeg",
-    imageClassName: "object-[46%_top]",
+    imageStyle: {} as React.CSSProperties,
+    imageObjectPosition: "40% top",
     credential:
       "Board-Certified Emergency Medicine Physician | Founder & CEO, ArifMED INC | Principal Investigator",
     bio: "Faizan is a board-certified Emergency Medicine physician who has worked in some of the highest-volume emergency departments in the country, including Kings County (140,000+ annual visits), NYC Elmhurst (Level 1 Trauma, 120,000+), and Mount Sinai. He founded ArifMED INC, a physician-led services company managing contracted coverage, credentialing, scheduling, compliance, and concierge care. As PI and Site Medical Lead at Clinilabs, he brings GCP-aligned research rigor, audit readiness, and sponsor-facing execution.",
@@ -62,7 +63,9 @@ const founders = [
   {
     name: "Navid M. Rahman, PE",
     role: "Chief Operating Officer",
-    image: "",
+    image: "/NavidHeadshot.jpeg",
+    imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
+    imageObjectPosition: "43% 35%",
     credential:
       "Professional Engineer (NJ, NY, PA) | 15+ Years Bridge & Infrastructure | Procurement & Regulated Project Leadership",
     bio: "Navid is a Professional Engineer licensed in three states with over 15 years leading bridge replacement, rehabilitation, inspection, and load rating programs. He coordinates multi-million-dollar infrastructure projects with NJDOT, NYSDOT, NJTA, PANYNJ, PennDOT, DRPA, and DRJTBC — navigating procurement paths, regulatory standards, and multi-stakeholder approvals that define complex regulated work.",
@@ -75,7 +78,8 @@ const founders = [
     name: "Ghulam Shah",
     role: "Chief Technology Officer",
     image: "/GhulamPhoto.jpg",
-    imageClassName: "scale-[1.8] origin-top object-[center_20%]",
+    imageStyle: { transform: "scale(1.8)", transformOrigin: "46% top" } as React.CSSProperties,
+    imageObjectPosition: "46% 20%",
     credential:
       "Enterprise Data & AI Operator | M.S. Data Science | Snowflake, ML, Workflow Automation",
     bio: "Ghulam is an enterprise data and AI operator currently serving as Lead Data Analyst at National Grid, where he runs enablement and adoption for a Snowflake-backed Electric Data Platform. He built workflow automation (Power Apps + Power Automate) that moved safety compliance from 60% to 93%, and develops applied ML forecasting models for operational risk prevention. Prior experience includes billion-record data migration at Apple Finance and regulated compliance SaaS at RELX.",
@@ -177,13 +181,16 @@ export default function About() {
                 <div className="flex shrink-0 items-center justify-center">
                   {founder.image ? (
                     <div className="h-48 w-48 overflow-hidden rounded-2xl dark:ring-1 dark:ring-dark-border">
-                      <Image
-                        src={founder.image}
-                        alt={founder.name}
-                        width={384}
-                        height={384}
-                        className={`h-full w-full object-cover ${founder.imageClassName || ""}`}
-                      />
+                      <div className="h-full w-full" style={founder.imageStyle}>
+                        <Image
+                          src={founder.image}
+                          alt={founder.name}
+                          width={384}
+                          height={384}
+                          className="h-full w-full object-cover"
+                          style={{ objectPosition: founder.imageObjectPosition }}
+                        />
+                      </div>
                     </div>
                   ) : (
                     <div className="h-48 w-48 rounded-2xl bg-ice dark:bg-dark-surface" />

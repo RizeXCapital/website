@@ -436,7 +436,8 @@ export default function Home() {
                 role: "Chief Executive Officer",
                 credential: "Physician | AI-Clinical Strategist",
                 image: "/FaizMD.jpeg",
-                imageClassName: "object-[46%_top]",
+                imageStyle: {} as React.CSSProperties,
+                imageObjectPosition: "40% top",
                 description:
                   "The clinical visionary behind RizeX. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
               },
@@ -444,7 +445,9 @@ export default function Home() {
                 name: "Navid M. Rahman, PE",
                 role: "Chief Operating Officer",
                 credential: "Licensed PE | Regulated Project Leader",
-                image: "",
+                image: "/NavidHeadshot.jpeg",
+                imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
+                imageObjectPosition: "43% 35%",
                 description:
                   "The operational backbone of RizeX. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
               },
@@ -453,7 +456,8 @@ export default function Home() {
                 role: "Chief Technology Officer",
                 credential: "AI Architect | Data Strategist",
                 image: "/GhulamPhoto.jpg",
-                imageClassName: "scale-[1.8] origin-top object-[center_20%]",
+                imageStyle: { transform: "scale(1.8)", transformOrigin: "46% top" } as React.CSSProperties,
+                imageObjectPosition: "46% 20%",
                 description:
                   "The technical force behind RizeX. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
               },
@@ -464,13 +468,16 @@ export default function Home() {
               >
                 {founder.image ? (
                   <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
-                    <Image
-                      src={founder.image}
-                      alt={founder.name}
-                      width={256}
-                      height={256}
-                      className={`h-full w-full object-cover ${founder.imageClassName || ""}`}
-                    />
+                    <div className="h-full w-full" style={founder.imageStyle}>
+                      <Image
+                        src={founder.image}
+                        alt={founder.name}
+                        width={256}
+                        height={256}
+                        className="h-full w-full object-cover"
+                        style={{ objectPosition: founder.imageObjectPosition }}
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
