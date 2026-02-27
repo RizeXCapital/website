@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
+import FaqItem from "@/components/FaqItem";
 
 export const metadata: Metadata = {
   title: "Security & HIPAA — Sovereign RCM",
@@ -191,36 +192,11 @@ export default function Security() {
           </p>
           <div className="mt-12 space-y-4">
             {faqs.map((faq) => (
-              <details
+              <FaqItem
                 key={faq.question}
-                className="group rounded-xl border border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
-              >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-bold text-navy dark:text-white [&::-webkit-details-marker]:hidden">
-                  <span>{faq.question}</span>
-                  <span
-                    className="shrink-0 text-teal transition-transform group-open:rotate-45 dark:text-teal-dark"
-                    aria-hidden="true"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 4V16M4 10H16"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                </summary>
-                <div className="px-6 pb-6 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {faq.answer}
-                </div>
-              </details>
+                question={faq.question}
+                answer={faq.answer}
+              />
             ))}
           </div>
           <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
