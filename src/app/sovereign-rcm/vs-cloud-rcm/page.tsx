@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionDivider from "@/components/SectionDivider";
+import FaqItem from "@/components/FaqItem";
+import Tooltip from "@/components/Tooltip";
 
 export const metadata: Metadata = {
   title: "On-Premise AI vs. Cloud SaaS Billing — Sovereign RCM",
@@ -42,51 +44,61 @@ const cloudProblems = [
 const comparisonRows = [
   {
     category: "Data Location",
+    tooltip: "Where patient records and billing data are physically stored and processed",
     sovereign: "On-premise appliance in your facility",
     cloud: "Vendor-managed cloud servers",
   },
   {
     category: "PHI Transmission",
+    tooltip: "Whether protected health information travels over external networks to reach the billing system",
     sovereign: "None — data never leaves the building",
     cloud: "Transmitted over internet to vendor infrastructure",
   },
   {
     category: "Breach Exposure",
+    tooltip: "The scope of damage if the billing system or its vendor is compromised",
     sovereign: "Limited to your physical facility",
     cloud: "Vendor breach exposes all clients simultaneously",
   },
   {
     category: "Cost Model",
+    tooltip: "How you pay for the billing system — one-time purchase vs. ongoing fees",
     sovereign: "One-time capital expenditure — you own it",
     cloud: "Recurring % of collections or per-provider monthly fee",
   },
   {
     category: "5-Year Total Cost",
+    tooltip: "Cumulative spend over five years including all fees, subscriptions, and maintenance",
     sovereign: "Fixed hardware cost, no ongoing subscription",
     cloud: "$120K–$300K+ for a 5-provider practice",
   },
   {
     category: "Data Ownership",
+    tooltip: "Who controls access to your billing data, claim history, and payer configurations",
     sovereign: "You own the hardware and all data on it",
     cloud: "Vendor controls data access, export, and retention",
   },
   {
     category: "Vendor Dependency",
+    tooltip: "Whether your billing operations continue if the vendor has issues",
     sovereign: "Appliance operates independently after deployment",
     cloud: "Platform outage halts your billing operations",
   },
   {
     category: "Internet Required",
+    tooltip: "Whether the system needs an active internet connection to process claims",
     sovereign: "No — fully air-gapped inference",
     cloud: "Yes — internet outage stops all billing",
   },
   {
     category: "BAA Complexity",
+    tooltip: "The chain of Business Associate Agreements required to stay HIPAA-compliant",
     sovereign: "Simplified — PHI stays under your direct control",
     cloud: "Multi-party BAA chain with vendor subprocessors",
   },
   {
     category: "Switching Cost",
+    tooltip: "The financial and operational cost of moving to a different billing system",
     sovereign: "Data stays on your hardware in standard formats",
     cloud: "$50K–$250K+ in migration and retraining",
   },
@@ -204,7 +216,7 @@ export default function VsCloudRCM() {
           </p>
 
           {/* Desktop Table */}
-          <div className="mt-12 hidden overflow-hidden rounded-xl border border-gray-300 dark:border-dark-border md:block">
+          <div className="mt-12 hidden rounded-xl border border-gray-300 dark:border-dark-border md:block">
             <table className="w-full text-left">
               <thead>
                 <tr className="bg-navy text-white">
@@ -230,7 +242,11 @@ export default function VsCloudRCM() {
                     }
                   >
                     <td className="px-6 py-4 font-heading text-sm font-bold text-navy dark:text-white">
-                      {row.category}
+                      {row.tooltip ? (
+                        <Tooltip text={row.tooltip}>{row.category}</Tooltip>
+                      ) : (
+                        row.category
+                      )}
                     </td>
                     <td className="px-6 py-4 text-sm text-charcoal dark:text-dark-text">
                       {row.sovereign}
@@ -252,7 +268,11 @@ export default function VsCloudRCM() {
                 className="rounded-xl border border-gray-300 bg-white p-5 dark:border-dark-border dark:bg-dark-elevated"
               >
                 <p className="font-heading text-sm font-bold uppercase tracking-wide text-navy dark:text-white">
-                  {row.category}
+                  {row.tooltip ? (
+                    <Tooltip text={row.tooltip}>{row.category}</Tooltip>
+                  ) : (
+                    row.category
+                  )}
                 </p>
                 <div className="mt-3 space-y-2">
                   <div>
@@ -576,36 +596,11 @@ export default function VsCloudRCM() {
           </p>
           <div className="mt-12 space-y-4">
             {faqs.map((faq) => (
-              <details
+              <FaqItem
                 key={faq.question}
-                className="group rounded-xl border border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
-              >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-heading text-base font-bold text-navy dark:text-white [&::-webkit-details-marker]:hidden">
-                  <span>{faq.question}</span>
-                  <span
-                    className="shrink-0 text-teal transition-transform group-open:rotate-45 dark:text-teal-dark"
-                    aria-hidden="true"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 4V16M4 10H16"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                </summary>
-                <div className="px-6 pb-6 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                  {faq.answer}
-                </div>
-              </details>
+                question={faq.question}
+                answer={faq.answer}
+              />
             ))}
           </div>
           <p className="mt-8 text-sm text-charcoal-light dark:text-gray-400">
