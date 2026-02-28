@@ -33,6 +33,9 @@ const authorBios: Record<string, { role: string; bio: string }> = {
 // Static Params + Dynamic Metadata
 // ---------------------------------------------------------------------------
 
+// Revalidate every 60s so Vercel's CDN picks up new deploys promptly
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
