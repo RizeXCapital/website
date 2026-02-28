@@ -7,6 +7,19 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/blog/:slug*",
+        headers: [
+          {
+            key: "CDN-Cache-Control",
+            value: "no-store",
+          },
+          {
+            key: "Vercel-CDN-Cache-Control",
+            value: "no-store",
+          },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
