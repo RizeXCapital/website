@@ -282,16 +282,6 @@ export default function PilotProgram() {
               entire time — we prove value before you transition anything.
             </p>
           </FadeIn>
-          <AnimatedPipeline
-            className="mt-12"
-            steps={[
-              { label: "Discovery", sub: "Weeks 1–2", type: "input" },
-              { label: "Shadow Mode", sub: "Weeks 3–8", type: "agent" },
-              { label: "Comparison", sub: "Weeks 9–10", type: "agent" },
-              { label: "Decision Point", sub: "Weeks 11–12", type: "output" },
-            ]}
-          />
-
           <AnimatedTimeline phases={phases} className="mt-12" />
         </div>
       </section>
@@ -445,6 +435,7 @@ export default function PilotProgram() {
                 </h3>
                 <AnimatedPipeline
                   compact
+                  staticBorders
                   className="mt-5"
                   steps={[
                     { label: "50% Deposit", sub: "Reserve slot + provision hardware" },

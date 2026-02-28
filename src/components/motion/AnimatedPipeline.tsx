@@ -30,6 +30,8 @@ interface AnimatedPipelineProps {
   className?: string;
   /** Smaller nodes for dense pipelines (e.g. the 6-step sovereign-rcm overview) */
   compact?: boolean;
+  /** Disable beam trace and glow animations, keep only entrance animations */
+  staticBorders?: boolean;
 }
 
 const STEP_STAGGER = 0.25;
@@ -47,6 +49,16 @@ const PULSE_POOL = [
   { duration: 2.8, delay: 1.2, anim: "pulse-steady" },
 ];
 
+/** Ambient glow timing — each box gets a unique breathing rhythm. */
+const GLOW_POOL = [
+  { duration: 3.0, delay: 0 },
+  { duration: 3.8, delay: 0.6 },
+  { duration: 2.6, delay: 1.2 },
+  { duration: 4.0, delay: 0.3 },
+  { duration: 3.4, delay: 0.9 },
+  { duration: 2.8, delay: 1.5 },
+];
+
 function inferType(index: number, total: number): "input" | "agent" | "output" {
   if (index === 0) return "input";
   if (index === total - 1) return "output";
@@ -62,23 +74,48 @@ function StepNode({
   index,
   total,
   compact,
+  revealTotal,
+  staticBorders,
 }: {
   step: PipelineStep;
   index: number;
   total: number;
   compact: boolean;
+  revealTotal: number;
+  staticBorders: boolean;
 }) {
   const type = step.type ?? inferType(index, total);
-  const borderColor =
-    type === "agent"
-      ? "border-teal dark:border-teal-dark"
-      : "border-navy dark:border-dark-border";
+  const isAgent = type === "agent";
+  const borderColor = isAgent
+    ? "border-teal dark:border-teal-dark"
+    : "border-navy dark:border-dark-border";
 
   const pad = compact ? "px-4 py-3" : "px-5 py-4";
   const labelSize = compact ? "text-sm" : "text-base";
   const subSize = compact ? "text-xs" : "text-sm";
   const badgeSize = compact ? "text-[10px]" : "text-xs";
   const gap = compact ? "mt-0.5" : "mt-1";
+
+  const glow = GLOW_POOL[index % GLOW_POOL.length];
+  const glowAnim = isAgent ? "pl-glow-teal" : "pl-glow-navy";
+  const beamNavy = isAgent ? "" : "pl-beam--navy";
+
+  const content = (
+    <>
+      <span className={`text-center font-bold text-navy dark:text-white ${labelSize}`}>
+        {step.label}
+      </span>
+      {step.sub ? (
+        <span className={`${gap} text-center text-charcoal-light dark:text-gray-400 ${subSize}`}>
+          {step.sub}
+        </span>
+      ) : (
+        <span className={`${gap} font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 ${badgeSize}`}>
+          {type === "input" ? "Input" : type === "output" ? "Output" : "AI Agent"}
+        </span>
+      )}
+    </>
+  );
 
   return (
     <motion.div
@@ -94,20 +131,32 @@ function StepNode({
           },
         },
       }}
-      className={`relative flex flex-col items-center justify-center rounded-xl border-2 bg-white shadow-sm dark:bg-dark-elevated ${pad} ${borderColor}`}
       style={{ minWidth: compact ? "9rem" : "10.5rem" }}
     >
-      <span className={`text-center font-bold text-navy dark:text-white ${labelSize}`}>
-        {step.label}
-      </span>
-      {step.sub ? (
-        <span className={`${gap} text-center text-charcoal-light dark:text-gray-400 ${subSize}`}>
-          {step.sub}
-        </span>
+      {staticBorders ? (
+        <div
+          className={`relative flex flex-col items-center justify-center rounded-xl border-2 bg-white shadow-sm dark:bg-dark-elevated ${pad} ${borderColor}`}
+        >
+          {content}
+        </div>
       ) : (
-        <span className={`${gap} font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 ${badgeSize}`}>
-          {type === "input" ? "Input" : type === "output" ? "Output" : "AI Agent"}
-        </span>
+        <div
+          className={`pl-beam ${beamNavy}`}
+          data-seq={index}
+          style={{
+            animationName: glowAnim,
+            animationDuration: `${glow.duration}s`,
+            animationTimingFunction: "ease-in-out",
+            animationIterationCount: "infinite",
+            animationDelay: `${revealTotal + glow.delay}s`,
+          }}
+        >
+          <div
+            className={`pl-beam-inner relative flex flex-col items-center justify-center border-2 bg-white shadow-sm dark:bg-dark-elevated ${pad} ${borderColor}`}
+          >
+            {content}
+          </div>
+        </div>
       )}
     </motion.div>
   );
@@ -169,7 +218,7 @@ function HLine({ index, revealTotal }: { index: number; revealTotal: number }) {
         className="h-px w-full origin-left bg-teal/25 dark:bg-teal-dark/25"
       />
       <span
-        className="absolute left-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-teal/60 dark:bg-teal-dark/60"
+        className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-teal/60 dark:bg-teal-dark/60"
         style={{
           opacity: 0,
           animationName: `${pulse.anim}-h`,
@@ -227,6 +276,7 @@ export function AnimatedPipeline({
   steps = DEFAULT_STEPS,
   className = "mt-12",
   compact = false,
+  staticBorders = false,
 }: AnimatedPipelineProps) {
   const prefersReduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -261,6 +311,34 @@ export function AnimatedPipeline({
         </div>
       </div>
     );
+  }
+
+  /* ── Dynamic CSS for beam sequencing ─────────────────────────── */
+  const beamDuration = 4; // seconds per box rotation
+  const cycleDuration = steps.length * beamDuration;
+
+  let seqKeyframes = "";
+  let seqRules = "";
+  for (let i = 0; i < steps.length; i++) {
+    const onStart = ((i * beamDuration) / cycleDuration) * 100;
+    const onEnd = (((i + 1) * beamDuration) / cycleDuration) * 100;
+    const fadeIn = onStart + (onEnd - onStart) * 0.2;
+    const fadeOut = onStart + (onEnd - onStart) * 0.7;
+    seqKeyframes += `
+        @keyframes pl-seq-${i}-of-${steps.length} {
+          0% { opacity: 0; }
+          ${onStart}% { opacity: 0; }
+          ${fadeIn}% { opacity: 1; }
+          ${fadeOut}% { opacity: 1; }
+          ${onEnd}% { opacity: 0; }
+          100% { opacity: 0; }
+        }`;
+    seqRules += `
+        .pl-beam[data-seq="${i}"]::before {
+          animation:
+            pl-spin ${beamDuration}s linear infinite ${revealTotal}s,
+            pl-seq-${i}-of-${steps.length} ${cycleDuration}s linear infinite ${revealTotal}s;
+        }`;
   }
 
   /* ── Animated pipeline ────────────────────────────────────────── */
@@ -298,6 +376,106 @@ export function AnimatedPipeline({
           92%  { opacity: 0.45; }
           100% { top: calc(100% - 0.5rem); opacity: 0; }
         }
+
+        /* ── Ambient glow ──────────────────────────────────────── */
+        @keyframes pl-glow-teal {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(46, 134, 171, 0); }
+          50%      { box-shadow: 0 0 12px 2px rgba(46, 134, 171, 0.25); }
+        }
+        @keyframes pl-glow-navy {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(27, 42, 74, 0); }
+          50%      { box-shadow: 0 0 12px 2px rgba(27, 42, 74, 0.2); }
+        }
+        .dark .pl-beam {
+          animation-name: pl-glow-teal-dark !important;
+        }
+        .dark .pl-beam--navy {
+          animation-name: pl-glow-navy-dark !important;
+        }
+        @keyframes pl-glow-teal-dark {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(91, 172, 204, 0); }
+          50%      { box-shadow: 0 0 14px 3px rgba(91, 172, 204, 0.3); }
+        }
+        @keyframes pl-glow-navy-dark {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(45, 63, 94, 0); }
+          50%      { box-shadow: 0 0 14px 3px rgba(45, 63, 94, 0.35); }
+        }
+
+        /* ── Traveling beam wrapper ────────────────────────────── */
+        .pl-beam {
+          position: relative;
+          overflow: hidden;
+          padding: 2px;
+          border-radius: 12px;
+        }
+        .pl-beam::before {
+          content: "";
+          position: absolute;
+          inset: -50%;
+          background: conic-gradient(
+            from 270deg,
+            rgba(46, 134, 171, 0.9) 0deg,
+            rgba(46, 134, 171, 1) 5deg,
+            rgba(46, 134, 171, 0.9) 20deg,
+            transparent 20deg,
+            transparent 360deg
+          );
+          opacity: 0;
+          z-index: 0;
+        }
+        .pl-beam--navy::before {
+          background: conic-gradient(
+            from 270deg,
+            rgba(27, 42, 74, 0.8) 0deg,
+            rgba(27, 42, 74, 1) 5deg,
+            rgba(27, 42, 74, 0.8) 20deg,
+            transparent 20deg,
+            transparent 360deg
+          );
+        }
+        .dark .pl-beam::before {
+          background: conic-gradient(
+            from 270deg,
+            rgba(91, 172, 204, 0.9) 0deg,
+            rgba(91, 172, 204, 1) 5deg,
+            rgba(91, 172, 204, 0.9) 20deg,
+            transparent 20deg,
+            transparent 360deg
+          ) !important;
+        }
+        .dark .pl-beam--navy::before {
+          background: conic-gradient(
+            from 270deg,
+            rgba(45, 63, 94, 0.8) 0deg,
+            rgba(45, 63, 94, 1) 5deg,
+            rgba(45, 63, 94, 0.8) 20deg,
+            transparent 20deg,
+            transparent 360deg
+          ) !important;
+        }
+
+        .pl-beam-inner {
+          position: relative;
+          z-index: 1;
+          border-radius: 10px;
+          background: white;
+        }
+        .dark .pl-beam-inner {
+          background: var(--color-dark-elevated);
+        }
+
+        @keyframes pl-spin {
+          0%   { transform: rotate(0deg); }
+          8%   { transform: rotate(20deg); }
+          44%  { transform: rotate(255deg); }
+          56%  { transform: rotate(285deg); }
+          92%  { transform: rotate(500deg); }
+          100% { transform: rotate(520deg); }
+        }
+
+        /* ── Dynamic beam sequencing ───────────────────────────── */
+        ${seqKeyframes}
+        ${seqRules}
       `}</style>
 
       <motion.div
@@ -311,7 +489,7 @@ export function AnimatedPipeline({
         <div className="hidden items-center justify-center md:flex">
           {steps.map((step, i) => (
             <div key={step.label} className="flex items-center">
-              <StepNode step={step} index={i} total={steps.length} compact={compact} />
+              <StepNode step={step} index={i} total={steps.length} compact={compact} revealTotal={revealTotal} staticBorders={staticBorders} />
               {i < steps.length - 1 && <HLine index={i} revealTotal={revealTotal} />}
             </div>
           ))}
@@ -321,7 +499,7 @@ export function AnimatedPipeline({
         <div className="flex flex-col items-center md:hidden">
           {steps.map((step, i) => (
             <div key={step.label} className="flex flex-col items-center">
-              <StepNode step={step} index={i} total={steps.length} compact={compact} />
+              <StepNode step={step} index={i} total={steps.length} compact={compact} revealTotal={revealTotal} staticBorders={staticBorders} />
               {i < steps.length - 1 && <VLine index={i} revealTotal={revealTotal} />}
             </div>
           ))}

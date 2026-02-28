@@ -559,6 +559,7 @@ export default function Pricing() {
                 </h3>
                 <AnimatedPipeline
                   compact
+                  staticBorders
                   className="mt-5"
                   steps={[
                     { label: "50% Deposit", sub: "Reserve slot + provision hardware" },

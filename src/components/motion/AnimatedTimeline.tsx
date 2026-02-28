@@ -89,19 +89,6 @@ function StaticTimeline({ phases, className }: AnimatedTimelineProps) {
                   )}
                 </div>
 
-                {/* Desktop center node */}
-                <div className="absolute left-1/2 top-1 hidden -translate-x-1/2 md:flex">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy font-heading text-sm font-bold text-white shadow-md dark:bg-teal">
-                    {phase.number}
-                  </div>
-                </div>
-
-                {/* Horizontal connector */}
-                <div
-                  className={`absolute top-5 hidden h-px bg-teal/25 dark:bg-teal-dark/25 md:block ${
-                    isLeft ? "right-1/2 mr-5 w-8" : "left-1/2 ml-5 w-8"
-                  }`}
-                />
 
                 {/* Mobile layout */}
                 <div className="md:hidden">
@@ -290,48 +277,6 @@ export function AnimatedTimeline({
                   )}
                 </div>
 
-                {/* Desktop center node */}
-                <motion.div
-                  variants={{
-                    hidden: { scale: 0, opacity: 0 },
-                    visible: {
-                      scale: 1,
-                      opacity: 1,
-                      transition: {
-                        duration: 0.3,
-                        delay: nodeDelay,
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20,
-                      },
-                    },
-                  }}
-                  className="absolute left-1/2 top-1 hidden -translate-x-1/2 md:flex"
-                >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy font-heading text-sm font-bold text-white shadow-md dark:bg-teal">
-                    {phase.number}
-                  </div>
-                </motion.div>
-
-                {/* Horizontal connector */}
-                <motion.div
-                  variants={{
-                    hidden: { scaleX: 0 },
-                    visible: {
-                      scaleX: 1,
-                      transition: {
-                        duration: 0.25,
-                        delay: nodeDelay + 0.15,
-                        ease: "easeOut",
-                      },
-                    },
-                  }}
-                  className={`absolute top-5 hidden h-px bg-teal/25 dark:bg-teal-dark/25 md:block ${
-                    isLeft
-                      ? "right-1/2 mr-5 w-8 origin-right"
-                      : "left-1/2 ml-5 w-8 origin-left"
-                  }`}
-                />
 
                 {/* Mobile layout */}
                 <motion.div
