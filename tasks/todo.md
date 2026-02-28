@@ -1,4 +1,4 @@
-# RizeX Capital — Task Tracker
+# Sovereign RCM — Task Tracker
 
 > Plan first. Execute with discipline. Verify before marking done.
 

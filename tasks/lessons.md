@@ -1,4 +1,4 @@
-# RizeX Capital — Lessons Learned
+# Sovereign RCM — Lessons Learned
 
 > Every correction is a pattern. Capture it. Never repeat it.
 

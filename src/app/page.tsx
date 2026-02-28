@@ -498,7 +498,7 @@ export default function Home() {
                 imageStyle: {} as React.CSSProperties,
                 imageObjectPosition: "40% top",
                 description:
-                  "The clinical visionary behind RizeX. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
+                  "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
               },
               {
                 name: "Navid M. Rahman, PE",
@@ -508,7 +508,7 @@ export default function Home() {
                 imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
                 imageObjectPosition: "43% 35%",
                 description:
-                  "The operational backbone of RizeX. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
+                  "The operational backbone of Sovereign RCM. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
               },
               {
                 name: "Ghulam Shah",
@@ -518,7 +518,7 @@ export default function Home() {
                 imageStyle: { transform: "scale(1.8)", transformOrigin: "46% top" } as React.CSSProperties,
                 imageObjectPosition: "46% 20%",
                 description:
-                  "The technical force behind RizeX. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
+                  "The technical force behind Sovereign RCM. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
               },
             ].map((founder) => (
               <StaggerItem key={founder.name}>

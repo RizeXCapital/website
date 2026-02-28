@@ -17,11 +17,11 @@ import SectionDivider from "@/components/SectionDivider";
 const authorBios: Record<string, { role: string; bio: string }> = {
   "Ghulam Shah": {
     role: "Chief Technology Officer",
-    bio: "AI architect and data strategist at RizeX Capital. Ghulam has built enterprise data platforms at scale, led ML forecasting models, and turns complex AI into production-grade products.",
+    bio: "AI architect and data strategist at Sovereign RCM. Ghulam has built enterprise data platforms at scale, led ML forecasting models, and turns complex AI into production-grade products.",
   },
   "Faizan G. Arif, MD": {
     role: "Chief Executive Officer",
-    bio: "Board-certified EM physician and the clinical visionary behind RizeX. Faizan has coded, billed, and fought denials from the bedside at the highest-volume EDs in the country.",
+    bio: "Board-certified EM physician and the clinical visionary behind Sovereign RCM. Faizan has coded, billed, and fought denials from the bedside at the highest-volume EDs in the country.",
   },
   "Navid M. Rahman, PE": {
     role: "Chief Operating Officer",
@@ -50,7 +50,7 @@ export async function generateMetadata({
   if (!post) return { title: "Post Not Found" };
 
   return {
-    title: `${post.title} | RizeX Capital Blog`,
+    title: `${post.title} | Sovereign RCM Blog`,
     description: post.excerpt,
     keywords: post.keywords,
     openGraph: {
@@ -104,7 +104,7 @@ export default async function BlogPost({
     },
     publisher: {
       "@type": "Organization",
-      name: "RizeX Capital",
+      name: "Sovereign RCM",
       url: "https://rizexcapital.com",
     },
     description: post.excerpt,

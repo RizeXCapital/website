@@ -30,10 +30,10 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <span className="font-heading text-lg font-bold tracking-tight">
-              RizeX Capital
+              Sovereign RCM
             </span>
             <p className="mt-3 text-sm leading-relaxed text-gray-300">
-              Where Alignment Becomes Power
+              Your Billing. Your Building. Your Data.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-gray-300">
               Princeton, NJ
@@ -65,7 +65,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-center text-sm text-gray-300">
-            &copy; {new Date().getFullYear()} RizeX Capital. All rights reserved.
+            &copy; {new Date().getFullYear()} Sovereign RCM. All rights reserved.
           </p>
         </div>
       </div>

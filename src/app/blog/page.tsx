@@ -11,13 +11,13 @@ import SectionDivider from "@/components/SectionDivider";
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedHero } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Blog — AI Medical Billing Insights | RizeX Capital",
+  title: "Blog — AI Medical Billing Insights | Sovereign RCM",
   description:
-    "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the RizeX Capital team.",
+    "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the Sovereign RCM team.",
   openGraph: {
-    title: "Blog — AI Medical Billing Insights | RizeX Capital",
+    title: "Blog — AI Medical Billing Insights | Sovereign RCM",
     description:
-      "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the RizeX Capital team.",
+      "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the Sovereign RCM team.",
     url: "https://rizexcapital.com/blog",
   },
 };
@@ -45,7 +45,7 @@ export default async function Blog({
         <div className="mx-auto max-w-7xl text-center">
           <FadeIn>
             <h1 className="font-heading text-4xl font-bold text-white sm:text-5xl">
-              RizeX Blog
+              Blog
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>

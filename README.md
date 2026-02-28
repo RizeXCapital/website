@@ -1,14 +1,14 @@
-# RizeX Capital — Website
+# Sovereign RCM — Website
 
-**Where Alignment Becomes Power**
+**Your Billing. Your Building. Your Data.**
 
-The official website for RizeX Capital — a disciplined AI product company based in Princeton, NJ. Our flagship product, Sovereign RCM, is an on-premise AI billing appliance for medical practices.
+The official website for Sovereign RCM — an on-premise AI billing appliance for medical practices, based in Princeton, NJ.
 
 ---
 
-## About RizeX Capital
+## About Sovereign RCM
 
-RizeX Capital operates a hub-and-spoke model. The hub provides strategic alignment, shared infrastructure, and capital deployment. Each spoke is an independent venture unified by a shared philosophy.
+Sovereign RCM is an on-premise AI billing appliance that lives inside your practice. It drafts compliant claims, catches undercoding, and builds audit-ready evidence packs — without patient data ever leaving the building.
 
 | Venture | Product | Status |
 |---------|---------|--------|

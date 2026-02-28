@@ -23,16 +23,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "RizeX Capital | Where Alignment Becomes Power",
-    template: "%s | RizeX Capital",
+    default: "Sovereign RCM | Your Billing. Your Building. Your Data.",
+    template: "%s | Sovereign RCM",
   },
   description:
-    "RizeX Capital is a disciplined AI product company. Our flagship, Sovereign RCM, is an on-premise AI billing appliance for medical practices. Princeton, NJ.",
+    "Sovereign RCM is an on-premise AI billing appliance for medical practices. Your billing stays in your building. Princeton, NJ.",
   keywords: [
     "AI medical billing",
     "on-premise medical billing AI",
     "Sovereign RCM",
-    "RizeX Capital",
     "Princeton NJ",
     "HIPAA compliant AI",
   ],
@@ -57,11 +56,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "RizeX Capital",
+              name: "Sovereign RCM",
               url: "https://rizexcapital.vercel.app",
               logo: "https://rizexcapital.vercel.app/logo.png",
               description:
-                "RizeX Capital is a disciplined AI product company. Our flagship, Sovereign RCM, is an on-premise AI billing appliance for medical practices.",
+                "Sovereign RCM is an on-premise AI billing appliance for medical practices. Your billing stays in your building.",
               foundingLocation: {
                 "@type": "Place",
                 name: "Princeton, NJ",

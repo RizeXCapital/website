@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "About — Founders & Philosophy",
   description:
-    "RizeX Capital is a disciplined collective of three founders built on shared principles of alignment, discipline, and long-term thinking. Princeton, NJ.",
+    "Meet the team behind Sovereign RCM — three founders built on shared principles of alignment, discipline, and long-term thinking. Princeton, NJ.",
 };
 
 const pillars = [
@@ -63,7 +63,7 @@ const founders = [
       "Board-Certified Emergency Medicine Physician | Founder & CEO, ArifMED INC | Principal Investigator",
     bio: "Faizan is a board-certified Emergency Medicine physician who has worked in some of the highest-volume emergency departments in the country, including Kings County (140,000+ annual visits), NYC Elmhurst (Level 1 Trauma, 120,000+), and Mount Sinai. He founded ArifMED INC, a physician-led services company managing contracted coverage, credentialing, scheduling, compliance, and concierge care. As PI and Site Medical Lead at Clinilabs, he brings GCP-aligned research rigor, audit readiness, and sponsor-facing execution.",
     impact:
-      "Faizan brings the clinical domain authority that makes Sovereign RCM possible — he understands medical billing, coding complexity, denial patterns, and documentation requirements from the bedside. His applied AI workflow experience bridges clinical operations and technology implementation.",
+      "Faizan brings the clinical domain authority that makes Sovereign RCM possible. He understands medical billing, coding complexity, denial patterns, and documentation requirements from the bedside. His applied AI workflow experience bridges clinical operations and technology implementation.",
     awards:
       "ED Physician of the Year | Patient Care Experience Champion | Outstanding Leadership Award | MD, American University of the Caribbean; BA, Rutgers | English, Urdu, Hindi, Spanish",
   },
@@ -77,7 +77,7 @@ const founders = [
       "Professional Engineer (NJ, NY, PA) | 15+ Years Bridge & Infrastructure | Procurement & Regulated Project Leadership",
     bio: "Navid is a Professional Engineer licensed in three states with over 15 years leading bridge replacement, rehabilitation, inspection, and load rating programs. He coordinates multi-million-dollar infrastructure projects with NJDOT, NYSDOT, NJTA, PANYNJ, PennDOT, DRPA, and DRJTBC — navigating procurement paths, regulatory standards, and multi-stakeholder approvals that define complex regulated work.",
     impact:
-      "Navid brings regulated project management at scale to RizeX. His experience with design approvals, contractor coordination, and procurement in safety-critical environments translates directly to Sovereign RCM's implementation process — hardware deployment, compliance documentation, and structured rollout playbooks. He also founded Navigator's Watches, LLC.",
+      "Navid brings regulated project management at scale to Sovereign RCM. His experience with design approvals, contractor coordination, and procurement in safety-critical environments translates directly to Sovereign RCM's implementation process: hardware deployment, compliance documentation, and structured rollout playbooks. He also founded Navigator's Watches, LLC.",
     awards:
       "PE (NJ, NY, PA) | NBIS Inspection | LRFR Training | OSHA 10 | English, Urdu, Hindi",
   },
@@ -91,7 +91,7 @@ const founders = [
       "Enterprise Data & AI Operator | M.S. Data Science | Snowflake, ML, Workflow Automation",
     bio: "Ghulam is an enterprise data and AI operator currently serving as Lead Data Analyst at National Grid, where he runs enablement and adoption for a Snowflake-backed Electric Data Platform. He built workflow automation (Power Apps + Power Automate) that moved safety compliance from 60% to 93%, and develops applied ML forecasting models for operational risk prevention. Prior experience includes billion-record data migration at Apple Finance and regulated compliance SaaS at RELX.",
     impact:
-      "Ghulam is the technical architect behind RizeX's AI products. His experience building enterprise data platforms, ML models, and workflow automation — combined with regulated environments, data governance, and adoption-first design — makes him the builder who translates Sovereign RCM from concept to deployed product. Led teams up to 42 people; $2M+ B2B revenue at Apple.",
+      "Ghulam is the technical architect behind Sovereign RCM. His experience building enterprise data platforms, ML models, and workflow automation, combined with regulated environments, data governance, and adoption-first design, makes him the builder who translates Sovereign RCM from concept to deployed product. Led teams up to 42 people; $2M+ B2B revenue at Apple.",
     awards:
       "60%→93% compliance | 384 hrs/yr saved | $2M+ revenue | 17% productivity gain",
   },
@@ -106,14 +106,15 @@ export default function About() {
           <div className="max-w-3xl">
             <FadeIn>
               <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                Built on Alignment, Discipline, and Long-Term Thinking
+                The Team Behind Sovereign RCM
               </h1>
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300">
-                RizeX Capital is a disciplined collective of three founders. We
-                operate a hub-and-spoke model: RizeX Capital is the hub, and each
-                venture is an independent spoke unified by a shared philosophy.
+                Sovereign RCM was built by three founders who believe medical
+                billing belongs inside your building, not in the cloud. We
+                combine clinical expertise, engineering discipline, and
+                operational rigor to deliver AI that practices actually own.
               </p>
             </FadeIn>
           </div>

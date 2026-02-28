@@ -113,7 +113,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="font-heading text-xl font-bold tracking-tight text-navy dark:text-white">
-            RizeX Capital
+            Sovereign RCM
           </span>
         </Link>
 

@@ -307,7 +307,7 @@ export default function Contact() {
                   Based in Princeton, NJ
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                  RizeX Capital serves practices across Central New
+                  Sovereign RCM serves practices across Central New
                   Jersey and beyond. Sovereign RCM deploys on-site at your
                   practice — wherever you are.
                 </p>

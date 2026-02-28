@@ -138,7 +138,7 @@ export async function POST(req: NextRequest) {
     `;
 
     await transporter.sendMail({
-      from: `"RizeX Capital" <${process.env.SMTP_USER}>`,
+      from: `"Sovereign RCM" <${process.env.SMTP_USER}>`,
       to: FOUNDERS.join(", "),
       replyTo: replyToEmail,
       subject: `Contact Form: ${subjectName}${subjectPractice ? ` — ${subjectPractice}` : ""}`,

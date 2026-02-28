@@ -107,7 +107,7 @@ const faqCategories = [
       {
         question: "Who has access to our data on the appliance?",
         answer:
-          "Only your authorized staff. RizeX has zero standing access to the appliance or any data on it. During the initial installation and 90-day pilot, our engineering team works on-site or via a temporary, monitored connection that you control and can revoke at any time. After deployment, the appliance operates independently.",
+          "Only your authorized staff. Our team has zero standing access to the appliance or any data on it. During the initial installation and 90-day pilot, our engineering team works on-site or via a temporary, monitored connection that you control and can revoke at any time. After deployment, the appliance operates independently.",
       },
       {
         question:
