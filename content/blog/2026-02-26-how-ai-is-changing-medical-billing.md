@@ -173,3 +173,4 @@ If you're evaluating AI billing solutions for your practice, we'd like to talk.
 7. American Medical Association. *Change Healthcare Cyberattack: Impact on Patients and Providers.* AMA, 2024.
 8. UnitedHealth Group. *Quarterly Report (10-Q), Q3 2024.* SEC Filing, 2024.
 9. Brookings Institution. *The Potential for AI to Reduce Healthcare Administrative Costs.* Brookings, 2024.
+
