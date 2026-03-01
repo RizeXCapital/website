@@ -332,7 +332,7 @@ export default function FAQ() {
                 href="/contact"
                 className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
               >
-                Get in Touch
+                Request a Billing Analysis
               </Link>
             </div>
           </div>
