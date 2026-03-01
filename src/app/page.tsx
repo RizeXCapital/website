@@ -419,11 +419,11 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <div className="mx-auto mt-12 max-w-4xl overflow-x-auto">
-              <div className="overflow-hidden rounded-xl border border-gray-300 dark:border-dark-border">
+              <div className="rounded-xl border border-gray-300 dark:border-dark-border">
                 <table className="w-full min-w-[600px] text-center">
                   <thead>
                     <tr className="bg-navy dark:bg-navy-light">
-                      <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-white">
+                      <th className="sticky left-0 z-10 bg-navy px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-white shadow-[2px_0_4px_-1px_rgba(0,0,0,0.1)] dark:bg-navy-light">
                         Feature
                       </th>
                       <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-gray-300">
@@ -453,7 +453,13 @@ export default function Home() {
                             : "bg-ice dark:bg-dark-surface"
                         }
                       >
-                        <td className="px-6 py-4 font-medium text-navy dark:text-white">
+                        <td
+                          className={`sticky left-0 z-10 px-6 py-4 font-medium text-navy shadow-[2px_0_4px_-1px_rgba(0,0,0,0.1)] dark:text-white ${
+                            i % 2 === 0
+                              ? "bg-white dark:bg-dark-elevated"
+                              : "bg-ice dark:bg-dark-surface"
+                          }`}
+                        >
                           {row[0]}
                         </td>
                         <td className="px-6 py-4 text-charcoal-light dark:text-gray-400">
@@ -508,7 +514,7 @@ export default function Home() {
                 imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
                 imageObjectPosition: "43% 35%",
                 description:
-                  "The operational backbone of Sovereign RCM. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
+                  <>The operational backbone of Sovereign RCM.<br />15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.</>,
               },
               {
                 name: "Ghulam Shah",

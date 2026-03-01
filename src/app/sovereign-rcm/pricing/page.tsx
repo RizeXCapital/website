@@ -447,11 +447,11 @@ export default function Pricing() {
 
           {/* Desktop Table */}
           <FadeIn delay={0.2}>
-            <div className="mt-12 hidden overflow-hidden rounded-xl border border-gray-300 dark:border-dark-border md:block">
-              <table className="w-full text-left">
+            <div className="mt-12 overflow-x-auto rounded-xl border border-gray-300 dark:border-dark-border">
+              <table className="w-full min-w-[600px] text-left">
                 <thead>
                   <tr className="bg-navy">
-                    <th className="w-[30%] px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white">
+                    <th className="sticky left-0 z-10 w-[30%] bg-navy px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white shadow-[2px_0_4px_-1px_rgba(0,0,0,0.1)]">
                       Feature
                     </th>
                     <th className="px-6 py-4 text-center font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
@@ -475,7 +475,13 @@ export default function Pricing() {
                           : "bg-ice dark:bg-dark-surface"
                       }
                     >
-                      <td className="px-6 py-4 font-heading text-sm font-bold text-navy dark:text-white">
+                      <td
+                        className={`sticky left-0 z-10 px-6 py-4 font-heading text-sm font-bold text-navy shadow-[2px_0_4px_-1px_rgba(0,0,0,0.1)] dark:text-white ${
+                          i % 2 === 0
+                            ? "bg-white dark:bg-dark-bg"
+                            : "bg-ice dark:bg-dark-surface"
+                        }`}
+                      >
                         {row.feature}
                       </td>
                       <td className="px-6 py-4 text-center">
@@ -494,41 +500,6 @@ export default function Pricing() {
             </div>
           </FadeIn>
 
-          {/* Mobile Stacked Cards */}
-          <FadeIn delay={0.2}>
-            <div className="mt-12 space-y-4 md:hidden">
-              {featureRows.map((row) => (
-                <div
-                  key={row.feature}
-                  className="rounded-xl border border-gray-300 bg-white p-5 dark:border-dark-border dark:bg-dark-elevated"
-                >
-                  <p className="font-heading text-sm font-bold text-navy dark:text-white">
-                    {row.feature}
-                  </p>
-                  <div className="mt-3 grid grid-cols-3 gap-3">
-                    <div className="text-center">
-                      <p className="text-xs font-medium uppercase tracking-wide text-charcoal-light dark:text-gray-400">
-                        SR-1
-                      </p>
-                      <div className="mt-1">{renderCell(row.sr1)}</div>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-xs font-medium uppercase tracking-wide text-teal dark:text-teal-dark">
-                        SR-2
-                      </p>
-                      <div className="mt-1">{renderCell(row.sr2)}</div>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-xs font-medium uppercase tracking-wide text-charcoal-light dark:text-gray-400">
-                        SR-3
-                      </p>
-                      <div className="mt-1">{renderCell(row.sr3)}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
         </div>
       </section>
 
