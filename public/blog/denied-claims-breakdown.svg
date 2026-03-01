@@ -1,0 +1,66 @@
+<svg width="800" height="380" viewBox="0 0 800 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="380" rx="16" fill="#F0F6FA"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#1B2A4A" text-anchor="middle">What Happens to 100 Denied Claims</text>
+  <text x="400" y="62" font-family="system-ui, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">Industry average outcome based on AHIMA and Premier Inc. data</text>
+
+  <!-- Starting block -->
+  <rect x="300" y="85" width="200" height="50" rx="10" fill="#1B2A4A"/>
+  <text x="400" y="116" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="white" text-anchor="middle">100 Claims Denied</text>
+
+  <!-- Arrow down splitting into two -->
+  <line x1="400" y1="135" x2="400" y2="155" stroke="#1B2A4A" stroke-width="2"/>
+  <line x1="400" y1="155" x2="220" y2="155" stroke="#E8614D" stroke-width="2"/>
+  <line x1="400" y1="155" x2="580" y2="155" stroke="#2E86AB" stroke-width="2"/>
+  <line x1="220" y1="155" x2="220" y2="175" stroke="#E8614D" stroke-width="2"/>
+  <line x1="580" y1="155" x2="580" y2="175" stroke="#2E86AB" stroke-width="2"/>
+  <!-- Arrowheads -->
+  <polygon points="220,175 215,168 225,168" fill="#E8614D"/>
+  <polygon points="580,175 575,168 585,168" fill="#2E86AB"/>
+
+  <!-- Left: Never resubmitted (65%) -->
+  <rect x="100" y="178" width="240" height="80" rx="10" fill="white" stroke="#E8614D" stroke-width="2"/>
+  <text x="220" y="205" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#E8614D" text-anchor="middle">65</text>
+  <text x="220" y="225" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1B2A4A" text-anchor="middle">Never Resubmitted</text>
+  <text x="220" y="245" font-family="system-ui, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">Written off as lost revenue</text>
+
+  <!-- Right: Reworked (35%) -->
+  <rect x="460" y="178" width="240" height="80" rx="10" fill="white" stroke="#2E86AB" stroke-width="2"/>
+  <text x="580" y="205" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#2E86AB" text-anchor="middle">35</text>
+  <text x="580" y="225" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1B2A4A" text-anchor="middle">Reworked / Appealed</text>
+  <text x="580" y="245" font-family="system-ui, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">Avg 3 rounds, 45-60 days each</text>
+
+  <!-- Arrow from left to bottom-left (permanent loss) -->
+  <line x1="220" y1="258" x2="220" y2="282" stroke="#E8614D" stroke-width="2"/>
+  <polygon points="220,282 215,275 225,275" fill="#E8614D"/>
+
+  <!-- Arrow from right splitting to two bottom outcomes -->
+  <line x1="580" y1="258" x2="580" y2="272" stroke="#2E86AB" stroke-width="2"/>
+  <line x1="580" y1="272" x2="490" y2="272" stroke="#2E86AB" stroke-width="1.5"/>
+  <line x1="580" y1="272" x2="670" y2="272" stroke="#1B2A4A" stroke-width="1.5"/>
+  <line x1="490" y1="272" x2="490" y2="282" stroke="#2E86AB" stroke-width="1.5"/>
+  <line x1="670" y1="272" x2="670" y2="282" stroke="#1B2A4A" stroke-width="1.5"/>
+  <polygon points="490,282 485,275 495,275" fill="#2E86AB"/>
+  <polygon points="670,282 665,275 675,275" fill="#1B2A4A"/>
+
+  <!-- Bottom row: three outcomes -->
+
+  <!-- Permanently lost (65) -->
+  <rect x="100" y="285" width="240" height="60" rx="10" fill="#E8614D" opacity="0.1" stroke="#E8614D" stroke-width="1"/>
+  <text x="220" y="312" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#E8614D" text-anchor="middle">$487,500 Lost</text>
+  <text x="220" y="332" font-family="system-ui, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">65% of $750K denied (5-provider practice)</text>
+
+  <!-- Recovered (~18) -->
+  <rect x="380" y="285" width="220" height="60" rx="10" fill="#2E86AB" opacity="0.1" stroke="#2E86AB" stroke-width="1"/>
+  <text x="490" y="312" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#2E86AB" text-anchor="middle">~18 Recovered</text>
+  <text x="490" y="332" font-family="system-ui, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">After costly rework</text>
+
+  <!-- Lost after rework (~17) -->
+  <rect x="610" y="285" width="120" height="60" rx="10" fill="#1B2A4A" opacity="0.08" stroke="#1B2A4A" stroke-width="1"/>
+  <text x="670" y="312" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1B2A4A" text-anchor="middle">~17 Lost</text>
+  <text x="670" y="332" font-family="system-ui, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">After appeal</text>
+
+  <!-- Source -->
+  <text x="400" y="370" font-family="system-ui, sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">Sources: AHIMA, Premier Inc. 2023 National Claims Adjudication Survey</text>
+</svg>

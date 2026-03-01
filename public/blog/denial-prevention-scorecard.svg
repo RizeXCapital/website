@@ -1,0 +1,54 @@
+<svg width="800" height="340" viewBox="0 0 800 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="340" rx="16" fill="#1B2A4A"/>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">Payer AI vs. Practice Response</text>
+
+  <!-- Left side: Payer AI -->
+  <g transform="translate(40, 60)">
+    <rect x="0" y="0" width="340" height="240" rx="12" fill="#E8614D" opacity="0.08" stroke="#E8614D" stroke-width="1"/>
+    <text x="170" y="30" font-family="system-ui, sans-serif" font-size="11" fill="#E8614D" text-anchor="middle" letter-spacing="1.5" font-weight="600">PAYER SIDE</text>
+
+    <rect x="20" y="48" width="300" height="50" rx="8" fill="#1F3355" opacity="0.8"/>
+    <text x="36" y="70" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#E8614D">71%</text>
+    <text x="105" y="70" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">of insurers use AI for</text>
+    <text x="105" y="88" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">utilization management</text>
+
+    <rect x="20" y="108" width="300" height="50" rx="8" fill="#1F3355" opacity="0.8"/>
+    <text x="36" y="130" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#E8614D">16x</text>
+    <text x="105" y="130" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">higher denial rate with</text>
+    <text x="105" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">AI vs. human review</text>
+
+    <rect x="20" y="168" width="300" height="50" rx="8" fill="#1F3355" opacity="0.8"/>
+    <text x="36" y="190" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#E8614D">56%</text>
+    <text x="105" y="190" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">increase in MA denials</text>
+    <text x="105" y="208" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">from 2022 to 2023</text>
+  </g>
+
+  <!-- Center arrow -->
+  <text x="400" y="186" font-family="system-ui, sans-serif" font-size="20" fill="#5BACCC" text-anchor="middle" opacity="0.5">vs</text>
+
+  <!-- Right side: Practice defense -->
+  <g transform="translate(420, 60)">
+    <rect x="0" y="0" width="340" height="240" rx="12" fill="#2E86AB" opacity="0.08" stroke="#2E86AB" stroke-width="1"/>
+    <text x="170" y="30" font-family="system-ui, sans-serif" font-size="11" fill="#2E86AB" text-anchor="middle" letter-spacing="1.5" font-weight="600">PRACTICE DEFENSE</text>
+
+    <rect x="20" y="48" width="300" height="50" rx="8" fill="#1F3355" opacity="0.8"/>
+    <text x="36" y="70" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#2E86AB">95%+</text>
+    <text x="125" y="70" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">clean-claim rate target</text>
+    <text x="125" y="88" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">(best-in-class benchmark)</text>
+
+    <rect x="20" y="108" width="300" height="50" rx="8" fill="#1F3355" opacity="0.8"/>
+    <text x="36" y="130" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#2E86AB">90%</text>
+    <text x="105" y="130" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">of denials are preventable</text>
+    <text x="105" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">with pre-submission scrubbing</text>
+
+    <rect x="20" y="168" width="300" height="50" rx="8" fill="#1F3355" opacity="0.8"/>
+    <text x="36" y="190" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#2E86AB">83%</text>
+    <text x="105" y="190" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">of PA appeals overturned</text>
+    <text x="105" y="208" font-family="system-ui, sans-serif" font-size="12" fill="#8BA4C4">when actually challenged</text>
+  </g>
+
+  <!-- Source -->
+  <text x="400" y="325" font-family="system-ui, sans-serif" font-size="9" fill="#5BACCC" opacity="0.35" text-anchor="middle">Sources: HFMA 2025, 2024 Senate Report, AHA 2024, Advisory Board, AMA 2024</text>
+</svg>

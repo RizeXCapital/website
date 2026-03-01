@@ -1,0 +1,73 @@
+<svg width="800" height="420" viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" rx="16" fill="#1B2A4A"/>
+
+  <!-- Title -->
+  <text x="400" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">Annual Denial Impact: 5-Provider Practice at 10% Denial Rate</text>
+
+  <!-- Waterfall bars -->
+
+  <!-- Bar 1: Gross Revenue -->
+  <g transform="translate(60, 70)">
+    <rect x="0" y="0" width="120" height="220" rx="8" fill="#2E86AB" opacity="0.25"/>
+    <rect x="0" y="0" width="120" height="220" rx="8" fill="none" stroke="#2E86AB" stroke-width="1.5"/>
+    <text x="60" y="112" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle">$7.5M</text>
+    <text x="60" y="134" font-family="system-ui, sans-serif" font-size="11" fill="#8BA4C4" text-anchor="middle">Gross Revenue</text>
+    <text x="60" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#5BACCC" opacity="0.6" text-anchor="middle">Starting</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="195" y1="180" x2="220" y2="180" stroke="#5BACCC" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="220,180 214,176 214,184" fill="#5BACCC" opacity="0.4"/>
+
+  <!-- Bar 2: Denied Claims -->
+  <g transform="translate(230, 70)">
+    <rect x="0" y="154" width="120" height="66" rx="8" fill="#E8614D" opacity="0.3"/>
+    <rect x="0" y="154" width="120" height="66" rx="8" fill="none" stroke="#E8614D" stroke-width="1.5"/>
+    <text x="60" y="192" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#E8614D" text-anchor="middle">$750K</text>
+    <text x="60" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" opacity="0.7" text-anchor="middle">10% Denied</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="365" y1="255" x2="390" y2="255" stroke="#5BACCC" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="390,255 384,251 384,259" fill="#5BACCC" opacity="0.4"/>
+
+  <!-- Bar 3: Never Resubmitted -->
+  <g transform="translate(400, 70)">
+    <rect x="0" y="176" width="120" height="44" rx="8" fill="#E8614D" opacity="0.5"/>
+    <rect x="0" y="176" width="120" height="44" rx="8" fill="none" stroke="#E8614D" stroke-width="1.5"/>
+    <text x="60" y="204" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">$488K</text>
+    <text x="60" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" opacity="0.7" text-anchor="middle">65% Written Off</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="535" y1="255" x2="560" y2="255" stroke="#5BACCC" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="560,255 554,251 554,259" fill="#5BACCC" opacity="0.4"/>
+
+  <!-- Bar 4: Rework + Lost Appeals -->
+  <g transform="translate(570, 70)">
+    <rect x="0" y="202" width="120" height="18" rx="6" fill="#E8614D" opacity="0.35"/>
+    <rect x="0" y="202" width="120" height="18" rx="6" fill="none" stroke="#E8614D" stroke-width="1"/>
+    <text x="60" y="216" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">$131K</text>
+    <text x="60" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" opacity="0.7" text-anchor="middle">Lost After Rework</text>
+  </g>
+
+  <!-- Plus rework costs -->
+  <text x="695" y="215" font-family="system-ui, sans-serif" font-size="14" fill="#5BACCC" opacity="0.5" text-anchor="middle">+</text>
+
+  <!-- Bar 5: Admin costs -->
+  <g transform="translate(710, 70)">
+    <rect x="0" y="210" width="60" height="10" rx="5" fill="#E8614D" opacity="0.3"/>
+    <rect x="0" y="210" width="60" height="10" rx="5" fill="none" stroke="#E8614D" stroke-width="1"/>
+    <text x="30" y="206" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8614D" text-anchor="middle">$43K</text>
+    <text x="30" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#E8614D" opacity="0.7" text-anchor="middle">Rework Cost</text>
+  </g>
+
+  <!-- Bottom summary bar -->
+  <rect x="60" y="310" width="710" height="70" rx="12" fill="#E8614D" opacity="0.12" stroke="#E8614D" stroke-width="1"/>
+
+  <text x="400" y="340" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Total Annual Revenue Lost to Denials</text>
+  <text x="400" y="367" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#E8614D" text-anchor="middle">$662,000+</text>
+
+  <!-- Comparison callout -->
+  <text x="400" y="405" font-family="system-ui, sans-serif" font-size="12" fill="#5BACCC" opacity="0.5" text-anchor="middle">Cutting denial rate from 10% to 5% recovers roughly $300,000/year</text>
+</svg>
