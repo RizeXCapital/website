@@ -33,7 +33,7 @@ export default function Footer() {
               Sovereign RCM
             </span>
             <p className="mt-3 text-sm leading-relaxed text-gray-300">
-              Your Billing. Your Building. Your Data.
+              Your Billing. Your Building. Your Data
             </p>
             <p className="mt-4 text-sm leading-relaxed text-gray-300">
               Princeton, NJ
