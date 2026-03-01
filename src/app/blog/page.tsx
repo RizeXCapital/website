@@ -155,19 +155,19 @@ export default async function Blog({
                   </FadeIn>
                   {[
                     {
-                      title: "How Much Revenue Is Your Practice Losing to Claim Denials?",
-                      author: "Faizan G. Arif, MD",
-                      date: "March 2026",
-                    },
-                    {
                       title: "What the Change Healthcare Attack Means for Your Practice",
                       author: "Navid M. Rahman, PE",
-                      date: "Late March 2026",
+                      date: "Early March 2026",
                     },
                     {
                       title: "Building an Air-Gapped AI System for Medical Billing",
                       author: "Ghulam Shah",
-                      date: "April 2026",
+                      date: "Mid March 2026",
+                    },
+                    {
+                      title: "The Prior Authorization Problem: What Every Practice Owner Should Know",
+                      author: "Faizan G. Arif, MD",
+                      date: "Late March 2026",
                     },
                   ].map((upcoming) => (
                     <StaggerItem key={upcoming.title}>

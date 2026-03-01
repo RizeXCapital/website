@@ -14,16 +14,22 @@ import {
 
 const upcomingPosts = [
   {
-    title: "How Much Revenue Is Your Practice Losing to Claim Denials?",
-    author: "Faizan G. Arif, MD",
-    date: "March 2026",
-    image: "/blog/revenue-leak-funnel.svg",
-  },
-  {
     title: "What the Change Healthcare Attack Means for Your Practice",
     author: "Navid M. Rahman, PE",
-    date: "Late March 2026",
+    date: "Early March 2026",
     image: "/blog/cloud-vs-onpremise.svg",
+  },
+  {
+    title: "Building an Air-Gapped AI System for Medical Billing",
+    author: "Ghulam Shah",
+    date: "Mid March 2026",
+    image: "/blog/ai-billing-pipeline.svg",
+  },
+  {
+    title: "The Prior Authorization Problem: What Every Practice Owner Should Know",
+    author: "Faizan G. Arif, MD",
+    date: "Late March 2026",
+    image: "/blog/revenue-leak-funnel.svg",
   },
 ];
 
