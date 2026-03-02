@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   Company: [
@@ -26,12 +27,21 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-300 bg-navy text-white dark:border-dark-border dark:bg-[#080E1A]">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand column */}
           <div>
-            <span className="font-heading text-lg font-bold tracking-tight">
-              Sovereign RCM
-            </span>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/crown-logo.svg"
+                alt=""
+                width={28}
+                height={23}
+                className="h-6 w-auto"
+              />
+              <span className="font-heading text-lg font-bold tracking-tight">
+                Sovereign RCM
+              </span>
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-300">
               Your Billing. Your Building. Your Data
             </p>

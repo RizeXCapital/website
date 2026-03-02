@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
@@ -197,6 +198,14 @@ export default function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/crown-logo.svg"
+            alt=""
+            width={32}
+            height={27}
+            className="h-7 w-auto"
+            priority
+          />
           <span className="font-heading text-xl font-bold tracking-tight text-navy dark:text-white">
             Sovereign RCM
           </span>

@@ -520,7 +520,7 @@ export default function Home() {
                 imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
                 imageObjectPosition: "43% 35%",
                 description:
-                  <>The operational backbone of Sovereign RCM.<br />15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.</>,
+                  "The operational backbone of Sovereign RCM. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
               },
               {
                 name: "Ghulam Shah",

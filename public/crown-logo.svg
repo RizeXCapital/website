@@ -1,0 +1,78 @@
+<svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Metallic body — bright gold top to deep amber base -->
+    <linearGradient id="cg-b" x1="60" y1="8" x2="60" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#F7E57A" />
+      <stop offset="24%"  stop-color="#D9A818" />
+      <stop offset="60%"  stop-color="#B88010" />
+      <stop offset="100%" stop-color="#7A5008" />
+    </linearGradient>
+    <!-- Cylindrical band — mid-bright reflection stripe -->
+    <linearGradient id="cg-bd" x1="0" y1="64" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#8A6008" />
+      <stop offset="20%"  stop-color="#C49015" />
+      <stop offset="48%"  stop-color="#EDD040" />
+      <stop offset="76%"  stop-color="#C49015" />
+      <stop offset="100%" stop-color="#5A3805" />
+    </linearGradient>
+    <!-- Orb sphere — specular upper-left -->
+    <radialGradient id="cg-o" cx="34%" cy="28%" r="66%">
+      <stop offset="0%"   stop-color="#FFF2A8" />
+      <stop offset="38%"  stop-color="#D4A415" />
+      <stop offset="100%" stop-color="#7A5008" />
+    </radialGradient>
+    <!-- Drop shadow -->
+    <filter id="cg-f" x="-12%" y="-10%" width="124%" height="135%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#4A2A04" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Crown body — 5-arch smooth silhouette -->
+  <path
+    d="M 5 64
+       C 4 58, 3 52, 7 47
+       C 11 42, 17 61, 22 63
+       C 27 64, 26 42, 32 32
+       C 38 22, 40 56, 47 57
+       C 54 58, 54 22, 60 10
+       C 66 22, 66 58, 73 57
+       C 80 56, 82 22, 88 32
+       C 94 42, 93 64, 98 63
+       C 103 61, 109 42, 113 47
+       C 117 52, 116 58, 115 64
+       Z"
+    fill="url(#cg-b)"
+    filter="url(#cg-f)"
+  />
+  <!-- Gleam — soft highlight on upper-center body -->
+  <path
+    d="M 54 57 C 55 38, 58 18, 60 10 C 62 18, 65 38, 66 57 C 63 46, 60 22, 57 46 Z"
+    fill="white" opacity="0.14"
+  />
+
+  <!-- Base band -->
+  <path d="M 5 64 Q 60 61, 115 64 L 115 88 Q 60 93, 5 88 Z" fill="url(#cg-bd)" />
+  <!-- Band top edge line -->
+  <path d="M 5 64 Q 60 61, 115 64" fill="none" stroke="#F5E070" stroke-width="0.7" opacity="0.5" />
+  <!-- Horizontal reflection strip -->
+  <path d="M 10 74 Q 60 71, 110 74" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" opacity="0.42" />
+  <!-- Band bottom shadow -->
+  <ellipse cx="60" cy="89" rx="55" ry="5" fill="#3A2003" opacity="0.4" />
+
+  <!-- Orbs — graduated size: outer small → centre large -->
+  <!-- Far left -->
+  <circle cx="7"    cy="46"   r="5.5" fill="url(#cg-o)" />
+  <circle cx="5.4"  cy="44.5" r="1.6" fill="white" opacity="0.36" />
+  <!-- Near left -->
+  <circle cx="32"   cy="31"   r="6.5" fill="url(#cg-o)" />
+  <circle cx="30.2" cy="29.3" r="2"   fill="white" opacity="0.36" />
+  <!-- Centre -->
+  <circle cx="60"   cy="9"    r="7.8" fill="url(#cg-o)" />
+  <circle cx="57.8" cy="7"    r="2.4" fill="white" opacity="0.38" />
+  <!-- Near right -->
+  <circle cx="88"   cy="31"   r="6.5" fill="url(#cg-o)" />
+  <circle cx="86.2" cy="29.3" r="2"   fill="white" opacity="0.36" />
+  <!-- Far right -->
+  <circle cx="113"  cy="46"   r="5.5" fill="url(#cg-o)" />
+  <circle cx="111.4" cy="44.5" r="1.6" fill="white" opacity="0.36" />
+</svg>
