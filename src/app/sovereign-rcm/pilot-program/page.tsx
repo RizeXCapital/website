@@ -7,7 +7,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  HoverCard,
   AnimatedPipeline,
   AnimatedTimeline,
 } from "@/components/motion";
@@ -303,7 +302,7 @@ export default function PilotProgram() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {metrics.map((metric) => (
               <StaggerItem key={metric.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 text-center dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 text-center dark:border-dark-border dark:bg-dark-elevated">
                   <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
                     {metric.target}
                   </p>
@@ -313,7 +312,7 @@ export default function PilotProgram() {
                   <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {metric.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -392,7 +391,7 @@ export default function PilotProgram() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
             {shadowBenefits.map((benefit) => (
               <StaggerItem key={benefit.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div aria-hidden="true">{benefit.icon}</div>
                   <h3 className="mt-4 font-heading text-xl font-bold text-navy dark:text-white">
                     {benefit.title}
@@ -400,7 +399,7 @@ export default function PilotProgram() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {benefit.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

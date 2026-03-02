@@ -6,7 +6,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  HoverCard,
   AnimatedHero,
 } from "@/components/motion";
 
@@ -132,7 +131,7 @@ export default function About() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-5">
             {pillars.map((pillar) => (
               <StaggerItem key={pillar.number}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface">
+                <div className="h-full rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface">
                   <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
                     {pillar.number}
                   </p>
@@ -142,7 +141,7 @@ export default function About() {
                   <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {pillar.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

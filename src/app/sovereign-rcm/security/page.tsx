@@ -7,7 +7,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  HoverCard,
   DataFlowVisualization,
 } from "@/components/motion";
 
@@ -133,7 +132,7 @@ export default function Security() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {securityFeatures.map((feature) => (
               <StaggerItem key={feature.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <p className="text-3xl" aria-hidden="true">
                     {feature.icon}
                   </p>
@@ -143,7 +142,7 @@ export default function Security() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {feature.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

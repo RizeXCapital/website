@@ -387,7 +387,7 @@ export default function SovereignRCM() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {tripleLeaks.map((leak) => (
               <StaggerItem key={leak.title}>
-                <HoverCard className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div className="flex items-center gap-3">
                     {leak.icon}
                     <span className="text-xs font-semibold uppercase tracking-wider text-coral">
@@ -400,7 +400,7 @@ export default function SovereignRCM() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {leak.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -426,7 +426,7 @@ export default function SovereignRCM() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {agents.map((agent) => (
               <StaggerItem key={agent.name}>
-                <HoverCard className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   {agent.icon}
                   <h3 className="mt-4 font-heading text-lg font-bold text-navy dark:text-white">
                     {agent.name}
@@ -434,7 +434,7 @@ export default function SovereignRCM() {
                   <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {agent.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -461,7 +461,7 @@ export default function SovereignRCM() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {specialties.map((s) => (
               <StaggerItem key={s.name}>
-                <HoverCard className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div className="flex items-center gap-2.5">
                     {s.icon}
                     <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
@@ -471,7 +471,7 @@ export default function SovereignRCM() {
                   <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {s.fit}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -497,7 +497,7 @@ export default function SovereignRCM() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
             {differentiators.map((d) => (
               <StaggerItem key={d.title}>
-                <HoverCard className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   {d.icon}
                   <h3 className="mt-4 font-heading text-lg font-bold text-navy dark:text-white">
                     {d.title}
@@ -505,7 +505,7 @@ export default function SovereignRCM() {
                   <p className="mt-2 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {d.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

@@ -8,7 +8,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  HoverCard,
   AnimatedPipeline,
 } from "@/components/motion";
 
@@ -436,7 +435,7 @@ export default function HowItWorks() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {pipelineSteps.map((step) => (
               <StaggerItem key={step.number}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div className="flex items-center gap-4">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy font-heading text-lg font-bold text-white dark:bg-teal">
                       {step.number}
@@ -466,7 +465,7 @@ export default function HowItWorks() {
                       </p>
                     </div>
                   </div>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -501,7 +500,7 @@ export default function HowItWorks() {
                   </div>
                 </FadeIn>
                 <FadeIn direction={agent.direction === "left" ? "right" : "left"}>
-                  <HoverCard className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+                  <div className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
                     <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
                       Agent Specification
                     </h3>
@@ -538,7 +537,7 @@ export default function HowItWorks() {
                         </ul>
                       </div>
                     </div>
-                  </HoverCard>
+                  </div>
                 </FadeIn>
               </div>
             </div>
@@ -570,7 +569,7 @@ export default function HowItWorks() {
               </p>
             </FadeIn>
             <FadeIn direction="right">
-              <HoverCard className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+              <div className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
                 <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
                   Example Evidence Entry
                 </h3>
@@ -612,7 +611,7 @@ export default function HowItWorks() {
                     </p>
                   </div>
                 </div>
-              </HoverCard>
+              </div>
             </FadeIn>
           </div>
 
@@ -625,7 +624,7 @@ export default function HowItWorks() {
           <StaggerContainer className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
             {evidenceBenefits.map((benefit) => (
               <StaggerItem key={benefit.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div aria-hidden="true">{benefit.icon}</div>
                   <h4 className="mt-4 font-heading text-lg font-bold text-navy dark:text-white">
                     {benefit.title}
@@ -633,7 +632,7 @@ export default function HowItWorks() {
                   <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {benefit.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -656,7 +655,7 @@ export default function HowItWorks() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
             {deploymentItems.map((item) => (
               <StaggerItem key={item.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div aria-hidden="true">{item.icon}</div>
                   <h3 className="mt-4 font-heading text-lg font-bold text-navy dark:text-white">
                     {item.title}
@@ -664,7 +663,7 @@ export default function HowItWorks() {
                   <p className="mt-2 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {item.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

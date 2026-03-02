@@ -223,7 +223,7 @@ export default function Home() {
               },
             ].map((leak) => (
               <StaggerItem key={leak.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
+                <div className="h-full rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
                   <p className="font-heading text-4xl font-bold text-teal dark:text-teal-dark">
                     <CountUp
                       prefix={leak.statPrefix}
@@ -238,7 +238,7 @@ export default function Home() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {leak.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -387,16 +387,18 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href="/contact"
-                    className={`mt-auto block rounded-lg px-6 py-3 text-center text-sm font-medium transition-colors ${
-                      i === 1
-                        ? "bg-coral text-white hover:bg-coral-hover"
-                        : "border border-navy bg-navy text-white hover:bg-navy-light"
-                    }`}
-                  >
-                    Contact for Pricing
-                  </Link>
+                  <div className="mt-auto pt-8">
+                    <Link
+                      href="/contact"
+                      className={`block rounded-lg px-6 py-3 text-center text-sm font-medium transition-colors ${
+                        i === 1
+                          ? "bg-coral text-white hover:bg-coral-hover"
+                          : "border border-navy bg-navy text-white hover:bg-navy-light"
+                      }`}
+                    >
+                      Contact for Pricing
+                    </Link>
+                  </div>
                 </HoverCard>
               </StaggerItem>
             ))}
@@ -534,7 +536,7 @@ export default function Home() {
               },
             ].map((founder) => (
               <StaggerItem key={founder.name}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
                   {founder.image ? (
                     <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
                       <div className="h-full w-full" style={founder.imageStyle}>
@@ -565,7 +567,7 @@ export default function Home() {
                       {founder.description}
                     </p>
                   </div>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

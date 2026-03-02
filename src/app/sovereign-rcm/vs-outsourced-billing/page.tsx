@@ -7,7 +7,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  HoverCard,
   AnimatedComparisonTable,
 } from "@/components/motion";
 
@@ -211,7 +210,7 @@ export default function VsOutsourcedBilling() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {outsourcedProblems.map((problem) => (
               <StaggerItem key={problem.title}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <p className="text-3xl" aria-hidden="true">
                     {problem.icon}
                   </p>
@@ -221,7 +220,7 @@ export default function VsOutsourcedBilling() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {problem.description}
                   </p>
-                </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
