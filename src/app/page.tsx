@@ -37,7 +37,7 @@ function BlogPreviewSection() {
   const posts = getRecentPosts(3);
 
   return (
-    <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
+    <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
       <div className="mx-auto max-w-7xl">
         <FadeIn>
           <div className="text-center">
@@ -128,7 +128,7 @@ function BlogPreviewSection() {
           <div className="mt-10 text-center">
             <Link
               href="/blog"
-              className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+              className="text-lg font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
             >
               View All Posts &rarr;
             </Link>
@@ -489,96 +489,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Meet the Team */}
-      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <FadeIn>
-            <div className="text-center">
-              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-                Meet the Founders
-              </h2>
-              <p className="mx-auto mt-4 max-w-4xl text-lg text-charcoal-light dark:text-gray-300">
-                A physician who knows the problem. An engineer who builds the solution. A PE who executes at scale
-              </p>
-            </div>
-          </FadeIn>
-          <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              {
-                name: "Faizan G. Arif, MD",
-                role: "Chief Executive Officer",
-                credential: "Physician | AI-Clinical Strategist",
-                image: "/FaizMD.jpeg",
-                imageStyle: {} as React.CSSProperties,
-                imageObjectPosition: "40% top",
-                description:
-                  "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
-              },
-              {
-                name: "Navid M. Rahman, PE",
-                role: "Chief Operating Officer",
-                credential: "Licensed PE | Regulated Project Leader",
-                image: "/NavidHeadshot.jpeg",
-                imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
-                imageObjectPosition: "43% 35%",
-                description:
-                  "The operational backbone of Sovereign RCM. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
-              },
-              {
-                name: "Ghulam Shah",
-                role: "Chief Technology Officer",
-                credential: "AI Architect | Data Strategist",
-                image: "/GhulamPhoto.jpg",
-                imageStyle: { transform: "scale(1.8)", transformOrigin: "46% top" } as React.CSSProperties,
-                imageObjectPosition: "46% 20%",
-                description:
-                  "The technical force behind Sovereign RCM. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
-              },
-            ].map((founder) => (
-              <StaggerItem key={founder.name}>
-                <div className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
-                  {founder.image ? (
-                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
-                      <div className="h-full w-full" style={founder.imageStyle}>
-                        <Image
-                          src={founder.image}
-                          alt={founder.name}
-                          width={256}
-                          height={256}
-                          className="h-full w-full object-cover"
-                          style={{ objectPosition: founder.imageObjectPosition }}
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
-                  )}
-                  <div className="mt-6 text-center">
-                    <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
-                      {founder.name}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
-                      {founder.role}
-                    </p>
-                    <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                      {founder.credential}
-                    </p>
-                    <p className="mt-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                      {founder.description}
-                    </p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Divider: Meet the Team → Blog Preview */}
-      <SectionDivider variant="light" />
-
-      {/* 7. Blog Preview */}
+      {/* 6. Blog Preview */}
       <BlogPreviewSection />
+
+      <SectionDivider variant="light" />
 
       {/* 8. Final CTA */}
       <section className="bg-navy px-6 py-20 lg:py-24">

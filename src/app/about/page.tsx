@@ -55,44 +55,32 @@ const founders = [
   {
     name: "Faizan G. Arif, MD",
     role: "Chief Executive Officer",
+    credential: "Physician | AI-Clinical Strategist",
     image: "/FaizMD.jpeg",
     imageStyle: {} as React.CSSProperties,
     imageObjectPosition: "40% top",
-    credential:
-      "Board-Certified Emergency Medicine Physician | Founder & CEO, ArifMED INC | Principal Investigator",
-    bio: "Faizan is a board-certified Emergency Medicine physician who has worked in some of the highest-volume emergency departments in the country, including Kings County (140,000+ annual visits), NYC Elmhurst (Level 1 Trauma, 120,000+), and Mount Sinai. He founded ArifMED INC, a physician-led services company managing contracted coverage, credentialing, scheduling, compliance, and concierge care. As PI and Site Medical Lead at Clinilabs, he brings GCP-aligned research rigor, audit readiness, and sponsor-facing execution.",
-    impact:
-      "Faizan brings the clinical domain authority that makes Sovereign RCM possible. He understands medical billing, coding complexity, denial patterns, and documentation requirements from the bedside. His applied AI workflow experience bridges clinical operations and technology implementation.",
-    awards:
-      "ED Physician of the Year | Patient Care Experience Champion | Outstanding Leadership Award | MD, American University of the Caribbean; BA, Rutgers | English, Urdu, Hindi, Spanish",
+    description:
+      "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
   },
   {
     name: "Navid M. Rahman, PE",
     role: "Chief Operating Officer",
+    credential: "Licensed PE | Regulated Project Leader",
     image: "/NavidHeadshot.jpeg",
     imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
     imageObjectPosition: "43% 35%",
-    credential:
-      "Professional Engineer (NJ, NY, PA) | 15+ Years Bridge & Infrastructure | Procurement & Regulated Project Leadership",
-    bio: "Navid is a Professional Engineer licensed in three states with over 15 years leading bridge replacement, rehabilitation, inspection, and load rating programs. He coordinates multi-million-dollar infrastructure projects with NJDOT, NYSDOT, NJTA, PANYNJ, PennDOT, DRPA, and DRJTBC — navigating procurement paths, regulatory standards, and multi-stakeholder approvals that define complex regulated work.",
-    impact:
-      "Navid brings regulated project management at scale to Sovereign RCM. His experience with design approvals, contractor coordination, and procurement in safety-critical environments translates directly to Sovereign RCM's implementation process: hardware deployment, compliance documentation, and structured rollout playbooks. He also founded Navigator's Watches, LLC.",
-    awards:
-      "PE (NJ, NY, PA) | NBIS Inspection | LRFR Training | OSHA 10 | English, Urdu, Hindi",
+    description:
+      "The operational backbone of Sovereign RCM. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
   },
   {
     name: "Ghulam Shah",
     role: "Chief Technology Officer",
+    credential: "AI Architect | Data Strategist",
     image: "/GhulamPhoto.jpg",
     imageStyle: { transform: "scale(1.8)", transformOrigin: "46% top" } as React.CSSProperties,
     imageObjectPosition: "46% 20%",
-    credential:
-      "Enterprise Data & AI Operator | M.S. Data Science | Snowflake, ML, Workflow Automation",
-    bio: "Ghulam is an enterprise data and AI operator currently serving as Lead Data Analyst at National Grid, where he runs enablement and adoption for a Snowflake-backed Electric Data Platform. He built workflow automation (Power Apps + Power Automate) that moved safety compliance from 60% to 93%, and develops applied ML forecasting models for operational risk prevention. Prior experience includes billion-record data migration at Apple Finance and regulated compliance SaaS at RELX.",
-    impact:
-      "Ghulam is the technical architect behind Sovereign RCM. His experience building enterprise data platforms, ML models, and workflow automation, combined with regulated environments, data governance, and adoption-first design, makes him the builder who translates Sovereign RCM from concept to deployed product. Led teams up to 42 people; $2M+ B2B revenue at Apple.",
-    awards:
-      "60%→93% compliance | 384 hrs/yr saved | $2M+ revenue | 17% productivity gain",
+    description:
+      "The technical force behind Sovereign RCM. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
   },
 ];
 
@@ -177,71 +165,53 @@ export default function About() {
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              The Founding Team
-            </h2>
-            <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-              A physician who knows the problem. An engineer who builds the
-              solution.
-              <br />
-              A PE who manages complex regulated implementations.
-            </p>
+            <div className="text-center">
+              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
+                Meet the Founders
+              </h2>
+              <p className="mx-auto mt-4 max-w-4xl text-lg text-charcoal-light dark:text-gray-300">
+                A physician who knows the problem. An engineer who builds the solution. A PE who executes at scale
+              </p>
+            </div>
           </FadeIn>
-          <div className="mt-16 space-y-16">
-            {founders.map((founder, i) => (
-              <FadeIn
-                key={founder.name}
-                direction={i % 2 === 0 ? "left" : "right"}
-                delay={0.1}
-              >
-                <div
-                  className={`flex flex-col gap-8 lg:flex-row ${
-                    i % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
-                >
-                  <div className="flex shrink-0 items-center justify-center">
-                    {founder.image ? (
-                      <div className="h-48 w-48 overflow-hidden rounded-2xl dark:ring-1 dark:ring-dark-border">
-                        <div className="h-full w-full" style={founder.imageStyle}>
-                          <Image
-                            src={founder.image}
-                            alt={founder.name}
-                            width={384}
-                            height={384}
-                            className="h-full w-full object-cover"
-                            style={{ objectPosition: founder.imageObjectPosition }}
-                          />
-                        </div>
+          <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {founders.map((founder) => (
+              <StaggerItem key={founder.name}>
+                <div className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
+                  {founder.image ? (
+                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
+                      <div className="h-full w-full" style={founder.imageStyle}>
+                        <Image
+                          src={founder.image}
+                          alt={founder.name}
+                          width={256}
+                          height={256}
+                          className="h-full w-full object-cover"
+                          style={{ objectPosition: founder.imageObjectPosition }}
+                        />
                       </div>
-                    ) : (
-                      <div className="h-48 w-48 rounded-2xl bg-ice dark:bg-dark-surface" />
-                    )}
-                  </div>
-                  {/* Bio */}
-                  <div className="flex-1">
-                    <h3 className="font-heading text-2xl font-bold text-navy dark:text-white">
+                    </div>
+                  ) : (
+                    <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
+                  )}
+                  <div className="mt-6 text-center">
+                    <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
                       {founder.name}
                     </h3>
-                    <p className="mt-1 text-base font-medium text-teal dark:text-teal-dark">
+                    <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
                       {founder.role}
                     </p>
-                    <p className="mt-1 text-sm text-charcoal-light dark:text-gray-400">
+                    <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
                       {founder.credential}
                     </p>
-                    <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                      {founder.bio}
-                    </p>
-                    <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                      {founder.impact}
-                    </p>
-                    <p className="mt-4 text-sm italic text-charcoal-light dark:text-gray-400">
-                      {founder.awards}
+                    <p className="mt-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                      {founder.description}
                     </p>
                   </div>
                 </div>
-              </FadeIn>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
