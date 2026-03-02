@@ -220,12 +220,23 @@ h1, h2, h3, h4, h5, h6 {
    ----------------------------------------------------------------------- */
 
 a[class*="bg-coral"],
-button[class*="bg-coral"] {
-  transition: background-color 150ms, transform 100ms;
+button[class*="bg-coral"],
+a[class*="bg-navy"],
+button[class*="bg-navy"] {
+  transition: background-color 150ms, transform 300ms ease-out;
+}
+
+a[class*="bg-coral"]:hover,
+button[class*="bg-coral"]:hover,
+a[class*="bg-navy"]:hover,
+button[class*="bg-navy"]:hover {
+  transform: scale(1.04);
 }
 
 a[class*="bg-coral"]:active,
-button[class*="bg-coral"]:active {
+button[class*="bg-coral"]:active,
+a[class*="bg-navy"]:active,
+button[class*="bg-navy"]:active {
   transform: scale(0.97);
 }
 

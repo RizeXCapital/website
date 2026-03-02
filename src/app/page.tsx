@@ -56,7 +56,7 @@ function BlogPreviewSection() {
             <StaggerItem key={post.slug}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block h-full overflow-hidden rounded-xl border border-gray-300 bg-white transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+                className="group block h-full overflow-hidden rounded-xl border border-gray-300 bg-white transition-[box-shadow,transform] duration-1500 ease-out hover:scale-[1.01] hover:shadow-md active:scale-[0.99] dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
               >
                 {post.image && (
                   <div className="aspect-[21/9] overflow-hidden">
@@ -128,7 +128,7 @@ function BlogPreviewSection() {
           <div className="mt-10 text-center">
             <Link
               href="/blog"
-              className="text-lg font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+              className="inline-block text-lg font-medium text-teal transition-[color,transform] duration-2800 ease-out hover:scale-[1.1] hover:text-teal-light active:scale-[0.97] dark:text-teal-dark dark:hover:text-teal"
             >
               View All Posts &rarr;
             </Link>

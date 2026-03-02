@@ -94,7 +94,7 @@ export default async function Blog({
                 {posts.map((post) => (
                   <StaggerItem key={post.slug}>
                   <article
-                    className="group overflow-hidden rounded-xl border border-gray-300 bg-white transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+                    className="group overflow-hidden rounded-xl border border-gray-300 bg-white transition-[box-shadow,transform] duration-2800 ease-out hover:scale-[1.01] hover:shadow-md active:scale-[0.99] dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
                   >
                     {post.image && (
                       <Link href={`/blog/${post.slug}`} className="block">
