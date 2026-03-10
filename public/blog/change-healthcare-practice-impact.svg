@@ -1,0 +1,77 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="420" fill="#F0F6FA"/>
+
+  <!-- Title -->
+  <text x="400" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A4A">By the Numbers: Practice and Hospital Impact</text>
+  <text x="400" y="54" text-anchor="middle" font-size="12" fill="#2D2D2D" opacity="0.6">AMA Physician Survey and AHA Survey, March-April 2024</text>
+
+  <!-- Chart area starts at y=80 -->
+  <!-- Bar track background -->
+  <rect x="0" y="68" width="800" height="308" fill="white" opacity="0.5"/>
+
+  <!-- Vertical gridlines -->
+  <g stroke="#1B2A4A" stroke-width="0.5" opacity="0.1">
+    <line x1="310" y1="72" x2="310" y2="372"/>
+    <line x1="430" y1="72" x2="430" y2="372"/>
+    <line x1="550" y1="72" x2="550" y2="372"/>
+    <line x1="670" y1="72" x2="670" y2="372"/>
+    <line x1="760" y1="72" x2="760" y2="372"/>
+  </g>
+
+  <!-- % axis labels -->
+  <text x="310" y="68" text-anchor="middle" font-size="10" fill="#2D2D2D" opacity="0.45">25%</text>
+  <text x="430" y="68" text-anchor="middle" font-size="10" fill="#2D2D2D" opacity="0.45">50%</text>
+  <text x="550" y="68" text-anchor="middle" font-size="10" fill="#2D2D2D" opacity="0.45">75%</text>
+  <text x="760" y="68" text-anchor="middle" font-size="10" fill="#2D2D2D" opacity="0.45">100%</text>
+
+  <!-- Row definitions:
+       Bar starts at x=190 (label ends ~185)
+       Full width (100%) = 570px (190 to 760)
+       Each 1% = 5.7px
+       y positions: row 1=108, row 2=163, row 3=218, row 4=273, row 5=328
+       bar height = 34px
+  -->
+
+  <!-- Row 1: 94% hospitals financially impacted (AHA) -->
+  <!-- 94% = 536px -->
+  <rect x="190" y="91" width="536" height="34" rx="5" fill="#E8614D" opacity="0.15"/>
+  <rect x="190" y="91" width="536" height="34" rx="5" fill="#E8614D"/>
+  <text x="182" y="114" text-anchor="end" font-size="12" font-weight="600" fill="#1B2A4A">Hospitals: financial impact</text>
+  <text x="734" y="114" text-anchor="start" font-size="13" font-weight="700" fill="white">94%</text>
+
+  <!-- Row 2: 80% practices lost revenue from unpaid claims -->
+  <!-- 80% = 456px -->
+  <rect x="190" y="146" width="456" height="34" rx="5" fill="#1B2A4A" opacity="0.12"/>
+  <rect x="190" y="146" width="456" height="34" rx="5" fill="#1B2A4A"/>
+  <text x="182" y="169" text-anchor="end" font-size="12" font-weight="600" fill="#1B2A4A">Practices: lost revenue (unpaid claims)</text>
+  <text x="652" y="169" text-anchor="start" font-size="13" font-weight="700" fill="white">80%</text>
+
+  <!-- Row 3: 78% practices unable to submit claims -->
+  <!-- 78% = 445px -->
+  <rect x="190" y="201" width="445" height="34" rx="5" fill="#1B2A4A" opacity="0.12"/>
+  <rect x="190" y="201" width="445" height="34" rx="5" fill="#2E86AB"/>
+  <text x="182" y="224" text-anchor="end" font-size="12" font-weight="600" fill="#1B2A4A">Practices: unable to submit claims</text>
+  <text x="641" y="224" text-anchor="start" font-size="13" font-weight="700" fill="white">78%</text>
+
+  <!-- Row 4: 55% practices used personal funds -->
+  <!-- 55% = 314px -->
+  <rect x="190" y="256" width="314" height="34" rx="5" fill="#E8614D" opacity="0.12"/>
+  <rect x="190" y="256" width="314" height="34" rx="5" fill="#E8614D" opacity="0.75"/>
+  <text x="182" y="279" text-anchor="end" font-size="12" font-weight="600" fill="#1B2A4A">Practices: used personal funds for expenses</text>
+  <text x="510" y="279" text-anchor="start" font-size="13" font-weight="700" fill="#1B2A4A">55%</text>
+
+  <!-- Row 5: 31% practices could not make payroll -->
+  <!-- 31% = 177px -->
+  <rect x="190" y="311" width="177" height="34" rx="5" fill="#E8614D" opacity="0.12"/>
+  <rect x="190" y="311" width="177" height="34" rx="5" fill="#E8614D" opacity="0.55"/>
+  <text x="182" y="334" text-anchor="end" font-size="12" font-weight="600" fill="#1B2A4A">Practices: could not make payroll</text>
+  <text x="372" y="334" text-anchor="start" font-size="13" font-weight="700" fill="#1B2A4A">31%</text>
+
+  <!-- Divider line -->
+  <line x1="40" y1="374" x2="760" y2="374" stroke="#1B2A4A" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Source note -->
+  <text x="400" y="395" text-anchor="middle" font-size="10" fill="#2D2D2D" opacity="0.45">Physician survey: AMA, March-April 2024 (n approx. 1,400 practices). Hospital survey: AHA, March 2024.</text>
+  <text x="400" y="410" text-anchor="middle" font-size="10" fill="#2D2D2D" opacity="0.45">Surveys conducted 5-6 weeks post-attack. Outage began February 21, 2024.</text>
+</svg>

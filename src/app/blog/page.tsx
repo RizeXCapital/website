@@ -155,11 +155,6 @@ export default async function Blog({
                   </FadeIn>
                   {[
                     {
-                      title: "What the Change Healthcare Attack Means for Your Practice",
-                      author: "Navid M. Rahman, PE",
-                      date: "Early March 2026",
-                    },
-                    {
                       title: "Building an Air-Gapped AI System for Medical Billing",
                       author: "Ghulam Shah",
                       date: "Mid March 2026",

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const footerLinks = {
   Company: [
@@ -31,13 +30,7 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <div className="flex items-center gap-2">
-              <Image
-                src="/crown-logo.svg"
-                alt=""
-                width={28}
-                height={23}
-                className="h-6 w-auto"
-              />
+              <span className="text-xl leading-none -translate-y-0.5">👑</span>
               <span className="font-heading text-lg font-bold tracking-tight">
                 Sovereign RCM
               </span>

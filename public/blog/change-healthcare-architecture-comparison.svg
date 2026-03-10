@@ -1,0 +1,106 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+  <!-- Background: warm cream matching hub-spoke -->
+  <rect width="800" height="420" fill="#FFFBEB"/>
+
+  <!-- Title -->
+  <text x="400" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">Why Architecture Determines Blast Radius</text>
+  <text x="400" y="54" text-anchor="middle" font-size="12" fill="#44403C" opacity="0.7">The same stolen credentials. Opposite outcomes.</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="70" x2="400" y2="395" stroke="#44403C" stroke-width="1" opacity="0.15"/>
+
+  <!-- ===== LEFT PANEL: Cloud Clearinghouse ===== -->
+
+  <!-- Panel header -->
+  <rect x="30" y="72" width="340" height="36" rx="6" fill="#DC2626" opacity="0.1"/>
+  <rect x="30" y="72" width="340" height="36" rx="6" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="200" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#DC2626">Cloud Clearinghouse Model</text>
+
+  <!-- Node: Your Practice -->
+  <rect x="60" y="132" width="120" height="44" rx="6" fill="white" stroke="#92400E" stroke-width="1.5"/>
+  <text x="120" y="151" text-anchor="middle" font-size="11" font-weight="600" fill="#0F172A">Your Practice</text>
+  <text x="120" y="167" text-anchor="middle" font-size="10" fill="#44403C" opacity="0.65">EHR + billing data</text>
+
+  <!-- Arrow down -->
+  <line x1="120" y1="176" x2="120" y2="196" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="115,196 120,206 125,196" fill="#DC2626"/>
+
+  <!-- PHI travels label -->
+  <text x="140" y="192" font-size="9" fill="#DC2626" font-weight="600">PHI leaves building</text>
+
+  <!-- Node: Public Internet -->
+  <rect x="60" y="208" width="120" height="44" rx="6" fill="#DC2626" opacity="0.08"/>
+  <rect x="60" y="208" width="120" height="44" rx="6" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="120" y="227" text-anchor="middle" font-size="11" font-weight="600" fill="#DC2626">Public Internet</text>
+  <text x="120" y="243" text-anchor="middle" font-size="10" fill="#DC2626" opacity="0.75">Uncontrolled transit</text>
+
+  <!-- Arrow down -->
+  <line x1="120" y1="252" x2="120" y2="272" stroke="#DC2626" stroke-width="1.5"/>
+  <polygon points="115,272 120,282 125,272" fill="#DC2626"/>
+
+  <!-- Node: Clearinghouse (danger) -->
+  <rect x="55" y="284" width="130" height="50" rx="6" fill="#DC2626" opacity="0.15"/>
+  <rect x="55" y="284" width="130" height="50" rx="6" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <text x="120" y="305" text-anchor="middle" font-size="11" font-weight="700" fill="#DC2626">Clearinghouse</text>
+  <text x="120" y="321" text-anchor="middle" font-size="9" fill="#DC2626">All practices share this node</text>
+
+  <!-- Warning label -->
+  <text x="200" y="308" font-size="10" fill="#DC2626" opacity="0.8">Single point</text>
+  <text x="200" y="322" font-size="10" fill="#DC2626" opacity="0.8">of failure !</text>
+
+  <!-- Arrow to payer -->
+  <line x1="185" y1="309" x2="340" y2="309" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <polygon points="336,305 345,309 336,313" fill="#DC2626" opacity="0.5"/>
+  <text x="262" y="303" text-anchor="middle" font-size="9" fill="#DC2626" opacity="0.65">to payer</text>
+
+  <!-- Risk bullets -->
+  <text x="60" y="360" font-size="11" fill="#DC2626">x</text>
+  <text x="76" y="360" font-size="11" fill="#44403C">PHI stored on vendor servers</text>
+  <text x="60" y="378" font-size="11" fill="#DC2626">x</text>
+  <text x="76" y="378" font-size="11" fill="#44403C">Breach exposes all connected practices</text>
+  <text x="60" y="396" font-size="11" fill="#DC2626">x</text>
+  <text x="76" y="396" font-size="11" fill="#44403C">Remote attack surface exists by design</text>
+
+  <!-- ===== RIGHT PANEL: On-Premise ===== -->
+
+  <!-- Panel header -->
+  <rect x="430" y="72" width="340" height="36" rx="6" fill="#92400E" opacity="0.1"/>
+  <rect x="430" y="72" width="340" height="36" rx="6" fill="none" stroke="#92400E" stroke-width="1.5"/>
+  <text x="600" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#92400E">On-Premise AI Appliance</text>
+
+  <!-- Node: Your Practice + Appliance -->
+  <rect x="455" y="132" width="148" height="68" rx="6" fill="white" stroke="#92400E" stroke-width="1.5"/>
+  <text x="529" y="154" text-anchor="middle" font-size="11" font-weight="600" fill="#0F172A">Your Practice</text>
+  <!-- Shield icon (simple) -->
+  <path d="M517 162 Q517 158 521 158 L537 158 Q541 158 541 162 L541 173 Q541 179 529 182 Q517 179 517 173 Z" fill="#D97706" opacity="0.2"/>
+  <path d="M517 162 Q517 158 521 158 L537 158 Q541 158 541 162 L541 173 Q541 179 529 182 Q517 179 517 173 Z" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <text x="529" y="175" text-anchor="middle" font-size="9" fill="#92400E" font-weight="600">AI Appliance</text>
+  <text x="529" y="191" text-anchor="middle" font-size="9" fill="#44403C" opacity="0.65">PHI stays here</text>
+
+  <!-- PHI boundary marker -->
+  <rect x="450" y="126" width="158" height="84" rx="8" fill="none" stroke="#D97706" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="529" y="220" text-anchor="middle" font-size="9" fill="#D97706" font-weight="600">PHI boundary</text>
+
+  <!-- Arrow: claims only (not PHI) to payer -->
+  <line x1="608" y1="166" x2="700" y2="166" stroke="#92400E" stroke-width="1.5"/>
+  <polygon points="696,162 706,166 696,170" fill="#92400E"/>
+  <text x="654" y="158" text-anchor="middle" font-size="9" fill="#92400E">claims only</text>
+
+  <!-- Node: Payer -->
+  <rect x="702" y="144" width="88" height="44" rx="6" fill="white" stroke="#92400E" stroke-width="1.5"/>
+  <text x="746" y="163" text-anchor="middle" font-size="11" font-weight="600" fill="#0F172A">Payer</text>
+  <text x="746" y="179" text-anchor="middle" font-size="10" fill="#44403C" opacity="0.65">remittance back</text>
+
+  <!-- No internet path indicator -->
+  <text x="529" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#92400E">No clearinghouse.</text>
+  <text x="529" y="278" text-anchor="middle" font-size="11" fill="#44403C">PHI never traverses</text>
+  <text x="529" y="294" text-anchor="middle" font-size="11" fill="#44403C">an external network.</text>
+
+  <!-- Benefit bullets -->
+  <text x="440" y="360" font-size="13" fill="#D97706">+</text>
+  <text x="456" y="360" font-size="11" fill="#44403C">No remote attack surface to exploit</text>
+  <text x="440" y="378" font-size="13" fill="#D97706">+</text>
+  <text x="456" y="378" font-size="11" fill="#44403C">Breach elsewhere has zero impact here</text>
+  <text x="440" y="396" font-size="13" fill="#D97706">+</text>
+  <text x="456" y="396" font-size="11" fill="#44403C">Physical control of all patient data</text>
+</svg>
