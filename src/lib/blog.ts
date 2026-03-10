@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkRehype from "remark-rehype";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -92,7 +94,11 @@ export async function getPostBySlug(
     const raw = fs.readFileSync(path.join(BLOG_DIR, filename), "utf-8");
     const { data, content } = matter(raw);
     if (data.slug === slug) {
-      const result = await remark().use(html).process(content);
+      const result = await remark()
+        .use(remarkRehype)
+        .use(rehypeSanitize)
+        .use(rehypeStringify)
+        .process(content);
       return { ...meta, content: result.toString() };
     }
   }
