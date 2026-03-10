@@ -158,6 +158,9 @@ export default function Home() {
                 audit-ready evidence packs — without your patient data ever
                 leaving the building.
               </p>
+              <p className="mt-4 text-sm text-gray-400">
+                Built by an EM physician, a licensed PE, and an AI architect
+              </p>
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -178,6 +181,66 @@ export default function Home() {
           </div>
         </div>
       </AnimatedHero>
+
+      {/* 2a. Stats Band */}
+      <section className="bg-navy px-6 py-4">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap items-center justify-center gap-y-3 divide-x divide-white/10">
+            {[
+              { stat: "≥ 95%", label: "Clean-Claim Rate" },
+              { stat: "≤ 48hr", label: "Deployment" },
+              { stat: "$30K+", label: "Recaptured Per Provider" },
+              { stat: "0", label: "PHI in the Cloud" },
+            ].map((item) => (
+              <div key={item.label} className="px-6 text-center first:pl-0 last:pr-0">
+                <span className="font-heading text-lg font-bold text-coral">
+                  {item.stat}
+                </span>
+                <span className="ml-2 text-sm text-gray-300">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2b. EHR Trust Bar */}
+      <section className="border-b border-gray-200 bg-white px-6 py-4 dark:border-dark-border dark:bg-dark-elevated">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-xs font-medium uppercase tracking-wider text-gray-400">
+                Compatible with
+              </span>
+              {["Epic", "Oracle Health", "athenahealth", "eClinicalWorks"].map((ehr) => (
+                <span
+                  key={ehr}
+                  className="rounded border border-gray-200 px-3 py-1 text-sm font-medium text-gray-500 dark:border-dark-border dark:text-gray-400"
+                >
+                  {ehr}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 rounded-lg border border-teal/20 bg-teal/5 px-4 py-2">
+              <svg
+                className="h-4 w-4 text-teal"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                />
+              </svg>
+              <span className="text-sm font-semibold text-teal dark:text-teal-dark">
+                HIPAA Compliant
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 2. Triple Leak */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
