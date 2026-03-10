@@ -40,11 +40,9 @@ On February 12, 2024, an attacker used stolen credentials to access a Citrix rem
 
 The attacker then spent nine days moving through the network undetected, escalating privileges, mapping internal systems, and identifying data stores. No alerts fired. On February 21, ransomware was deployed across the infrastructure, and Change Healthcare took its systems offline.
 
-The attacker group was ALPHV/BlackCat, a ransomware-as-a-service operation with Russian ties. They claimed to have exfiltrated 6 terabytes of data. UnitedHealth Group, which had acquired Change Healthcare in 2022 for $13 billion, paid a ransom of 350 bitcoin -- roughly $22 million -- to recover access.
+The attacker group was ALPHV/BlackCat, a ransomware-as-a-service operation. They claimed to have exfiltrated 6 terabytes of data. UnitedHealth Group, which had acquired Change Healthcare in 2022 for $13 billion, paid a ransom of roughly $22 million. The payment didn't end the exposure. A second extortion attempt followed using the same stolen data, and the 6 terabytes of patient records stayed in criminal hands.
 
-The payment did not resolve the situation. ALPHV leadership then executed what security researchers call an exit scam: they kept the $22 million and disappeared, leaving their own affiliate unpaid. That affiliate partnered with a new group called RansomHub and attempted a second extortion using the same stolen data. The 6 terabytes of patient records remained in criminal hands.
-
-The final breach count, reported to the HHS Office for Civil Rights in July 2025, was 192.7 million individuals. More than half the U.S. population. The largest healthcare data breach in history.
+The final breach count, reported to the HHS Office for Civil Rights in July 2025, was 192.7 million individuals -- more than half the U.S. population.
 
 UHG CEO Andrew Witty testified before the Senate Finance Committee and House Energy and Commerce Committee on May 1, 2024. When asked about the missing MFA, Senator Ron Wyden called it a failure of "cybersecurity 101." I'd call it the equivalent of designing a dam with no overflow spillway and being surprised when it overtopped.
 
@@ -58,19 +56,13 @@ In the weeks immediately following the attack, the AMA surveyed approximately 1,
 
 ![By the numbers: how the Change Healthcare outage hit practices and hospitals](/blog/change-healthcare-practice-impact.svg)
 
-On the hospital side, the American Hospital Association found that 94% of hospitals reported financial impact. Nearly 60% reported losses of $1 million per day or more during the outage. Kodiak Solutions tracked a $6.3 billion drop in submitted claims from their clients alone in the first three weeks.
-
-The ground-level reporting was stark. One rural practice owner, as reported by Fortune, was carrying bags of cash onto airplane flights to make sure employees got paid. Another took out emergency loans at 50% interest rates to cover payroll. Survey respondents wrote things like: "[This] may bankrupt our practice of 50 years in this rural community." None of these were edge cases. The AMA's second survey, conducted in late April, found that nearly two-thirds of respondents were still using personal funds to cover expenses.
-
-UnitedHealth Group eventually extended $8.9 billion in interest-free loans to affected providers, and CMS disbursed over $3.2 billion in accelerated and advance payments through an emergency program. UHG's total reported costs from the incident came to $3.1 billion for the full year 2024. That figure includes the ransom, the remediation, the provider loans, and legal exposure that is still accumulating.
+The ground-level reporting was stark. One rural practice owner was carrying bags of cash onto flights to make sure employees got paid. Another took out emergency loans at 50% interest rates to cover payroll. Survey respondents wrote things like: "[This] may bankrupt our practice of 50 years in this rural community." The AMA's second survey, conducted in late April, found that nearly two-thirds of respondents were still using personal funds to cover expenses.
 
 ## The Structural Lesson
 
 If you gave this scenario to a second-year engineering student -- a single company processing 40% of all U.S. healthcare claims, with internet-facing remote access protected by a single password -- and asked them to identify the failure mode, they'd find it in under a minute.
 
-In structural engineering, we say cracks propagate before they fail. A beam doesn't snap the moment the crack forms -- it grows, invisibly, until the remaining load-bearing section can no longer carry the applied force. Nine days of undetected lateral movement inside the network of a company processing nearly half a trillion dollars in annual claims is the equivalent of a crack propagating across a critical structural member with no inspection regime in place to catch it.
-
-Centralized systems are efficient. They are also brittle. The more load you concentrate through a single node, the more catastrophic the consequences when that node fails. This is true for power grids, for single-span highway bridges, and for clearinghouses that route the financial lifeblood of hundreds of thousands of healthcare providers.
+In structural engineering, we say cracks propagate before they fail. Nine days of undetected lateral movement inside the network of a company processing nearly half a trillion dollars in annual claims is the equivalent of a crack propagating across a critical structural member with no inspection regime in place to catch it.
 
 The attack itself was not sophisticated. The attacker did not exploit an unknown vulnerability. They logged into a portal that was left unlocked. The absence of basic monitoring and the absence of MFA together created an attack surface that any competent security reviewer would have flagged immediately. What made the damage total was the architecture: because Change served as the dominant routing node for U.S. claims, there was no failover. Every connected practice went down simultaneously. A distributed design -- one where claims route through multiple clearinghouses with automatic failover -- would have contained the damage. A practice using on-premise billing infrastructure that doesn't route PHI through external clearinghouses at all would have been unaffected entirely.
 
@@ -80,13 +72,19 @@ The attack itself was not sophisticated. The attacker did not exploit an unknown
 
 The breach data from Change Healthcare contained names, Social Security numbers, insurance IDs, medical diagnoses, prescription records, and billing codes. For the 192.7 million people in that dataset, that information is now in criminal hands and has been for over a year. No regulatory response changes that.
 
-What the regulatory response does address is what comes next. HHS proposed significant updates to the HIPAA Security Rule in December 2024, including mandatory MFA, mandatory encryption, and required penetration testing. The Health Care Cybersecurity and Resiliency Act of 2025 has bipartisan support in Congress. These changes will move through eventually, and when they do, practices will be expected to evaluate their vendors with the same scrutiny regulators now apply to the vendors themselves.
+What the regulatory response addresses is what comes next. HHS proposed significant updates to the HIPAA Security Rule in December 2024, including mandatory MFA, mandatory encryption, and required penetration testing. Practices will be expected to evaluate their vendors with the same scrutiny regulators now apply to the vendors themselves.
 
-If your billing currently depends on a cloud-based platform or clearinghouse, you are trusting that vendor's security posture, their network monitoring, their MFA policies, and their incident response capability. You are also sharing systemic risk with every other customer on that platform. Change Healthcare served hundreds of thousands of providers simultaneously. When it failed, they all failed simultaneously, regardless of how well any individual practice had managed its own security hygiene.
+If your billing currently depends on a cloud-based platform or clearinghouse, you are trusting that vendor's security posture, their network monitoring, their MFA policies, and their incident response capability. You are sharing systemic risk with every other practice on that platform. When it fails -- and the historical record on this is consistent -- they all fail together.
 
-An on-premise billing system, particularly one without persistent external connectivity, eliminates this exposure at the source. There is no Citrix portal for a remote attacker to authenticate against. Stolen credentials for your local system cannot be used from a server in another country. PHI stays inside your building, under your physical control, on hardware you own. If a breach hits a major clearinghouse next quarter, your practice keeps running.
+This is the structural problem that an air-gapped billing system solves. "Air-gapped" is not a marketing phrase. It means the system processes PHI on hardware inside your building, disconnected from the public internet during billing operations. The AI inference runs locally on the appliance. Patient records are never transmitted to an external server for processing. There is no inbound connection path -- no remote desktop portal, no cloud API endpoint, no shared network node that an attacker can reach from outside.
 
-That architecture is what we built [Sovereign RCM](/sovereign-rcm) around. On-premise AI billing, inside the practice, with PHI that never routes through external cloud infrastructure. The system handles claim submission, coding review, and denial prevention without putting your patient data on a shared vendor network that is, by design, reachable from anywhere on earth.
+The attack surface comparison is concrete. A cloud billing platform exposes a login portal reachable from anywhere on earth, shared infrastructure with thousands of other practices, ongoing data transmission between your EHR and remote servers, and a single vendor whose security posture you cannot audit. An air-gapped appliance exposes none of those. You can't authenticate to a system you can't reach. You can't exfiltrate data that isn't there.
+
+Think through the scenario. Another major clearinghouse gets hit next year -- which the cybersecurity community considers likely given how concentrated claims processing still is. If your billing runs through that clearinghouse, you stop billing. You go through the same cash flow disruption the AMA documented for tens of thousands of practices in 2024. If your billing runs on an air-gapped appliance inside your building, nothing changes. Your system processes claims the same way it did the day before the attack. You don't share in the blast radius because you were never connected to the target.
+
+The HIPAA regulatory pressure also lands differently when you own your infrastructure. Under cloud billing, your exposure includes your vendor's security posture -- you are a covered entity using a business associate, and a failure at the business associate level is a failure on your record. When the infrastructure is inside your building, under your physical control, you are not downstream of someone else's incident response team.
+
+That architecture is what we built [Sovereign RCM](/sovereign-rcm) around. On-premise AI billing, inside the practice, with PHI that never routes through external cloud infrastructure. The system handles claim generation, coding review, and denial prevention without putting your patient data on a shared vendor network reachable from anywhere on earth. The next Change Healthcare will happen. Whether your practice is caught in it is a question of architecture.
 
 ---
 
