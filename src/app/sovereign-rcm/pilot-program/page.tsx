@@ -491,6 +491,49 @@ export default function PilotProgram() {
         </div>
       </section>
 
+      {/* Lead Magnet */}
+      <section className="bg-white px-6 py-16 dark:bg-dark-bg">
+        <div className="mx-auto max-w-4xl">
+          <FadeIn>
+            <div className="flex flex-col items-start gap-6 rounded-xl border border-teal/20 bg-teal/5 p-8 sm:flex-row sm:items-center dark:border-teal/20 dark:bg-teal/10">
+              <div className="shrink-0">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10 dark:bg-teal/20">
+                  <svg
+                    className="h-6 w-6 text-teal dark:text-teal-dark"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <p className="font-heading text-lg font-bold text-navy dark:text-white">
+                  Not sure where your billing stands today?
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                  Download our free Medical Practice Billing Audit Checklist — 35
+                  items across claim accuracy, denial patterns, A/R, coding, and
+                  PHI compliance.
+                </p>
+              </div>
+              <Link
+                href="/sovereign-rcm/billing-audit-checklist"
+                className="shrink-0 rounded-lg border border-teal px-5 py-3 text-sm font-medium text-teal transition-colors hover:bg-teal hover:text-white dark:border-teal-dark dark:text-teal-dark dark:hover:bg-teal-dark dark:hover:text-navy"
+              >
+                Get the Free Checklist
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-navy px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">

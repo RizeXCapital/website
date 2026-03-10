@@ -21,15 +21,27 @@ const upcomingPosts = [
   },
   {
     title: "Building an Air-Gapped AI System for Medical Billing",
-    author: "Ghulam Shah",
+    author: "Zubair Khan, DO",
     date: "Mid March 2026",
     image: "/blog/ai-billing-pipeline.svg",
   },
   {
     title: "The Prior Authorization Problem: What Every Practice Owner Should Know",
-    author: "Faizan G. Arif, MD",
+    author: "Shahan G. Arif, MD",
     date: "Late March 2026",
     image: "/blog/revenue-leak-funnel.svg",
+  },
+  {
+    title: "Why Credentialing Delays Are Costing Your Practice More Than You Know",
+    author: "Fawad Aziz",
+    date: "Early April 2026",
+    image: "/blog/cloud-vs-onpremise.svg",
+  },
+  {
+    title: "Days in A/R: The One Metric That Reveals Everything About Your Billing Health",
+    author: "Usman Khan",
+    date: "Mid April 2026",
+    image: "/blog/ai-billing-pipeline.svg",
   },
 ];
 
@@ -204,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* 2b. EHR Trust Bar */}
-      <section className="border-b border-gray-200 bg-white px-6 py-4 dark:border-dark-border dark:bg-dark-elevated">
+      <section className="bg-white px-6 py-4 dark:bg-dark-bg">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <div className="flex flex-wrap items-center gap-3">
@@ -310,6 +322,22 @@ export default function Home() {
 
       {/* Divider: Triple Leak → Product Visual */}
       <SectionDivider variant="light" />
+
+      {/* Citation Strip */}
+      <section className="bg-navy px-6 py-4">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap items-center justify-center gap-y-2 divide-x divide-white/10">
+            <span className="pr-6 text-xs font-medium uppercase tracking-wider text-gray-500 first:pl-0">
+              Industry context from
+            </span>
+            {["MGMA", "AAFP", "AMA", "Modern Healthcare"].map((org) => (
+              <span key={org} className="px-6 text-sm font-semibold text-gray-400">
+                {org}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 3. Product Visual — How It Works */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">

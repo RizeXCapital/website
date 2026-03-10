@@ -14,6 +14,12 @@ import SectionDivider from "@/components/SectionDivider";
 // Author Bios (lookup map for founders)
 // ---------------------------------------------------------------------------
 
+const authorPhotos: Record<string, string> = {
+  "Ghulam Shah": "/GhulamPhoto.jpg",
+  "Faizan G. Arif, MD": "/FaizMD.jpeg",
+  "Navid M. Rahman, PE": "/NavidHeadshot.jpeg",
+};
+
 const authorBios: Record<string, { role: string; bio: string }> = {
   "Ghulam Shah": {
     role: "Chief Technology Officer",
@@ -155,10 +161,21 @@ export default async function BlogPost({
 
           {/* Meta + Share */}
           <div className="mt-4 flex items-center justify-between">
-            <p className="text-sm text-charcoal-light dark:text-gray-400">
-              {post.author} &middot; {formattedDate} &middot; {post.readingTime}{" "}
-              min read
-            </p>
+            <div className="flex items-center gap-2">
+              {authorPhotos[post.author] && (
+                <Image
+                  src={authorPhotos[post.author]}
+                  alt={post.author}
+                  width={32}
+                  height={32}
+                  className="rounded-full object-cover"
+                />
+              )}
+              <p className="text-sm text-charcoal-light dark:text-gray-400">
+                {post.author} &middot; {formattedDate} &middot; {post.readingTime}{" "}
+                min read
+              </p>
+            </div>
             <div className="flex items-center gap-3">
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://rizexcapital.com/blog/${post.slug}`)}`}
@@ -263,15 +280,28 @@ export default async function BlogPost({
               <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
                 About the Author
               </p>
-              <p className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
-                {post.author}
-              </p>
-              <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
-                {authorInfo.role}
-              </p>
-              <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                {authorInfo.bio}
-              </p>
+              <div className="mt-3 flex items-start gap-4">
+                {authorPhotos[post.author] && (
+                  <Image
+                    src={authorPhotos[post.author]}
+                    alt={post.author}
+                    width={64}
+                    height={64}
+                    className="shrink-0 rounded-full object-cover"
+                  />
+                )}
+                <div>
+                  <p className="font-heading text-lg font-bold text-navy dark:text-white">
+                    {post.author}
+                  </p>
+                  <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
+                    {authorInfo.role}
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
+                    {authorInfo.bio}
+                  </p>
+                </div>
+              </div>
             </div>
           )}
         </div>

@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 
 const categories = Object.keys(categoryLabels) as BlogCategory[];
 
+const authorPhotos: Record<string, string> = {
+  "Ghulam Shah": "/GhulamPhoto.jpg",
+  "Faizan G. Arif, MD": "/FaizMD.jpeg",
+  "Navid M. Rahman, PE": "/NavidHeadshot.jpeg",
+};
+
 export default async function Blog({
   searchParams,
 }: {
@@ -121,15 +127,26 @@ export default async function Blog({
                           {post.title}
                         </Link>
                       </h2>
-                      <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                        {post.author} &middot;{" "}
-                        {new Date(post.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}{" "}
-                        &middot; {post.readingTime} min read
-                      </p>
+                      <div className="mt-2 flex items-center gap-2">
+                        {authorPhotos[post.author] && (
+                          <Image
+                            src={authorPhotos[post.author]}
+                            alt={post.author}
+                            width={24}
+                            height={24}
+                            className="rounded-full object-cover"
+                          />
+                        )}
+                        <p className="text-sm text-charcoal-light dark:text-gray-400">
+                          {post.author} &middot;{" "}
+                          {new Date(post.date).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}{" "}
+                          &middot; {post.readingTime} min read
+                        </p>
+                      </div>
                       <p className="mt-4 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                         {post.excerpt}
                       </p>
@@ -148,6 +165,28 @@ export default async function Blog({
               {/* Upcoming post teasers — stacked on the right */}
               {!activeCategory && (
                 <StaggerContainer className="space-y-6 lg:col-span-1">
+                  {/* Checklist lead magnet */}
+                  <FadeIn>
+                    <div className="rounded-xl border border-teal/20 bg-teal/5 p-6 dark:border-teal/20 dark:bg-teal/10">
+                      <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                        Free Resource
+                      </p>
+                      <p className="mt-2 font-heading text-base font-bold text-navy dark:text-white">
+                        Medical Practice Billing Audit Checklist
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
+                        35 audit items across claim accuracy, denial patterns,
+                        A/R, coding, and PHI compliance. Free download.
+                      </p>
+                      <Link
+                        href="/sovereign-rcm/billing-audit-checklist"
+                        className="mt-4 inline-block text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+                      >
+                        Get the Free Checklist &rarr;
+                      </Link>
+                    </div>
+                  </FadeIn>
+
                   <FadeIn>
                     <p className="font-heading text-sm font-bold uppercase tracking-wider text-charcoal-light dark:text-gray-400">
                       Coming Up
@@ -156,13 +195,23 @@ export default async function Blog({
                   {[
                     {
                       title: "Building an Air-Gapped AI System for Medical Billing",
-                      author: "Ghulam Shah",
+                      author: "Zubair Khan, DO",
                       date: "Mid March 2026",
                     },
                     {
                       title: "The Prior Authorization Problem: What Every Practice Owner Should Know",
-                      author: "Faizan G. Arif, MD",
+                      author: "Shahan G. Arif, MD",
                       date: "Late March 2026",
+                    },
+                    {
+                      title: "Why Credentialing Delays Are Costing Your Practice More Than You Know",
+                      author: "Fawad Aziz",
+                      date: "Early April 2026",
+                    },
+                    {
+                      title: "Days in A/R: The One Metric That Reveals Everything About Your Billing Health",
+                      author: "Usman Khan",
+                      date: "Mid April 2026",
                     },
                   ].map((upcoming) => (
                     <StaggerItem key={upcoming.title}>
