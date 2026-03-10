@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import remarkRehype from "remark-rehype";
-import rehypeSanitize from "rehype-sanitize";
+import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 
 // ---------------------------------------------------------------------------
@@ -45,7 +45,7 @@ const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 function computeReadingTime(text: string): number {
   const words = text.trim().split(/\s+/).length;
-  return Math.max(1, Math.ceil(words / 265));
+  return Math.max(1, Math.ceil(words / 300));
 }
 
 // ---------------------------------------------------------------------------
@@ -96,7 +96,13 @@ export async function getPostBySlug(
     if (data.slug === slug) {
       const result = await remark()
         .use(remarkRehype)
-        .use(rehypeSanitize)
+        .use(rehypeSanitize, {
+          ...defaultSchema,
+          protocols: {
+            href: defaultSchema.protocols?.href,
+            // src left unrestricted so relative paths like /blog/image.svg are allowed
+          },
+        })
         .use(rehypeStringify)
         .process(content);
       return { ...meta, content: result.toString() };
