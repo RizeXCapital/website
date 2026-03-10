@@ -196,10 +196,10 @@ export default function Navigation() {
     <header className="sticky top-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-sm dark:border-dark-border dark:bg-dark-bg/95">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-start gap-2">
-          <span className="text-2xl leading-none">👑</span>
-          <span className="font-heading text-xl font-bold tracking-tight text-navy dark:text-white">
-            Sovereign RCM
+        <Link href="/" className="flex items-center gap-2">
+          <span className="text-2xl leading-none -translate-y-0.5">👑</span>
+          <span className="font-heading text-2xl font-semibold tracking-wide text-navy dark:text-white select-none">
+            Sovereign <span className="text-coral">RCM</span>
           </span>
         </Link>
 

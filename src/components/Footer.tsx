@@ -30,9 +30,9 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xl leading-none -translate-y-0.5">👑</span>
-              <span className="font-heading text-lg font-bold tracking-tight">
-                Sovereign RCM
+              <span className="text-2xl leading-none -translate-y-0.5">👑</span>
+              <span className="font-heading text-2xl font-semibold tracking-wide select-none">
+                Sovereign <span className="text-coral">RCM</span>
               </span>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-300">
