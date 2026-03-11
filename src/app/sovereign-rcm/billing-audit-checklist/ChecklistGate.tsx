@@ -257,18 +257,23 @@ function ChecklistContent() {
         </button>
       </div>
 
-      <div className="space-y-10">
+      <div className="space-y-6">
         {sections.map((section, si) => (
-          <div key={section.title}>
-            <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
-              <span className="mr-2 font-mono text-sm text-teal dark:text-teal-dark">
-                0{si + 1}
+          <div
+            key={section.title}
+            className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-dark-border dark:bg-dark-elevated"
+          >
+            <div className="flex items-center gap-3 border-b border-gray-200 bg-gray-50 px-6 py-4 dark:border-dark-border dark:bg-dark-bg">
+              <span className="font-mono text-xs font-semibold text-teal dark:text-teal-dark">
+                {String(si + 1).padStart(2, "0")}
               </span>
-              {section.title}
-            </h3>
-            <ul className="mt-4 space-y-3">
+              <h3 className="font-heading text-base font-bold text-navy dark:text-white">
+                {section.title}
+              </h3>
+            </div>
+            <ul className="divide-y divide-gray-100 dark:divide-dark-border">
               {section.items.map((item, ii) => (
-                <li key={ii} className="flex items-start gap-3">
+                <li key={ii} className="flex items-start gap-4 px-6 py-4">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-gray-300 dark:border-dark-border" />
                   <span className="text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                     {item}

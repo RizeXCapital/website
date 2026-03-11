@@ -4,11 +4,11 @@ import { ChecklistGate } from "./ChecklistGate";
 export const metadata: Metadata = {
   title: "Medical Practice Billing Audit Checklist — Sovereign RCM",
   description:
-    "A free 35-point audit checklist for medical practices. Covers claim accuracy, denial patterns, A/R health, coding accuracy, payer compliance, and PHI security.",
+    "A free 34-point audit checklist for medical practices. Covers claim accuracy, denial patterns, A/R health, coding accuracy, payer compliance, and PHI security.",
   openGraph: {
     title: "Medical Practice Billing Audit Checklist — Free Download",
     description:
-      "35 audit items across 7 sections. Find the billing gaps costing your practice revenue — and fix them.",
+      "34 audit items across 7 sections. Find the billing gaps costing your practice revenue — and fix them.",
     url: "https://rizexcapital.com/sovereign-rcm/billing-audit-checklist",
     type: "website",
   },
@@ -23,7 +23,7 @@ const jsonLd = {
   "@type": "HowTo",
   name: "Medical Practice Billing Audit Checklist",
   description:
-    "A 35-point checklist for auditing medical practice billing operations across claim submission, documentation, denials, A/R, coding, payer contracts, and PHI security.",
+    "A 34-point checklist for auditing medical practice billing operations across claim submission, documentation, denials, A/R, coding, payer contracts, and PHI security.",
   url: "https://rizexcapital.com/sovereign-rcm/billing-audit-checklist",
   publisher: {
     "@type": "Organization",
@@ -52,7 +52,7 @@ export default function BillingAuditChecklist() {
             Billing Audit Checklist
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            35 audit items across 7 sections. Find the billing gaps costing your
+            34 audit items across 7 sections. Find the billing gaps costing your
             practice revenue — and the compliance gaps putting it at risk.
           </p>
         </div>
