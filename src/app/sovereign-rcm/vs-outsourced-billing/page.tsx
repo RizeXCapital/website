@@ -31,7 +31,7 @@ const outsourcedProblems = [
     icon: "📉",
     title: "Percentage Drain",
     description:
-      "Outsourced billing companies charge 4 - 10% of collections. The more revenue your practice generates, the more you pay — indefinitely. A 5-provider practice collecting $2.5M/yr pays $100K - $250K/yr with no path to ownership.",
+      "Outsourced billing companies charge 4 - 10% of collections. The more revenue your practice generates, the more you pay  -  indefinitely. A 5-provider practice collecting $2.5M/yr pays $100K - $250K/yr with no path to ownership.",
   },
   {
     icon: "🔍",
@@ -50,16 +50,16 @@ const outsourcedProblems = [
 const comparisonRows = [
   {
     category: "Cost Model",
-    tooltip: "How you pay — fixed one-time cost vs. perpetual percentage of collections",
-    sovereign: "One-time capital expenditure — you own the appliance",
+    tooltip: "How you pay  -  fixed one-time cost vs. perpetual percentage of collections",
+    sovereign: "One-time capital expenditure, you own the appliance",
     outsourced: "4 - 10% of collections, paid every month, indefinitely",
   },
   {
     category: "5-Year Cost Trajectory",
     tooltip: "How total billing costs change over five years as your practice grows",
-    sovereign: "Fixed hardware cost, no ongoing fees — cost decreases over time",
+    sovereign: "Fixed hardware cost, no ongoing fees, cost decreases over time",
     outsourced:
-      "Scales with revenue — a growing practice pays more every year",
+      "Scales with revenue, a growing practice pays more every year",
   },
   {
     category: "Coding Accuracy",
@@ -88,7 +88,7 @@ const comparisonRows = [
   {
     category: "PHI Handling",
     tooltip: "How protected health information is stored, transmitted, and accessed during billing",
-    sovereign: "On-premise, air-gapped — PHI never leaves your facility",
+    sovereign: "On-premise, air-gapped. PHI never leaves your facility",
     outsourced:
       "PHI transmitted to third-party offices, expanding your breach surface",
   },
@@ -96,7 +96,7 @@ const comparisonRows = [
     category: "Audit Trail",
     tooltip: "Level of documentation for why each coding and billing decision was made",
     sovereign:
-      "Per-claim reasoning trail — every coding decision is documented",
+      "Per-claim reasoning trail, every coding decision is documented",
     outsourced:
       "Monthly summary reports with limited claim-level transparency",
   },
@@ -112,7 +112,7 @@ const comparisonRows = [
     tooltip: "How billing costs and capacity change as your practice adds providers or volume",
     sovereign:
       "Same appliance handles increased volume without proportional cost increase",
-    outsourced: "Costs scale linearly — more claims means proportionally higher fees",
+    outsourced: "Costs scale linearly, more claims means proportionally higher fees",
   },
   {
     category: "Switching Cost",
@@ -127,13 +127,13 @@ const faqs = [
   {
     question: "Can AI really replace our outsourced billing team?",
     answer:
-      "Sovereign RCM is designed to handle the core coding and claim preparation workflow — reading clinical notes, assigning CPT and ICD-10 codes, applying payer-specific rules, and generating compliant 837P claims. For most practices, this covers 80 - 90% of claim volume. Edge cases and complex appeals may still benefit from human review, which is why we run a 90-day pilot in shadow mode to measure exactly what the appliance handles versus what needs manual attention in your specific specialty mix.",
+      "Sovereign RCM is designed to handle the core coding and claim preparation workflow, reading clinical notes, assigning CPT and ICD-10 codes, applying payer-specific rules, and generating compliant 837P claims. For most practices, this covers 80 - 90% of claim volume. Edge cases and complex appeals may still benefit from human review, which is why we run a 90-day pilot in shadow mode to measure exactly what the appliance handles versus what needs manual attention in your specific specialty mix.",
   },
   {
     question:
-      "We've used the same billing company for years — why switch now?",
+      "We've used the same billing company for years, why switch now?",
     answer:
-      "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year — $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate — it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue when a fixed-cost alternative exists.",
+      "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year, $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate, it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue when a fixed-cost alternative exists.",
   },
   {
     question: "What about complex specialty coding?",
@@ -143,7 +143,7 @@ const faqs = [
   {
     question: "How does the transition from outsourced billing work?",
     answer:
-      "We run Sovereign RCM in shadow mode alongside your existing billing company for 90 days. During this period, both systems process claims independently. You compare clean-claim rates, denial rates, coding accuracy, and turnaround times side by side. There is no disruption to your current revenue cycle during the evaluation. If the pilot meets exit criteria — 95%+ clean-claim rate, 30%+ reduction in coder touch time — you transition at your own pace.",
+      "We run Sovereign RCM in shadow mode alongside your existing billing company for 90 days. During this period, both systems process claims independently. You compare clean-claim rates, denial rates, coding accuracy, and turnaround times side by side. There is no disruption to your current revenue cycle during the evaluation. If the pilot meets exit criteria, 95%+ clean-claim rate, 30%+ reduction in coder touch time, you transition at your own pace.",
   },
   {
     question: "Is the upfront cost worth it vs. continuing to pay a percentage?",
@@ -254,7 +254,7 @@ export default function VsOutsourcedBilling() {
         </div>
       </section>
 
-      {/* Deep Dive A: Cost — Fixed vs. Percentage */}
+      {/* Deep Dive A: Cost. Fixed vs. Percentage */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
@@ -266,7 +266,7 @@ export default function VsOutsourcedBilling() {
                 The percentage-of-collections model creates a fundamental
                 misalignment: the more revenue your practice generates, the more
                 you pay your billing company. Solo practitioners pay the highest
-                rates — 10.9% of collections on average (AMA 2024) — while
+                rates, 10.9% of collections on average (AMA 2024), while
                 administrative overhead consumes 15.5% of net patient revenue
                 across the industry.
               </p>
@@ -274,7 +274,7 @@ export default function VsOutsourcedBilling() {
                 Sovereign RCM replaces that perpetual cost with a one-time
                 capital expenditure. The appliance processes claims at a fixed
                 cost regardless of volume or collections. As your practice
-                grows, your billing cost stays flat — the opposite of the
+                grows, your billing cost stays flat, the opposite of the
                 percentage model where success is penalized with higher fees.
               </p>
             </FadeIn>
@@ -326,7 +326,7 @@ export default function VsOutsourcedBilling() {
 
       <SectionDivider variant="dark" />
 
-      {/* Deep Dive B: Coding Accuracy — AI vs. Human Coders */}
+      {/* Deep Dive B: Coding Accuracy. AI vs. Human Coders */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
@@ -391,7 +391,7 @@ export default function VsOutsourcedBilling() {
                 Procedure Specialist assigns codes based on documentation, the
                 Payer Logic Bot applies insurer-specific rules, and the Denial
                 Analyst identifies patterns that cause rejections. Every claim
-                is processed with the same rigor — no turnover, no fatigue, no
+                is processed with the same rigor, no turnover, no fatigue, no
                 conservative defaults.
               </p>
             </FadeIn>
@@ -399,7 +399,7 @@ export default function VsOutsourcedBilling() {
         </div>
       </section>
 
-      {/* Deep Dive C: Data Security — On-Premise vs. Third Party */}
+      {/* Deep Dive C: Data Security. On-Premise vs. Third Party */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
@@ -408,8 +408,8 @@ export default function VsOutsourcedBilling() {
                 Data Security: On-Premise vs. Third Party
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                Outsourced billing requires transmitting PHI — patient names,
-                diagnoses, insurance details, Social Security numbers — to a
+                Outsourced billing requires transmitting PHI, patient names,
+                diagnoses, insurance details, Social Security numbers, to a
                 third-party company. That data travels over networks, sits on
                 external servers, and is accessible to billing company staff.
                 Your BAA chain extends to every subprocessor they use.
@@ -419,8 +419,8 @@ export default function VsOutsourcedBilling() {
                 records through a single point of failure in a centralized
                 billing infrastructure. Sovereign RCM eliminates third-party PHI
                 transmission entirely. Clinical notes are processed on a local,
-                air-gapped appliance. Only the final 837P claim — containing the
-                minimum data required by the payer — leaves your facility.
+                air-gapped appliance. Only the final 837P claim, containing the
+                minimum data required by the payer, leaves your facility.
               </p>
             </FadeIn>
             <FadeIn direction="right">
@@ -471,7 +471,7 @@ export default function VsOutsourcedBilling() {
 
       <SectionDivider variant="light" />
 
-      {/* Deep Dive D: Visibility — Full Audit Trail vs. Black Box */}
+      {/* Deep Dive D: Visibility. Full Audit Trail vs. Black Box */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
@@ -484,28 +484,28 @@ export default function VsOutsourcedBilling() {
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>Per-claim reasoning</strong> — see exactly why
+                      <strong>Per-claim reasoning</strong>, see exactly why
                       each code was assigned
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>Denial pattern analysis</strong> — identify root
+                      <strong>Denial pattern analysis</strong>, identify root
                       causes, not just totals
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>Real-time dashboards</strong> — not monthly
+                      <strong>Real-time dashboards</strong>, not monthly
                       summary reports
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>Undercoding alerts</strong> — flagged
+                      <strong>Undercoding alerts</strong>, flagged
                       opportunities, not missed silently
                     </span>
                   </li>
@@ -524,7 +524,7 @@ export default function VsOutsourcedBilling() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 Most outsourced billing companies provide monthly summary
-                reports — total claims submitted, total collected, total denied.
+                reports, total claims submitted, total collected, total denied.
                 What they rarely provide is per-claim reasoning: why a specific
                 code was chosen, why a modifier was applied or omitted, or why a
                 claim was denied and what pattern it belongs to.
@@ -535,7 +535,7 @@ export default function VsOutsourcedBilling() {
                 documentation that supports it. Denial patterns are analyzed
                 across your full claim history, not just individual rejections.
                 You see exactly where revenue is being captured, where it is
-                being missed, and why — in real time, not 30 days later.
+                being missed, and why, in real time, not 30 days later.
               </p>
             </FadeIn>
           </div>
@@ -589,7 +589,7 @@ export default function VsOutsourcedBilling() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
               Replace your outsourced billing company with infrastructure you own.
-              Fixed cost, full visibility, no percentage of collections — and your
+              Fixed cost, full visibility, no percentage of collections, and your
               PHI never leaves the building.
             </p>
             <div className="mt-8">

@@ -11,13 +11,13 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "On-Premise AI vs. Cloud SaaS Billing — Sovereign RCM",
+  title: "On-Premise AI vs. Cloud SaaS Billing  -  Sovereign RCM",
   description:
     "Compare Sovereign RCM's on-premise AI billing appliance to cloud SaaS RCM platforms. See how on-premise deployment eliminates breach risk, ends recurring fees, and gives you full data ownership.",
   openGraph: {
-    title: "On-Premise AI vs. Cloud SaaS Billing — Sovereign RCM",
+    title: "On-Premise AI vs. Cloud SaaS Billing  -  Sovereign RCM",
     description:
-      "Compare Sovereign RCM's on-premise AI billing appliance to cloud SaaS RCM platforms. Security, cost, data ownership, and uptime — side by side.",
+      "Compare Sovereign RCM's on-premise AI billing appliance to cloud SaaS RCM platforms. Security, cost, data ownership, and uptime, side by side.",
     url: "https://rizexcapital.com/sovereign-rcm/vs-cloud-rcm",
     type: "website",
   },
@@ -31,13 +31,13 @@ const cloudProblems = [
     icon: "🛡️",
     title: "Security Exposure",
     description:
-      "The 2024 Change Healthcare breach exposed 192.7 million patient records. Cloud billing centralizes PHI into a single attack surface — one breach compromises every practice on the platform.",
+      "The 2024 Change Healthcare breach exposed 192.7 million patient records. Cloud billing centralizes PHI into a single attack surface, one breach compromises every practice on the platform.",
   },
   {
     icon: "💸",
     title: "Recurring Cost Drain",
     description:
-      "Cloud RCM charges 4 - 8% of collections or $200 - $500 per provider per month — indefinitely. A 5-provider practice pays $120K - $300K over five years with nothing to show for it.",
+      "Cloud RCM charges 4 - 8% of collections or $200 - $500 per provider per month, indefinitely. A 5-provider practice pays $120K - $300K over five years with nothing to show for it.",
   },
   {
     icon: "🔗",
@@ -57,7 +57,7 @@ const comparisonRows = [
   {
     category: "PHI Transmission",
     tooltip: "Whether protected health information travels over external networks to reach the billing system",
-    sovereign: "None — data never leaves the building",
+    sovereign: "None, data never leaves the building",
     cloud: "Transmitted over internet to vendor infrastructure",
   },
   {
@@ -68,8 +68,8 @@ const comparisonRows = [
   },
   {
     category: "Cost Model",
-    tooltip: "How you pay for the billing system — one-time purchase vs. ongoing fees",
-    sovereign: "One-time capital expenditure — you own it",
+    tooltip: "How you pay for the billing system, one-time purchase vs. ongoing fees",
+    sovereign: "One-time capital expenditure, you own it",
     cloud: "Recurring % of collections or per-provider monthly fee",
   },
   {
@@ -93,13 +93,13 @@ const comparisonRows = [
   {
     category: "Internet Required",
     tooltip: "Whether the system needs an active internet connection to process claims",
-    sovereign: "No — fully air-gapped inference",
-    cloud: "Yes — internet outage stops all billing",
+    sovereign: "No, fully air-gapped inference",
+    cloud: "Yes, internet outage stops all billing",
   },
   {
     category: "BAA Complexity",
     tooltip: "The chain of Business Associate Agreements required to stay HIPAA-compliant",
-    sovereign: "Simplified — PHI stays under your direct control",
+    sovereign: "Simplified. PHI stays under your direct control",
     cloud: "Multi-party BAA chain with vendor subprocessors",
   },
   {
@@ -120,22 +120,22 @@ const faqs = [
   {
     question: "We already use a cloud RCM platform. Can we switch?",
     answer:
-      "Yes. We run a 90-day pilot in shadow mode alongside your existing billing system. During the pilot, Sovereign RCM processes claims in parallel without disrupting your current workflow. This lets you validate clean-claim rates, denial rate reduction, and time savings before making the transition. Migration support is included — we handle data mapping and payer enrollment coordination.",
+      "Yes. We run a 90-day pilot in shadow mode alongside your existing billing system. During the pilot, Sovereign RCM processes claims in parallel without disrupting your current workflow. This lets you validate clean-claim rates, denial rate reduction, and time savings before making the transition. Migration support is included, we handle data mapping and payer enrollment coordination.",
   },
   {
     question: "Does the appliance need to connect to payers and clearinghouses?",
     answer:
-      "Claim submission to payers and clearinghouses does require a controlled, outbound-only network connection — the same connection your practice already uses for claim submission today. The critical difference: clinical notes and patient records are processed entirely on the local appliance. Only the final, formatted 837P claim is transmitted, containing the minimum data required by the payer. No bulk PHI is ever sent to a cloud service.",
+      "Claim submission to payers and clearinghouses does require a controlled, outbound-only network connection, the same connection your practice already uses for claim submission today. The critical difference: clinical notes and patient records are processed entirely on the local appliance. Only the final, formatted 837P claim is transmitted, containing the minimum data required by the payer. No bulk PHI is ever sent to a cloud service.",
   },
   {
     question: "How are updates and maintenance handled?",
     answer:
-      "Software updates are delivered on encrypted media or through a secure, authenticated channel that you initiate. Updates are never pushed automatically — your team controls when and whether to apply them. The appliance includes self-diagnostic monitoring that alerts you to hardware health issues. For practices that want hands-off maintenance, we offer optional support agreements.",
+      "Software updates are delivered on encrypted media or through a secure, authenticated channel that you initiate. Updates are never pushed automatically, your team controls when and whether to apply them. The appliance includes self-diagnostic monitoring that alerts you to hardware health issues. For practices that want hands-off maintenance, we offer optional support agreements.",
   },
   {
     question: "Is Sovereign RCM only for large practices?",
     answer:
-      "No. Sovereign RCM starts at the SR-1 tier for practices with 1 - 3 providers. Small practices often have the most to gain — they pay the highest percentage of collections to outsourced billing and have the least bargaining power to negotiate rates. The appliance scales from solo practices to multi-specialty groups with up to 25 providers.",
+      "No. Sovereign RCM starts at the SR-1 tier for practices with 1 - 3 providers. Small practices often have the most to gain, they pay the highest percentage of collections to outsourced billing and have the least bargaining power to negotiate rates. The appliance scales from solo practices to multi-specialty groups with up to 25 providers.",
   },
 ];
 
@@ -252,14 +252,14 @@ export default function VsCloudRCM() {
                 Healthcare data breaches reached record levels in 2024. The HHS
                 Office for Civil Rights reported 725 major incidents exposing
                 over 275 million patient records. The Change Healthcare attack
-                alone compromised 192.7 million records — roughly 60% of the
+                alone compromised 192.7 million records, roughly 60% of the
                 U.S. population.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 Cloud RCM platforms are high-value targets because they
                 aggregate data from thousands of practices into centralized
                 infrastructure. Sovereign RCM eliminates this risk category
-                entirely. Your data sits on a local appliance — a breach at
+                entirely. Your data sits on a local appliance, a breach at
                 another organization has no impact on your practice.
               </p>
             </FadeIn>
@@ -376,7 +376,7 @@ export default function VsCloudRCM() {
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 Cloud RCM pricing is designed to be easy to start and expensive
                 to keep. Percentage-of-collections models mean your costs scale
-                with your success — the more revenue you collect, the more you
+                with your success, the more revenue you collect, the more you
                 pay your billing vendor. Per-provider monthly fees compound
                 quietly over years.
               </p>
@@ -513,7 +513,7 @@ export default function VsCloudRCM() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 Cloud platforms depend on internet connectivity, vendor server
-                uptime, and third-party infrastructure — all outside your
+                uptime, and third-party infrastructure, all outside your
                 control. When any link in that chain breaks, your billing stops.
                 Athenahealth alone has logged over 465 outage incidents, each one
                 delaying claims for thousands of practices simultaneously.
@@ -522,7 +522,7 @@ export default function VsCloudRCM() {
                 Sovereign RCM runs entirely on local hardware. Internet outages,
                 vendor maintenance windows, and cloud provider incidents have
                 zero effect on your billing operations. The appliance processes
-                claims whenever your staff is ready — no external dependencies,
+                claims whenever your staff is ready, no external dependencies,
                 no waiting on someone else&apos;s infrastructure.
               </p>
             </FadeIn>
@@ -577,7 +577,7 @@ export default function VsCloudRCM() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
               Stop paying rent on your billing system. Sovereign RCM gives your
-              practice full control — security, cost, data, and uptime — with no
+              practice full control, security, cost, data, and uptime, with no
               recurring platform fees.
             </p>
             <div className="mt-8">

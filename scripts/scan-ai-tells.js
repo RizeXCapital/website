@@ -174,6 +174,7 @@ for (const filePath of files) {
     } else {
       // For TSX: we extracted segments, but we need to fix the original file directly
       // Apply punctuation + banned phrase fixes to raw TSX
+      let emDashSeenTsx = 0;
       let rawFixed = rawFile
         .replace(/ +$/gm, '')
         .replace(/[\u2018\u2019]/g, "'")
@@ -181,7 +182,17 @@ for (const filePath of files) {
         .replace(/\u2026/g, '...')
         .replace(/ \u2013 ([A-Z])/g, '. $1')
         .replace(/ \u2013 /g, ', ')
-        .replace(/\u2013/g, ' - ');
+        .replace(/\u2013/g, ' - ')
+        .replace(/ \u2014 /g, (match, offset, str) => {
+          emDashSeenTsx++;
+          if (emDashSeenTsx <= EM_DASH_KEEP) return match;
+          const after = str.slice(offset + match.length);
+          return /^[A-Z]/.test(after.trim()) ? '. ' : ', ';
+        })
+        .replace(/\u2014/g, (match) => {
+          emDashSeenTsx++;
+          return emDashSeenTsx <= EM_DASH_KEEP ? match : ' - ';
+        });
       for (const phrase of bannedRule.phrases) {
         rawFixed = rawFixed.replace(phrase.pattern, phrase.fix);
         phrase.pattern.lastIndex = 0;

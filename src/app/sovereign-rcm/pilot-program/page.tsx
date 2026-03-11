@@ -12,11 +12,11 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "90-Day Pilot Program — Sovereign RCM",
+  title: "90-Day Pilot Program  -  Sovereign RCM",
   description:
-    "Prove Sovereign RCM works for your practice with a zero-risk, 90-day shadow pilot. Real claims, real results — no obligation.",
+    "Prove Sovereign RCM works for your practice with a zero-risk, 90-day shadow pilot. Real claims, real results  -  no obligation.",
   openGraph: {
-    title: "90-Day Pilot Program — Sovereign RCM",
+    title: "90-Day Pilot Program. Sovereign RCM",
     description:
       "Prove Sovereign RCM works for your practice with a zero-risk, 90-day shadow pilot.",
     url: "https://rizexcapital.com/sovereign-rcm/pilot-program",
@@ -39,7 +39,7 @@ const phases = [
     title: "Shadow Mode",
     duration: "Weeks 3 - 8",
     description:
-      "The AI processes your claims in parallel — your existing billing continues untouched. Every claim is drafted, coded, and scrubbed without affecting your live revenue cycle.",
+      "The AI processes your claims in parallel, your existing billing continues untouched. Every claim is drafted, coded, and scrubbed without affecting your live revenue cycle.",
   },
   {
     number: "03",
@@ -53,7 +53,7 @@ const phases = [
     title: "Decision Point",
     duration: "Weeks 11 - 12",
     description:
-      "Review the results with your team. If the pilot meets exit criteria, transition at your own pace. If it doesn't — walk away with zero obligation.",
+      "Review the results with your team. If the pilot meets exit criteria, transition at your own pace. If it doesn't, walk away with zero obligation.",
   },
 ];
 
@@ -85,7 +85,7 @@ const shadowBenefits = [
   {
     title: "Zero Revenue Risk",
     description:
-      "Your existing billing continues uninterrupted. The AI runs in parallel, not in place — no disruption to your cash flow.",
+      "Your existing billing continues uninterrupted. The AI runs in parallel, not in place, no disruption to your cash flow.",
     icon: (
       <svg
         className="h-8 w-8 text-teal dark:text-teal-dark"
@@ -105,7 +105,7 @@ const shadowBenefits = [
   {
     title: "Real Data, Not Projections",
     description:
-      "Results are based on your actual claims, payer mix, and specialty — not industry averages or hypothetical models.",
+      "Results are based on your actual claims, payer mix, and specialty, not industry averages or hypothetical models.",
     icon: (
       <svg
         className="h-8 w-8 text-teal dark:text-teal-dark"
@@ -145,7 +145,7 @@ const shadowBenefits = [
   {
     title: "Full Transparency",
     description:
-      "Every AI coding decision includes a reasoning trail. You see exactly why each code was assigned — nothing is a black box.",
+      "Every AI coding decision includes a reasoning trail. You see exactly why each code was assigned, nothing is a black box.",
     icon: (
       <svg
         className="h-8 w-8 text-teal dark:text-teal-dark"
@@ -191,7 +191,7 @@ const faqs = [
   {
     question: "What happens to my current billing during the pilot?",
     answer:
-      "It continues exactly as-is. Shadow mode runs the AI in parallel with your existing billing process. Your current revenue cycle is never interrupted — the pilot is purely observational until you decide to transition.",
+      "It continues exactly as-is. Shadow mode runs the AI in parallel with your existing billing process. Your current revenue cycle is never interrupted, the pilot is purely observational until you decide to transition.",
   },
   {
     question: "What do I need to provide for the pilot?",
@@ -201,7 +201,7 @@ const faqs = [
   {
     question: "Is my patient data safe during the pilot?",
     answer:
-      "Yes. The appliance is installed on-premise in your facility and operates air-gapped — no cloud connection, no external data transmission. PHI never leaves your building. The same security architecture applies during the pilot as in full deployment.",
+      "Yes. The appliance is installed on-premise in your facility and operates air-gapped, no cloud connection, no external data transmission. PHI never leaves your building. The same security architecture applies during the pilot as in full deployment.",
   },
   {
     question: "What if the pilot doesn't meet the benchmarks?",
@@ -211,12 +211,12 @@ const faqs = [
   {
     question: "How much does the pilot cost?",
     answer:
-      "Pilot pricing depends on your practice size, specialty mix, and claim volume. Contact us for a quote specific to your practice — we will scope the pilot to your exact needs.",
+      "Pilot pricing depends on your practice size, specialty mix, and claim volume. Contact us for a quote specific to your practice, we will scope the pilot to your exact needs.",
   },
   {
     question: "Can I extend the pilot period?",
     answer:
-      "Yes. If additional time would provide meaningful data — for example, to capture seasonal volume variations or a broader payer mix — we can extend the pilot by mutual agreement.",
+      "Yes. If additional time would provide meaningful data, for example, to capture seasonal volume variations or a broader payer mix, we can extend the pilot by mutual agreement.",
   },
 ];
 
@@ -260,7 +260,7 @@ export default function PilotProgram() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300 sm:text-xl">
-                Shadow mode runs alongside your current billing — zero
+                Shadow mode runs alongside your current billing, zero
                 disruption, full transparency. See the results before you make
                 any commitment.
               </p>
@@ -278,7 +278,7 @@ export default function PilotProgram() {
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
               Four phases over 90 days. Your existing billing runs untouched the
-              entire time — we prove value before you transition anything.
+              entire time, we prove value before you transition anything.
             </p>
           </FadeIn>
           <AnimatedTimeline phases={phases} className="mt-12" />
@@ -295,7 +295,7 @@ export default function PilotProgram() {
               What We Measure
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-              Every pilot is evaluated against four objective benchmarks — the
+              Every pilot is evaluated against four objective benchmarks, the
               same metrics your practice already tracks.
             </p>
           </FadeIn>
@@ -328,14 +328,14 @@ export default function PilotProgram() {
                 Clear Exit Criteria
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                The pilot succeeds or fails on objective benchmarks — not
+                The pilot succeeds or fails on objective benchmarks, not
                 subjective impressions. Before day one, we agree on the specific
                 thresholds your practice needs to see. If they are not met, you
                 walk away with zero obligation.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 This structure exists because we believe the results speak for
-                themselves. We do not need a long-term contract to prove value —
+                themselves. We do not need a long-term contract to prove value  -
                 we need 90 days of your real claims data.
               </p>
             </FadeIn>
@@ -417,7 +417,7 @@ export default function PilotProgram() {
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 If the pilot meets your benchmarks, transitioning to full
                 deployment is straightforward. The same appliance that ran in
-                shadow mode becomes your production billing engine — no new
+                shadow mode becomes your production billing engine, no new
                 hardware, no reconfiguration, no learning curve.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
@@ -518,7 +518,7 @@ export default function PilotProgram() {
                   Not sure where your billing stands today?
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                  Download our free Medical Practice Billing Audit Checklist — 35
+                  Download our free Medical Practice Billing Audit Checklist, 35
                   items across claim accuracy, denial patterns, A/R, coding, and
                   PHI compliance.
                 </p>
