@@ -53,4 +53,4 @@
 - Check bold subpoint sections — are they all identical in structure? Break them up.
 - Check lists — could they be prose instead? Are they too uniform?
 - Grep for trailing spaces, smart quotes, em dash count
-- Does the author's personality come through? (Ghulam = data/ML background, Faizan = EM physician, Mudassir = finance/ops)
+- Does the author's personality come through? (Ghulam = data/ML background, Faizan = EM physician, Navid M. Rahman PE = COO/ops)
