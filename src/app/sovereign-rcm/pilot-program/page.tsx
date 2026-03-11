@@ -30,28 +30,28 @@ const phases = [
   {
     number: "01",
     title: "Discovery & Onboarding",
-    duration: "Weeks 1–2",
+    duration: "Weeks 1 - 2",
     description:
       "Practice assessment, appliance installation, EHR integration, and staff orientation. We learn your specialty mix, payer contracts, and current denial patterns.",
   },
   {
     number: "02",
     title: "Shadow Mode",
-    duration: "Weeks 3–8",
+    duration: "Weeks 3 - 8",
     description:
       "The AI processes your claims in parallel — your existing billing continues untouched. Every claim is drafted, coded, and scrubbed without affecting your live revenue cycle.",
   },
   {
     number: "03",
     title: "Comparison & Analysis",
-    duration: "Weeks 9–10",
+    duration: "Weeks 9 - 10",
     description:
       "Side-by-side comparison of AI-drafted claims versus your manually-billed claims. We measure clean-claim rates, coding accuracy, denial patterns, and undercoding recapture.",
   },
   {
     number: "04",
     title: "Decision Point",
-    duration: "Weeks 11–12",
+    duration: "Weeks 11 - 12",
     description:
       "Review the results with your team. If the pilot meets exit criteria, transition at your own pace. If it doesn't — walk away with zero obligation.",
   },
