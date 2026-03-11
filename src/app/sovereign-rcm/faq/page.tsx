@@ -5,11 +5,11 @@ import FaqFilter from "@/components/FaqFilter";
 import { AnimatedHero, FadeIn } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "FAQ — Sovereign RCM",
+  title: "FAQ: Sovereign RCM",
   description:
-    "Frequently asked questions about Sovereign RCM — how it works, the AI pipeline, security, pricing, the 90-day pilot, and how it compares to outsourced billing and cloud platforms.",
+    "Frequently asked questions about Sovereign RCM: how it works, the AI pipeline, security, pricing, the 90-day pilot, and how it compares to outsourced billing and cloud platforms.",
   openGraph: {
-    title: "FAQ — Sovereign RCM",
+    title: "FAQ: Sovereign RCM",
     description:
       "Answers to the most common questions about Sovereign RCM's on-premise AI billing appliance for medical practices.",
     url: "https://rizexcapital.com/sovereign-rcm/faq",
@@ -27,7 +27,7 @@ const faqCategories = [
       {
         question: "What is Sovereign RCM?",
         answer:
-          "Sovereign RCM is a physical AI appliance deployed inside your medical practice. It reads signed clinical notes and drafts compliant 837P professional claims using a multi-agent AI pipeline — Chart Reader, Procedure Specialist, Payer Logic Bot, and Denial Analyst. Everything runs locally. No PHI leaves your building.",
+          "Sovereign RCM is a physical AI appliance deployed inside your medical practice. It reads signed clinical notes and drafts compliant 837P professional claims using a multi-agent AI pipeline: Chart Reader, Procedure Specialist, Payer Logic Bot, and Denial Analyst. Everything runs locally. No PHI leaves your building.",
       },
       {
         question: "How does the AI generate claims from clinical notes?",
@@ -37,12 +37,12 @@ const faqCategories = [
       {
         question: "Which medical specialties does Sovereign RCM support?",
         answer:
-          "We are launching with six beachhead specialties: Emergency Medicine, Orthopedics, Cardiology, Pain Management, Dermatology, and Multi-Specialty Groups. These were selected because they have high coding complexity, significant undercoding risk, or procedure-heavy workflows where AI-assisted billing delivers the most value. Dental practices are not supported — dental billing uses CDT codes and the 837D format, which is a different system.",
+          "We are launching with six beachhead specialties: Emergency Medicine, Orthopedics, Cardiology, Pain Management, Dermatology, and Multi-Specialty Groups. These were selected because they have high coding complexity, significant undercoding risk, or procedure-heavy workflows where AI-assisted billing delivers the most value. Dental practices are not supported (dental billing uses CDT codes and the 837D format, a different system entirely).",
       },
       {
         question: "Does Sovereign RCM replace our billing staff?",
         answer:
-          "No. Sovereign RCM drafts claims and flags potential issues — your billing team reviews, approves, and submits. The goal is to reduce coder touch time, catch undercoding, and improve clean-claim rates. Your staff focuses on exceptions and complex cases instead of routine data entry.",
+          "No. Sovereign RCM drafts claims and flags potential issues. Your billing team reviews, approves, and submits. The goal is to reduce coder touch time, catch undercoding, and improve clean-claim rates. Your staff focuses on exceptions and complex cases instead of routine data entry.",
       },
       {
         question: "What EHR systems are supported?",
@@ -62,12 +62,12 @@ const faqCategories = [
       {
         question: "How long does it take to process a single claim?",
         answer:
-          "The full pipeline — from clinical note ingestion to 837P output — typically completes in under 60 seconds per encounter. Batch processing of a full day's encounters runs overnight without manual intervention.",
+          "The full pipeline, from clinical note ingestion to 837P output, typically completes in under 60 seconds per encounter. Batch processing of a full day's encounters runs overnight without manual intervention.",
       },
       {
         question: "What if my team disagrees with a code assignment?",
         answer:
-          "Every code includes the clinical documentation that supports it. Your team can override any assignment — the system records the change and learns from the correction. The AI makes recommendations; your staff makes final decisions.",
+          "Every code includes the clinical documentation that supports it. Your team can override any assignment; the system records the change and learns from the correction. The AI makes recommendations, your staff makes final decisions.",
       },
       {
         question: "How does the system learn our practice patterns?",
@@ -92,17 +92,17 @@ const faqCategories = [
       {
         question: "How does Sovereign RCM protect patient data?",
         answer:
-          "Sovereign RCM processes all data locally on a physical appliance inside your facility. Clinical notes, patient records, and billing data never leave your building. There is no cloud component, no external API calls during claim generation, and no third-party data sharing. The appliance operates in an air-gapped environment — it does not require an internet connection to function.",
+          "Sovereign RCM processes all data locally on a physical appliance inside your facility. Clinical notes, patient records, and billing data never leave your building. There is no cloud component, no external API calls during claim generation, and no third-party data sharing. The appliance operates in a true air-gapped environment with no internet connection required.",
       },
       {
         question: "Is Sovereign RCM HIPAA compliant?",
         answer:
-          "Yes. Sovereign RCM is HIPAA-compliant by architecture, not just by policy. Because PHI never leaves your premises, the entire category of transmission and cloud-storage risks is eliminated. There are no Business Associate Agreements needed for data processing — the data stays under your direct control. We provide full documentation for your compliance team.",
+          "Yes. Sovereign RCM is HIPAA-compliant by architecture, not just by policy. Because PHI never leaves your premises, the entire category of transmission and cloud-storage risks is eliminated. There are no Business Associate Agreements needed for data processing; the data stays under your direct control. We provide full documentation for your compliance team.",
       },
       {
         question: "What about attacks like the Change Healthcare breach?",
         answer:
-          "The 2024 Change Healthcare attack exposed 192.7 million patient records and disrupted roughly 40% of U.S. medical claims — because all that data was centralized in cloud infrastructure. Sovereign RCM takes the opposite approach: your data lives on a local appliance with no external network dependency. A breach at a clearinghouse or cloud vendor cannot reach data that was never sent there.",
+          "The 2024 Change Healthcare attack exposed 192.7 million patient records and disrupted roughly 40% of U.S. medical claims. All that data was centralized in cloud infrastructure. Sovereign RCM takes the opposite approach: your data lives on a local appliance with no external network dependency. A breach at a clearinghouse or cloud vendor cannot reach data that was never sent there.",
       },
       {
         question: "Who has access to our data on the appliance?",
@@ -128,12 +128,12 @@ const faqCategories = [
       {
         question: "What does the 50/40/10 payment structure mean?",
         answer:
-          "You pay 50% as a deposit to reserve your deployment slot and begin hardware provisioning. 40% is due at installation, after the appliance is configured and connected to your EHR. The final 10% is due at acceptance — after you confirm everything works as expected. You never pay in full until you have verified the system.",
+          "You pay 50% as a deposit to reserve your deployment slot and begin hardware provisioning. 40% is due at installation, after the appliance is configured and connected to your EHR. The final 10% is due at acceptance, once you've confirmed everything works as expected. You never pay in full until you have verified the system.",
       },
       {
         question: "Why don't you list prices on the website?",
         answer:
-          "Every practice is different — specialty mix, provider count, claim volume, and EHR environment all affect deployment scope. We provide custom quotes so pricing reflects exactly what your practice needs, not a one-size-fits-all number.",
+          "Every practice is different. Specialty mix, provider count, claim volume, and EHR environment all affect deployment scope. We provide custom quotes so pricing reflects exactly what your practice needs, not a one-size-fits-all number.",
       },
       {
         question:
@@ -159,13 +159,13 @@ const faqCategories = [
       {
         question: "Can we try Sovereign RCM before committing?",
         answer:
-          "Yes. Every engagement starts with a 90-day pilot in shadow mode — the appliance runs alongside your existing billing process without disrupting it. At the end of 90 days, we measure clean-claim rate, denial rate changes, days-in-A/R, and undercoding recapture. You see the results before making a long-term decision. Exit criteria include a clean-claim rate of 95% or higher and at least a 30% reduction in coder touch time.",
+          "Yes. Every engagement starts with a 90-day pilot in shadow mode, running alongside your existing billing process without disrupting it. At the end of 90 days, we measure clean-claim rate, denial rate changes, days-in-A/R, and undercoding recapture. You see the results before making a long-term decision. Exit criteria include a clean-claim rate of 95% or higher and at least a 30% reduction in coder touch time.",
       },
       {
         question:
           "What happens to my current billing during the pilot?",
         answer:
-          "It continues exactly as-is. Shadow mode runs the AI in parallel with your existing billing process. Your current revenue cycle is never interrupted — the pilot is purely observational until you decide to transition.",
+          "It continues exactly as-is. Shadow mode runs the AI in parallel with your existing billing process. Your current revenue cycle is never interrupted. The pilot is purely observational until you decide to transition.",
       },
       {
         question: "What do I need to provide for the pilot?",
@@ -180,7 +180,7 @@ const faqCategories = [
       {
         question: "How much does the pilot cost?",
         answer:
-          "Pilot pricing depends on your practice size, specialty mix, and claim volume. Contact us for a quote specific to your practice — we will scope the pilot to your exact needs.",
+          "Pilot pricing depends on your practice size, specialty mix, and claim volume. Contact us for a quote specific to your practice and we'll scope the pilot to your exact needs.",
       },
     ],
   },
@@ -190,13 +190,13 @@ const faqCategories = [
       {
         question: "Can AI really replace our outsourced billing team?",
         answer:
-          "Sovereign RCM is designed to handle the core coding and claim preparation workflow — reading clinical notes, assigning CPT and ICD-10 codes, applying payer-specific rules, and generating compliant 837P claims. For most practices, this covers 80–90% of claim volume. Edge cases and complex appeals may still benefit from human review, which is why we run a 90-day pilot in shadow mode to measure exactly what the appliance handles versus what needs manual attention in your specific specialty mix.",
+          "Sovereign RCM is designed to handle the core coding and claim preparation workflow: reading clinical notes, assigning CPT and ICD-10 codes, applying payer-specific rules, and generating compliant 837P claims. For most practices, this covers 80–90% of claim volume. Edge cases and complex appeals may still benefit from human review, which is why we run a 90-day pilot in shadow mode to measure exactly what the appliance handles versus what needs manual attention in your specific specialty mix.",
       },
       {
         question:
-          "We've used the same billing company for years — why switch now?",
+          "We've used the same billing company for years. Why switch now?",
         answer:
-          "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year — $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate — it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue when a fixed-cost alternative exists.",
+          "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year, or $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate; it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue when a fixed-cost alternative exists.",
       },
       {
         question:
@@ -207,7 +207,7 @@ const faqCategories = [
       {
         question: "How are updates and maintenance handled?",
         answer:
-          "Software updates are delivered on encrypted media or through a secure, authenticated channel that you initiate. Updates are never pushed automatically — your team controls when and whether to apply them. The appliance includes self-diagnostic monitoring that alerts you to hardware health issues. For practices that want hands-off maintenance, we offer optional support agreements.",
+          "Software updates are delivered on encrypted media or through a secure, authenticated channel that you initiate. Updates are never pushed automatically. Your team controls when and whether to apply them. The appliance includes self-diagnostic monitoring that alerts you to hardware health issues. For practices that want hands-off maintenance, we offer optional support agreements.",
       },
       {
         question:
@@ -255,7 +255,7 @@ export default function FAQ() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300">
-                Everything you need to know about Sovereign RCM — from how it
+                Everything you need to know about Sovereign RCM, from how it
                 works to what it costs.
               </p>
             </FadeIn>

@@ -12,13 +12,13 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "How It Works — Sovereign RCM Pipeline",
+  title: "How It Works: Sovereign RCM Pipeline",
   description:
     "Step-by-step walkthrough of Sovereign RCM's multi-agent AI pipeline. Four specialized agents turn clinical notes into compliant 837P claims with full evidence tracing.",
   openGraph: {
-    title: "How It Works — Sovereign RCM Pipeline",
+    title: "How It Works: Sovereign RCM Pipeline",
     description:
-      "Four AI agents process clinical notes into compliant claims — on-premise, air-gapped, every decision documented.",
+      "Four AI agents process clinical notes into compliant 837P claims. On-premise, air-gapped, every decision documented.",
     url: "https://rizexcapital.com/sovereign-rcm/how-it-works",
   },
   alternates: {
@@ -58,7 +58,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "02",
     label: "Chart Reader",
     description:
-      "The first AI agent reads the full clinical note and extracts structured medical detail — diagnoses, procedures, medical decision-making complexity.",
+      "The first AI agent reads the full clinical note and extracts structured medical detail: diagnoses, procedures, and medical decision-making complexity.",
     dataIn: "Raw clinical note",
     dataOut: "Structured clinical extract",
     icon: (
@@ -73,7 +73,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "03",
     label: "Procedure Specialist",
     description:
-      "Maps the clinical extract to CPT and ICD-10 codes at the level the documentation supports — no conservative defaults.",
+      "Maps the clinical extract to CPT and ICD-10 codes at the level the documentation supports, with no conservative defaults.",
     dataIn: "Structured clinical extract",
     dataOut: "Code assignments with rationale",
     icon: (
@@ -88,7 +88,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "04",
     label: "Payer Logic Bot",
     description:
-      "Applies carrier-specific rules — modifiers, bundling edits, frequency limits, and prior authorization requirements.",
+      "Applies carrier-specific rules: modifiers, bundling edits, frequency limits, and prior authorization requirements.",
     dataIn: "Coded claim + payer rules",
     dataOut: "Payer-adjusted claim with corrections",
     icon: (
@@ -102,7 +102,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "05",
     label: "Denial Analyst",
     description:
-      "Reviews the draft claim against your practice's historical denial data. Flags risk before submission — predictive, not reactive.",
+      "Reviews the draft claim against your practice's historical denial data. Flags risk before submission. Predictive, not reactive.",
     dataIn: "Adjusted claim + denial history",
     dataOut: "Final claim with risk flags",
     icon: (
@@ -144,7 +144,7 @@ const agentDeepDives: AgentDeepDive[] = [
   {
     name: "Chart Reader",
     narrative:
-      "The first agent in the pipeline reads the full signed clinical note — history of present illness, exam findings, medical decision-making, and plan. It extracts structured clinical detail the same way a senior coder would, but without the time pressure that causes human readers to default to conservative interpretations.",
+      "The first agent in the pipeline reads the full signed clinical note: history of present illness, exam findings, medical decision-making, and plan. It extracts structured clinical detail the same way a senior coder would, but without the time pressure that causes human readers to default to conservative interpretations.",
     whyItMatters:
       "Undercoding starts at the reading stage. When coders are processing 80+ charts per day, nuance gets missed. The AAFP estimates this costs physicians $30K or more per provider per year in lost revenue that the documentation already supports.",
     inputs: ["Signed clinical note", "Encounter metadata (date, provider, facility)"],
@@ -162,7 +162,7 @@ const agentDeepDives: AgentDeepDive[] = [
   {
     name: "Procedure Specialist",
     narrative:
-      "The second agent takes the structured clinical extract and maps it to CPT and ICD-10 codes at the level the documentation actually supports. It does not default to lower-level codes when the note justifies a higher one — and it flags when documentation is insufficient for the code a practice might expect.",
+      "The second agent takes the structured clinical extract and maps it to CPT and ICD-10 codes at the level the documentation actually supports. It does not default to lower-level codes when the note justifies a higher one. It also flags when documentation falls short of what a practice might expect to bill.",
     whyItMatters:
       "The gap between a 99213 and a 99214 is $40 to $70 per visit. Across thousands of encounters per year, systematic undercoding compounds into significant lost revenue. The Procedure Specialist codes to documentation, not to habit.",
     inputs: ["Structured clinical extract from Chart Reader"],
@@ -199,7 +199,7 @@ const agentDeepDives: AgentDeepDive[] = [
   {
     name: "Denial Analyst",
     narrative:
-      "The fourth and final agent reviews the draft claim against your practice's own historical denial data. It identifies patterns — specific codes that get denied by specific payers, documentation gaps that trigger reviews, modifier combinations that fail — and flags risk before the claim is submitted.",
+      "The fourth and final agent reviews the draft claim against your practice's own historical denial data. It identifies patterns: specific codes that get denied by specific payers, documentation gaps that trigger reviews, modifier combinations that fail. All of that gets flagged before the claim is submitted.",
     whyItMatters:
       "Industry denial rates run 5 to 10 percent, with each denial costing $25 to $50 in rework. The Denial Analyst shifts your practice from reactive (appealing denials after the fact) to predictive (preventing them before submission).",
     inputs: ["Payer-adjusted claim from Payer Logic Bot", "Practice denial history and patterns"],
@@ -281,7 +281,7 @@ const deploymentItems: DeploymentItem[] = [
   {
     title: "EHR Connection",
     description:
-      "One-directional, read-only integration with your EHR. The appliance reads clinical notes — it never writes back or modifies source records.",
+      "One-directional, read-only integration with your EHR. The appliance reads clinical notes and never writes back or modifies source records.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -323,7 +323,7 @@ const faqs: Faq[] = [
   {
     question: "How long does it take to process a single claim?",
     answer:
-      "The full pipeline — from clinical note ingestion to 837P output — typically completes in under 60 seconds per encounter. Batch processing of a full day's encounters runs overnight without manual intervention.",
+      "The full pipeline, from clinical note ingestion to 837P output, typically completes in under 60 seconds per encounter. Batch processing of a full day's encounters runs overnight without manual intervention.",
   },
   {
     question: "Does the AI replace billing staff?",
@@ -333,7 +333,7 @@ const faqs: Faq[] = [
   {
     question: "What if my team disagrees with a code assignment?",
     answer:
-      "Every code includes the clinical documentation that supports it. Your team can override any assignment — the system records the change and learns from the correction. The AI makes recommendations; your staff makes final decisions.",
+      "Every code includes the clinical documentation that supports it. Your team can override any assignment; the system records the change and learns from the correction. The AI makes recommendations, your staff makes final decisions.",
   },
   {
     question: "How does the system learn our practice patterns?",
@@ -390,7 +390,7 @@ export default function HowItWorks() {
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300">
                 Four specialized AI agents work in sequence inside your facility.
-                Each one handles a distinct stage of the billing pipeline — reading
+                Each one handles a distinct stage of the billing pipeline: reading
                 the chart, assigning codes, applying payer rules, and flagging
                 denial risk. Every decision is documented. Nothing leaves the
                 building except the final claim.
@@ -425,7 +425,7 @@ export default function HowItWorks() {
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
               Six stages from clinical note to submission-ready claim. Each step
-              produces structured output that feeds the next — nothing is skipped,
+              produces structured output that feeds the next. Nothing is skipped,
               nothing is assumed.
             </p>
           </FadeIn>
@@ -558,7 +558,7 @@ export default function HowItWorks() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 Every claim produced by Sovereign RCM includes a per-claim evidence
-                pack. Not a summary — a decision-by-decision record of what was
+                pack. Not a summary. A decision-by-decision record of what was
                 coded, why it was coded that way, what payer rules were applied, and
                 what denial risks were identified.
               </p>
@@ -579,7 +579,7 @@ export default function HowItWorks() {
                       Code Assigned
                     </p>
                     <p className="mt-1 font-heading text-base font-bold text-navy dark:text-white">
-                      99214 — Office Visit, Moderate Complexity
+                      99214: Office Visit, Moderate Complexity
                     </p>
                   </div>
                   <div className="rounded-lg bg-ice px-4 py-3 dark:bg-dark-surface">
@@ -606,7 +606,7 @@ export default function HowItWorks() {
                       Denial Risk
                     </p>
                     <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
-                      Low — practice has 97% acceptance rate for 99214 with this
+                      Low. Practice has 97% acceptance rate for 99214 with this
                       payer over the past 12 months.
                     </p>
                   </div>

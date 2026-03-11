@@ -10,9 +10,9 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "About — Founders & Philosophy",
+  title: "About: Founders & Philosophy",
   description:
-    "Meet the team behind Sovereign RCM — three founders built on shared principles of alignment, discipline, and long-term thinking. Princeton, NJ.",
+    "Meet the team behind Sovereign RCM. Three founders built on shared principles of alignment, discipline, and long-term thinking. Princeton, NJ.",
 };
 
 const pillars = [
@@ -47,8 +47,8 @@ const values = [
   "We move with conviction, knowing disciplined effort yields worthy results.",
   "Opportunity favors those who prepare with intention.",
   "Partnership built on mutual respect and accountability.",
-  "Integrity is non-negotiable — in every decision.",
-  "We build for the long term — systems that outlive any single project.",
+  "Integrity is non-negotiable, in every decision.",
+  "We build for the long term. Systems that outlive any single project.",
 ];
 
 const founders = [
@@ -60,7 +60,7 @@ const founders = [
     imageStyle: {} as React.CSSProperties,
     imageObjectPosition: "40% top",
     description:
-      "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC — bridging healthcare, AI, and research.",
+      "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC, bridging healthcare, AI, and research.",
   },
   {
     name: "Navid M. Rahman, PE",
@@ -225,7 +225,7 @@ export default function About() {
               Ready to Work With Us?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-              We build for the long term — systems that outlive any single
+              We build for the long term. Systems that outlive any single
               project. Let&apos;s talk.
             </p>
             <div className="mt-8">

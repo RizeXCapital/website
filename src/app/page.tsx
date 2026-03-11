@@ -29,7 +29,7 @@ export default function Home() {
                 Sovereign RCM is an AI-powered billing appliance installed
                 directly in your clinic. It drafts compliant claims, captures
                 missed revenue from undercoding, reduces denials, and accelerates
-                reimbursements — all while keeping patient data securely inside
+                reimbursements, all while keeping patient data securely inside
                 your building.
               </p>
               <p className="mt-4 text-sm text-gray-400">

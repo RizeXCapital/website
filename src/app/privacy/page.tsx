@@ -6,7 +6,7 @@ import { AnimatedHero } from "@/components/motion";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "RizeX Capital privacy policy. Learn how we collect, use, and protect your information — including our commitment to on-premise data processing and HIPAA compliance.",
+    "RizeX Capital privacy policy. Learn how we collect, use, and protect your information, including our commitment to on-premise data processing and HIPAA compliance.",
 };
 
 const lastUpdated = "February 26, 2026";
@@ -152,8 +152,8 @@ export default function Privacy() {
                   access to any patient data processed by Sovereign RCM.
                 </li>
                 <li className="list-disc text-base leading-relaxed text-charcoal-light dark:text-gray-300">
-                  The appliance operates in an air-gapped configuration — no
-                  cloud connectivity is required for core functionality.
+                  The appliance operates in a true air-gapped configuration with
+                  no cloud connectivity required for core functionality.
                 </li>
                 <li className="list-disc text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                   Your practice retains 100% ownership and control of all data

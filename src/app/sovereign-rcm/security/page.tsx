@@ -11,11 +11,11 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Security & HIPAA — Sovereign RCM",
+  title: "Security & HIPAA: Sovereign RCM",
   description:
     "Sovereign RCM is deployed on-premise in an air-gapped enclave. No PHI leaves your building. HIPAA-compliant by architecture, not by policy.",
   openGraph: {
-    title: "Security & HIPAA — Sovereign RCM",
+    title: "Security & HIPAA: Sovereign RCM",
     description:
       "On-premise AI billing that keeps patient data inside your building. Air-gapped, HIPAA-compliant by architecture.",
     url: "https://rizexcapital.com/sovereign-rcm/security",
@@ -43,7 +43,7 @@ const securityFeatures = [
     icon: "🔑",
     title: "You Own Your Data",
     description:
-      "No vendor has access to your data without explicit, documented permission. The appliance is yours — physically inside your facility, under your control.",
+      "No vendor has access to your data without explicit, documented permission. The appliance is yours, physically inside your facility, under your control.",
   },
 ];
 
@@ -51,17 +51,17 @@ const faqs = [
   {
     question: "How does Sovereign RCM protect patient data?",
     answer:
-      "Sovereign RCM processes all data locally on a physical appliance inside your facility. Clinical notes, patient records, and billing data never leave your building. There is no cloud component, no external API calls during claim generation, and no third-party data sharing. The appliance operates in an air-gapped environment — it does not require an internet connection to function.",
+      "Sovereign RCM processes all data locally on a physical appliance inside your facility. Clinical notes, patient records, and billing data never leave your building. There is no cloud component, no external API calls during claim generation, and no third-party data sharing. The appliance operates in a true air-gapped environment with no internet connection required.",
   },
   {
     question: "Is Sovereign RCM HIPAA compliant?",
     answer:
-      "Yes. Sovereign RCM is HIPAA-compliant by architecture, not just by policy. Because PHI never leaves your premises, the entire category of transmission and cloud-storage risks is eliminated. There are no Business Associate Agreements needed for data processing — the data stays under your direct control. We provide full documentation for your compliance team.",
+      "Yes. Sovereign RCM is HIPAA-compliant by architecture, not just by policy. Because PHI never leaves your premises, the entire category of transmission and cloud-storage risks is eliminated. There are no Business Associate Agreements needed for data processing; the data stays under your direct control. We provide full documentation for your compliance team.",
   },
   {
     question: "What about attacks like the Change Healthcare breach?",
     answer:
-      "The 2024 Change Healthcare attack exposed 192.7 million patient records and disrupted roughly 40% of U.S. medical claims — because all that data was centralized in cloud infrastructure. Sovereign RCM takes the opposite approach: your data lives on a local appliance with no external network dependency. A breach at a clearinghouse or cloud vendor cannot reach data that was never sent there.",
+      "The 2024 Change Healthcare attack exposed 192.7 million patient records and disrupted roughly 40% of U.S. medical claims. All that data was centralized in cloud infrastructure. Sovereign RCM takes the opposite approach: your data lives on a local appliance with no external network dependency. A breach at a clearinghouse or cloud vendor cannot reach data that was never sent there.",
   },
   {
     question: "Who has access to our data on the appliance?",
@@ -172,7 +172,7 @@ export default function Security() {
                 Sovereign RCM is the architectural answer. When patient data never
                 leaves your building, a breach at a clearinghouse or cloud vendor
                 has zero impact on your practice. This isn&apos;t a feature
-                checkbox — it&apos;s a fundamentally different approach to billing
+                checkbox; it&apos;s a fundamentally different approach to billing
                 infrastructure.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

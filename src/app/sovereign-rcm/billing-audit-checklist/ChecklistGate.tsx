@@ -12,9 +12,9 @@ const sections = [
     items: [
       "Correct NPI type used per payer requirement (Type 1 individual vs. Type 2 organizational)",
       "Required modifiers attached where applicable (bilateral, multiple procedures, assistant surgeon)",
-      "ICD-10 codes at highest level of specificity — no unspecified codes where specific codes exist",
+      "ICD-10 codes at highest level of specificity (no unspecified codes where specific codes exist)",
       "CPT/HCPCS codes validated against current payer fee schedule for the date of service",
-      "Diagnosis-to-procedure linking documented — medical necessity supported for every line item",
+      "Diagnosis-to-procedure linking documented; medical necessity supported for every line item",
     ],
   },
   {
@@ -33,28 +33,28 @@ const sections = [
       "90-day denial report pulled and sorted by denial reason code",
       "Top 5 denial codes identified by dollar volume, not just volume",
       "Denials categorized: clinical (medical necessity), administrative (missing info), or duplicate",
-      "First-pass clean-claim rate calculated — benchmark is ≥ 95%",
+      "First-pass clean-claim rate calculated (benchmark: ≥ 95%)",
       "Payers with denial rates exceeding 10% flagged for contract and submission review",
     ],
   },
   {
     title: "Accounts Receivable Health",
     items: [
-      "Days in A/R calculated for the last 90 days — benchmark is < 45 days for most specialties",
+      "Days in A/R calculated for the last 90 days (benchmark: < 45 days for most specialties)",
       "A/R aging analysis run: percentage of balance over 90 days should be < 10%",
       "Claims older than 120 days without resolution identified and actioned",
       "Timely filing deadlines reviewed by payer for all open claims approaching cutoff",
-      "Credit balance accounts reviewed — patient refunds issued as required by law",
+      "Credit balance accounts reviewed; patient refunds issued as required by law",
     ],
   },
   {
     title: "Coding Accuracy & Undercoding",
     items: [
       "Random sample audit: 20 charts pulled, coded independently, then compared to what was billed",
-      "Systematic undercoding identified — e.g., Level 3 billed when Level 4 is supported by documentation",
+      "Systematic undercoding identified (e.g., Level 3 billed when Level 4 is supported by documentation)",
       "High-frequency CPT codes reviewed for correct modifier usage and sequencing",
       "Split/shared billing rules applied correctly for physician–PA/NP teams",
-      "Global period rules verified on all post-operative claims — no unbundled services in the global window",
+      "Global period rules verified on all post-operative claims (no unbundled services in the global window)",
     ],
   },
   {
@@ -62,7 +62,7 @@ const sections = [
     items: [
       "Fee schedules loaded in the practice management system match current signed contracts",
       "Non-covered services identified and removed from the standard billing workflow",
-      "Bundling edits reviewed — no inappropriate unbundling of services the payer considers inclusive",
+      "Bundling edits reviewed (no inappropriate unbundling of services the payer considers inclusive)",
       "Coordination of benefits rules applied correctly for dual-coverage patients",
     ],
   },
@@ -71,7 +71,7 @@ const sections = [
     items: [
       "PHI transmissions use encrypted channels (TLS 1.2 or higher) for all payer and clearinghouse connections",
       "Business Associate Agreements (BAAs) on file for every vendor with access to patient billing data",
-      "User access to billing systems reviewed — principle of least privilege applied",
+      "User access to billing systems reviewed; principle of least privilege applied",
       "EHR and billing system access logs audited for anomalous access patterns",
       "Data retention policy meets HIPAA minimum (6 years from creation or last effective date)",
     ],
@@ -129,8 +129,8 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
         Get the Checklist
       </h2>
       <p className="mt-3 text-base text-charcoal-light dark:text-gray-300">
-        Enter your name and email to access all 35 audit items across 7 sections
-        — no spam, no sales call required
+        Enter your name and email to access all 35 audit items across 7 sections.
+        No spam, no sales call required.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4" noValidate>
@@ -290,9 +290,9 @@ function ChecklistContent() {
           Found issues in your audit?
         </p>
         <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-          Sovereign RCM closes every gap on this list — clean-claim rate, denial
-          patterns, undercoding, A/R velocity, and PHI security — with an
-          on-premise AI appliance that never sends your data to the cloud
+          Sovereign RCM closes every gap on this list: clean-claim rate, denial
+          patterns, undercoding, A/R velocity, and PHI security. All handled by
+          an on-premise AI appliance that never sends your data to the cloud.
         </p>
         <a
           href="/contact"

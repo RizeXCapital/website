@@ -11,11 +11,11 @@ import SectionDivider from "@/components/SectionDivider";
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedHero } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Blog — AI Medical Billing Insights | Sovereign RCM",
+  title: "Blog: AI Medical Billing Insights | Sovereign RCM",
   description:
     "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the Sovereign RCM team.",
   openGraph: {
-    title: "Blog — AI Medical Billing Insights | Sovereign RCM",
+    title: "Blog: AI Medical Billing Insights | Sovereign RCM",
     description:
       "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the Sovereign RCM team.",
     url: "https://rizexcapital.com/blog",

@@ -12,11 +12,11 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Pricing — Sovereign RCM Packages",
+  title: "Pricing: Sovereign RCM Packages",
   description:
     "Three Sovereign RCM tiers for solo practices, group practices, and multi-specialty groups. Fixed cost, no percentage of collections. Contact us for a custom quote.",
   openGraph: {
-    title: "Pricing — Sovereign RCM Packages",
+    title: "Pricing: Sovereign RCM Packages",
     description:
       "Three Sovereign RCM tiers for solo practices, group practices, and multi-specialty groups. Fixed cost, no percentage of collections.",
     url: "https://rizexcapital.com/sovereign-rcm/pricing",
@@ -174,7 +174,7 @@ const faqs: Faq[] = [
   {
     question: "Why don't you list prices on the website?",
     answer:
-      "Every practice is different — specialty mix, provider count, claim volume, and EHR environment all affect deployment scope. We provide custom quotes so pricing reflects exactly what your practice needs, not a one-size-fits-all number.",
+      "Every practice is different. Specialty mix, provider count, claim volume, and EHR environment all affect deployment scope. We provide custom quotes so pricing reflects exactly what your practice needs, not a one-size-fits-all number.",
   },
   {
     question:
@@ -185,7 +185,7 @@ const faqs: Faq[] = [
   {
     question: "What does the 50/40/10 payment structure mean?",
     answer:
-      "You pay 50% as a deposit to reserve your deployment slot and begin hardware provisioning. 40% is due at installation, after the appliance is configured and connected to your EHR. The final 10% is due at acceptance — after you confirm everything works as expected. You never pay in full until you have verified the system.",
+      "You pay 50% as a deposit to reserve your deployment slot and begin hardware provisioning. 40% is due at installation, after the appliance is configured and connected to your EHR. The final 10% is due at acceptance, once you've confirmed everything works as expected. You never pay in full until you have verified the system.",
   },
   {
     question: "Can I start with SR-1 and upgrade later?",
@@ -635,8 +635,8 @@ export default function Pricing() {
               Request a Custom Quote
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-              Tell us about your practice — specialty, provider count, and claim
-              volume — and we will put together pricing tailored to your needs.
+              Tell us about your practice: specialty, provider count, and claim
+              volume. We'll put together pricing tailored to your needs.
             </p>
             <div className="mt-8">
               <Link

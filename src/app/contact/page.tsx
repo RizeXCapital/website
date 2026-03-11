@@ -115,7 +115,7 @@ export default function Contact() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mt-4 text-lg leading-relaxed text-gray-300">
-                Whether you&apos;re a practice exploring AI billing or a partner looking to collaborate — we&apos;d like to hear from you.
+                Whether you&apos;re a practice exploring AI billing or a partner looking to collaborate, we&apos;d like to hear from you.
               </p>
             </FadeIn>
           </div>
@@ -309,7 +309,7 @@ export default function Contact() {
                 <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
                   Sovereign RCM serves practices across Central New
                   Jersey and beyond. Sovereign RCM deploys on-site at your
-                  practice — wherever you are.
+                  practice, wherever you are.
                 </p>
               </div>
               </FadeIn>

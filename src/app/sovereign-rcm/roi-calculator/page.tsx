@@ -5,11 +5,11 @@ import { AnimatedHero, FadeIn } from "@/components/motion";
 import ROICalculator from "@/components/ROICalculator";
 
 export const metadata: Metadata = {
-  title: "ROI Calculator — Sovereign RCM",
+  title: "ROI Calculator: Sovereign RCM",
   description:
     "Calculate how much revenue your practice is losing to billing overhead, denials, and undercoding. See the impact with our interactive calculator.",
   openGraph: {
-    title: "ROI Calculator — Sovereign RCM",
+    title: "ROI Calculator: Sovereign RCM",
     description:
       "Calculate how much revenue your practice is losing to billing overhead, denials, and undercoding.",
     url: "https://rizexcapital.com/sovereign-rcm/roi-calculator",

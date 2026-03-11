@@ -141,7 +141,7 @@ export async function POST(req: NextRequest) {
       from: `"Sovereign RCM" <${process.env.SMTP_USER}>`,
       to: FOUNDERS.join(", "),
       replyTo: replyToEmail,
-      subject: `Contact Form: ${subjectName}${subjectPractice ? ` — ${subjectPractice}` : ""}`,
+      subject: `Contact Form: ${subjectName}${subjectPractice ? ` | ${subjectPractice}` : ""}`,
       html: htmlBody,
     });
 

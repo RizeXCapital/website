@@ -12,11 +12,11 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Sovereign RCM — On-Premise AI Billing Appliance",
+  title: "Sovereign RCM: On-Premise AI Billing Appliance",
   description:
     "Sovereign RCM is an on-premise, air-gapped AI appliance that drafts compliant 837P claims from clinical notes. No PHI leaves your building. Fixed cost, full transparency.",
   openGraph: {
-    title: "Sovereign RCM — On-Premise AI Billing Appliance",
+    title: "Sovereign RCM: On-Premise AI Billing Appliance",
     description:
       "On-premise AI that drafts compliant claims, catches undercoding, and keeps PHI inside your practice.",
     url: "https://rizexcapital.com/sovereign-rcm",
@@ -42,7 +42,7 @@ const tripleLeaks: Leak[] = [
     label: "Cost Leak",
     title: "Billing Overhead",
     description:
-      "Outsourced billing charges 4\u201310% of collections \u2014 a perpetual tax that grows as your practice grows. Solo practitioners pay the highest rates at 10.9% (AMA 2024).",
+      "Outsourced billing charges 4\u201310% of collections, a perpetual tax that grows as your practice grows. Solo practitioners pay the highest rates at 10.9% (AMA 2024).",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral">
         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -84,7 +84,7 @@ const agents: Agent[] = [
   {
     name: "Chart Reader",
     description:
-      "Extracts clinical detail from signed notes \u2014 diagnoses, procedures, medical decision-making complexity.",
+      "Extracts clinical detail from signed notes: diagnoses, procedures, and medical decision-making complexity.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -347,8 +347,8 @@ export default function SovereignRCM() {
               <p className="mt-6 text-lg leading-relaxed text-gray-300">
                 Sovereign RCM is an air-gapped AI appliance installed inside your
                 practice. It reads clinical notes, drafts compliant 837P claims,
-                catches undercoding, and builds audit-ready evidence packs
-                &mdash;&nbsp;without patient data ever leaving the building.
+                catches undercoding, and builds audit-ready evidence packs,
+                all without patient data ever leaving the building.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -417,7 +417,7 @@ export default function SovereignRCM() {
               The Multi-Agent Pipeline
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-              Four specialized AI agents work in sequence — each focused on one
+              Four specialized AI agents work in sequence, each focused on one
               stage of the billing workflow, each passing structured output to the
               next.
             </p>
@@ -520,7 +520,7 @@ export default function SovereignRCM() {
               Explore Sovereign RCM
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-              Dive deeper into specific topics — security architecture, the pilot
+              Dive deeper into specific topics: security architecture, the pilot
               process, competitive comparisons, and more.
             </p>
           </FadeIn>
