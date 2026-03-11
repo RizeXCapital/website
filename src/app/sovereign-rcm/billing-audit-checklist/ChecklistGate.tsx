@@ -130,7 +130,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
       </h2>
       <p className="mt-3 text-base text-charcoal-light dark:text-gray-300">
         Enter your name and email to access all 35 audit items across 7 sections
-        — no spam, no sales call required.
+        — no spam, no sales call required
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4" noValidate>
@@ -217,7 +217,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
         </button>
 
         <p className="text-center text-xs text-charcoal-light dark:text-gray-400">
-          Your information is never sold or shared.
+          Your information is never sold or shared
         </p>
       </form>
     </div>
@@ -287,7 +287,7 @@ function ChecklistContent() {
         <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
           Sovereign RCM closes every gap on this list — clean-claim rate, denial
           patterns, undercoding, A/R velocity, and PHI security — with an
-          on-premise AI appliance that never sends your data to the cloud.
+          on-premise AI appliance that never sends your data to the cloud
         </p>
         <a
           href="/contact"

@@ -47,7 +47,9 @@ export default function BillingAuditChecklist() {
             Free Resource
           </p>
           <h1 className="mt-3 font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">
-            Medical Practice Billing Audit Checklist
+            Medical Practice{" "}
+            <br />
+            Billing Audit Checklist
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
             35 audit items across 7 sections. Find the billing gaps costing your
