@@ -443,20 +443,20 @@ export default function Home() {
       </section>
 
       {/* 7. Final CTA */}
-      <section className="bg-navy px-6 py-20 lg:py-24">
+      <section className="bg-coral px-6 py-10 lg:py-12">
         <div className="mx-auto max-w-4xl text-center">
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
               See How Much Revenue You&apos;re Leaving on the Table
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
               Every day without optimized billing is revenue lost. Let&apos;s talk
               about what Sovereign RCM can do for your practice.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                className="inline-block rounded-lg bg-white px-10 py-4 text-base font-medium text-coral transition-colors hover:bg-gray-100"
               >
                 Get in Touch
               </Link>
