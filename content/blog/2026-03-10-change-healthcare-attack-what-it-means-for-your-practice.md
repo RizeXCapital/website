@@ -18,7 +18,7 @@ featured: true
 image: "/blog/change-healthcare-hero.svg"
 ---
 
-I've spent my career designing systems that cannot fail. Bridges, water treatment plants, stormwater infrastructure. When you sign a drawing as a Professional Engineer, you're certifying that what you've designed will carry the loads it was built for -- including the ones nobody anticipated.
+I've spent my career designing systems that cannot fail. Bridges and Roadway infrastructure. When you sign a drawing as a Professional Engineer, you're certifying that what you've designed will carry the loads it was built for -- including the ones nobody anticipated.
 
 I've been watching the healthcare IT space for the past two years through those same eyes. What I saw in the Change Healthcare attack is something I'd recognize on any infrastructure review: a non-redundant critical node with no backup load path, sitting behind a door with no lock.
 
@@ -26,13 +26,9 @@ I've been watching the healthcare IT space for the past two years through those 
 
 Most physician practices know Change Healthcare as the company that suddenly couldn't process their claims in February 2024. What the headlines didn't fully convey is just how much of the U.S. healthcare revenue cycle was flowing through a single point.
 
-At the time of the attack, Change Healthcare processed approximately 40% of all U.S. medical claims -- roughly 15 billion transactions per year representing $1.5 trillion in health claims. The company touched one in every three patient records in the United States. It handled eligibility verification, claims submission, prior authorization, pharmacy benefits, electronic prescribing, and electronic payments. For the majority of U.S. practices, there was no alternative route. Claims went through Change, or they didn't go at all.
+At the time of the attack, Change Healthcare processed approximately 40% of all U.S. medical claims -- roughly 15 billion transactions per year representing $1.5 trillion in health claims. The company touched one in every three patient records in the United States. It handled eligibility verification, claims submission, prior authorization, pharmacy benefits, electronic prescribing, and electronic payments. For the majority of U.S. practices, there was no alternative route. Claims went through Change, or they didn't go at all. Change Healthcare was the Ohio node.
 
 ![How healthcare claims flowed through Change Healthcare -- and why that concentration created catastrophic risk](/blog/change-healthcare-hub-spoke.svg)
-
-In structural engineering, we call this a non-redundant system. A single load path. If the critical member fails, the structure comes down. We've seen this pattern before: the 2003 Northeast power outage knocked out electricity for 55 million people because a software bug in one Ohio control room triggered a cascading failure across an entire interconnected grid. The design assumption was that no single node could fail catastrophically. That assumption was wrong.
-
-Change Healthcare was the Ohio node.
 
 ## How It Failed
 
@@ -56,7 +52,7 @@ In the weeks immediately following the attack, the AMA surveyed approximately 1,
 
 ![By the numbers: how the Change Healthcare outage hit practices and hospitals](/blog/change-healthcare-practice-impact.svg)
 
-The ground-level reporting was stark. One rural practice owner was carrying bags of cash onto flights to make sure employees got paid. Another took out emergency loans at 50% interest rates to cover payroll. Survey respondents wrote things like: "[This] may bankrupt our practice of 50 years in this rural community." The AMA's second survey, conducted in late April, found that nearly two-thirds of respondents were still using personal funds to cover expenses.
+One rural practice owner was carrying bags of cash onto flights to make payroll. Another took out emergency loans at 50% interest rates. A second AMA survey in late April found nearly two-thirds of respondents still using personal funds to cover expenses.
 
 ## The Structural Lesson
 
@@ -78,9 +74,7 @@ If your billing currently depends on a cloud-based platform or clearinghouse, yo
 
 This is the structural problem that an air-gapped billing system solves. "Air-gapped" is not a marketing phrase. It means the system processes PHI on hardware inside your building, disconnected from the public internet during billing operations. The AI inference runs locally on the appliance. Patient records are never transmitted to an external server for processing. There is no inbound connection path -- no remote desktop portal, no cloud API endpoint, no shared network node that an attacker can reach from outside.
 
-The attack surface comparison is concrete. A cloud billing platform exposes a login portal reachable from anywhere on earth, shared infrastructure with thousands of other practices, ongoing data transmission between your EHR and remote servers, and a single vendor whose security posture you cannot audit. An air-gapped appliance exposes none of those. You can't authenticate to a system you can't reach. You can't exfiltrate data that isn't there.
-
-Think through the scenario. Another major clearinghouse gets hit next year -- which the cybersecurity community considers likely given how concentrated claims processing still is. If your billing runs through that clearinghouse, you stop billing. You go through the same cash flow disruption the AMA documented for tens of thousands of practices in 2024. If your billing runs on an air-gapped appliance inside your building, nothing changes. Your system processes claims the same way it did the day before the attack. You don't share in the blast radius because you were never connected to the target.
+The attack surface comparison is concrete: a cloud billing platform exposes a login portal reachable from anywhere on earth, shared infrastructure with thousands of other practices, and a vendor whose security posture you cannot audit. An air-gapped appliance exposes none of those. You can't exfiltrate data that isn't there.
 
 The HIPAA regulatory pressure also lands differently when you own your infrastructure. Under cloud billing, your exposure includes your vendor's security posture -- you are a covered entity using a business associate, and a failure at the business associate level is a failure on your record. When the infrastructure is inside your building, under your physical control, you are not downstream of someone else's incident response team.
 

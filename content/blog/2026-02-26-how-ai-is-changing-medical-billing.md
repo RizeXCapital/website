@@ -24,8 +24,6 @@ The cost of billing has gotten out of hand. The AMA's 2024 Practice Benchmark Su
 
 Staffing makes it worse. Billing departments are churning through people at over 30% annually (MGMA, 2024 DataDive Cost and Revenue). Every time a trained biller leaves, they take payer-specific knowledge with them. Which modifier goes where, which diagnosis codes a particular insurer flags, how to preempt a denial from Blue Cross vs. Aetna. Replacing that takes months, and in the meantime, errors pile up.
 
-And then there's the sheer volume of payer rules. A single practice might contract with 15-20 insurance companies, each with its own coverage policies, prior auth rules, modifier expectations, and filing deadlines. CMS alone publishes thousands of pages of updates to the Medicare Physician Fee Schedule every year. Good luck keeping a small billing team current on all of it.
-
 The practices that can least afford to lose revenue are the ones losing the most.
 
 ## Why Claim Denials Keep Getting Worse
@@ -34,17 +32,9 @@ If it feels like you're fighting more denials than you used to, you're not imagi
 
 Each denial costs more than just the lost payment. MGMA estimates reworking a denied claim runs $25 to $118 per claim, depending on complexity and how many times someone has to touch it (MGMA, 2024 DataDive Cost and Revenue). For a small practice processing 3,000-5,000 claims a year, even a modest denial rate adds up fast in dollars and staff hours.
 
-So what's driving the increase?
+Payer rules keep getting more granular. Commercial insurers are layering on new prior auth requirements, narrowing coverage criteria, and deploying more aggressive automated claim review. ICD-10-CM has over 72,000 diagnosis codes now — claims that used to pass with "knee pain" now need laterality, chronicity, and sometimes mechanism of injury. Turnover makes it worse: experienced billers leave, junior staff replace them, and the nuanced understanding of which payers flag which codes disappears with them.
 
-**Payer rules keep getting more granular.** Commercial insurers are layering on new prior auth requirements, narrowing coverage criteria, and deploying more aggressive automated claim review. The goalposts move faster than most billing teams can track.
-
-Coding specificity requirements are ratcheting up too. ICD-10-CM has over 72,000 diagnosis codes now. Claims that went through five years ago with "knee pain" now need laterality (left vs. right), chronicity (acute vs. chronic), and sometimes mechanism of injury. Payers that used to let vague codes slide are rejecting them.
-
-**Turnover keeps eroding institutional knowledge.** Experienced billers leave, junior staff replace them, and the nuanced understanding of which payers flag which codes just disappears. New hires learn by making mistakes, and each mistake is a denied claim.
-
-Filing windows are shrinking too. Some payers have cut deadlines from 12 months to 90 days. A denial comes back, the appeal window is tight, and the rework has to happen right now or that revenue is gone for good.
-
-None of these trends are reversing. They're all getting worse, and they hit small practices with lean billing teams hardest.
+None of these trends are reversing. They all hit small practices with lean billing teams hardest.
 
 ![Why denials are getting worse: rising rates, compounding factors, and the cost per claim](/blog/denial-trend.svg)
 
@@ -59,8 +49,6 @@ The numbers aren't small. AAFP estimates systematic undercoding costs the averag
 Why does it persist?
 
 Audit fear, mostly. Physicians hear about Medicare audits and RAC reviews and respond by systematically downcoding. Understandable, but financially destructive. The actual risk of an audit for appropriate coding is far lower than the certainty of leaving money on the table every day.
-
-**Documentation gaps** play a role too. Even when a physician does a thorough evaluation, the note may not capture the medical decision-making complexity needed to support the higher code. It's a documentation problem, not a care problem, but the financial result is the same.
 
 And billers don't have clinical context. A biller reading a note can't always tell the difference between a straightforward visit and a complex one. Without clinical training, they default to the safer, lower-paying code.
 
@@ -90,11 +78,7 @@ AI can also mine historical denial data and spot patterns that human billers mis
 
 Going from reacting to denials to preventing them is probably the highest-impact thing AI does in billing right now. Instead of staffing up to handle the denial backlog, practices can stop denials from happening.
 
-### Administrative Cost Reduction
-
-A 2024 Brookings Institution analysis estimated AI-driven automation could cut healthcare administrative costs by up to 30% across billing, coding, and claims management (Brookings, 2024). Real-world results vary, but even a fraction of that matters. A small practice spending $150,000-$300,000 a year on billing that sees a 15-20% reduction frees up enough to fund a clinical hire or invest in patient care.
-
-Not all AI billing tools are equal, though. Where inference runs and how the system learns from your practice's specific patterns matters as much as the underlying technology.
+Where inference runs and how the system learns from your practice's specific patterns matters as much as the underlying technology.
 
 ![How AI catches revenue leaks, from clinical note to clean claim](/blog/ai-billing-pipeline.svg)
 
@@ -103,8 +87,6 @@ Not all AI billing tools are equal, though. Where inference runs and how the sys
 Before adopting any AI billing system, you need to ask a question that doesn't get nearly enough attention: where does the data go?
 
 ![Cloud billing vs on-premise AI comparison](/blog/cloud-vs-onpremise.svg)
-
-Medical billing data is some of the most sensitive information in healthcare. Diagnoses, procedures, medications, insurance details, Social Security numbers, financial data. A billing system touches every patient encounter. Compromise it and you've compromised your entire patient population.
 
 We saw how bad this can get in February 2024. The Change Healthcare cyberattack disrupted claims processing for roughly 40% of all U.S. healthcare claims (U.S. House Energy & Commerce Committee, April 2024). The breach affected 192.7 million individuals, more than half the U.S. population, making it the largest healthcare data breach in history (AMA, 2024). UnitedHealth Group disclosed total costs exceeding $2.45 billion in its Q3 2024 earnings report.
 
@@ -144,12 +126,6 @@ When talking to vendors, a few questions separate real solutions from marketing.
 
 Push them on specifics. Can they show results from practices like yours? Not general claims, but specialty-specific, size-specific numbers. What happens when the system goes down? And what's the real total cost once you factor in implementation, training time, and ongoing support?
 
-### Get Your Team Involved Early
-
-Technology adoption fails most often because the people who have to use it weren't part of the evaluation. Your billers and coders need to understand what the AI does, how it fits their workflow, and how it makes their jobs easier. Not that it's coming for their jobs.
-
-Your physicians need to know how it affects documentation and coding patterns. If the people who touch the revenue cycle every day don't buy in, it won't matter how good the technology is.
-
 ---
 
 Payer complexity will keep increasing. Coding requirements will keep expanding. The billing workforce will keep shrinking. These are structural problems, not cyclical ones, and they're accelerating.
@@ -172,5 +148,4 @@ If you're evaluating AI billing solutions for your practice, we'd like to talk.
 6. U.S. House Energy & Commerce Committee. *Hearing on the Change Healthcare Cyberattack.* April 2024.
 7. American Medical Association. *Change Healthcare Cyberattack: Impact on Patients and Providers.* AMA, 2024.
 8. UnitedHealth Group. *Quarterly Report (10-Q), Q3 2024.* SEC Filing, 2024.
-9. Brookings Institution. *The Potential for AI to Reduce Healthcare Administrative Costs.* Brookings, 2024.
 

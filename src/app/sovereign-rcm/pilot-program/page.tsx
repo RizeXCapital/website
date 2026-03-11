@@ -274,7 +274,7 @@ export default function PilotProgram() {
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              How the Pilot Works
+              How the No-Commitment Pilot Works
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
               Four phases over 90 days. Your existing billing runs untouched the

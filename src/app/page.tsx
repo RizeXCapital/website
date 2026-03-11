@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
-import { getRecentPosts, categoryLabels } from "@/lib/blog";
 import {
   FadeIn,
   StaggerContainer,
@@ -12,144 +11,6 @@ import {
   AnimatedPipeline,
 } from "@/components/motion";
 
-const upcomingPosts = [
-  {
-    title: "What the Change Healthcare Attack Means for Your Practice",
-    author: "Navid M. Rahman, PE",
-    date: "Early March 2026",
-    image: "/blog/cloud-vs-onpremise.svg",
-  },
-  {
-    title: "Building an Air-Gapped AI System for Medical Billing",
-    author: "Zubair Khan, DO",
-    date: "Mid March 2026",
-    image: "/blog/ai-billing-pipeline.svg",
-  },
-  {
-    title: "The Prior Authorization Problem: What Every Practice Owner Should Know",
-    author: "Shahan G. Arif, MD",
-    date: "Late March 2026",
-    image: "/blog/revenue-leak-funnel.svg",
-  },
-  {
-    title: "Why Credentialing Delays Are Costing Your Practice More Than You Know",
-    author: "Fawad Aziz",
-    date: "Early April 2026",
-    image: "/blog/cloud-vs-onpremise.svg",
-  },
-  {
-    title: "Days in A/R: The One Metric That Reveals Everything About Your Billing Health",
-    author: "Usman Khan",
-    date: "Mid April 2026",
-    image: "/blog/ai-billing-pipeline.svg",
-  },
-];
-
-function BlogPreviewSection() {
-  const posts = getRecentPosts(3);
-
-  return (
-    <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
-      <div className="mx-auto max-w-7xl">
-        <FadeIn>
-          <div className="text-center">
-            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-              From the Blog
-            </h2>
-            <p className="mx-auto mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-              Insights on AI medical billing, revenue cycle management, and
-              healthcare technology
-            </p>
-          </div>
-        </FadeIn>
-        <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* Real posts */}
-          {posts.map((post) => (
-            <StaggerItem key={post.slug}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="group block h-full overflow-hidden rounded-xl border border-gray-300 bg-white transition-[box-shadow,transform] duration-1500 ease-out hover:scale-[1.01] hover:shadow-md active:scale-[0.99] dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
-              >
-                {post.image && (
-                  <div className="aspect-[21/9] overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={600}
-                      height={257}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                )}
-                <div className="p-8">
-                  <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
-                    {categoryLabels[post.category]}
-                  </p>
-                  <h3 className="mt-2 font-heading text-lg font-bold text-navy transition-colors group-hover:text-teal dark:text-white dark:group-hover:text-teal-dark">
-                    {post.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                    {post.author} &middot;{" "}
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                    {post.excerpt}
-                  </p>
-                </div>
-              </Link>
-            </StaggerItem>
-          ))}
-
-          {/* Upcoming post teasers to fill up to 3 */}
-          {upcomingPosts.slice(0, 3 - posts.length).map((post) => (
-            <StaggerItem key={post.title}>
-              <div className="h-full overflow-hidden rounded-xl border border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated">
-                {post.image && (
-                  <div className="aspect-[21/9] overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={600}
-                      height={257}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-8">
-                  <p className="text-xs font-medium uppercase tracking-wider text-coral">
-                    Coming Soon
-                  </p>
-                  <h3 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
-                    {post.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-charcoal-light dark:text-gray-400">
-                    {post.author} &middot; {post.date}
-                  </p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        {/* View All link */}
-        <FadeIn delay={0.3}>
-          <div className="mt-10 text-center">
-            <Link
-              href="/blog"
-              className="inline-block text-lg font-medium text-teal transition-[color,transform] duration-2800 ease-out hover:scale-[1.1] hover:text-teal-light active:scale-[0.97] dark:text-teal-dark dark:hover:text-teal"
-            >
-              View All Posts &rarr;
-            </Link>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
@@ -160,18 +21,19 @@ export default function Home() {
           <div className="max-w-3xl">
             <FadeIn>
               <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Your Practice&apos;s Billing, Powered by On-Premise AI
+                Get Paid Faster While Keeping Patient Data Inside Your Practice
               </h1>
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300 sm:text-xl">
-                Sovereign RCM is an AI appliance that lives inside your practice.
-                It drafts compliant claims, catches undercoding, and builds
-                audit-ready evidence packs — without your patient data ever
-                leaving the building.
+                Sovereign RCM is an AI-powered billing appliance installed
+                directly in your clinic. It drafts compliant claims, captures
+                missed revenue from undercoding, reduces denials, and accelerates
+                reimbursements — all while keeping patient data securely inside
+                your building.
               </p>
               <p className="mt-4 text-sm text-gray-400">
-                Built by an EM physician, a licensed PE, and an AI architect
+                Built by an EM physician and an AI architect
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -580,12 +442,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Blog Preview */}
-      <BlogPreviewSection />
-
-      <SectionDivider variant="light" />
-
-      {/* 8. Final CTA */}
+      {/* 7. Final CTA */}
       <section className="bg-navy px-6 py-20 lg:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <FadeIn>

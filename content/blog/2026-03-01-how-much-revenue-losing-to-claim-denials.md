@@ -29,8 +29,6 @@ Kodiak Solutions tracks denial data across 2,100 hospitals and 300,000 physician
 
 Experian Health's 2025 State of Claims survey tells the same story from a different angle: 41% of providers now report denial rates above 10%. Three years ago, that number was 30%. And 54% of providers say submitting clean claims is harder than it was a year ago.
 
-MGMA's polling backs it up too. In a March 2024 survey, 60% of medical group leaders said their denial rates had increased compared to the previous year.
-
 ![How denied claims break down: most are never resubmitted](/blog/denied-claims-breakdown.svg)
 
 These aren't cherry-picked numbers from struggling systems. This is the landscape. If your practice runs below 8%, you're outperforming most of the industry. If you're at 12% or higher, you're not alone. But you're losing money you could be keeping.
@@ -73,8 +71,6 @@ The documentation supports the higher code. They deny it anyway.
 
 The AMA has documented this pattern. Payers are using automated software to downcode E/M levels without reviewing clinical records, basing the decision on final diagnosis rather than the complexity of the encounter. That's not how E/M coding works. But the practice has to file an appeal to prove it, and that appeal takes time and staff that small groups don't have.
 
-Emergency physicians are also getting squeezed by the No Surprises Act. EDPMA's 2024 member survey found a 39% reduction in out-of-network reimbursement since the law took effect. When providers do win in the Independent Dispute Resolution process (and they win about 80% of the time), 59% of those rulings aren't paid within the required 30-day window. Over a quarter are underpaid even after the ruling.
-
 And then there's the prior authorization burden. It hits every specialty, not just EM. The AMA's December 2024 survey of 1,000 physicians found that the average practice completes 39 prior authorizations per week, consuming about 13 hours of combined physician and staff time. Ninety-three percent said prior auth delays access to necessary care. Forty percent of practices now have staff who do nothing but prior authorization work.
 
 Here's what gets me: when physicians do appeal prior auth denials, 83% are overturned. The denials weren't clinically justified in the first place. They were friction, designed to slow things down and make a percentage of providers give up. And it works. Only 20% of physicians always appeal an adverse PA decision.
@@ -88,8 +84,6 @@ It's automation.
 HFMA reports that 71% of health insurers now use AI for utilization management, including prior authorization and concurrent review. A 2024 Senate report found that some AI denial tools produce rejection rates up to 16 times higher than traditional human review. Cigna was sued for using an algorithm called PXDX to auto-deny claims without a physician ever looking at the medical record. UnitedHealthcare faces similar litigation over its AI-driven post-acute care denials.
 
 The numbers tell the story. Between 2022 and 2023, care denials increased by 20% for commercial claims and nearly 56% for Medicare Advantage claims, according to AHA data. UnitedHealthcare's prior auth denial rate for post-acute care more than doubled in two years, going from 10.9% in 2020 to 22.7% in 2022.
-
-California responded by passing the Physicians Make Decisions Act, which prohibits insurers from using AI as the sole basis for a denial. Other states are following. But legislation moves slowly, and the payer automation is already deployed at scale.
 
 The math is straightforward for insurers: if an AI can deny 16 times more claims per hour than a human reviewer, and 65% of those denials are never appealed, the ROI is enormous. They're not worried about the 35% that fight back. They're profiting from the majority that doesn't.
 
@@ -125,12 +119,9 @@ If you want to know what denials are actually costing your practice, we can show
 
 1. Kodiak Solutions. *Revenue Cycle Denials Index: Initial Denial Rates 2020-2024.* BusinessWire, May 2025.
 2. Experian Health. *State of Claims Report 2025.* Experian Health, 2025.
-3. Medical Group Management Association. *MGMA Stat Poll: Denial Rate Trends.* MGMA, March 2024.
-4. Premier Inc. *National Claims Adjudication Survey: 2023 Data.* Premier Inc., 2025.
-5. Advisory Board. *Preventable Denials Study.* Advisory Board / HFMA.
-6. American Medical Association. *2024 Prior Authorization Physician Survey.* AMA, December 2024.
-7. Emergency Department Practice Management Association. *No Surprises Act Implementation and Compliance Data Analysis.* EDPMA, April 2024.
-8. American Medical Association. *Payer E/M Downcoding Resource.* AMA, 2024.
-9. Health Financial Management Association. *Navigating the Rising Tide of Denials.* HFMA, 2025.
-10. American Hospital Association. *Payer Denial Tactics: How to Confront a $20 Billion Problem.* AHA, April 2024.
-11. Kaiser Family Foundation. *Nearly 50 Million Prior Authorization Requests Sent to Medicare Advantage Insurers in 2023.* KFF, 2024.
+3. Premier Inc. *National Claims Adjudication Survey: 2023 Data.* Premier Inc., 2025.
+4. Advisory Board. *Preventable Denials Study.* Advisory Board / HFMA.
+5. American Medical Association. *2024 Prior Authorization Physician Survey.* AMA, December 2024.
+6. American Medical Association. *Payer E/M Downcoding Resource.* AMA, 2024.
+7. Health Financial Management Association. *Navigating the Rising Tide of Denials.* HFMA, 2025.
+8. American Hospital Association. *Payer Denial Tactics: How to Confront a $20 Billion Problem.* AHA, April 2024.
