@@ -12,7 +12,7 @@
 
   <!-- ===== EVENTS ABOVE THE LINE ===== -->
 
-  <!-- Event 1 (above): Feb 12 -- Initial Access, x=95 -->
+  <!-- Event 1 (above): Feb 12 - Initial Access, x=95 -->
   <line x1="95" y1="163" x2="95" y2="188" stroke="#D97706" stroke-width="1.5"/>
   <circle cx="95" cy="188" r="7" fill="#D97706"/>
   <rect x="28" y="96" width="134" height="64" rx="6" fill="#D97706" opacity="0.12"/>
@@ -22,7 +22,7 @@
   <text x="95" y="146" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">Citrix portal, stolen creds</text>
   <text x="95" y="159" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">No MFA in place</text>
 
-  <!-- Event 3 (above): Feb 21 -- Ransomware, x=340 -->
+  <!-- Event 3 (above): Feb 21 - Ransomware, x=340 -->
   <line x1="340" y1="163" x2="340" y2="188" stroke="#DC2626" stroke-width="1.5"/>
   <circle cx="340" cy="188" r="8" fill="#DC2626"/>
   <rect x="270" y="96" width="140" height="64" rx="6" fill="#DC2626" opacity="0.15"/>
@@ -32,7 +32,7 @@
   <text x="340" y="146" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">Systems taken offline</text>
   <text x="340" y="159" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">Nationwide outage begins</text>
 
-  <!-- Event 5 (above): Mar 7 -- Partial Restore, x=580 -->
+  <!-- Event 5 (above): Mar 7 - Partial Restore, x=580 -->
   <line x1="580" y1="163" x2="580" y2="188" stroke="#D97706" stroke-width="1.5"/>
   <circle cx="580" cy="188" r="7" fill="#D97706" opacity="0.7"/>
   <rect x="514" y="96" width="132" height="64" rx="6" fill="#D97706" opacity="0.1"/>
@@ -44,7 +44,7 @@
 
   <!-- ===== EVENTS BELOW THE LINE ===== -->
 
-  <!-- Event 2 (below): Feb 12-20 -- 9 Days Dwell, x=215 -->
+  <!-- Event 2 (below): Feb 12-20 - 9 Days Dwell, x=215 -->
   <line x1="215" y1="188" x2="215" y2="213" stroke="#D97706" stroke-width="1.5"/>
   <circle cx="215" cy="188" r="7" fill="#D97706" opacity="0.85"/>
   <rect x="148" y="216" width="134" height="64" rx="6" fill="#D97706" opacity="0.1"/>
@@ -54,7 +54,7 @@
   <text x="215" y="266" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">Lateral movement</text>
   <text x="215" y="279" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">No alerts triggered</text>
 
-  <!-- Event 4 (below): ~Mar 1 -- Ransom Paid, x=460 -->
+  <!-- Event 4 (below): ~Mar 1 - Ransom Paid, x=460 -->
   <line x1="460" y1="188" x2="460" y2="213" stroke="#DC2626" stroke-width="1.5"/>
   <circle cx="460" cy="188" r="8" fill="#DC2626"/>
   <rect x="390" y="216" width="140" height="64" rx="6" fill="#DC2626" opacity="0.12"/>
@@ -64,7 +64,7 @@
   <text x="460" y="266" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">350 BTC to ALPHV/BlackCat</text>
   <text x="460" y="279" text-anchor="middle" font-size="9" fill="#FEF3C7" opacity="0.7">Exit scam followed</text>
 
-  <!-- Event 6 (below): Nov 2024 -- Full Restoration, x=700 -->
+  <!-- Event 6 (below): Nov 2024 - Full Restoration, x=700 -->
   <line x1="700" y1="188" x2="700" y2="213" stroke="#6B7280" stroke-width="1.5"/>
   <circle cx="700" cy="188" r="7" fill="#6B7280"/>
   <rect x="635" y="216" width="130" height="64" rx="6" fill="#6B7280" opacity="0.1"/>

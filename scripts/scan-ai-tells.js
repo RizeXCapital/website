@@ -5,7 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { RULES, EM_DASH_KEEP, fixEmDash } = require('./lib/rules.js');
+const { RULES, EM_DASH_KEEP, fixEmDash, fixDoubleDash } = require('./lib/rules.js');
 const { extractText } = require('./lib/extract-text.js');
 
 const FIX_MODE = process.argv.includes('--fix');
@@ -134,6 +134,12 @@ for (const filePath of files) {
         .replace(/\u2013/g, ' - ')               // fallback
     );
 
+    // Fix double-hyphen dashes: " -- " → comma or period
+    fixed = fixed.map((line) => {
+      if (!/ -- /.test(line) || /^-{3,}/.test(line.trim()) || /(<!--|-->)/.test(line)) return line;
+      return fixDoubleDash(line);
+    });
+
     // Fix em dashes: keep first EM_DASH_KEEP, replace rest with context-aware logic
     let emDashSeen = 0;
     fixed = fixed.map((line) => {
@@ -167,7 +173,11 @@ for (const filePath of files) {
     if (path.extname(filePath) === '.md') {
       const fmMatch = rawFile.match(/^(---\n[\s\S]*?\n---\n)([\s\S]*)$/);
       if (fmMatch) {
-        fs.writeFileSync(filePath, fmMatch[1] + fixed.join('\n'));
+        // extractText prepends frontmatter label lines to `lines` for scanning.
+        // Recover only the body portion of `fixed` by counting from the end.
+        const rawBodyLineCount = fmMatch[2].split('\n').length;
+        const fixedBody = fixed.slice(fixed.length - rawBodyLineCount);
+        fs.writeFileSync(filePath, fmMatch[1] + fixedBody.join('\n'));
       } else {
         fs.writeFileSync(filePath, fixed.join('\n'));
       }
@@ -180,6 +190,9 @@ for (const filePath of files) {
         .replace(/[\u2018\u2019]/g, "'")
         .replace(/[\u201C\u201D]/g, '"')
         .replace(/\u2026/g, '...')
+        // Fix double-hyphen dashes in prose (CSS vars like --color have no surrounding spaces)
+        .replace(/ -- ([A-Z])/g, '. $1')
+        .replace(/ -- /g, ', ')
         .replace(/ \u2013 ([A-Z])/g, '. $1')
         .replace(/ \u2013 /g, ', ')
         .replace(/\u2013/g, ' - ')

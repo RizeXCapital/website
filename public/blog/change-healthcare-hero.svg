@@ -62,9 +62,9 @@
 
   <!-- Text -->
   <text x="400" y="290" text-anchor="middle" font-size="22" font-weight="700" fill="white" letter-spacing="-0.3">Change Healthcare</text>
-  <text x="400" y="316" text-anchor="middle" font-size="13" fill="#FEF3C7" opacity="0.75">February 21, 2024 -- 192.7 million records breached</text>
+  <text x="400" y="316" text-anchor="middle" font-size="13" fill="#FEF3C7" opacity="0.75">February 21, 2024 · 192.7 million records breached</text>
   <text x="400" y="344" text-anchor="middle" font-size="13" fill="#D97706" font-weight="600">40% of U.S. medical claims through one node</text>
 
   <!-- Bottom label -->
-  <text x="400" y="398" text-anchor="middle" font-size="11" fill="#FEF3C7" opacity="0.4">RizeX Capital -- Sovereign RCM</text>
+  <text x="400" y="398" text-anchor="middle" font-size="11" fill="#FEF3C7" opacity="0.4">RizeX Capital · Sovereign RCM</text>
 </svg>

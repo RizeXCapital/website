@@ -31,6 +31,7 @@
 
 **Punctuation signals:**
 - Em dash (—) overuse. Humans use maybe 3-5 per article. AI uses 15-20+. Replace most with commas, periods, parentheses, or restructure the sentence.
+- Double-hyphen dash ( -- ). AI frequently types ` -- ` as a long-dash substitute. Real writers never do this. Replace with a comma (mid-sentence) or period (before a capital). Auto-fixed by scanner.
 - Colon introductions as a crutch ("The bottom line:", "The alternative:", "The classic example:"). Rewrite as natural sentences.
 - Perfectly consistent Oxford comma usage. Humans are inconsistent.
 

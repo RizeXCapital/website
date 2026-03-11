@@ -10,6 +10,23 @@ const RULES = [
     // No check/lineCheck — handled via dedicated block in scanner to avoid double-reporting
   },
   {
+    id: 'double-hyphen-dash',
+    severity: 'HIGH',
+    description: 'Double-hyphen dash (" -- ")',
+    lineCheck: (lines) => {
+      const issues = [];
+      for (let i = 0; i < lines.length; i++) {
+        const t = lines[i];
+        // Skip horizontal rules / YAML frontmatter separators and HTML/JSX comments
+        if (/^-{3,}/.test(t.trim()) || /(<!--|-->)/.test(t)) continue;
+        if (/ -- /.test(t)) {
+          issues.push({ lineStart: i + 1, message: 'Double-hyphen dash (" -- ") — AI punctuation signal; replace with comma or period' });
+        }
+      }
+      return issues;
+    },
+  },
+  {
     id: 'parallel-bold-subpoints',
     severity: 'HIGH',
     description: 'Parallel bold subpoints',
@@ -215,4 +232,12 @@ function fixEmDash(line, prevLine, nextLine) {
   }).replace(/\u2014/g, ' - '); // fallback for any remaining
 }
 
-module.exports = { RULES, AUTHORS, EM_DASH_KEEP, fixEmDash };
+// Double-hyphen dash replacement strategy
+// " -- Word" (capital) → ". Word"  |  " -- word" → ", word"
+function fixDoubleDash(line) {
+  return line
+    .replace(/ -- ([A-Z])/g, '. $1')
+    .replace(/ -- /g, ', ');
+}
+
+module.exports = { RULES, AUTHORS, EM_DASH_KEEP, fixEmDash, fixDoubleDash };

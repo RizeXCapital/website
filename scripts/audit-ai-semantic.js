@@ -41,6 +41,7 @@ async function main() {
 4. FLOW — Overly smooth transitions (every paragraph flows perfectly; no abrupt human shifts)
 5. HEDGE — Hedging language cluster (high density of "may", "might", "could", "it's worth noting")
 6. VOICE — Author voice mismatch (writing doesn't match the author's known register)
+7. PUNCTUATION — Double-hyphen dash (" -- ") used as a long-dash substitute; real writers don't type this
 
 ${voiceContext}
 
