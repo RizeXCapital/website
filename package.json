@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:ai": "node scripts/scan-ai-tells.js",
+    "audit:ai:fix": "node scripts/scan-ai-tells.js --fix"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
