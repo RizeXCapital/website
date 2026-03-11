@@ -8,11 +8,11 @@ const FOUNDERS = [
 ];
 
 // Input length limits
-const MAX_NAME = 200;
-const MAX_EMAIL = 254;
-const MAX_PHONE = 30;
-const MAX_PRACTICE = 200;
-const MAX_MESSAGE = 5000;
+const MAX_NAME = 50;
+const MAX_EMAIL = 60;
+const MAX_PHONE = 15;
+const MAX_PRACTICE = 80;
+const MAX_MESSAGE = 2000;
 
 // Escape HTML special characters to prevent XSS in email body
 function escapeHtml(str: string): string {

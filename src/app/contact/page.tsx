@@ -8,7 +8,9 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [messageLen, setMessageLen] = useState(0);
   const formLoadTime = useRef(Date.now());
+  const MESSAGE_MAX = 2000;
 
   useEffect(() => {
     formLoadTime.current = Date.now();
@@ -163,6 +165,8 @@ export default function Contact() {
                     id="name"
                     name="name"
                     required
+                    minLength={2}
+                    maxLength={50}
                     className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="Your full name"
                   />
@@ -181,6 +185,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     required
+                    maxLength={60}
                     className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="you@example.com"
                   />
@@ -199,6 +204,7 @@ export default function Contact() {
                     type="tel"
                     id="phone"
                     name="phone"
+                    maxLength={15}
                     className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="(555) 000-0000"
                   />
@@ -217,6 +223,7 @@ export default function Contact() {
                     type="text"
                     id="practice"
                     name="practice"
+                    maxLength={80}
                     className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="Your practice or organization"
                   />
@@ -235,9 +242,15 @@ export default function Contact() {
                     name="message"
                     required
                     rows={5}
+                    minLength={10}
+                    maxLength={MESSAGE_MAX}
+                    onChange={(e) => setMessageLen(e.target.value.length)}
                     className="mt-2 w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="Tell us about your practice or what you're looking for..."
                   />
+                  <p className={`mt-1 text-right text-xs ${messageLen > MESSAGE_MAX * 0.9 ? "text-coral" : "text-charcoal-light dark:text-gray-400"}`}>
+                    {messageLen} / {MESSAGE_MAX}
+                  </p>
                 </div>
 
                 {error && (
