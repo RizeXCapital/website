@@ -573,7 +573,7 @@ export default function SovereignRCM() {
                 href="/contact"
                 className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
               >
-                Request a Billing Analysis
+                Request a Free Product Demo
               </Link>
             </div>
           </FadeIn>

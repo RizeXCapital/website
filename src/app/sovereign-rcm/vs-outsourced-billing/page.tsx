@@ -52,7 +52,7 @@ const comparisonRows = [
     category: "Cost Model",
     tooltip: "How you pay: fixed one-time cost vs. perpetual percentage of collections",
     sovereign: "One-time capital expenditure, you own the appliance",
-    outsourced: "4 - 10% of collections, paid every month, indefinitely",
+    outsourced: "4–10% of collections, paid every month, indefinitely",
   },
   {
     category: "5-Year Cost Trajectory",
@@ -127,7 +127,7 @@ const faqs = [
   {
     question: "Can AI really replace our outsourced billing team?",
     answer:
-      "Sovereign RCM is designed to handle the core coding and claim preparation workflow, reading clinical notes, assigning CPT and ICD-10 codes, applying payer-specific rules, and generating compliant 837P claims. For most practices, this covers 80 - 90% of claim volume. Edge cases and complex appeals may still benefit from human review, which is why we run a 90-day pilot in shadow mode to measure exactly what the appliance handles versus what needs manual attention in your specific specialty mix.",
+      "Sovereign RCM is designed to handle the core coding and claim preparation workflow, reading clinical notes, assigning CPT and ICD-10 codes, applying payer-specific rules, and generating compliant 837P claims. For most practices, this covers 80–90% of claim volume. Edge cases and complex appeals may still benefit from human review, which is why we run a 90-day pilot in shadow mode to measure exactly what the appliance handles versus what needs manual attention in your specific specialty mix.",
   },
   {
     question:
@@ -148,7 +148,7 @@ const faqs = [
   {
     question: "Is the upfront cost worth it vs. continuing to pay a percentage?",
     answer:
-      "For most practices, the math favors ownership within 18 - 24 months. A 5-provider practice paying 6% of $2.5M in annual collections spends $150K per year on outsourced billing. Sovereign RCM's one-time capital cost is recovered in that timeframe, and every month after that is savings. Use our ROI calculator to model the payback period for your specific practice size and collection volume.",
+      "For most practices, the math favors ownership within 18–24 months. A 5-provider practice paying 6% of $2.5M in annual collections spends $150K per year on outsourced billing. Sovereign RCM's one-time capital cost is recovered in that timeframe, and every month after that is savings. Use our ROI calculator to model the payback period for your specific practice size and collection volume.",
   },
 ];
 
@@ -287,7 +287,7 @@ export default function VsOutsourcedBilling() {
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>4 - 10%</strong> of collections (industry range)
+                      <strong>4–10%</strong> of collections (industry range)
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -307,7 +307,7 @@ export default function VsOutsourcedBilling() {
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>$100K - $250K/yr</strong> for a 5-provider practice at
+                      <strong>$100K–$250K/yr</strong> for a 5-provider practice at
                       $2.5M collections
                     </span>
                   </li>
@@ -360,7 +360,7 @@ export default function VsOutsourcedBilling() {
                   <li className="flex items-start gap-3">
                     <span className="mt-0.5 shrink-0 text-coral">&bull;</span>
                     <span>
-                      <strong>$25 - $118</strong> cost to rework each denied claim
+                      <strong>$25–$118</strong> cost to rework each denied claim
                       (MGMA)
                     </span>
                   </li>

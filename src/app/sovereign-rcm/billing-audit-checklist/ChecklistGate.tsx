@@ -129,7 +129,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
         Get the Checklist
       </h2>
       <p className="mt-3 text-base text-charcoal-light dark:text-gray-300">
-        Enter your name and email to access all 35 audit items across 7 sections.
+        Enter your name and email to access all 34 audit items across 7 sections.
         No spam, no sales call required.
       </p>
 
@@ -298,7 +298,7 @@ function ChecklistContent() {
           href="/contact"
           className="mt-4 inline-block rounded-lg bg-coral px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
         >
-          Request a Billing Analysis
+          Request a Free Product Demo
         </a>
       </div>
     </div>
