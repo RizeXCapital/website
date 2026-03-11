@@ -458,7 +458,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-block rounded-lg bg-white px-10 py-4 text-base font-medium text-coral transition-colors hover:bg-gray-100"
               >
-                Get in Touch
+                Request a Free Product Demo
               </Link>
             </div>
           </FadeIn>

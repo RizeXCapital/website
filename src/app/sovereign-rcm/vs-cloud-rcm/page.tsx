@@ -11,11 +11,11 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "On-Premise AI vs. Cloud SaaS Billing  -  Sovereign RCM",
+  title: "On-Premise AI vs. Cloud SaaS Billing: Sovereign RCM",
   description:
     "Compare Sovereign RCM's on-premise AI billing appliance to cloud SaaS RCM platforms. See how on-premise deployment eliminates breach risk, ends recurring fees, and gives you full data ownership.",
   openGraph: {
-    title: "On-Premise AI vs. Cloud SaaS Billing  -  Sovereign RCM",
+    title: "On-Premise AI vs. Cloud SaaS Billing: Sovereign RCM",
     description:
       "Compare Sovereign RCM's on-premise AI billing appliance to cloud SaaS RCM platforms. Security, cost, data ownership, and uptime, side by side.",
     url: "https://rizexcapital.com/sovereign-rcm/vs-cloud-rcm",

@@ -21,7 +21,7 @@ The actual number was closer to 13%. He had no idea.
 
 Most practice owners don't. Denials show up as line items buried in an RCM report that someone in billing reads and nobody else does. The billing team handles the rework. Some claims get recovered. A lot don't. And the practice keeps running, never quite seeing the full picture of what it's leaving on the table every month.
 
-I wanted to write about this because I've lived it. I've coded and billed from the bedside in some of the highest-volume emergency departments in the country. I've written notes I know support a Level 5 visit, watched the claim get downcoded by a payer algorithm, and then spent time I didn't have fighting the appeal. The denial problem isn't abstract to me. It's a Tuesday.
+I wanted to write about this because I've lived it. I've coded and billed from the bedside in some of the busiest emergency departments in the country. I've written notes I know support a Level 5 visit, watched the claim get downcoded by a payer algorithm, and then spent time I didn't have fighting the appeal. The denial problem isn't abstract to me. It's a Tuesday.
 
 ## The Denial Rate Keeps Climbing
 

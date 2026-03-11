@@ -27,7 +27,7 @@ const authorBios: Record<string, { role: string; bio: string }> = {
   },
   "Faizan G. Arif, MD": {
     role: "Chief Executive Officer",
-    bio: "Board-certified EM physician and the clinical visionary behind Sovereign RCM. Faizan has coded, billed, and fought denials from the bedside at the highest-volume EDs in the country.",
+    bio: "Board-certified EM physician and the clinical visionary behind Sovereign RCM. Faizan has coded, billed, and fought denials from the bedside at some of the busiest EDs in the country.",
   },
   "Navid M. Rahman, PE": {
     role: "Chief Operating Officer",

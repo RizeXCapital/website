@@ -31,7 +31,7 @@ const outsourcedProblems = [
     icon: "📉",
     title: "Percentage Drain",
     description:
-      "Outsourced billing companies charge 4 - 10% of collections. The more revenue your practice generates, the more you pay  -  indefinitely. A 5-provider practice collecting $2.5M/yr pays $100K - $250K/yr with no path to ownership.",
+      "Outsourced billing companies charge 4-10% of collections. The more revenue your practice generates, the more you pay, indefinitely. A 5-provider practice collecting $2.5M/yr pays $100K-$250K/yr with no path to ownership.",
   },
   {
     icon: "🔍",
@@ -50,7 +50,7 @@ const outsourcedProblems = [
 const comparisonRows = [
   {
     category: "Cost Model",
-    tooltip: "How you pay  -  fixed one-time cost vs. perpetual percentage of collections",
+    tooltip: "How you pay: fixed one-time cost vs. perpetual percentage of collections",
     sovereign: "One-time capital expenditure, you own the appliance",
     outsourced: "4 - 10% of collections, paid every month, indefinitely",
   },

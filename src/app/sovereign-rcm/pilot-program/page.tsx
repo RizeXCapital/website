@@ -12,9 +12,9 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "90-Day Pilot Program  -  Sovereign RCM",
+  title: "90-Day Pilot Program: Sovereign RCM",
   description:
-    "Prove Sovereign RCM works for your practice with a zero-risk, 90-day shadow pilot. Real claims, real results  -  no obligation.",
+    "Prove Sovereign RCM works for your practice with a zero-risk, 90-day shadow pilot. Real claims, real results, no obligation.",
   openGraph: {
     title: "90-Day Pilot Program. Sovereign RCM",
     description:

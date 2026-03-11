@@ -54,4 +54,57 @@
 - Check bold subpoint sections — are they all identical in structure? Break them up.
 - Check lists — could they be prose instead? Are they too uniform?
 - Grep for trailing spaces, smart quotes, em dash count
+- Grep for stacked compound adjectives (two hyphenated words in a row, e.g. `x-specific, y-specific`)
+- Grep for `-specific`, `-focused`, `-driven`, `-based`, `-level`, `-related` as compound modifiers
 - Does the author's personality come through? (Ghulam = data/ML background, Faizan = EM physician, Navid M. Rahman PE = COO/ops)
+
+---
+
+### 3. Over-hyphenation is a distinct AI signature
+**Date:** 2026-03-11
+**Context:** Audit found `specialty-specific, size-specific numbers`, `highest-impact thing AI does`, `specialty-specific coding patterns`, and `highest-volume emergency departments` across blog posts and TSX pages. All replaced with plain human phrasing.
+**Rule:** AI over-hyphenates. It compresses meaning into compound adjectives because it optimizes for information density. Humans reach for noun phrases instead. The difference is subtle but detectable.
+
+**The core problem — compression vs. readability:**
+AI writes: `specialty-specific, size-specific numbers`
+Human writes: `actual numbers from practices your size and specialty`
+AI writes: `highest-impact thing AI does`
+Human writes: `where AI makes the biggest difference`
+AI writes: `highest-volume emergency departments`
+Human writes: `busiest emergency departments`
+
+**Patterns to catch and fix:**
+
+1. **Stacked compound adjectives** — two or more hyphenated modifiers in a row
+   - `specialty-specific, size-specific` → `practices your size and specialty`
+   - `data-driven, outcome-focused` → rewrite as a sentence
+   - Any time you see `x-something, y-something` before a noun: rewrite as a phrase
+
+2. **Superlative compounds** — `highest-X`, `lowest-X`, `most-X` as hyphenated modifiers
+   - `highest-impact` → `biggest`, `most significant`, `most important`
+   - `highest-volume` → `busiest`, `most active`
+   - `lowest-cost` → `cheapest`, `least expensive`
+   - Exception: `high-volume` is a real industry term in clinical settings (e.g., "high-volume ED") — fine to use sparingly
+
+3. **The `-specific` suffix** — overused by AI to signal precision
+   - `specialty-specific` → `for your specialty`, `tailored to your specialty`
+   - `size-specific` → `for practices your size`
+   - `practice-specific` → `for your practice`
+   - KEEP: `payer-specific` — this is genuine medical billing industry vocabulary
+
+4. **Unnecessary `-based`, `-driven`, `-focused`, `-level`, `-related` modifiers**
+   - `outcome-based approach` → `approach focused on outcomes` or just `what works`
+   - `data-driven decision` → `decision backed by data`
+   - `claim-level analysis` → `analysis of each claim`
+   - `billing-related issues` → `billing issues`
+   - These are not always wrong, but they cluster in AI writing. One is fine; three in a paragraph is a flag.
+
+5. **The compression test** — ask: is the hyphenated form trying to pack more meaning than a simple word?
+   - If yes: expand it to a phrase or use a simpler word
+   - If the hyphenated form is an established compound (on-premise, air-gapped, clean-claim, third-party, multi-agent, payer-specific): keep it
+
+**Approved compound terms (always hyphenated, never flag these):**
+`on-premise`, `air-gapped`, `clean-claim`, `third-party`, `multi-agent`, `multi-factor`, `multi-provider`, `pre-submission`, `post-acute`, `non-redundant`, `internet-facing`, `zero-day`, `month-end`, `modifier-intensive`, `payer-specific`, `decision-making`, `write-off`, `real-time` (in tech contexts)
+
+**The broader principle:**
+AI optimizes for information density. Humans optimize for conversational flow. When you see a cluster of hyphenated compound adjectives, it means the writing was compressed rather than composed. The fix is almost always a noun phrase or a simpler word.

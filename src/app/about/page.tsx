@@ -60,7 +60,7 @@ const founders = [
     imageStyle: {} as React.CSSProperties,
     imageObjectPosition: "40% top",
     description:
-      "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at the highest-volume EDs in the country. Founder of ArifMED INC, bridging healthcare, AI, and research.",
+      "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at some of the busiest EDs in the country. Founder of ArifMED INC, bridging healthcare, AI, and research.",
   },
   {
     name: "Navid M. Rahman, PE",

@@ -452,7 +452,7 @@ export default function SovereignRCM() {
               Built for Your Specialty
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
-              Sovereign RCM is trained on specialty-specific coding patterns,
+              Sovereign RCM is trained on coding patterns for each specialty,
               modifier rules, and payer logic for the specialties that lose the
               most to billing inefficiency.
             </p>

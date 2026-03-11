@@ -32,7 +32,7 @@ If it feels like you're fighting more denials than you used to, you're not imagi
 
 Each denial costs more than just the lost payment. MGMA estimates reworking a denied claim runs $25 to $118 per claim, depending on complexity and how many times someone has to touch it (MGMA, 2024 DataDive Cost and Revenue). For a small practice processing 3,000-5,000 claims a year, even a modest denial rate adds up fast in dollars and staff hours.
 
-Payer rules keep getting more granular. Commercial insurers are layering on new prior auth requirements, narrowing coverage criteria, and deploying more aggressive automated claim review. ICD-10-CM has over 72,000 diagnosis codes now — claims that used to pass with "knee pain" now need laterality, chronicity, and sometimes mechanism of injury. Turnover makes it worse: experienced billers leave, junior staff replace them, and the nuanced understanding of which payers flag which codes disappears with them.
+Payer rules keep getting more granular. Commercial insurers are layering on new prior auth requirements, narrowing coverage criteria, and deploying more aggressive automated claim review. ICD-10-CM has over 72,000 diagnosis codes now. Claims that used to pass with "knee pain" now need laterality, chronicity, and sometimes mechanism of injury. Turnover makes it worse: experienced billers leave, junior staff replace them, and the nuanced understanding of which payers flag which codes disappears with them.
 
 None of these trends are reversing. They all hit small practices with lean billing teams hardest.
 
@@ -54,7 +54,7 @@ And billers don't have clinical context. A biller reading a note can't always te
 
 The worst part about undercoding? It never triggers a rejection notice. No denial letter. No rework queue. The money just never shows up, and most practices never realize what they're missing.
 
-On-premise AI billing systems trained on specialty-specific coding patterns can catch undercoding before claims go out, making sure documentation supports the right level of service. That's one of the problems that led us to build [Sovereign RCM](/sovereign-rcm). It flags these patterns locally, without sending patient data to a third-party cloud.
+On-premise AI billing systems trained on coding patterns for your specialty can catch undercoding before claims go out, making sure documentation supports the right level of service. That's one of the problems that led us to build [Sovereign RCM](/sovereign-rcm). It flags these patterns locally, without sending patient data to a third-party cloud.
 
 ## How AI Billing Tools Actually Work
 
@@ -76,7 +76,7 @@ The goal is pushing the clean-claim rate (claims accepted on first submission) a
 
 AI can also mine historical denial data and spot patterns that human billers miss. When a specific payer starts rejecting a particular code combination more often, the system catches the trend and adjusts scrubbing rules before denied claims start piling up.
 
-Going from reacting to denials to preventing them is probably the highest-impact thing AI does in billing right now. Instead of staffing up to handle the denial backlog, practices can stop denials from happening.
+Going from reacting to denials to preventing them is probably where AI makes the biggest difference in billing right now. Instead of staffing up to handle the denial backlog, practices can stop denials from happening.
 
 Where inference runs and how the system learns from your practice's specific patterns matters as much as the underlying technology.
 
@@ -124,7 +124,7 @@ And fourth, **undercoding recapture**. Compare the AI's coding suggestions again
 
 When talking to vendors, a few questions separate real solutions from marketing. Ask where inference happens, cloud or on-premise, and if cloud, who has access to the data. Ask how the model gets trained and updated, whether it improves based on your practice's specific patterns or if it's static. Ask what the human oversight model looks like, because AI should assist coders and billers, not replace their judgment.
 
-Push them on specifics. Can they show results from practices like yours? Not general claims, but specialty-specific, size-specific numbers. What happens when the system goes down? And what's the real total cost once you factor in implementation, training time, and ongoing support?
+Push them on specifics. Can they show results from practices like yours? Not general claims, but actual numbers from practices your size and specialty. What happens when the system goes down? And what's the real total cost once you factor in implementation, training time, and ongoing support?
 
 ---
 
