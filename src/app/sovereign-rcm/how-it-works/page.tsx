@@ -153,7 +153,7 @@ const agentDeepDives: AgentDeepDive[] = [
     darkBgClass: "dark:bg-dark-surface",
     direction: "left",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
         <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
       </svg>
@@ -171,7 +171,7 @@ const agentDeepDives: AgentDeepDive[] = [
     darkBgClass: "dark:bg-dark-bg",
     direction: "right",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
         <rect x="9" y="3" width="6" height="4" rx="1" />
         <path d="M9 14l2 2 4-4" />
@@ -190,7 +190,7 @@ const agentDeepDives: AgentDeepDive[] = [
     darkBgClass: "dark:bg-dark-surface",
     direction: "left",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8M12 17v4M6 8h.01M10 8h.01" />
       </svg>
@@ -208,7 +208,7 @@ const agentDeepDives: AgentDeepDive[] = [
     darkBgClass: "dark:bg-dark-bg",
     direction: "right",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <circle cx="11" cy="11" r="8" />
         <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
       </svg>
@@ -228,7 +228,7 @@ const evidenceBenefits: EvidenceBenefit[] = [
     description:
       "Review AI-drafted claims with full rationale instead of re-reading charts. Focus time shifts from coding to quality assurance.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
@@ -240,7 +240,7 @@ const evidenceBenefits: EvidenceBenefit[] = [
     description:
       "Per-claim documentation of every coding decision. Audit-ready evidence that maps codes to clinical support.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="M9 12l2 2 4-4" />
       </svg>
@@ -251,7 +251,7 @@ const evidenceBenefits: EvidenceBenefit[] = [
     description:
       "Immediate visibility into how notes translate to codes. Undercoding alerts highlight where documentation supports higher reimbursement.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
@@ -270,7 +270,7 @@ const deploymentItems: DeploymentItem[] = [
     description:
       "A dedicated appliance installed on-site in your facility. Standard rack-mount form factor, minimal footprint, connected to your local network.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <rect x="2" y="2" width="20" height="8" rx="2" />
         <rect x="2" y="14" width="20" height="8" rx="2" />
         <line x1="6" y1="6" x2="6.01" y2="6" />
@@ -283,7 +283,7 @@ const deploymentItems: DeploymentItem[] = [
     description:
       "One-directional, read-only integration with your EHR. The appliance reads clinical notes and never writes back or modifies source records.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
       </svg>
@@ -294,7 +294,7 @@ const deploymentItems: DeploymentItem[] = [
     description:
       "All AI inference runs locally with no internet connection. Only the final 837P claim leaves your facility through your existing clearinghouse workflow.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <rect x="3" y="11" width="18" height="11" rx="2" />
         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
@@ -305,7 +305,7 @@ const deploymentItems: DeploymentItem[] = [
     description:
       "Model and rule updates delivered via secure portable media. No remote access, no cloud sync, no background connections.",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-teal dark:text-teal-dark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
         <polyline points="7 10 12 15 17 10" />
         <line x1="12" y1="15" x2="12" y2="3" />
@@ -437,7 +437,7 @@ export default function HowItWorks() {
               <StaggerItem key={step.number}>
                 <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <div className="flex items-center gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy font-heading text-lg font-bold text-white dark:bg-teal">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy font-heading text-lg font-bold text-white dark:bg-coral">
                       {step.number}
                     </span>
                     <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
@@ -449,15 +449,15 @@ export default function HowItWorks() {
                   </p>
                   <div className="mt-4 grid grid-cols-2 gap-3">
                     <div className="rounded-lg bg-ice px-3 py-2 dark:bg-dark-surface">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                         In
                       </p>
                       <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
                         {step.dataIn}
                       </p>
                     </div>
-                    <div className="rounded-lg bg-teal/15 px-3 py-2 dark:bg-teal/20">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                    <div className="rounded-lg bg-coral/10 px-3 py-2 dark:bg-coral/15">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                         Out
                       </p>
                       <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
@@ -490,8 +490,8 @@ export default function HowItWorks() {
                   <p className="mt-6 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                     {agent.narrative}
                   </p>
-                  <div className="mt-6 rounded-lg border-l-4 border-teal bg-white/60 px-5 py-4 dark:border-teal-dark dark:bg-dark-elevated/60">
-                    <p className="text-sm font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                  <div className="mt-6 rounded-lg border-l-4 border-coral bg-white/60 px-5 py-4 dark:border-coral dark:bg-dark-elevated/60">
+                    <p className="text-sm font-semibold uppercase tracking-wider text-coral dark:text-coral">
                       Why it matters
                     </p>
                     <p className="mt-2 text-base leading-relaxed text-charcoal dark:text-dark-text">
@@ -506,13 +506,13 @@ export default function HowItWorks() {
                     </h3>
                     <div className="mt-5 space-y-5">
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                           Inputs
                         </p>
                         <ul className="mt-2 space-y-1.5">
                           {agent.inputs.map((input) => (
                             <li key={input} className="flex items-start gap-2 text-sm text-charcoal dark:text-dark-text">
-                              <svg className="mt-0.5 h-4 w-4 shrink-0 text-teal dark:text-teal-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <svg className="mt-0.5 h-4 w-4 shrink-0 text-coral dark:text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                               </svg>
                               {input}
@@ -521,7 +521,7 @@ export default function HowItWorks() {
                         </ul>
                       </div>
                       <div className="border-t border-gray-200 pt-5 dark:border-dark-border">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                           Outputs
                         </p>
                         <ul className="mt-2 space-y-1.5">
@@ -575,7 +575,7 @@ export default function HowItWorks() {
                 </h3>
                 <div className="mt-5 space-y-4">
                   <div className="rounded-lg bg-ice px-4 py-3 dark:bg-dark-surface">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                       Code Assigned
                     </p>
                     <p className="mt-1 font-heading text-base font-bold text-navy dark:text-white">
@@ -583,7 +583,7 @@ export default function HowItWorks() {
                     </p>
                   </div>
                   <div className="rounded-lg bg-ice px-4 py-3 dark:bg-dark-surface">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                       Documentation Support
                     </p>
                     <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
@@ -593,7 +593,7 @@ export default function HowItWorks() {
                     </p>
                   </div>
                   <div className="rounded-lg bg-ice px-4 py-3 dark:bg-dark-surface">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                       Payer Rule Applied
                     </p>
                     <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
@@ -602,7 +602,7 @@ export default function HowItWorks() {
                     </p>
                   </div>
                   <div className="rounded-lg bg-ice px-4 py-3 dark:bg-dark-surface">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-teal dark:text-teal-dark">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
                       Denial Risk
                     </p>
                     <p className="mt-1 text-sm text-charcoal dark:text-dark-text">
@@ -672,13 +672,13 @@ export default function HowItWorks() {
             <div className="mt-10 flex flex-wrap gap-6">
               <Link
                 href="/sovereign-rcm/security"
-                className="text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                className="text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
               >
                 Security & HIPAA architecture
               </Link>
               <Link
                 href="/sovereign-rcm/pilot-program"
-                className="text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                className="text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
               >
                 90-Day Pilot Program
               </Link>
@@ -715,7 +715,7 @@ export default function HowItWorks() {
               Have a question not covered here?{" "}
               <Link
                 href="/contact"
-                className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
               >
                 Reach out directly
               </Link>

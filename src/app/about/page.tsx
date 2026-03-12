@@ -120,7 +120,7 @@ export default function About() {
             {pillars.map((pillar) => (
               <StaggerItem key={pillar.number}>
                 <div className="h-full rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
+                  <p className="font-heading text-3xl font-bold text-coral dark:text-coral">
                     {pillar.number}
                   </p>
                   <h3 className="mt-3 font-heading text-base font-bold text-navy dark:text-white">
@@ -150,7 +150,7 @@ export default function About() {
             {values.map((value) => (
               <StaggerItem key={value}>
                 <div className="flex items-center gap-4 rounded-lg bg-white p-6 dark:bg-dark-elevated">
-                  <div className="h-2 w-2 shrink-0 rounded-full bg-teal" />
+                  <div className="h-2 w-2 shrink-0 rounded-full bg-coral" />
                   <p className="text-lg leading-relaxed text-charcoal dark:text-dark-text">
                     {value}
                   </p>
@@ -198,7 +198,7 @@ export default function About() {
                     <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
                       {founder.name}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
+                    <p className="mt-1 text-sm font-medium text-coral dark:text-coral">
                       {founder.role}
                     </p>
                     <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">

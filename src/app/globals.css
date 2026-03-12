@@ -7,25 +7,25 @@ html {
 }
 
 @theme inline {
-  --color-navy: #1B2A4A;
-  --color-navy-light: #243556;
-  --color-teal: #2E86AB;
-  --color-teal-light: #3A9BC2;
-  --color-teal-dark: #5BACCC;
-  --color-ice: #F0F6FA;
-  --color-coral: #E8614D;
-  --color-coral-hover: #D4533F;
-  --color-charcoal: #2D2D2D;
-  --color-charcoal-light: #4A4A4A;
-  --color-gray-100: #F7F8FA;
-  --color-gray-200: #E8ECF0;
-  --color-gray-300: #D1D5DB;
+  --color-navy: #1A1A1A;
+  --color-navy-light: #2A2A2A;
+  --color-teal: #C9C9C9;
+  --color-teal-light: #D9D9D9;
+  --color-teal-dark: #A0A0A0;
+  --color-ice: #F7F7F8;
+  --color-coral: #C8102E;
+  --color-coral-hover: #A80D26;
+  --color-charcoal: #3A3A3A;
+  --color-charcoal-light: #5A5A5A;
+  --color-gray-100: #F7F7F8;
+  --color-gray-200: #ECECEF;
+  --color-gray-300: #D9D9DD;
   --color-gray-500: #6B7280;
-  --color-dark-bg: #0F1729;
-  --color-dark-surface: #1B2A4A;
-  --color-dark-elevated: #243352;
-  --color-dark-border: #2D3F5E;
-  --color-dark-text: #E8EDF3;
+  --color-dark-bg: #000000;
+  --color-dark-surface: #111111;
+  --color-dark-elevated: #1A1A1A;
+  --color-dark-border: #2A2A2A;
+  --color-dark-text: #D9D9D9;
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-content a {
-  color: var(--color-teal);
+  color: var(--color-coral);
   text-decoration: none;
   transition: text-decoration 150ms;
 }
@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-content blockquote {
-  border-left: 4px solid var(--color-teal);
+  border-left: 4px solid var(--color-coral);
   background: var(--color-ice);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
@@ -186,12 +186,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .blog-content a {
-  color: var(--color-teal-dark);
+  color: var(--color-coral);
 }
 
 .dark .blog-content blockquote {
   background: var(--color-dark-elevated);
-  border-left-color: var(--color-teal-dark);
+  border-left-color: var(--color-coral);
 }
 
 .dark .blog-content code {
@@ -244,13 +244,13 @@ button[class*="bg-navy"]:active {
 input:focus,
 textarea:focus,
 select:focus {
-  box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.15);
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
 }
 
 .dark input:focus,
 .dark textarea:focus,
 .dark select:focus {
-  box-shadow: 0 0 0 3px rgba(91, 172, 204, 0.15);
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
 }
 
 /* -----------------------------------------------------------------------

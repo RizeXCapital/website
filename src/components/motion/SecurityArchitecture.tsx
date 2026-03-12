@@ -106,7 +106,7 @@ function ArrowDefs({ id }: { id: string }) {
   return (
     <defs>
       <marker id={id} markerWidth={8} markerHeight={6} refX={8} refY={3} orient="auto">
-        <polygon points="0 0, 8 3, 0 6" fill="#2E86AB" />
+        <polygon points="0 0, 8 3, 0 6" fill="#C9C9C9" />
       </marker>
     </defs>
   );
@@ -130,11 +130,11 @@ function CloudZone({ cx, cy, w, h }: { cx: number; cy: number; w: number; h: num
         Cloud Services
       </text>
       <line x1={cx - 20} y1={cy + 14} x2={cx + 20} y2={cy + 34}
-        stroke="#E8614D" strokeWidth={2.5} opacity={0.6} />
+        stroke="#C8102E" strokeWidth={2.5} opacity={0.6} />
       <line x1={cx + 20} y1={cy + 14} x2={cx - 20} y2={cy + 34}
-        stroke="#E8614D" strokeWidth={2.5} opacity={0.6} />
+        stroke="#C8102E" strokeWidth={2.5} opacity={0.6} />
       <text x={cx} y={cy + 50} textAnchor="middle"
-        className="text-[9px] font-bold" fill="#E8614D" opacity={0.7}>
+        className="text-[9px] font-bold" fill="#C8102E" opacity={0.7}>
         BLOCKED
       </text>
     </g>
@@ -173,28 +173,28 @@ function StaticDesktopContent() {
       <ArrowDefs id="ah" />
       {/* Boundary */}
       <rect x={D.bx} y={D.by} width={D.bw} height={D.bh} rx={16}
-        fill="rgba(46,134,171,0.04)" stroke="rgba(46,134,171,0.3)" strokeWidth={2} strokeDasharray="8 4" />
-      <text x={D.bx + 12} y={D.by + 20} className="font-heading text-[11px] font-bold" fill="#2E86AB" opacity={0.8}>
+        fill="rgba(201,201,201,0.04)" stroke="rgba(201,201,201,0.3)" strokeWidth={2} strokeDasharray="8 4" />
+      <text x={D.bx + 12} y={D.by + 20} className="font-heading text-[11px] font-bold" fill="#C9C9C9" opacity={0.8}>
         Practice Network
       </text>
       {/* Boxes */}
       <SystemBox x={D.ehrX} y={D.ehrY} width={D.boxW} height={D.boxH}
-        label="EHR System" fill="#F0F6FA" strokeColor="#1B2A4A" textColor="#1B2A4A" />
+        label="EHR System" fill="#F7F7F8" strokeColor="#1A1A1A" textColor="#1A1A1A" />
       <SystemBox x={D.srmX} y={D.srmY} width={D.boxW} height={D.boxH}
-        label="Sovereign RCM" sublabel="AI Appliance" fill="#1B2A4A" strokeColor="#2E86AB" textColor="white" />
+        label="Sovereign RCM" sublabel="AI Appliance" fill="#1A1A1A" strokeColor="#C9C9C9" textColor="white" />
       <SystemBox x={D.outX} y={D.outY} width={D.boxW} height={D.boxH}
-        label="837P Claim" sublabel="Output" fill="#F0F6FA" strokeColor="#2E86AB" textColor="#1B2A4A" />
+        label="837P Claim" sublabel="Output" fill="#F7F7F8" strokeColor="#C9C9C9" textColor="#1A1A1A" />
       {/* Arrows */}
       <line x1={D.ehrX + D.boxW} y1={midY} x2={D.srmX} y2={midY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah)" />
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah)" />
       <line x1={D.srmX + D.boxW} y1={midY} x2={D.outX} y2={midY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah)" />
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah)" />
       {/* Labels */}
-      <text x={(D.ehrX + D.boxW + D.srmX) / 2} y={midY - 18} textAnchor="middle" className="text-[11px]" fill="#2E86AB">Clinical Notes</text>
-      <text x={(D.srmX + D.boxW + D.outX) / 2} y={midY - 18} textAnchor="middle" className="text-[11px]" fill="#2E86AB">Formatted Claim</text>
+      <text x={(D.ehrX + D.boxW + D.srmX) / 2} y={midY - 18} textAnchor="middle" className="text-[11px]" fill="#C9C9C9">Clinical Notes</text>
+      <text x={(D.srmX + D.boxW + D.outX) / 2} y={midY - 18} textAnchor="middle" className="text-[11px]" fill="#C9C9C9">Formatted Claim</text>
       {/* Wall */}
-      <rect x={D.wallX} y={D.by + 10} width={8} height={D.bh - 20} rx={4} fill="#E8614D" opacity={0.8} />
-      <text x={D.wallX + 4} y={D.by + D.bh + 8} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#E8614D">AIR GAP</text>
+      <rect x={D.wallX} y={D.by + 10} width={8} height={D.bh - 20} rx={4} fill="#C8102E" opacity={0.8} />
+      <text x={D.wallX + 4} y={D.by + D.bh + 8} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#C8102E">AIR GAP</text>
       {/* Cloud */}
       <g opacity={0.4}>
         <CloudZone cx={D.cloudX + D.cloudW / 2} cy={D.cloudY + D.cloudH / 2} w={D.cloudW} h={D.cloudH} />
@@ -211,25 +211,25 @@ function StaticMobileContent() {
       <ArrowDefs id="ah-m" />
       {/* Boundary */}
       <rect x={M.bx} y={M.by} width={M.bw} height={M.bh} rx={16}
-        fill="rgba(46,134,171,0.04)" stroke="rgba(46,134,171,0.3)" strokeWidth={2} strokeDasharray="8 4" />
-      <text x={M.bx + 12} y={M.by + 20} className="font-heading text-[11px] font-bold" fill="#2E86AB" opacity={0.8}>
+        fill="rgba(201,201,201,0.04)" stroke="rgba(201,201,201,0.3)" strokeWidth={2} strokeDasharray="8 4" />
+      <text x={M.bx + 12} y={M.by + 20} className="font-heading text-[11px] font-bold" fill="#C9C9C9" opacity={0.8}>
         Practice Network
       </text>
       {/* Boxes */}
       <SystemBox x={cx} y={M.ehrY} width={M.boxW} height={M.boxH}
-        label="EHR System" fill="#F0F6FA" strokeColor="#1B2A4A" textColor="#1B2A4A" />
+        label="EHR System" fill="#F7F7F8" strokeColor="#1A1A1A" textColor="#1A1A1A" />
       <SystemBox x={cx} y={M.srmY} width={M.boxW} height={M.boxH}
-        label="Sovereign RCM" sublabel="AI Appliance" fill="#1B2A4A" strokeColor="#2E86AB" textColor="white" />
+        label="Sovereign RCM" sublabel="AI Appliance" fill="#1A1A1A" strokeColor="#C9C9C9" textColor="white" />
       <SystemBox x={cx} y={M.outY} width={M.boxW} height={M.boxH}
-        label="837P Claim Output" fill="#F0F6FA" strokeColor="#2E86AB" textColor="#1B2A4A" />
+        label="837P Claim Output" fill="#F7F7F8" strokeColor="#C9C9C9" textColor="#1A1A1A" />
       {/* Arrows */}
       <line x1={midX} y1={M.ehrY + M.boxH} x2={midX} y2={M.srmY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah-m)" />
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah-m)" />
       <line x1={midX} y1={M.srmY + M.boxH} x2={midX} y2={M.outY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah-m)" />
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah-m)" />
       {/* Wall */}
-      <rect x={M.bx + 20} y={M.wallY} width={M.bw - 40} height={M.wallH} rx={3} fill="#E8614D" opacity={0.8} />
-      <text x={M.bx + M.bw / 2} y={M.wallY + 20} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#E8614D">AIR GAP</text>
+      <rect x={M.bx + 20} y={M.wallY} width={M.bw - 40} height={M.wallH} rx={3} fill="#C8102E" opacity={0.8} />
+      <text x={M.bx + M.bw / 2} y={M.wallY + 20} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#C8102E">AIR GAP</text>
       {/* Cloud */}
       <g opacity={0.4}>
         <CloudZone cx={M.bx + M.bw / 2} cy={M.cloudY + M.cloudH / 2} w={M.bw - 80} h={M.cloudH} />
@@ -257,8 +257,8 @@ export function SecurityArchitecture({
     <>
       <style>{`
         @keyframes wall-glow {
-          0%, 100% { filter: drop-shadow(0 0 4px rgba(232,97,77,0.2)); }
-          50% { filter: drop-shadow(0 0 10px rgba(232,97,77,0.4)); }
+          0%, 100% { filter: drop-shadow(0 0 4px rgba(200,16,46,0.2)); }
+          50% { filter: drop-shadow(0 0 10px rgba(200,16,46,0.4)); }
         }
       `}</style>
 
@@ -302,7 +302,7 @@ function AnimatedDesktopDiagram() {
       {/* Practice network boundary — draws in */}
       <motion.rect
         x={D.bx} y={D.by} width={D.bw} height={D.bh} rx={16}
-        fill="rgba(46,134,171,0.04)" stroke="rgba(46,134,171,0.3)" strokeWidth={2}
+        fill="rgba(201,201,201,0.04)" stroke="rgba(201,201,201,0.3)" strokeWidth={2}
         strokeDasharray="8 4"
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
@@ -311,7 +311,7 @@ function AnimatedDesktopDiagram() {
       />
       <motion.text
         x={D.bx + 12} y={D.by + 20}
-        className="font-heading text-[11px] font-bold" fill="#2E86AB"
+        className="font-heading text-[11px] font-bold" fill="#C9C9C9"
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 0.8, transition: { delay: 0.3, duration: 0.3 } },
@@ -326,7 +326,7 @@ function AnimatedDesktopDiagram() {
         visible: { opacity: 1, scale: 1, transition: { delay: BOX_STAGGER, duration: 0.4 } },
       }}>
         <SystemBox x={D.ehrX} y={D.ehrY} width={D.boxW} height={D.boxH}
-          label="EHR System" fill="#F0F6FA" strokeColor="#1B2A4A" textColor="#1B2A4A" />
+          label="EHR System" fill="#F7F7F8" strokeColor="#1A1A1A" textColor="#1A1A1A" />
       </motion.g>
 
       {/* Sovereign RCM box */}
@@ -335,7 +335,7 @@ function AnimatedDesktopDiagram() {
         visible: { opacity: 1, scale: 1, transition: { delay: BOX_STAGGER * 2, duration: 0.4 } },
       }}>
         <SystemBox x={D.srmX} y={D.srmY} width={D.boxW} height={D.boxH}
-          label="Sovereign RCM" sublabel="AI Appliance" fill="#1B2A4A" strokeColor="#2E86AB" textColor="white" />
+          label="Sovereign RCM" sublabel="AI Appliance" fill="#1A1A1A" strokeColor="#C9C9C9" textColor="white" />
       </motion.g>
 
       {/* 837P output box */}
@@ -344,13 +344,13 @@ function AnimatedDesktopDiagram() {
         visible: { opacity: 1, scale: 1, transition: { delay: BOX_STAGGER * 3, duration: 0.4 } },
       }}>
         <SystemBox x={D.outX} y={D.outY} width={D.boxW} height={D.boxH}
-          label="837P Claim" sublabel="Output" fill="#F0F6FA" strokeColor="#2E86AB" textColor="#1B2A4A" />
+          label="837P Claim" sublabel="Output" fill="#F7F7F8" strokeColor="#C9C9C9" textColor="#1A1A1A" />
       </motion.g>
 
       {/* Flow arrows */}
       <motion.line
         x1={D.ehrX + D.boxW} y1={midY} x2={D.srmX} y2={midY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah)"
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah)"
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
           visible: { pathLength: 1, opacity: 1, transition: { delay: BOX_STAGGER * 1.5, duration: 0.3 } },
@@ -358,7 +358,7 @@ function AnimatedDesktopDiagram() {
       />
       <motion.line
         x1={D.srmX + D.boxW} y1={midY} x2={D.outX} y2={midY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah)"
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah)"
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
           visible: { pathLength: 1, opacity: 1, transition: { delay: BOX_STAGGER * 2.5, duration: 0.3 } },
@@ -368,7 +368,7 @@ function AnimatedDesktopDiagram() {
       {/* Flow labels */}
       <motion.text
         x={(D.ehrX + D.boxW + D.srmX) / 2} y={midY - 18}
-        textAnchor="middle" className="text-[11px]" fill="#2E86AB"
+        textAnchor="middle" className="text-[11px]" fill="#C9C9C9"
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { delay: BOX_STAGGER * 2, duration: 0.3 } },
@@ -378,7 +378,7 @@ function AnimatedDesktopDiagram() {
       </motion.text>
       <motion.text
         x={(D.srmX + D.boxW + D.outX) / 2} y={midY - 18}
-        textAnchor="middle" className="text-[11px]" fill="#2E86AB"
+        textAnchor="middle" className="text-[11px]" fill="#C9C9C9"
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { delay: BOX_STAGGER * 3, duration: 0.3 } },
@@ -390,12 +390,12 @@ function AnimatedDesktopDiagram() {
       {/* Pulse dots on flow paths */}
       <path id="flow1" d={`M${D.ehrX + D.boxW},${midY} L${D.srmX},${midY}`} fill="none" />
       <path id="flow2" d={`M${D.srmX + D.boxW},${midY} L${D.outX},${midY}`} fill="none" />
-      <circle r={3} fill="#2E86AB" opacity={0.6}>
+      <circle r={3} fill="#C9C9C9" opacity={0.6}>
         <animateMotion dur="2.5s" repeatCount="indefinite" begin={`${PULSE_DELAY}s`}>
           <mpath xlinkHref="#flow1" />
         </animateMotion>
       </circle>
-      <circle r={3} fill="#2E86AB" opacity={0.6}>
+      <circle r={3} fill="#C9C9C9" opacity={0.6}>
         <animateMotion dur="2.5s" repeatCount="indefinite" begin={`${PULSE_DELAY + 1.2}s`}>
           <mpath xlinkHref="#flow2" />
         </animateMotion>
@@ -409,8 +409,8 @@ function AnimatedDesktopDiagram() {
         }}
         style={{ animationName: "wall-glow", animationDuration: "3s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite", animationDelay: `${PULSE_DELAY}s` }}
       >
-        <rect x={D.wallX} y={D.by + 10} width={8} height={D.bh - 20} rx={4} fill="#E8614D" opacity={0.8} />
-        <text x={D.wallX + 4} y={D.by + D.bh + 8} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#E8614D">AIR GAP</text>
+        <rect x={D.wallX} y={D.by + 10} width={8} height={D.bh - 20} rx={4} fill="#C8102E" opacity={0.8} />
+        <text x={D.wallX + 4} y={D.by + D.bh + 8} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#C8102E">AIR GAP</text>
       </motion.g>
 
       {/* Blocked Cloud zone */}
@@ -441,7 +441,7 @@ function AnimatedMobileDiagram() {
       {/* Practice network boundary */}
       <motion.rect
         x={M.bx} y={M.by} width={M.bw} height={M.bh} rx={16}
-        fill="rgba(46,134,171,0.04)" stroke="rgba(46,134,171,0.3)" strokeWidth={2}
+        fill="rgba(201,201,201,0.04)" stroke="rgba(201,201,201,0.3)" strokeWidth={2}
         strokeDasharray="8 4"
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
@@ -450,7 +450,7 @@ function AnimatedMobileDiagram() {
       />
       <motion.text
         x={M.bx + 12} y={M.by + 20}
-        className="font-heading text-[11px] font-bold" fill="#2E86AB"
+        className="font-heading text-[11px] font-bold" fill="#C9C9C9"
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 0.8, transition: { delay: 0.3, duration: 0.3 } },
@@ -465,27 +465,27 @@ function AnimatedMobileDiagram() {
         visible: { opacity: 1, scale: 1, transition: { delay: BOX_STAGGER, duration: 0.4 } },
       }}>
         <SystemBox x={cx} y={M.ehrY} width={M.boxW} height={M.boxH}
-          label="EHR System" fill="#F0F6FA" strokeColor="#1B2A4A" textColor="#1B2A4A" />
+          label="EHR System" fill="#F7F7F8" strokeColor="#1A1A1A" textColor="#1A1A1A" />
       </motion.g>
       <motion.g variants={{
         hidden: { opacity: 0, scale: 0.95 },
         visible: { opacity: 1, scale: 1, transition: { delay: BOX_STAGGER * 2, duration: 0.4 } },
       }}>
         <SystemBox x={cx} y={M.srmY} width={M.boxW} height={M.boxH}
-          label="Sovereign RCM" sublabel="AI Appliance" fill="#1B2A4A" strokeColor="#2E86AB" textColor="white" />
+          label="Sovereign RCM" sublabel="AI Appliance" fill="#1A1A1A" strokeColor="#C9C9C9" textColor="white" />
       </motion.g>
       <motion.g variants={{
         hidden: { opacity: 0, scale: 0.95 },
         visible: { opacity: 1, scale: 1, transition: { delay: BOX_STAGGER * 3, duration: 0.4 } },
       }}>
         <SystemBox x={cx} y={M.outY} width={M.boxW} height={M.boxH}
-          label="837P Claim Output" fill="#F0F6FA" strokeColor="#2E86AB" textColor="#1B2A4A" />
+          label="837P Claim Output" fill="#F7F7F8" strokeColor="#C9C9C9" textColor="#1A1A1A" />
       </motion.g>
 
       {/* Vertical arrows */}
       <motion.line
         x1={midX} y1={M.ehrY + M.boxH} x2={midX} y2={M.srmY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah-m)"
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah-m)"
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
           visible: { pathLength: 1, opacity: 1, transition: { delay: BOX_STAGGER * 1.5, duration: 0.3 } },
@@ -493,7 +493,7 @@ function AnimatedMobileDiagram() {
       />
       <motion.line
         x1={midX} y1={M.srmY + M.boxH} x2={midX} y2={M.outY}
-        stroke="#2E86AB" strokeWidth={1.5} markerEnd="url(#ah-m)"
+        stroke="#C9C9C9" strokeWidth={1.5} markerEnd="url(#ah-m)"
         variants={{
           hidden: { pathLength: 0, opacity: 0 },
           visible: { pathLength: 1, opacity: 1, transition: { delay: BOX_STAGGER * 2.5, duration: 0.3 } },
@@ -507,8 +507,8 @@ function AnimatedMobileDiagram() {
           visible: { opacity: 1, y: 0, transition: { delay: BOX_STAGGER * 3.5, duration: 0.4 } },
         }}
       >
-        <rect x={M.bx + 20} y={M.wallY} width={M.bw - 40} height={M.wallH} rx={3} fill="#E8614D" opacity={0.8} />
-        <text x={M.bx + M.bw / 2} y={M.wallY + 20} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#E8614D">AIR GAP</text>
+        <rect x={M.bx + 20} y={M.wallY} width={M.bw - 40} height={M.wallH} rx={3} fill="#C8102E" opacity={0.8} />
+        <text x={M.bx + M.bw / 2} y={M.wallY + 20} textAnchor="middle" className="font-heading text-[10px] font-bold" fill="#C8102E">AIR GAP</text>
       </motion.g>
 
       {/* Blocked Cloud zone */}

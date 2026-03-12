@@ -23,7 +23,7 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
       >
         <span>{question}</span>
         <span
-          className={`shrink-0 text-teal transition-transform duration-300 dark:text-teal-dark ${isOpen ? "rotate-45" : ""}`}
+          className={`shrink-0 text-coral transition-transform duration-300 dark:text-coral ${isOpen ? "rotate-45" : ""}`}
           aria-hidden="true"
         >
           <svg

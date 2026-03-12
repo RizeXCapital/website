@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { SITE_URL, LOGO_OG } from "@/lib/brand";
+import { SITE_URL, LOGO_DARK } from "@/lib/brand";
 
 const FOUNDERS = [
   "Faizan.Arif@rizexcapital.com",
@@ -118,11 +118,11 @@ export async function POST(req: NextRequest) {
 
     const htmlBody = `
       <div style="max-width:600px;margin:0 auto;font-family:sans-serif;">
-      <div style="background:#1B2A4A;padding:24px 32px;border-radius:8px 8px 0 0;text-align:center;">
-        <img src="${SITE_URL}${LOGO_OG}" alt="Sovereign RCM" width="300" height="77" style="height:60px;width:auto;" />
+      <div style="background:#1A1A1A;padding:24px 32px;border-radius:8px 8px 0 0;text-align:center;">
+        <img src="${SITE_URL}${LOGO_DARK}" alt="Sovereign RCM" width="300" height="77" style="height:60px;width:auto;" />
       </div>
       <div style="padding:24px 32px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;">
-      <h2 style="margin:0 0 16px;color:#1B2A4A;">New Contact Form Submission</h2>
+      <h2 style="margin:0 0 16px;color:#1A1A1A;">New Contact Form Submission</h2>
       <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
         <tr>
           <td style="padding: 8px 12px; font-weight: bold; border-bottom: 1px solid #eee;">Name</td>

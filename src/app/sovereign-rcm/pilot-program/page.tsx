@@ -88,7 +88,7 @@ const shadowBenefits = [
       "Your existing billing continues uninterrupted. The AI runs in parallel, not in place, no disruption to your cash flow.",
     icon: (
       <svg
-        className="h-8 w-8 text-teal dark:text-teal-dark"
+        className="h-8 w-8 text-coral dark:text-coral"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -108,7 +108,7 @@ const shadowBenefits = [
       "Results are based on your actual claims, payer mix, and specialty, not industry averages or hypothetical models.",
     icon: (
       <svg
-        className="h-8 w-8 text-teal dark:text-teal-dark"
+        className="h-8 w-8 text-coral dark:text-coral"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -128,7 +128,7 @@ const shadowBenefits = [
       "Your team watches the system work before any workflow changes. By decision day, they have seen 6 weeks of real output.",
     icon: (
       <svg
-        className="h-8 w-8 text-teal dark:text-teal-dark"
+        className="h-8 w-8 text-coral dark:text-coral"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -148,7 +148,7 @@ const shadowBenefits = [
       "Every AI coding decision includes a reasoning trail. You see exactly why each code was assigned, nothing is a black box.",
     icon: (
       <svg
-        className="h-8 w-8 text-teal dark:text-teal-dark"
+        className="h-8 w-8 text-coral dark:text-coral"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -303,7 +303,7 @@ export default function PilotProgram() {
             {metrics.map((metric) => (
               <StaggerItem key={metric.title}>
                 <div className="h-full rounded-xl border border-gray-300 bg-white p-6 text-center dark:border-dark-border dark:bg-dark-elevated">
-                  <p className="font-heading text-3xl font-bold text-teal dark:text-teal-dark">
+                  <p className="font-heading text-3xl font-bold text-coral dark:text-coral">
                     {metric.target}
                   </p>
                   <h3 className="mt-3 font-heading text-lg font-bold text-navy dark:text-white">
@@ -348,7 +348,7 @@ export default function PilotProgram() {
                   {exitCriteria.map((criterion) => (
                     <li key={criterion} className="flex items-start gap-3">
                       <svg
-                        className="mt-0.5 h-5 w-5 shrink-0 text-teal dark:text-teal-dark"
+                        className="mt-0.5 h-5 w-5 shrink-0 text-coral dark:text-coral"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={2}
@@ -444,7 +444,7 @@ export default function PilotProgram() {
                 />
                 <Link
                   href="/sovereign-rcm/pricing"
-                  className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="mt-6 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   View package tiers and features
                 </Link>
@@ -481,7 +481,7 @@ export default function PilotProgram() {
               Have a question not covered here?{" "}
               <Link
                 href="/contact"
-                className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
               >
                 Reach out directly
               </Link>
@@ -495,11 +495,11 @@ export default function PilotProgram() {
       <section className="bg-white px-6 py-16 dark:bg-dark-bg">
         <div className="mx-auto max-w-4xl">
           <FadeIn>
-            <div className="flex flex-col items-start gap-6 rounded-xl border border-teal/20 bg-teal/5 p-8 sm:flex-row sm:items-center dark:border-teal/20 dark:bg-teal/10">
+            <div className="flex flex-col items-start gap-6 rounded-xl border border-coral/20 bg-coral/5 p-8 sm:flex-row sm:items-center dark:border-coral/20 dark:bg-coral/10">
               <div className="shrink-0">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-teal/10 dark:bg-teal/20">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-coral/10 dark:bg-coral/15">
                   <svg
-                    className="h-6 w-6 text-teal dark:text-teal-dark"
+                    className="h-6 w-6 text-coral dark:text-coral"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
@@ -525,7 +525,7 @@ export default function PilotProgram() {
               </div>
               <Link
                 href="/sovereign-rcm/billing-audit-checklist"
-                className="shrink-0 rounded-lg border border-teal px-5 py-3 text-sm font-medium text-teal transition-colors hover:bg-teal hover:text-white dark:border-teal-dark dark:text-teal-dark dark:hover:bg-teal-dark dark:hover:text-navy"
+                className="shrink-0 rounded-lg border border-coral px-5 py-3 text-sm font-medium text-coral transition-colors hover:bg-coral hover:text-white dark:border-coral dark:text-coral dark:hover:bg-coral-hover dark:hover:text-navy"
               >
                 Get the Free Checklist
               </Link>

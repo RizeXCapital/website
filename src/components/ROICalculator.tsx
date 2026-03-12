@@ -193,11 +193,11 @@ export default function ROICalculator() {
           height: 8px;
           border-radius: 9999px;
           outline: none;
-          --range-fill: #2E86AB;
-          --range-track: #E2E8F0;
+          --range-fill: #C8102E;
+          --range-track: #ECECEF;
         }
         .dark input[type="range"] {
-          --range-track: #2D3F5E;
+          --range-track: #2A2A2A;
         }
         input[type="range"]::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -206,36 +206,36 @@ export default function ROICalculator() {
           height: 22px;
           border-radius: 50%;
           background: white;
-          border: 2px solid #2E86AB;
+          border: 2px solid #C8102E;
           cursor: pointer;
-          box-shadow: 0 2px 6px rgba(46,134,171,0.25), 0 1px 2px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 6px rgba(200,16,46,0.25), 0 1px 2px rgba(0,0,0,0.1);
           transition: box-shadow 0.15s ease, transform 0.15s ease;
         }
         input[type="range"]::-webkit-slider-thumb:hover {
-          box-shadow: 0 2px 10px rgba(46,134,171,0.4), 0 1px 3px rgba(0,0,0,0.12);
+          box-shadow: 0 2px 10px rgba(200,16,46,0.4), 0 1px 3px rgba(0,0,0,0.12);
           transform: scale(1.1);
         }
         input[type="range"]::-webkit-slider-thumb:active {
           transform: scale(1.15);
-          box-shadow: 0 2px 12px rgba(46,134,171,0.5), 0 1px 3px rgba(0,0,0,0.15);
+          box-shadow: 0 2px 12px rgba(200,16,46,0.5), 0 1px 3px rgba(0,0,0,0.15);
         }
         input[type="range"]::-moz-range-thumb {
           width: 22px;
           height: 22px;
           border-radius: 50%;
           background: white;
-          border: 2px solid #2E86AB;
+          border: 2px solid #C8102E;
           cursor: pointer;
-          box-shadow: 0 2px 6px rgba(46,134,171,0.25), 0 1px 2px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 6px rgba(200,16,46,0.25), 0 1px 2px rgba(0,0,0,0.1);
           transition: box-shadow 0.15s ease, transform 0.15s ease;
         }
         input[type="range"]::-moz-range-thumb:hover {
-          box-shadow: 0 2px 10px rgba(46,134,171,0.4), 0 1px 3px rgba(0,0,0,0.12);
+          box-shadow: 0 2px 10px rgba(200,16,46,0.4), 0 1px 3px rgba(0,0,0,0.12);
           transform: scale(1.1);
         }
         input[type="range"]::-moz-range-thumb:active {
           transform: scale(1.15);
-          box-shadow: 0 2px 12px rgba(46,134,171,0.5), 0 1px 3px rgba(0,0,0,0.15);
+          box-shadow: 0 2px 12px rgba(200,16,46,0.5), 0 1px 3px rgba(0,0,0,0.15);
         }
         @media (pointer: coarse) {
           input[type="range"]::-webkit-slider-thumb {
@@ -281,7 +281,7 @@ export default function ROICalculator() {
                         onChange={(e) =>
                           handleSpecialtyChange(e.target.value as SpecialtyKey)
                         }
-                        className="mt-1.5 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-charcoal focus:ring-2 focus:ring-teal/20 dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
+                        className="mt-1.5 w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-charcoal focus:ring-2 focus:ring-coral/20 dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text"
                       >
                         {Object.keys(SPECIALTIES).map((s) => (
                           <option key={s} value={s}>
@@ -334,7 +334,7 @@ export default function ROICalculator() {
                         <Tooltip text="Total annual collections per provider before billing costs — includes all payer sources">
                           Collections / Provider
                         </Tooltip>
-                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                        <span className="font-mono text-base text-coral dark:text-coral">
                           {formatCurrency(collectionsPerProvider)}
                         </span>
                       </label>
@@ -363,7 +363,7 @@ export default function ROICalculator() {
                         <Tooltip text="Percentage of collections paid to your billing company — MGMA benchmark: 4.8–5.2% for outsourced billing">
                           Billing Cost (%)
                         </Tooltip>
-                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                        <span className="font-mono text-base text-coral dark:text-coral">
                           {billingCostPct}%
                         </span>
                       </label>
@@ -391,7 +391,7 @@ export default function ROICalculator() {
                         <Tooltip text="Percentage of claims denied on first submission — industry average is 6–13% depending on specialty">
                           Denial Rate
                         </Tooltip>
-                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                        <span className="font-mono text-base text-coral dark:text-coral">
                           {denialRatePct}%
                         </span>
                       </label>
@@ -420,7 +420,7 @@ export default function ROICalculator() {
                         <Tooltip text="Percentage of visits where documented services are billed at a lower level than supported — AAFP estimates $30K+ lost per provider annually">
                           Undercoding Rate
                         </Tooltip>
-                        <span className="font-mono text-base text-teal dark:text-teal-dark">
+                        <span className="font-mono text-base text-coral dark:text-coral">
                           {undercodingPct}%
                         </span>
                       </label>
@@ -448,7 +448,7 @@ export default function ROICalculator() {
                       <button
                         type="button"
                         onClick={resetDefaults}
-                        className="text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+                        className="text-sm font-medium text-coral transition-colors hover:text-coral dark:text-coral dark:hover:text-coral"
                       >
                         Reset to Defaults
                       </button>
@@ -462,11 +462,11 @@ export default function ROICalculator() {
                 {/* Top row: Featured metrics */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {/* Total Annual Leakage */}
-                  <div className="rounded-xl border-2 border-teal bg-white p-6 dark:border-teal-dark dark:bg-dark-surface">
+                  <div className="rounded-xl border-2 border-coral bg-white p-6 dark:border-coral dark:bg-dark-surface">
                     <p className="text-sm font-medium text-charcoal-light dark:text-gray-400">
                       Total Annual Leakage
                     </p>
-                    <p className="mt-1 font-heading text-4xl font-bold text-teal dark:text-teal-dark">
+                    <p className="mt-1 font-heading text-4xl font-bold text-coral dark:text-coral">
                       {formatCurrency(results.totalLeakage)}
                     </p>
                     <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
@@ -539,7 +539,7 @@ export default function ROICalculator() {
                       {`${barSegments.denials.toFixed(0)}%`}
                     </div>
                     <div
-                      className="flex items-center justify-center bg-teal text-[10px] font-semibold text-white transition-all duration-300"
+                      className="flex items-center justify-center bg-gray-500 text-[10px] font-semibold text-white transition-all duration-300"
                       style={{ width: `${barSegments.undercoding}%` }}
                     >
                       {`${barSegments.undercoding.toFixed(0)}%`}
@@ -580,12 +580,12 @@ export default function ROICalculator() {
 
                     <div className="rounded-lg border border-gray-300 bg-ice p-4 dark:border-dark-border dark:bg-dark-surface">
                       <div className="flex items-center gap-2">
-                        <div className="h-3 w-3 shrink-0 rounded-full bg-teal" />
+                        <div className="h-3 w-3 shrink-0 rounded-full bg-gray-500" />
                         <p className="text-sm font-medium text-navy dark:text-white">
                           Undercoding Loss
                         </p>
                       </div>
-                      <p className="mt-1 font-heading text-xl font-bold text-teal dark:text-teal-dark">
+                      <p className="mt-1 font-heading text-xl font-bold text-gray-500 dark:text-gray-400">
                         {formatCurrency(results.undercodingLoss)}
                       </p>
                       <p className="text-xs text-charcoal-light dark:text-gray-400">

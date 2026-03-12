@@ -17,7 +17,7 @@ export default function SectionDivider({ variant = "light" }: SectionDividerProp
   const glowId = `glow-${variant}`;
 
   // Accent color for line + diamonds
-  const accentColor = "#2E86AB";
+  const accentColor = "#C9C9C9";
   // Diamond positions along the line (x out of 1200)
   const diamonds = [200, 480, 600, 720, 1000];
 

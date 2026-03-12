@@ -45,7 +45,7 @@ function ThemeToggle({ className = "" }: { className?: string }) {
     <button
       type="button"
       onClick={toggle}
-      className={`rounded-lg p-2 text-charcoal-light transition-colors hover:text-teal dark:text-gray-400 dark:hover:text-teal-dark ${className}`}
+      className={`rounded-lg p-2 text-charcoal-light transition-colors hover:text-coral dark:text-gray-400 dark:hover:text-coral ${className}`}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {dark ? (
@@ -84,8 +84,8 @@ function MobileNavLink({
 
   const linkClass = `text-sm font-medium ${
     isActive
-      ? "text-teal dark:text-teal-dark"
-      : "text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+      ? "text-coral dark:text-coral"
+      : "text-charcoal-light transition-colors hover:text-coral dark:text-gray-300 dark:hover:text-coral"
   } ${className}`;
 
   if (prefersReduced) {
@@ -225,10 +225,10 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-teal after:transition-all after:duration-200 dark:after:bg-teal-dark ${
+                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-coral after:transition-all after:duration-200 dark:after:bg-coral ${
                   active
-                    ? "text-teal after:w-full dark:text-teal-dark"
-                    : "text-charcoal-light hover:text-teal after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-teal-dark"
+                    ? "text-coral after:w-full dark:text-coral"
+                    : "text-charcoal-light hover:text-coral after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-coral"
                 }`}
               >
                 {link.label}
@@ -245,10 +245,10 @@ export default function Navigation() {
           >
             <Link
               href="/sovereign-rcm"
-              className={`relative flex items-center gap-1 text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-teal after:transition-all after:duration-200 dark:after:bg-teal-dark ${
+              className={`relative flex items-center gap-1 text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-coral after:transition-all after:duration-200 dark:after:bg-coral ${
                 isSovereignActive
-                  ? "text-teal after:w-full dark:text-teal-dark"
-                  : "text-charcoal-light hover:text-teal after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-teal-dark"
+                  ? "text-coral after:w-full dark:text-coral"
+                  : "text-charcoal-light hover:text-coral after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-coral"
               }`}
             >
               Sovereign RCM
@@ -278,7 +278,7 @@ export default function Navigation() {
                     href={subLink.href}
                     className={`rounded-lg px-3 py-2.5 text-sm transition-colors ${
                       pathname === subLink.href
-                        ? "bg-ice font-medium text-teal dark:bg-dark-surface dark:text-teal-dark"
+                        ? "bg-ice font-medium text-coral dark:bg-dark-surface dark:text-coral"
                         : "text-charcoal-light hover:bg-ice hover:text-navy dark:text-gray-300 dark:hover:bg-dark-surface dark:hover:text-white"
                     }`}
                   >
@@ -295,10 +295,10 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-teal after:transition-all after:duration-200 dark:after:bg-teal-dark ${
+                className={`relative text-sm font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-coral after:transition-all after:duration-200 dark:after:bg-coral ${
                   active
-                    ? "text-teal after:w-full dark:text-teal-dark"
-                    : "text-charcoal-light hover:text-teal after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-teal-dark"
+                    ? "text-coral after:w-full dark:text-coral"
+                    : "text-charcoal-light hover:text-coral after:w-0 hover:after:w-full dark:text-gray-300 dark:hover:text-coral"
                 }`}
               >
                 {link.label}
@@ -429,7 +429,7 @@ function MobileSovereignDropdown({
   const prefersReduced = useReducedMotion();
 
   const labelClass = isSovereignActive
-    ? "text-teal dark:text-teal-dark"
+    ? "text-coral dark:text-coral"
     : "text-charcoal-light dark:text-gray-300";
 
   const wrapper = (children: React.ReactNode) => {
@@ -453,7 +453,7 @@ function MobileSovereignDropdown({
       <button
         type="button"
         onClick={onToggle}
-        className={`flex w-full items-center justify-between text-sm font-medium transition-colors hover:text-teal dark:hover:text-teal-dark ${labelClass}`}
+        className={`flex w-full items-center justify-between text-sm font-medium transition-colors hover:text-coral dark:hover:text-coral ${labelClass}`}
       >
         Sovereign RCM
         <svg
@@ -484,8 +484,8 @@ function MobileSovereignDropdown({
                     onClick={onClose}
                     className={`text-sm ${
                       subActive
-                        ? "font-medium text-teal dark:text-teal-dark"
-                        : "text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+                        ? "font-medium text-coral dark:text-coral"
+                        : "text-charcoal-light transition-colors hover:text-coral dark:text-gray-300 dark:hover:text-coral"
                     }`}
                   >
                     {subLink.label}
@@ -507,8 +507,8 @@ function MobileSovereignDropdown({
                     onClick={onClose}
                     className={`text-sm ${
                       subActive
-                        ? "font-medium text-teal dark:text-teal-dark"
-                        : "text-charcoal-light transition-colors hover:text-teal dark:text-gray-300 dark:hover:text-teal-dark"
+                        ? "font-medium text-coral dark:text-coral"
+                        : "text-charcoal-light transition-colors hover:text-coral dark:text-gray-300 dark:hover:text-coral"
                     }`}
                   >
                     {subLink.label}

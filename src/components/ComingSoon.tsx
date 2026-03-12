@@ -30,7 +30,7 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
           </Link>
           <Link
             href="/"
-            className="rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:border-teal hover:text-teal dark:border-dark-border dark:text-gray-300 dark:hover:border-teal-dark dark:hover:text-teal-dark"
+            className="rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:border-coral hover:text-coral dark:border-dark-border dark:text-gray-300 dark:hover:border-coral dark:hover:text-coral"
           >
             Back to Home
           </Link>

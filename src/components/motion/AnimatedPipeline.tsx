@@ -87,7 +87,7 @@ function StepNode({
   const type = step.type ?? inferType(index, total);
   const isAgent = type === "agent";
   const borderColor = isAgent
-    ? "border-teal dark:border-teal-dark"
+    ? "border-coral dark:border-coral"
     : "border-navy dark:border-dark-border";
 
   const pad = compact ? "px-4 py-3" : "px-5 py-4";
@@ -166,7 +166,7 @@ function StaticStepNode({ step, total, index, compact }: { step: PipelineStep; t
   const type = step.type ?? inferType(index, total);
   const borderColor =
     type === "agent"
-      ? "border-teal dark:border-teal-dark"
+      ? "border-coral dark:border-coral"
       : "border-navy dark:border-dark-border";
 
   const pad = compact ? "px-4 py-3" : "px-5 py-4";
@@ -215,10 +215,10 @@ function HLine({ index, revealTotal }: { index: number; revealTotal: number }) {
             },
           },
         }}
-        className="h-px w-full origin-left bg-teal/25 dark:bg-teal-dark/25"
+        className="h-px w-full origin-left bg-coral dark:bg-coral/25"
       />
       <span
-        className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-teal/60 dark:bg-teal-dark/60"
+        className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-coral/50 dark:bg-coral/60"
         style={{
           opacity: 0,
           animationName: `${pulse.anim}-h`,
@@ -251,10 +251,10 @@ function VLine({ index, revealTotal }: { index: number; revealTotal: number }) {
             },
           },
         }}
-        className="h-full w-px origin-top bg-teal/25 dark:bg-teal-dark/25"
+        className="h-full w-px origin-top bg-coral dark:bg-coral/25"
       />
       <span
-        className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-teal/60 dark:bg-teal-dark/60"
+        className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-coral/50 dark:bg-coral/60"
         style={{
           opacity: 0,
           animationName: `${pulse.anim}-v`,
@@ -293,7 +293,7 @@ export function AnimatedPipeline({
             <div key={step.label} className="flex items-center gap-3">
               <StaticStepNode step={step} total={steps.length} index={i} compact={compact} />
               {i < steps.length - 1 && (
-                <div className="h-px w-10 bg-teal/25 dark:bg-teal-dark/25" />
+                <div className="h-px w-10 bg-coral dark:bg-coral/25" />
               )}
             </div>
           ))}
@@ -304,7 +304,7 @@ export function AnimatedPipeline({
             <div key={step.label} className="flex flex-col items-center">
               <StaticStepNode step={step} total={steps.length} index={i} compact={compact} />
               {i < steps.length - 1 && (
-                <div className="h-8 w-px bg-teal/25 dark:bg-teal-dark/25" />
+                <div className="h-8 w-px bg-coral dark:bg-coral/25" />
               )}
             </div>
           ))}
@@ -379,12 +379,12 @@ export function AnimatedPipeline({
 
         /* ── Ambient glow ──────────────────────────────────────── */
         @keyframes pl-glow-teal {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(46, 134, 171, 0); }
-          50%      { box-shadow: 0 0 12px 2px rgba(46, 134, 171, 0.25); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(201, 201, 201, 0); }
+          50%      { box-shadow: 0 0 12px 2px rgba(201, 201, 201, 0.25); }
         }
         @keyframes pl-glow-navy {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(27, 42, 74, 0); }
-          50%      { box-shadow: 0 0 12px 2px rgba(27, 42, 74, 0.2); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(26, 26, 26, 0); }
+          50%      { box-shadow: 0 0 12px 2px rgba(26, 26, 26, 0.2); }
         }
         .dark .pl-beam {
           animation-name: pl-glow-teal-dark !important;
@@ -393,12 +393,12 @@ export function AnimatedPipeline({
           animation-name: pl-glow-navy-dark !important;
         }
         @keyframes pl-glow-teal-dark {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(91, 172, 204, 0); }
-          50%      { box-shadow: 0 0 14px 3px rgba(91, 172, 204, 0.3); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(160, 160, 160, 0); }
+          50%      { box-shadow: 0 0 14px 3px rgba(160, 160, 160, 0.3); }
         }
         @keyframes pl-glow-navy-dark {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(45, 63, 94, 0); }
-          50%      { box-shadow: 0 0 14px 3px rgba(45, 63, 94, 0.35); }
+          0%, 100% { box-shadow: 0 0 0 0 rgba(42, 42, 42, 0); }
+          50%      { box-shadow: 0 0 14px 3px rgba(42, 42, 42, 0.35); }
         }
 
         /* ── Traveling beam wrapper ────────────────────────────── */
@@ -414,9 +414,9 @@ export function AnimatedPipeline({
           inset: -50%;
           background: conic-gradient(
             from 270deg,
-            rgba(46, 134, 171, 0.9) 0deg,
-            rgba(46, 134, 171, 1) 5deg,
-            rgba(46, 134, 171, 0.9) 20deg,
+            rgba(201, 201, 201, 0.9) 0deg,
+            rgba(201, 201, 201, 1) 5deg,
+            rgba(201, 201, 201, 0.9) 20deg,
             transparent 20deg,
             transparent 360deg
           );
@@ -426,9 +426,9 @@ export function AnimatedPipeline({
         .pl-beam--navy::before {
           background: conic-gradient(
             from 270deg,
-            rgba(27, 42, 74, 0.8) 0deg,
-            rgba(27, 42, 74, 1) 5deg,
-            rgba(27, 42, 74, 0.8) 20deg,
+            rgba(26, 26, 26, 0.8) 0deg,
+            rgba(26, 26, 26, 1) 5deg,
+            rgba(26, 26, 26, 0.8) 20deg,
             transparent 20deg,
             transparent 360deg
           );
@@ -436,9 +436,9 @@ export function AnimatedPipeline({
         .dark .pl-beam::before {
           background: conic-gradient(
             from 270deg,
-            rgba(91, 172, 204, 0.9) 0deg,
-            rgba(91, 172, 204, 1) 5deg,
-            rgba(91, 172, 204, 0.9) 20deg,
+            rgba(160, 160, 160, 0.9) 0deg,
+            rgba(160, 160, 160, 1) 5deg,
+            rgba(160, 160, 160, 0.9) 20deg,
             transparent 20deg,
             transparent 360deg
           ) !important;
@@ -446,9 +446,9 @@ export function AnimatedPipeline({
         .dark .pl-beam--navy::before {
           background: conic-gradient(
             from 270deg,
-            rgba(45, 63, 94, 0.8) 0deg,
-            rgba(45, 63, 94, 1) 5deg,
-            rgba(45, 63, 94, 0.8) 20deg,
+            rgba(42, 42, 42, 0.8) 0deg,
+            rgba(42, 42, 42, 1) 5deg,
+            rgba(42, 42, 42, 0.8) 20deg,
             transparent 20deg,
             transparent 360deg
           ) !important;

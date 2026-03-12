@@ -304,7 +304,7 @@ export default function VsCloudRCM() {
                 </ul>
                 <Link
                   href="/sovereign-rcm/security"
-                  className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="mt-6 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   Full security architecture details
                 </Link>
@@ -363,7 +363,7 @@ export default function VsCloudRCM() {
                 </ul>
                 <Link
                   href="/sovereign-rcm/roi-calculator"
-                  className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="mt-6 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   Model the numbers for your practice
                 </Link>
@@ -556,7 +556,7 @@ export default function VsCloudRCM() {
               Have a question not covered here?{" "}
               <Link
                 href="/contact"
-                className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
               >
                 Reach out directly
               </Link>

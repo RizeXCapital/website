@@ -78,9 +78,9 @@ export default function Contact() {
             <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={1513} height={357} className="h-16 w-auto dark:hidden" />
             <Image src={LOGO_DARK}  alt="Sovereign RCM" width={1495} height={348} className="h-16 w-auto hidden dark:block" />
           </div>
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-coral/10">
             <svg
-              className="h-8 w-8 text-teal"
+              className="h-8 w-8 text-coral"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
@@ -99,7 +99,7 @@ export default function Contact() {
           <p className="mt-4 text-lg leading-relaxed text-charcoal-light dark:text-gray-300">
             We&apos;ve received your message. We&apos;ll respond within one
             business day. In the meantime, explore our{" "}
-            <a href="/blog" className="font-medium text-teal hover:underline dark:text-teal-dark">
+            <a href="/blog" className="font-medium text-coral hover:underline dark:text-coral">
               blog
             </a>{" "}
             for insights on AI medical billing.
@@ -173,7 +173,7 @@ export default function Contact() {
                     required
                     minLength={2}
                     maxLength={50}
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
+                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-coral focus:ring-1 focus:ring-coral dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="Your full name"
                   />
                 </div>
@@ -192,7 +192,7 @@ export default function Contact() {
                     name="email"
                     required
                     maxLength={60}
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
+                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-coral focus:ring-1 focus:ring-coral dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -211,7 +211,7 @@ export default function Contact() {
                     id="phone"
                     name="phone"
                     maxLength={15}
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
+                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-coral focus:ring-1 focus:ring-coral dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="(555) 000-0000"
                   />
                 </div>
@@ -230,7 +230,7 @@ export default function Contact() {
                     id="practice"
                     name="practice"
                     maxLength={80}
-                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
+                    className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-coral focus:ring-1 focus:ring-coral dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="Your practice or organization"
                   />
                 </div>
@@ -251,7 +251,7 @@ export default function Contact() {
                     minLength={10}
                     maxLength={MESSAGE_MAX}
                     onChange={(e) => setMessageLen(e.target.value.length)}
-                    className="mt-2 w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-teal focus:ring-1 focus:ring-teal dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
+                    className="mt-2 w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-charcoal outline-none transition-colors focus:border-coral focus:ring-1 focus:ring-coral dark:border-[#3B5178] dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-gray-500"
                     placeholder="Tell us about your practice or what you're looking for..."
                   />
                   <p className={`mt-1 text-right text-xs ${messageLen > MESSAGE_MAX * 0.9 ? "text-coral" : "text-charcoal-light dark:text-gray-400"}`}>

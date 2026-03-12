@@ -71,7 +71,7 @@ export default async function Blog({
               href="/blog"
               className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
                 !activeCategory
-                  ? "bg-teal text-white"
+                  ? "bg-coral text-white"
                   : "bg-gray-100 text-charcoal-light hover:bg-gray-200 dark:bg-dark-elevated dark:text-gray-300 dark:hover:bg-dark-border"
               }`}
             >
@@ -83,7 +83,7 @@ export default async function Blog({
                 href={`/blog?category=${cat}`}
                 className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
                   activeCategory === cat
-                    ? "bg-teal text-white"
+                    ? "bg-coral text-white"
                     : "bg-gray-100 text-charcoal-light hover:bg-gray-200 dark:bg-dark-elevated dark:text-gray-300 dark:hover:bg-dark-border"
                 }`}
               >
@@ -116,13 +116,13 @@ export default async function Blog({
                       </Link>
                     )}
                     <div className="p-8">
-                      <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                      <p className="text-xs font-medium uppercase tracking-wider text-coral dark:text-coral">
                         {categoryLabels[post.category]}
                       </p>
                       <h2 className="mt-2 font-heading text-xl font-bold text-navy dark:text-white">
                         <Link
                           href={`/blog/${post.slug}`}
-                          className="transition-colors hover:text-teal dark:hover:text-teal-dark"
+                          className="transition-colors hover:text-coral dark:hover:text-coral"
                         >
                           {post.title}
                         </Link>
@@ -152,7 +152,7 @@ export default async function Blog({
                       </p>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="mt-4 inline-block text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+                        className="mt-4 inline-block text-sm font-medium text-coral transition-colors hover:text-coral dark:text-coral dark:hover:text-coral"
                       >
                         Read More &rarr;
                       </Link>
@@ -167,8 +167,8 @@ export default async function Blog({
                 <StaggerContainer className="space-y-6 lg:col-span-1">
                   {/* Checklist lead magnet */}
                   <FadeIn>
-                    <div className="rounded-xl border border-teal/20 bg-teal/5 p-6 dark:border-teal/20 dark:bg-teal/10">
-                      <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+                    <div className="rounded-xl border border-coral/20 bg-coral/5 p-6 dark:border-coral/20 dark:bg-coral/10">
+                      <p className="text-xs font-medium uppercase tracking-wider text-coral dark:text-coral">
                         Free Resource
                       </p>
                       <p className="mt-2 font-heading text-base font-bold text-navy dark:text-white">
@@ -180,7 +180,7 @@ export default async function Blog({
                       </p>
                       <Link
                         href="/sovereign-rcm/billing-audit-checklist"
-                        className="mt-4 inline-block text-sm font-medium text-teal transition-colors hover:text-teal-light dark:text-teal-dark dark:hover:text-teal"
+                        className="mt-4 inline-block text-sm font-medium text-coral transition-colors hover:text-coral dark:text-coral dark:hover:text-coral"
                       >
                         Get the Free Checklist &rarr;
                       </Link>
@@ -237,7 +237,7 @@ export default async function Blog({
               </p>
               <Link
                 href="/blog"
-                className="mt-4 inline-block text-sm font-medium text-teal hover:underline dark:text-teal-dark"
+                className="mt-4 inline-block text-sm font-medium text-coral hover:underline dark:text-coral"
               >
                 &larr; View all posts
               </Link>

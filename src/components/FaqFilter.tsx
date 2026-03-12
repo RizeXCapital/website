@@ -41,8 +41,8 @@ export default function FaqFilter({ categories }: FaqFilterProps) {
               onClick={() => handleClick(name)}
               className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-teal text-white dark:bg-teal-dark"
-                  : "border border-gray-300 bg-white text-charcoal hover:border-teal hover:text-teal dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text dark:hover:border-teal-dark dark:hover:text-teal-dark"
+                  ? "bg-coral text-white dark:bg-coral"
+                  : "border border-gray-300 bg-white text-charcoal hover:border-coral hover:text-coral dark:border-dark-border dark:bg-dark-elevated dark:text-dark-text dark:hover:border-coral dark:hover:text-coral"
               }`}
             >
               {name}

@@ -52,8 +52,8 @@ function StaticTimeline({ phases, className }: AnimatedTimelineProps) {
     <div className={className}>
       <div className="relative">
         {/* Center line */}
-        <div className="absolute left-6 top-0 hidden h-full w-px bg-teal/25 dark:bg-teal-dark/25 md:left-1/2 md:block" />
-        <div className="absolute left-6 top-0 h-full w-px bg-teal/25 dark:bg-teal-dark/25 md:hidden" />
+        <div className="absolute left-6 top-0 hidden h-full w-px bg-coral dark:bg-coral/25 md:left-1/2 md:block" />
+        <div className="absolute left-6 top-0 h-full w-px bg-coral dark:bg-coral/25 md:hidden" />
 
         <div className="space-y-8 md:space-y-12">
           {phases.map((phase, i) => {
@@ -66,7 +66,7 @@ function StaticTimeline({ phases, className }: AnimatedTimelineProps) {
                 className="relative pl-16 md:pl-0"
               >
                 {/* Mobile node dot */}
-                <div className="absolute left-4 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-navy dark:bg-teal md:hidden">
+                <div className="absolute left-4 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-navy dark:bg-coral md:hidden">
                   <div className="h-2 w-2 rounded-full bg-white" />
                 </div>
 
@@ -117,7 +117,7 @@ function PhaseContent({
       <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
         {phase.title}
       </h3>
-      <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
+      <p className="mt-1 text-sm font-medium text-coral dark:text-coral">
         {phase.duration}
       </p>
       <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
@@ -125,7 +125,7 @@ function PhaseContent({
       </p>
       <div className={`mt-3 flex ${align === "right" ? "justify-end" : "justify-start"}`}>
         <div
-          className="h-1.5 rounded-full bg-teal/20 dark:bg-teal-dark/20"
+          className="h-1.5 rounded-full bg-coral/15 dark:bg-coral/20"
           style={{ width: `${widthPct}%`, minWidth: "2rem", maxWidth: "100%" }}
         />
       </div>
@@ -173,7 +173,7 @@ export function AnimatedTimeline({
               },
             },
           }}
-          className="absolute left-1/2 top-0 hidden h-full w-px origin-top bg-teal/25 dark:bg-teal-dark/25 md:block"
+          className="absolute left-1/2 top-0 hidden h-full w-px origin-top bg-coral dark:bg-coral/25 md:block"
         />
 
         {/* Mobile left line — draws downward */}
@@ -188,7 +188,7 @@ export function AnimatedTimeline({
               },
             },
           }}
-          className="absolute left-6 top-0 h-full w-px origin-top bg-teal/25 dark:bg-teal-dark/25 md:hidden"
+          className="absolute left-6 top-0 h-full w-px origin-top bg-coral dark:bg-coral/25 md:hidden"
         />
 
         <div className="space-y-8 md:space-y-12">
@@ -216,7 +216,7 @@ export function AnimatedTimeline({
                       },
                     },
                   }}
-                  className="absolute left-4 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-navy dark:bg-teal md:hidden"
+                  className="absolute left-4 top-1 flex h-5 w-5 items-center justify-center rounded-full bg-navy dark:bg-coral md:hidden"
                 >
                   <div className="h-2 w-2 rounded-full bg-white" />
                 </motion.div>
@@ -326,7 +326,7 @@ function AnimatedPhaseContent({
       <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
         {phase.title}
       </h3>
-      <p className="mt-1 text-sm font-medium text-teal dark:text-teal-dark">
+      <p className="mt-1 text-sm font-medium text-coral dark:text-coral">
         {phase.duration}
       </p>
       <p className="mt-2 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
@@ -345,7 +345,7 @@ function AnimatedPhaseContent({
               },
             },
           }}
-          className="h-1.5 rounded-full bg-teal/20 dark:bg-teal-dark/20"
+          className="h-1.5 rounded-full bg-coral/15 dark:bg-coral/20"
           style={{ minWidth: 0, maxWidth: "100%" }}
         />
       </div>

@@ -18,7 +18,7 @@ export default function Home() {
       {/* 1. Hero */}
       <AnimatedHero className="bg-navy px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <FadeIn>
               <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Get Paid Faster While Keeping Patient Data Inside Your Practice
@@ -46,7 +46,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/sovereign-rcm"
-                  className="rounded-lg border border-white/20 px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-teal hover:text-teal"
+                  className="rounded-lg border border-white/20 px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-coral hover:text-coral"
                 >
                   Learn More
                 </Link>
@@ -94,9 +94,9 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="flex items-center gap-2 rounded-lg border border-teal/20 bg-teal/5 px-4 py-2">
+            <div className="flex items-center gap-2 rounded-lg border border-coral/20 bg-coral/5 px-4 py-2">
               <svg
-                className="h-4 w-4 text-teal"
+                className="h-4 w-4 text-coral"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
@@ -108,7 +108,7 @@ export default function Home() {
                   d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
                 />
               </svg>
-              <span className="text-sm font-semibold text-teal dark:text-teal-dark">
+              <span className="text-sm font-semibold text-coral dark:text-coral">
                 HIPAA Compliant
               </span>
             </div>
@@ -127,7 +127,7 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
                 Most practices lose revenue in three places they never see
               </p>
-              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-coral dark:text-coral">
                 Sovereign RCM closes all three
               </p>
             </div>
@@ -161,7 +161,7 @@ export default function Home() {
             ].map((leak) => (
               <StaggerItem key={leak.title}>
                 <div className="h-full rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="font-heading text-4xl font-bold text-teal dark:text-teal-dark">
+                  <p className="font-heading text-4xl font-bold text-coral dark:text-coral">
                     <CountUp
                       prefix={leak.statPrefix}
                       end={leak.statEnd}
@@ -212,7 +212,7 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
                 Sovereign RCM processes everything inside your practice
               </p>
-              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-coral dark:text-coral">
                 No cloud. No exposure
               </p>
             </div>
@@ -288,13 +288,13 @@ export default function Home() {
                 <HoverCard
                   className={`flex h-full flex-col rounded-xl border p-8 ${
                     i === 1
-                      ? "border-teal bg-navy text-white shadow-lg"
+                      ? "border-coral bg-navy text-white shadow-lg"
                       : "border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
                   }`}
                 >
                   <p
                     className={`font-heading text-sm font-bold uppercase tracking-wider ${
-                      i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
+                      i === 1 ? "text-coral" : "text-coral dark:text-coral"
                     }`}
                   >
                     {pkg.name}
@@ -323,7 +323,7 @@ export default function Home() {
                       >
                         <svg
                           className={`mt-0.5 h-4 w-4 shrink-0 ${
-                            i === 1 ? "text-teal-light" : "text-teal dark:text-teal-dark"
+                            i === 1 ? "text-coral" : "text-coral dark:text-coral"
                           }`}
                           fill="none"
                           viewBox="0 0 24 24"
@@ -373,7 +373,7 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
                 Not outsourced billing. Not cloud SaaS
               </p>
-              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-teal dark:text-teal-dark">
+              <p className="mx-auto mt-2 max-w-2xl text-lg font-medium text-coral dark:text-coral">
                 An owned AI appliance with fixed pricing and zero patient data exposure
               </p>
             </div>
@@ -393,7 +393,7 @@ export default function Home() {
                       <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-gray-300">
                         Cloud SaaS
                       </th>
-                      <th className="bg-teal/20 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-teal-light">
+                      <th className="bg-coral/15 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wider text-coral">
                         Sovereign RCM
                       </th>
                     </tr>
@@ -429,7 +429,7 @@ export default function Home() {
                         <td className="px-6 py-4 text-charcoal-light dark:text-gray-400">
                           {row[2]}
                         </td>
-                        <td className="bg-teal/5 px-6 py-4 font-semibold text-teal dark:bg-teal/10 dark:text-teal-dark">
+                        <td className="bg-coral/5 px-6 py-4 font-semibold text-coral dark:bg-coral/10 dark:text-coral">
                           {row[3]}
                         </td>
                       </tr>

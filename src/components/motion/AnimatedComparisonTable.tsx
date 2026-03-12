@@ -48,7 +48,7 @@ function StaticTable({
               <th className="sticky left-0 z-10 w-[18%] bg-navy px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white shadow-[2px_0_4px_-1px_rgba(0,0,0,0.1)]">
                 Category
               </th>
-              <th className="bg-teal/20 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-teal-light">
+              <th className="bg-coral/15 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-coral">
                 {sovereignLabel}
               </th>
               <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
@@ -79,7 +79,7 @@ function StaticTable({
                     row.category
                   )}
                 </td>
-                <td className="bg-teal/5 px-6 py-4 text-sm font-medium text-teal dark:bg-teal/10 dark:text-teal-dark">
+                <td className="bg-coral/5 px-6 py-4 text-sm font-medium text-coral dark:bg-coral/10 dark:text-coral">
                   {row.sovereign}
                 </td>
                 <td className="px-6 py-4 text-sm text-charcoal-light dark:text-gray-300">
@@ -125,8 +125,8 @@ export function AnimatedComparisonTable({
     <>
       <style>{`
         @keyframes teal-glow {
-          0%, 100% { box-shadow: inset 0 0 0 rgba(46,134,171,0); }
-          50% { box-shadow: inset 0 0 12px rgba(46,134,171,0.08); }
+          0%, 100% { box-shadow: inset 0 0 0 rgba(201,201,201,0); }
+          50% { box-shadow: inset 0 0 12px rgba(201,201,201,0.08); }
         }
       `}</style>
 
@@ -152,7 +152,7 @@ export function AnimatedComparisonTable({
                 <th className="sticky left-0 z-10 w-[18%] bg-navy px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-white shadow-[2px_0_4px_-1px_rgba(0,0,0,0.1)]">
                   Category
                 </th>
-                <th className="bg-teal/20 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-teal-light">
+                <th className="bg-coral/15 px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-coral">
                   {sovereignLabel}
                 </th>
                 <th className="px-6 py-4 font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
@@ -196,7 +196,7 @@ export function AnimatedComparisonTable({
                     )}
                   </td>
                   <td
-                    className="bg-teal/5 px-6 py-4 text-sm font-medium text-teal dark:bg-teal/10 dark:text-teal-dark"
+                    className="bg-coral/5 px-6 py-4 text-sm font-medium text-coral dark:bg-coral/10 dark:text-coral"
                     style={{
                       animationName: "teal-glow",
                       animationDuration: "3s",

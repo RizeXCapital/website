@@ -278,21 +278,21 @@ export default function FAQ() {
                 Visit our dedicated pages for{" "}
                 <Link
                   href="/sovereign-rcm/security"
-                  className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   Security &amp; HIPAA
                 </Link>
                 ,{" "}
                 <Link
                   href="/sovereign-rcm/pilot-program"
-                  className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   90-Day Pilot Program
                 </Link>
                 , and{" "}
                 <Link
                   href="/sovereign-rcm/pricing"
-                  className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   Pricing &amp; Packages
                 </Link>
@@ -305,7 +305,7 @@ export default function FAQ() {
             Don&apos;t see what you need?{" "}
             <Link
               href="/contact"
-              className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+              className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
             >
               Reach out directly
             </Link>

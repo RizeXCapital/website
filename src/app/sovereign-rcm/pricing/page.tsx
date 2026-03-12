@@ -246,7 +246,7 @@ function renderCell(value: boolean | string) {
   if (value === true) {
     return (
       <svg
-        className="mx-auto h-5 w-5 text-teal dark:text-teal-dark"
+        className="mx-auto h-5 w-5 text-coral dark:text-coral"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={2}
@@ -346,24 +346,24 @@ export default function Pricing() {
                 <HoverCard
                   className={`relative flex h-full flex-col rounded-xl border bg-white p-6 dark:bg-dark-elevated ${
                     tier.highlighted
-                      ? "border-2 border-teal dark:border-teal-dark"
+                      ? "border-2 border-coral dark:border-coral"
                       : "border-gray-300 dark:border-dark-border"
                   }`}
                 >
                   {tier.highlighted && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-teal px-4 py-1 text-xs font-bold uppercase tracking-wide text-white dark:bg-teal-dark">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-xs font-bold uppercase tracking-wide text-white dark:bg-coral">
                       Most Popular
                     </span>
                   )}
                   <div className="flex items-center gap-4">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy font-heading text-lg font-bold text-white dark:bg-teal">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy font-heading text-lg font-bold text-white dark:bg-coral">
                       {tier.id}
                     </span>
                     <div>
                       <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
                         {tier.label}
                       </h3>
-                      <p className="text-sm font-medium text-teal dark:text-teal-dark">
+                      <p className="text-sm font-medium text-coral dark:text-coral">
                         {tier.providers}
                       </p>
                     </div>
@@ -375,7 +375,7 @@ export default function Pricing() {
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
                         <svg
-                          className="mt-0.5 h-5 w-5 shrink-0 text-teal dark:text-teal-dark"
+                          className="mt-0.5 h-5 w-5 shrink-0 text-coral dark:text-coral"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth={2}
@@ -457,7 +457,7 @@ export default function Pricing() {
                     <th className="px-6 py-4 text-center font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
                       SR-1
                     </th>
-                    <th className="bg-teal/20 px-6 py-4 text-center font-heading text-sm font-bold uppercase tracking-wide text-teal-light">
+                    <th className="bg-coral/15 px-6 py-4 text-center font-heading text-sm font-bold uppercase tracking-wide text-coral">
                       SR-2
                     </th>
                     <th className="px-6 py-4 text-center font-heading text-sm font-bold uppercase tracking-wide text-gray-300">
@@ -487,7 +487,7 @@ export default function Pricing() {
                       <td className="px-6 py-4 text-center">
                         {renderCell(row.sr1)}
                       </td>
-                      <td className="bg-teal/5 px-6 py-4 text-center dark:bg-teal/10">
+                      <td className="bg-coral/5 px-6 py-4 text-center dark:bg-coral/10">
                         {renderCell(row.sr2)}
                       </td>
                       <td className="px-6 py-4 text-center">
@@ -540,7 +540,7 @@ export default function Pricing() {
                 />
                 <Link
                   href="/sovereign-rcm/pilot-program"
-                  className="mt-6 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                  className="mt-6 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                 >
                   Learn about the 90-day pilot
                 </Link>
@@ -569,7 +569,7 @@ export default function Pricing() {
             {scenarios.map((scenario) => (
               <StaggerItem key={scenario.tier}>
                 <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
-                  <span className="inline-block rounded bg-navy px-3 py-1 font-heading text-sm font-bold text-white dark:bg-teal">
+                  <span className="inline-block rounded bg-navy px-3 py-1 font-heading text-sm font-bold text-white dark:bg-coral">
                     {scenario.tier}
                   </span>
                   <h3 className="mt-4 font-heading text-xl font-bold text-navy dark:text-white">
@@ -580,7 +580,7 @@ export default function Pricing() {
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-block text-sm font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                    className="mt-5 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
                   >
                     Get a quote for {scenario.tier}
                   </Link>
@@ -617,7 +617,7 @@ export default function Pricing() {
               Have a question not covered here?{" "}
               <Link
                 href="/contact"
-                className="font-medium text-teal underline decoration-teal/30 hover:decoration-teal dark:text-teal-dark dark:decoration-teal-dark/30 dark:hover:decoration-teal-dark"
+                className="font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"
               >
                 Reach out directly
               </Link>

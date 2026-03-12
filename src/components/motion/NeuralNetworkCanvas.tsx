@@ -105,7 +105,7 @@ function renderFrame(
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
-        ctx.strokeStyle = `rgba(46,134,171,${alpha})`;
+        ctx.strokeStyle = `rgba(201,201,201,${alpha})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -120,10 +120,10 @@ function renderFrame(
       : 0.5;
     const opacity = 0.25 + pulse * 0.3;
 
-    // Interpolate color from #2E86AB to #5BACCC based on pulse
-    const r = Math.round(46 + pulse * (91 - 46));
-    const g = Math.round(134 + pulse * (172 - 134));
-    const b = Math.round(171 + pulse * (204 - 171));
+    // Interpolate color from #C9C9C9 to #D9D9D9 based on pulse
+    const r = Math.round(201 + pulse * (217 - 201));
+    const g = Math.round(201 + pulse * (217 - 201));
+    const b = Math.round(201 + pulse * (217 - 201));
 
     // Glow ring at pulse peak (>0.8)
     if (pulse > 0.8) {

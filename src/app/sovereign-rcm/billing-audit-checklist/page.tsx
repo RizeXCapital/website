@@ -43,7 +43,7 @@ export default function BillingAuditChecklist() {
       {/* Header */}
       <section className="bg-navy px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-medium uppercase tracking-wider text-teal">
+          <p className="text-xs font-medium uppercase tracking-wider text-coral">
             Free Resource
           </p>
           <h1 className="mt-3 font-heading text-4xl font-bold leading-tight text-white sm:text-5xl">

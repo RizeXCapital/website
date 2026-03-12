@@ -19,7 +19,7 @@ export function HoverCard({ children, className }: HoverCardProps) {
     <motion.div
       whileHover={{
         y: -4,
-        boxShadow: "0 8px 30px rgba(46, 134, 171, 0.15)",
+        boxShadow: "0 8px 30px rgba(201, 201, 201, 0.15)",
       }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: "easeOut" }}

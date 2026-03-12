@@ -35,9 +35,9 @@ const DESKTOP_PARTICLES = 24;
 const MOBILE_PARTICLES = 12;
 
 // Colors
-const TEAL = { r: 46, g: 134, b: 171 };     // #2E86AB
-const NAVY = { r: 27, g: 42, b: 74 };       // #1B2A4A
-const CORAL = { r: 232, g: 97, b: 77 };     // #E8614D
+const TEAL = { r: 201, g: 201, b: 201 };     // #C9C9C9 (silver)
+const NAVY = { r: 26, g: 26, b: 26 };       // #1A1A1A
+const CORAL = { r: 200, g: 16, b: 46 };     // #C8102E
 
 const EDGE_PAD = 20;
 

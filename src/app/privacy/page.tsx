@@ -48,7 +48,7 @@ export default function Privacy() {
                 flagship product, Sovereign RCM, is an on-premise AI billing
                 appliance for medical practices. This Privacy Policy applies to
                 the RizeX Capital website at{" "}
-                <span className="font-medium text-teal dark:text-teal-dark">
+                <span className="font-medium text-coral dark:text-coral">
                   rizexcapital.com
                 </span>{" "}
                 and the services we offer.
@@ -209,7 +209,7 @@ export default function Privacy() {
               <div className="mt-4 overflow-x-auto">
                 <table className="w-full text-left text-sm">
                   <thead>
-                    <tr className="border-b-2 border-navy dark:border-teal-dark">
+                    <tr className="border-b-2 border-navy dark:border-coral">
                       <th className="pb-3 pr-6 font-heading font-bold text-navy dark:text-white">
                         Name
                       </th>
@@ -226,7 +226,7 @@ export default function Privacy() {
                   </thead>
                   <tbody className="text-charcoal-light dark:text-gray-300">
                     <tr className="border-b border-gray-300 dark:border-dark-border">
-                      <td className="py-3 pr-6 font-mono text-sm text-teal dark:text-teal-dark">
+                      <td className="py-3 pr-6 font-mono text-sm text-coral dark:text-coral">
                         theme
                       </td>
                       <td className="py-3 pr-6">
@@ -347,7 +347,7 @@ export default function Privacy() {
                   Email:{" "}
                   <a
                     href="mailto:contact@rizexcapital.com"
-                    className="font-medium text-teal hover:underline dark:text-teal-dark"
+                    className="font-medium text-coral hover:underline dark:text-coral"
                   >
                     contact@rizexcapital.com
                   </a>
@@ -356,7 +356,7 @@ export default function Privacy() {
                   Or use our{" "}
                   <Link
                     href="/contact"
-                    className="font-medium text-teal hover:underline dark:text-teal-dark"
+                    className="font-medium text-coral hover:underline dark:text-coral"
                   >
                     contact form
                   </Link>

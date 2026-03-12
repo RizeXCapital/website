@@ -122,7 +122,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
 
   return (
     <div className="mx-auto max-w-lg rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-dark-border dark:bg-dark-elevated">
-      <p className="text-xs font-medium uppercase tracking-wider text-teal dark:text-teal-dark">
+      <p className="text-xs font-medium uppercase tracking-wider text-coral dark:text-coral">
         Free Resource
       </p>
       <h2 className="mt-2 font-heading text-2xl font-bold text-navy dark:text-white">
@@ -160,7 +160,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Dr. Jane Smith"
-            className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-navy placeholder-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal dark:border-dark-border dark:bg-dark-bg dark:text-white dark:placeholder-gray-500"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-navy placeholder-gray-400 focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral dark:border-dark-border dark:bg-dark-bg dark:text-white dark:placeholder-gray-500"
           />
         </div>
 
@@ -178,7 +178,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@yourpractice.com"
-            className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-navy placeholder-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal dark:border-dark-border dark:bg-dark-bg dark:text-white dark:placeholder-gray-500"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-navy placeholder-gray-400 focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral dark:border-dark-border dark:bg-dark-bg dark:text-white dark:placeholder-gray-500"
           />
         </div>
 
@@ -198,7 +198,7 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
             value={practice}
             onChange={(e) => setPractice(e.target.value)}
             placeholder="Westside Family Medicine"
-            className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-navy placeholder-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal dark:border-dark-border dark:bg-dark-bg dark:text-white dark:placeholder-gray-500"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-navy placeholder-gray-400 focus:border-coral focus:outline-none focus:ring-1 focus:ring-coral dark:border-dark-border dark:bg-dark-bg dark:text-white dark:placeholder-gray-500"
           />
         </div>
 
@@ -264,7 +264,7 @@ function ChecklistContent() {
             className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-dark-border dark:bg-dark-elevated"
           >
             <div className="flex items-center gap-3 border-b border-gray-200 bg-gray-50 px-6 py-4 dark:border-dark-border dark:bg-dark-bg">
-              <span className="font-mono text-xs font-semibold text-teal dark:text-teal-dark">
+              <span className="font-mono text-xs font-semibold text-coral dark:text-coral">
                 {String(si + 1).padStart(2, "0")}
               </span>
               <h3 className="font-heading text-base font-bold text-navy dark:text-white">
@@ -285,7 +285,7 @@ function ChecklistContent() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-xl border border-teal/20 bg-teal/5 p-6 dark:border-teal/20 dark:bg-teal/10">
+      <div className="mt-12 rounded-xl border border-coral/20 bg-coral/5 p-6 dark:border-coral/20 dark:bg-coral/10">
         <p className="font-heading text-base font-bold text-navy dark:text-white">
           Found issues in your audit?
         </p>
