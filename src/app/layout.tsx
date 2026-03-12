@@ -68,7 +68,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Sovereign RCM",
               url: "https://rizexcapital.vercel.app",
-              logo: "https://rizexcapital.vercel.app/MainLogoNew.jpeg",
+              logo: "https://rizexcapital.vercel.app/srcm1w.png",
               description:
                 "Sovereign RCM is an on-premise AI billing appliance for medical practices. Your billing stays in your building.",
               foundingLocation: {

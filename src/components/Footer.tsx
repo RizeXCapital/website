@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand column */}
           <div>
-            <div className="flex items-center">
+            <div className="flex items-center -ml-8">
               <Image
                 src={LOGO_DARK}
                 alt="RizeX Capital"
