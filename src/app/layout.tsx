@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { LOGO_OG, SITE_URL } from "@/lib/brand";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import MobileCTA from "@/components/MobileCTA";
@@ -35,6 +36,15 @@ export const metadata: Metadata = {
     "Princeton NJ",
     "HIPAA compliant AI",
   ],
+  openGraph: {
+    type: "website",
+    siteName: "Sovereign RCM",
+    images: [{ url: `${SITE_URL}${LOGO_OG}`, width: 1200, height: 630, alt: "Sovereign RCM" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${SITE_URL}${LOGO_OG}`],
+  },
 };
 
 export default function RootLayout({
@@ -58,7 +68,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Sovereign RCM",
               url: "https://rizexcapital.vercel.app",
-              logo: "https://rizexcapital.vercel.app/logo.png",
+              logo: "https://rizexcapital.vercel.app/MainLogoNew.jpeg",
               description:
                 "Sovereign RCM is an on-premise AI billing appliance for medical practices. Your billing stays in your building.",
               foundingLocation: {

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { LOGO_DARK } from "@/lib/brand";
 
 const footerLinks = {
   Company: [
@@ -29,11 +31,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand column */}
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl leading-none -translate-y-0.5">👑</span>
-              <span className="font-heading text-2xl font-semibold tracking-wide select-none">
-                Sovereign <span className="text-coral">RCM</span>
-              </span>
+            <div className="flex items-center">
+              <Image
+                src={LOGO_DARK}
+                alt="RizeX Capital"
+                width={320}
+                height={83}
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-300">
               Your Billing. Your Building. Your Data

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedHero } from "@/components/motion";
+import { LOGO_LIGHT, LOGO_DARK } from "@/lib/brand";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -72,6 +74,10 @@ export default function Contact() {
       <section className="flex min-h-[70vh] items-center justify-center px-6">
         <FadeIn>
         <div className="max-w-lg text-center">
+          <div className="mb-8 flex justify-center">
+            <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={240} height={62} className="h-12 w-auto dark:hidden" />
+            <Image src={LOGO_DARK}  alt="Sovereign RCM" width={240} height={62} className="h-12 w-auto hidden dark:block" />
+          </div>
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
             <svg
               className="h-8 w-8 text-teal"

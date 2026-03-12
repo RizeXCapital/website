@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
+import { LOGO_LIGHT, LOGO_DARK } from "@/lib/brand";
 
 interface ComingSoonProps {
   title: string;
@@ -11,6 +13,10 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
     <>
     <section className="flex min-h-[60vh] items-center justify-center px-6">
       <div className="max-w-lg text-center">
+        <div className="mb-8 flex justify-center">
+          <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={240} height={62} className="h-12 w-auto dark:hidden" />
+          <Image src={LOGO_DARK}  alt="Sovereign RCM" width={240} height={62} className="h-12 w-auto hidden dark:block" />
+        </div>
         <h1 className="font-heading text-4xl font-bold text-navy dark:text-white">{title}</h1>
         <p className="mt-4 text-lg leading-relaxed text-charcoal-light dark:text-gray-300">
           {description}
