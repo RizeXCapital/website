@@ -160,7 +160,7 @@ export default function Home() {
               },
             ].map((leak) => (
               <StaggerItem key={leak.title}>
-                <div className="h-full rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
+                <div className="h-full rounded-xl border border-gray-300 border-t-2 border-t-steel bg-ice p-8 dark:border-dark-border dark:border-t-steel-light dark:bg-dark-surface">
                   <p className="font-heading text-4xl font-bold text-coral dark:text-coral">
                     <CountUp
                       prefix={leak.statPrefix}
@@ -289,7 +289,7 @@ export default function Home() {
                   className={`flex h-full flex-col rounded-xl border p-8 ${
                     i === 1
                       ? "border-coral bg-navy text-white shadow-lg"
-                      : "border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated"
+                      : "border-gray-300 bg-white transition-colors hover:border-steel dark:border-dark-border dark:bg-dark-elevated dark:hover:border-steel-light"
                   }`}
                 >
                   <p

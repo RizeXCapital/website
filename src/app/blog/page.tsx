@@ -100,7 +100,7 @@ export default async function Blog({
                 {posts.map((post) => (
                   <StaggerItem key={post.slug}>
                   <article
-                    className="group overflow-hidden rounded-xl border border-gray-300 bg-white transition-[box-shadow,transform] duration-2800 ease-out hover:scale-[1.01] hover:shadow-md active:scale-[0.99] dark:border-dark-border dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
+                    className="group overflow-hidden rounded-xl border border-gray-300 border-l-4 border-l-coral bg-white transition-[box-shadow,transform] duration-2800 ease-out hover:scale-[1.01] hover:shadow-md active:scale-[0.99] dark:border-dark-border dark:border-l-coral dark:bg-dark-elevated dark:hover:shadow-lg dark:hover:shadow-black/20"
                   >
                     {post.image && (
                       <Link href={`/blog/${post.slug}`} className="block">
@@ -116,7 +116,7 @@ export default async function Blog({
                       </Link>
                     )}
                     <div className="p-8">
-                      <p className="text-xs font-medium uppercase tracking-wider text-coral dark:text-coral">
+                      <p className="inline-block rounded-full bg-coral/10 px-2.5 py-0.5 text-xs font-medium uppercase tracking-wider text-coral dark:bg-coral/20 dark:text-coral">
                         {categoryLabels[post.category]}
                       </p>
                       <h2 className="mt-2 font-heading text-xl font-bold text-navy dark:text-white">
@@ -216,8 +216,11 @@ export default async function Blog({
                   ].map((upcoming) => (
                     <StaggerItem key={upcoming.title}>
                     <article
-                      className="rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated"
+                      className="rounded-xl border border-dashed border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated"
                     >
+                      <span className="inline-block rounded-full bg-steel/10 px-2.5 py-0.5 text-xs font-medium text-steel dark:bg-steel-light/10 dark:text-steel-light">
+                        Coming Soon
+                      </span>
                       <h2 className="mt-2 font-heading text-lg font-bold text-navy dark:text-white">
                         {upcoming.title}
                       </h2>

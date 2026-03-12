@@ -150,7 +150,7 @@ export default async function BlogPost({
           </nav>
 
           {/* Category Badge */}
-          <p className="text-xs font-medium uppercase tracking-wider text-coral dark:text-coral">
+          <p className="inline-block rounded-full bg-coral/10 px-2.5 py-0.5 text-xs font-medium uppercase tracking-wider text-coral dark:bg-coral/20 dark:text-coral">
             {categoryLabels[post.category]}
           </p>
 
@@ -242,7 +242,7 @@ export default async function BlogPost({
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://rizexcapital.com/blog/${post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-charcoal-light transition-colors hover:text-coral dark:text-gray-400 dark:hover:text-coral"
+                className="rounded-lg p-1.5 text-charcoal-light transition-colors hover:bg-steel/10 hover:text-coral dark:text-gray-400 dark:hover:bg-steel-light/10 dark:hover:text-coral"
                 aria-label="Share on LinkedIn"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -254,7 +254,7 @@ export default async function BlogPost({
                 href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://rizexcapital.com/blog/${post.slug}`)}&text=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-charcoal-light transition-colors hover:text-coral dark:text-gray-400 dark:hover:text-coral"
+                className="rounded-lg p-1.5 text-charcoal-light transition-colors hover:bg-steel/10 hover:text-coral dark:text-gray-400 dark:hover:bg-steel-light/10 dark:hover:text-coral"
                 aria-label="Share on X"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -264,7 +264,7 @@ export default async function BlogPost({
               {/* Email */}
               <a
                 href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(post.excerpt)}%0A%0A${encodeURIComponent(`https://rizexcapital.com/blog/${post.slug}`)}`}
-                className="text-charcoal-light transition-colors hover:text-coral dark:text-gray-400 dark:hover:text-coral"
+                className="rounded-lg p-1.5 text-charcoal-light transition-colors hover:bg-steel/10 hover:text-coral dark:text-gray-400 dark:hover:bg-steel-light/10 dark:hover:text-coral"
                 aria-label="Share via email"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -276,7 +276,7 @@ export default async function BlogPost({
 
           {/* Author Bio */}
           {authorInfo && (
-            <div className="mt-12 rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-elevated">
+            <div className="mt-12 rounded-xl border border-gray-300 border-t-2 border-t-steel bg-ice p-6 dark:border-dark-border dark:border-t-steel-light dark:bg-dark-elevated">
               <p className="text-xs font-medium uppercase tracking-wider text-coral dark:text-coral">
                 About the Author
               </p>

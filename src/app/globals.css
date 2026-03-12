@@ -27,6 +27,10 @@ html {
   --color-dark-border: #2A2A2A;
   --color-dark-text: #D9D9D9;
 
+  --color-steel: #607D8B;
+  --color-steel-light: #78909C;
+  --color-steel-dark: #455A64;
+
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -70,6 +74,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-navy);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  border-left: 3px solid var(--color-steel);
+  padding-left: 0.75rem;
 }
 
 .blog-content h3 {
@@ -97,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-content a:hover {
+  color: var(--color-coral-hover);
   text-decoration: underline;
 }
 
@@ -180,6 +187,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+.dark .blog-content h2 {
+  border-left-color: var(--color-steel-light);
+}
+
 .dark .blog-content p,
 .dark .blog-content li {
   color: var(--color-dark-text);
@@ -231,6 +242,7 @@ button[class*="bg-coral"]:hover,
 a[class*="bg-navy"]:hover,
 button[class*="bg-navy"]:hover {
   transform: scale(1.04);
+  box-shadow: 0 4px 14px rgba(200, 16, 46, 0.25);
 }
 
 a[class*="bg-coral"]:active,

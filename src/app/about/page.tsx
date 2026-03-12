@@ -119,10 +119,12 @@ export default function About() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-5">
             {pillars.map((pillar) => (
               <StaggerItem key={pillar.number}>
-                <div className="h-full rounded-xl border border-gray-300 bg-ice p-6 dark:border-dark-border dark:bg-dark-surface">
-                  <p className="font-heading text-3xl font-bold text-coral dark:text-coral">
-                    {pillar.number}
-                  </p>
+                <div className="h-full rounded-xl border border-gray-300 border-t-2 border-t-steel bg-ice p-6 dark:border-dark-border dark:border-t-steel-light dark:bg-dark-surface">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-steel/10 dark:bg-steel-light/10">
+                    <p className="font-heading text-lg font-bold text-steel dark:text-steel-light">
+                      {pillar.number}
+                    </p>
+                  </div>
                   <h3 className="mt-3 font-heading text-base font-bold text-navy dark:text-white">
                     {pillar.name}
                   </h3>
@@ -179,7 +181,7 @@ export default function About() {
               <StaggerItem key={founder.name}>
                 <div className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
                   {founder.image ? (
-                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full dark:ring-1 dark:ring-dark-border">
+                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-2 ring-steel/20 dark:ring-steel-light/30">
                       <div className="h-full w-full" style={founder.imageStyle}>
                         <Image
                           src={founder.image}

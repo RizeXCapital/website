@@ -26,7 +26,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-300 bg-navy text-white dark:border-dark-border dark:bg-[#080E1A]">
+    <footer className="border-t border-steel/30 bg-navy text-white dark:border-steel-light/20 dark:bg-[#080E1A]">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand column */}
@@ -53,6 +53,7 @@ export default function Footer() {
             <div key={category}>
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
                 {category}
+                <span className="mt-2 block h-0.5 w-8 bg-steel/40" />
               </h3>
               <ul className="mt-4 space-y-3">
                 {links.map((link) => (
