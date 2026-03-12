@@ -35,9 +35,9 @@ export default function Footer() {
               <Image
                 src={LOGO_DARK}
                 alt="RizeX Capital"
-                width={320}
-                height={83}
-                className="h-12 w-auto object-contain"
+                width={1495}
+                height={348}
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-300">

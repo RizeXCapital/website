@@ -75,8 +75,8 @@ export default function Contact() {
         <FadeIn>
         <div className="max-w-lg text-center">
           <div className="mb-8 flex justify-center">
-            <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={240} height={62} className="h-12 w-auto dark:hidden" />
-            <Image src={LOGO_DARK}  alt="Sovereign RCM" width={240} height={62} className="h-12 w-auto hidden dark:block" />
+            <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={1513} height={357} className="h-16 w-auto dark:hidden" />
+            <Image src={LOGO_DARK}  alt="Sovereign RCM" width={1495} height={348} className="h-16 w-auto hidden dark:block" />
           </div>
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
             <svg
