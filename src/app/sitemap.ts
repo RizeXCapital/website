@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { SITE_URL } from "@/lib/brand";
 
-const BASE_URL = "https://rizexcapital.vercel.app";
+const BASE_URL = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -19,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/sovereign-rcm/vs-cloud-rcm", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/sovereign-rcm/vs-outsourced-billing", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/sovereign-rcm/billing-audit-checklist", priority: 0.6, changeFrequency: "monthly" as const },
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({

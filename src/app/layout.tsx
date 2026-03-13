@@ -66,7 +66,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Sovereign RCM",
-              url: "https://rizexcapital.vercel.app",
+              url: "https://rizexcapital.com",
               logo: `${SITE_URL}${LOGO_LIGHT}`,
               description:
                 "Sovereign RCM is an on-premise AI billing appliance for medical practices. Your billing stays in your building.",
@@ -77,7 +77,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "sales",
-                url: "https://rizexcapital.vercel.app/contact",
+                url: "https://rizexcapital.com/contact",
               },
             }),
           }}

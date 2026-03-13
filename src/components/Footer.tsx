@@ -8,6 +8,7 @@ const footerLinks = {
     { href: "/contact", label: "Contact" },
     { href: "/blog", label: "Blog" },
     { href: "/privacy", label: "Privacy Policy" },
+    { href: "/terms", label: "Terms of Service" },
   ],
   "Sovereign RCM": [
     { href: "/sovereign-rcm", label: "Overview" },
