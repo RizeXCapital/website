@@ -9,6 +9,7 @@ import {
   StaggerContainer,
   StaggerItem,
   AnimatedComparisonTable,
+  HoverCard,
 } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -38,13 +39,13 @@ const cloudProblems = [
     icon: "💸",
     title: "Recurring Cost Drain",
     description:
-      "Cloud RCM charges 4 - 8% of collections or $200 - $500 per provider per month, indefinitely. A 5-provider practice pays $120K - $300K over five years with nothing to show for it.",
+      "Cloud RCM charges 4–8% of collections or $200–$500 per provider per month, indefinitely. A 5-provider practice pays $120K–$300K over five years with nothing to show for it.",
   },
   {
     icon: "🔗",
     title: "Vendor Lock-In",
     description:
-      "Switching cloud RCM vendors costs $50K - $250K+ in migration, retraining, and downtime. Your data, workflows, and payer integrations are held hostage by the platform.",
+      "Switching cloud RCM vendors costs $50K–$250K+ in migration, retraining, and downtime. Your data, workflows, and payer integrations are held hostage by the platform.",
   },
 ];
 
@@ -77,7 +78,7 @@ const comparisonRows = [
     category: "5-Year Total Cost",
     tooltip: "Cumulative spend over five years including all fees, subscriptions, and maintenance",
     sovereign: "Fixed hardware cost, no ongoing subscription",
-    cloud: "$120K - $300K+ for a 5-provider practice",
+    cloud: "$120K–$300K+ for a 5-provider practice",
   },
   {
     category: "Data Ownership",
@@ -107,7 +108,7 @@ const comparisonRows = [
     category: "Switching Cost",
     tooltip: "The financial and operational cost of moving to a different billing system",
     sovereign: "Data stays on your hardware in standard formats",
-    cloud: "$50K - $250K+ in migration and retraining",
+    cloud: "$50K–$250K+ in migration and retraining",
   },
 ];
 
@@ -116,7 +117,7 @@ const faqs = [
     question:
       "Isn't the upfront cost of on-premise higher than starting with cloud?",
     answer:
-      "The initial capital outlay for Sovereign RCM is higher than the first monthly payment on a cloud subscription. But cloud fees never stop. Over a 3 - 5 year period, the total cost of a cloud platform significantly exceeds the one-time cost of owning your infrastructure. Most practices reach cost parity within 18 - 24 months, and everything after that is savings. Use our ROI calculator to model the numbers for your practice size.",
+      "The initial capital outlay for Sovereign RCM is higher than the first monthly payment on a cloud subscription. But cloud fees never stop. Over a 3–5 year period, the total cost of a cloud platform significantly exceeds the one-time cost of owning your infrastructure. Most practices reach cost parity within 18–24 months, and everything after that is savings. Use our ROI calculator to model the numbers for your practice size.",
   },
   {
     question: "We already use a cloud RCM platform. Can we switch?",
@@ -197,7 +198,7 @@ export default function VsCloudRCM() {
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {cloudProblems.map((problem) => (
               <StaggerItem key={problem.title}>
-                <div className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
+                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-6 dark:border-dark-border dark:bg-dark-elevated">
                   <p className="text-3xl" aria-hidden="true">
                     {problem.icon}
                   </p>
@@ -207,7 +208,7 @@ export default function VsCloudRCM() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {problem.description}
                   </p>
-                </div>
+                </HoverCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -332,7 +333,7 @@ export default function VsCloudRCM() {
                       &bull;
                     </span>
                     <span>
-                      <strong>4 - 8%</strong> of collections (industry standard)
+                      <strong>4–8%</strong> of collections (industry standard)
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -340,7 +341,7 @@ export default function VsCloudRCM() {
                       &bull;
                     </span>
                     <span>
-                      <strong>$200 - $500</strong> per provider per month (SaaS
+                      <strong>$200–$500</strong> per provider per month (SaaS
                       tier)
                     </span>
                   </li>
@@ -349,7 +350,7 @@ export default function VsCloudRCM() {
                       &bull;
                     </span>
                     <span>
-                      <strong>$120K - $300K+</strong> over 5 years for a
+                      <strong>$120K–$300K+</strong> over 5 years for a
                       5-provider practice
                     </span>
                   </li>
@@ -386,7 +387,7 @@ export default function VsCloudRCM() {
                 appliance, deploy it in your facility, and own it outright. There
                 are no recurring platform fees, no percentage cuts, and no
                 surprise price increases. Most practices recover the investment
-                within 18 - 24 months through eliminated billing fees and
+                within 18–24 months through eliminated billing fees and
                 recaptured revenue from reduced undercoding.
               </p>
             </FadeIn>
@@ -406,7 +407,7 @@ export default function VsCloudRCM() {
                 With cloud RCM, your billing data, coding patterns, denial
                 history, and payer configurations live on someone else&apos;s
                 servers. Need to switch vendors? Expect migration costs of
-                $50K - $250K+, months of transition time, and the risk of data
+                $50K–$250K+, months of transition time, and the risk of data
                 loss or format incompatibility.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
@@ -428,7 +429,7 @@ export default function VsCloudRCM() {
                       &bull;
                     </span>
                     <span>
-                      <strong>$50K - $250K+</strong> typical migration cost
+                      <strong>$50K–$250K+</strong> typical migration cost
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -436,7 +437,7 @@ export default function VsCloudRCM() {
                       &bull;
                     </span>
                     <span>
-                      <strong>3 - 6 months</strong> average transition timeline
+                      <strong>3–6 months</strong> average transition timeline
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -587,7 +588,7 @@ export default function VsCloudRCM() {
                   href="/contact"
                   className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
                 >
-                  Request a Free Product Demo
+                  Request a Billing Analysis
                 </Link>
               </MagneticButton>
             </div>

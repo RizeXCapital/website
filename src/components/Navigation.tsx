@@ -196,7 +196,7 @@ export default function Navigation() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-sm dark:border-dark-border dark:bg-dark-bg/95">
+    <header className="sticky top-0 z-50 border-b border-gray-200/60 bg-white/50 backdrop-blur-md dark:border-dark-border/60 dark:bg-dark-bg/50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 lg:px-1">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -280,7 +280,7 @@ export default function Navigation() {
                     className={`rounded-lg px-3 py-2.5 text-sm transition-colors ${
                       pathname === subLink.href
                         ? "bg-ice font-medium text-coral dark:bg-dark-surface dark:text-coral"
-                        : "text-charcoal-light hover:bg-ice hover:text-navy dark:text-gray-300 dark:hover:bg-dark-surface dark:hover:text-white"
+                        : "text-charcoal-light hover:text-coral dark:text-gray-300 dark:hover:bg-dark-surface dark:hover:text-white"
                     }`}
                   >
                     {subLink.label}

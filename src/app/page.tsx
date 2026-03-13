@@ -163,7 +163,7 @@ export default function Home() {
               },
             ].map((leak) => (
               <StaggerItem key={leak.title}>
-                <div className="h-full rounded-xl border border-gray-300 border-t-2 border-t-steel bg-ice p-8 dark:border-dark-border dark:border-t-steel-light dark:bg-dark-surface">
+                <HoverCard className="h-full rounded-xl border border-gray-300 border-t-2 border-t-steel bg-ice p-8 dark:border-dark-border dark:border-t-steel-light dark:bg-dark-surface">
                   <p className="font-heading text-4xl font-bold text-coral dark:text-coral">
                     <CountUp
                       prefix={leak.statPrefix}
@@ -178,7 +178,7 @@ export default function Home() {
                   <p className="mt-3 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
                     {leak.description}
                   </p>
-                </div>
+                </HoverCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -189,7 +189,7 @@ export default function Home() {
       <SectionDivider variant="light" />
 
       {/* Citation Strip */}
-      <section className="bg-navy px-6 py-4">
+      <section className="bg-navy px-6 py-4 dark:bg-dark-surface">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-center justify-center gap-y-2 divide-x divide-white/10">
             <span className="pr-6 text-xs font-medium uppercase tracking-wider text-gray-500 first:pl-0">
