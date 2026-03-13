@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface FaqItemProps {
   question: string;
@@ -9,12 +10,17 @@ interface FaqItemProps {
 
 export default function FaqItem({ question, answer }: FaqItemProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-
+  const prefersReduced = useReducedMotion();
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
 
   return (
-    <div className="rounded-xl border border-gray-300 bg-white dark:border-dark-border dark:bg-dark-elevated">
+    <div
+      className={`rounded-xl border bg-white transition-colors duration-300 dark:bg-dark-elevated ${
+        isOpen
+          ? "border-coral/40 dark:border-coral/30"
+          : "border-gray-300 dark:border-dark-border"
+      }`}
+    >
       <button
         type="button"
         onClick={toggle}
@@ -22,8 +28,10 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
         aria-expanded={isOpen}
       >
         <span>{question}</span>
-        <span
-          className={`shrink-0 text-coral transition-transform duration-300 dark:text-coral ${isOpen ? "rotate-45" : ""}`}
+        <motion.span
+          animate={{ rotate: prefersReduced ? 0 : isOpen ? 180 : 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
+          className={`shrink-0 text-coral dark:text-coral ${prefersReduced && isOpen ? "rotate-180" : ""}`}
           aria-hidden="true"
         >
           <svg
@@ -34,19 +42,21 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M10 4V16M4 10H16"
+              d="M5 8L10 13L15 8"
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
-        </span>
+        </motion.span>
       </button>
+
       <div
         className="grid transition-[grid-template-rows] duration-300 ease-in-out"
         style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
       >
-        <div ref={contentRef} className="overflow-hidden">
+        <div className="overflow-hidden">
           <div className="px-6 pb-6 text-base leading-relaxed text-charcoal-light dark:text-gray-300">
             {answer}
           </div>

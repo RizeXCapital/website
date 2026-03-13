@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MagneticButton from "@/components/MagneticButton";
 
 // ---------------------------------------------------------------------------
 // Checklist data
@@ -294,12 +295,14 @@ function ChecklistContent() {
           patterns, undercoding, A/R velocity, and PHI security. All handled by
           an on-premise AI appliance that never sends your data to the cloud.
         </p>
-        <a
-          href="/contact"
-          className="mt-4 inline-block rounded-lg bg-coral px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
-        >
-          Request a Free Product Demo
-        </a>
+        <MagneticButton>
+          <a
+            href="/contact"
+            className="mt-4 inline-block rounded-lg bg-coral px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
+          >
+            Request a Free Product Demo
+          </a>
+        </MagneticButton>
       </div>
     </div>
   );

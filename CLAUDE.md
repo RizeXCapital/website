@@ -86,11 +86,12 @@ This file governs how Claude Code operates within the RizeX Capital project. Eve
 ## Brand & Design System
 
 ### Colors
-- **Deep Navy** (primary): `#1B2A4A` — backgrounds, headlines, nav
-- **Electric Teal** (accent): `#2E86AB` — links, highlights, secondary buttons
-- **Light Ice** (surface): `#F0F6FA` — page backgrounds, card surfaces
-- **Warm Coral** (CTA): `#E8614D` — all CTA buttons, urgent highlights
-- **Charcoal** (body text): `#2D2D2D` — paragraphs, descriptions
+- **Navy** (primary): `#1A1A1A` — backgrounds, headlines, nav (near-black)
+- **Coral** (CTA + accent): `#C8102E` — all CTA buttons, links, highlights (crimson red); hover: `#A80D26`
+- **Steel** (secondary accent): `#607D8B` — dividers, subtle borders, section accents; light: `#78909C`, dark: `#455A64`
+- **Ice** (surface): `#F7F7F8` — page backgrounds, card surfaces
+- **Charcoal** (body text): `#3A3A3A` — paragraphs; light variant: `#5A5A5A`
+- **Teal** (now gray): `#C9C9C9` — decorative only, used as a light gray tone (NOT a blue-teal)
 
 ### Typography
 - **Headlines**: Space Grotesk (Bold) — self-hosted via `next/font`

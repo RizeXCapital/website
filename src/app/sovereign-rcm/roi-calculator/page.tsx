@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MagneticButton from "@/components/MagneticButton";
 import SectionDivider from "@/components/SectionDivider";
 import { AnimatedHero, FadeIn } from "@/components/motion";
 import ROICalculator from "@/components/ROICalculator";
@@ -56,12 +57,14 @@ export default function ROICalculatorPage() {
               actual claims data for a precise projection.
             </p>
             <div className="mt-10">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Request a Billing Analysis
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                >
+                  Request a Billing Analysis
+                </Link>
+              </MagneticButton>
             </div>
           </div>
         </FadeIn>

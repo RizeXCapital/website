@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MagneticButton from "@/components/MagneticButton";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import {
@@ -546,12 +547,14 @@ export default function PilotProgram() {
               value, you walk away.
             </p>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Request a Free Product Demo
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                >
+                  Request a Free Product Demo
+                </Link>
+              </MagneticButton>
             </div>
           </FadeIn>
         </div>

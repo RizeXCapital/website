@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MagneticButton from "@/components/MagneticButton";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import {
@@ -39,6 +40,7 @@ interface Tier {
   features: string[];
   excluded?: string[];
   highlighted?: boolean;
+  enterprise?: boolean;
 }
 
 const tiers: Tier[] = [
@@ -103,6 +105,7 @@ const tiers: Tier[] = [
       "Compliance audit preparation",
       "Dedicated support line",
     ],
+    enterprise: true,
   },
 ];
 
@@ -305,12 +308,14 @@ export default function Pricing() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Link
-                  href="/contact"
-                  className="rounded-lg bg-coral px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-coral-hover"
-                >
-                  Request a Billing Analysis
-                </Link>
+                <MagneticButton>
+                  <Link
+                    href="/contact"
+                    className="block rounded-lg bg-coral px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-coral-hover"
+                  >
+                    Request a Billing Analysis
+                  </Link>
+                </MagneticButton>
                 <a
                   href="#packages"
                   className="rounded-lg border border-white/30 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-white/10"
@@ -342,17 +347,25 @@ export default function Pricing() {
 
           <StaggerContainer className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {tiers.map((tier) => (
-              <StaggerItem key={tier.id}>
+              <StaggerItem key={tier.id} className={tier.highlighted ? "relative z-10" : undefined}>
+                <div className={tier.highlighted ? "scale-[1.02]" : undefined}>
                 <HoverCard
                   className={`relative flex h-full flex-col rounded-xl border bg-white p-6 dark:bg-dark-elevated ${
                     tier.highlighted
-                      ? "border-2 border-coral dark:border-coral"
-                      : "border-gray-300 dark:border-dark-border"
+                      ? "border-2 border-coral shadow-lg shadow-coral/20 dark:border-coral dark:shadow-coral/10"
+                      : tier.enterprise
+                        ? "border-steel shadow-sm shadow-steel/15 dark:border-steel-dark"
+                        : "border-gray-300 dark:border-dark-border"
                   }`}
                 >
                   {tier.highlighted && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-xs font-bold uppercase tracking-wide text-white dark:bg-coral">
-                      Most Popular
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-coral px-4 py-1 text-xs font-bold uppercase tracking-wide text-white dark:bg-coral">
+                      Most Practices Choose This
+                    </span>
+                  )}
+                  {tier.enterprise && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-steel bg-white px-4 py-1 text-xs font-bold uppercase tracking-wide text-steel dark:border-steel-light dark:bg-dark-elevated dark:text-steel-light">
+                      Enterprise
                     </span>
                   )}
                   <div className="flex items-center gap-4">
@@ -424,6 +437,7 @@ export default function Pricing() {
                     </Link>
                   </div>
                 </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -639,12 +653,14 @@ export default function Pricing() {
               volume. We'll put together pricing tailored to your needs.
             </p>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Request a Free Product Demo
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                >
+                  Request a Free Product Demo
+                </Link>
+              </MagneticButton>
             </div>
           </FadeIn>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MagneticButton from "@/components/MagneticButton";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
@@ -18,6 +19,10 @@ const authorPhotos: Record<string, string> = {
   "Ghulam Shah": "/GhulamPhoto.jpg",
   "Faizan G. Arif, MD": "/FaizMD.jpeg",
   "Navid M. Rahman, PE": "/NavidHeadshot.jpeg",
+};
+
+const authorPhotoPosition: Record<string, string> = {
+  "Faizan G. Arif, MD": "[object-position:50%_30%]",
 };
 
 const authorBios: Record<string, { role: string; bio: string }> = {
@@ -163,13 +168,15 @@ export default async function BlogPost({
           <div className="mt-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               {authorPhotos[post.author] && (
-                <Image
-                  src={authorPhotos[post.author]}
-                  alt={post.author}
-                  width={32}
-                  height={32}
-                  className="rounded-full object-cover"
-                />
+                <div className="overflow-hidden rounded-full">
+                  <Image
+                    src={authorPhotos[post.author]}
+                    alt={post.author}
+                    width={32}
+                    height={32}
+                    className={`rounded-full object-cover transition-transform duration-300 hover:scale-125 ${authorPhotoPosition[post.author] ?? ""}`}
+                  />
+                </div>
               )}
               <p className="text-sm text-charcoal-light dark:text-gray-400">
                 {post.author} &middot; {formattedDate} &middot; {post.readingTime}{" "}
@@ -282,13 +289,15 @@ export default async function BlogPost({
               </p>
               <div className="mt-3 flex items-start gap-4">
                 {authorPhotos[post.author] && (
-                  <Image
-                    src={authorPhotos[post.author]}
-                    alt={post.author}
-                    width={64}
-                    height={64}
-                    className="shrink-0 rounded-full object-cover"
-                  />
+                  <div className="shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src={authorPhotos[post.author]}
+                      alt={post.author}
+                      width={64}
+                      height={64}
+                      className={`rounded-full object-cover transition-transform duration-300 hover:scale-125 ${authorPhotoPosition[post.author] ?? ""}`}
+                    />
+                  </div>
                 )}
                 <div>
                   <p className="font-heading text-lg font-bold text-navy dark:text-white">
@@ -361,12 +370,14 @@ export default async function BlogPost({
             on-premise AI billing can do for your practice.
           </p>
           <div className="mt-10">
-            <Link
-              href="/contact"
-              className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-            >
-              Request a Billing Analysis
-            </Link>
+            <MagneticButton>
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+              >
+                Request a Billing Analysis
+              </Link>
+            </MagneticButton>
           </div>
         </div>
       </section>

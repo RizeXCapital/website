@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MagneticButton from "@/components/MagneticButton";
 import Image from "next/image";
 import {
   getAllPosts,
@@ -28,6 +29,10 @@ const authorPhotos: Record<string, string> = {
   "Ghulam Shah": "/GhulamPhoto.jpg",
   "Faizan G. Arif, MD": "/FaizMD.jpeg",
   "Navid M. Rahman, PE": "/NavidHeadshot.jpeg",
+};
+
+const authorPhotoPosition: Record<string, string> = {
+  "Faizan G. Arif, MD": "[object-position:50%_30%]",
 };
 
 export default async function Blog({
@@ -129,13 +134,15 @@ export default async function Blog({
                       </h2>
                       <div className="mt-2 flex items-center gap-2">
                         {authorPhotos[post.author] && (
-                          <Image
-                            src={authorPhotos[post.author]}
-                            alt={post.author}
-                            width={24}
-                            height={24}
-                            className="rounded-full object-cover"
-                          />
+                          <div className="overflow-hidden rounded-full">
+                            <Image
+                              src={authorPhotos[post.author]}
+                              alt={post.author}
+                              width={24}
+                              height={24}
+                              className={`rounded-full object-cover transition-transform duration-300 hover:scale-125 ${authorPhotoPosition[post.author] ?? ""}`}
+                            />
+                          </div>
                         )}
                         <p className="text-sm text-charcoal-light dark:text-gray-400">
                           {post.author} &middot;{" "}
@@ -263,12 +270,14 @@ export default async function Blog({
               Find out how much revenue your practice could recover with on-premise AI billing.
             </p>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Get in Touch
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                >
+                  Get in Touch
+                </Link>
+              </MagneticButton>
             </div>
           </div>
         </FadeIn>

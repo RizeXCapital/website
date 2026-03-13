@@ -6,6 +6,7 @@ import { LOGO_LIGHT, LOGO_DARK } from "@/lib/brand";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
+import MagneticButton from "@/components/MagneticButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -196,7 +197,7 @@ export default function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-300 bg-white/95 backdrop-blur-sm dark:border-dark-border dark:bg-dark-bg/95">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-0 py-2 lg:px-1">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 lg:px-1">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -306,42 +307,41 @@ export default function Navigation() {
             );
           })}
           <ThemeToggle />
-          <Link
-            href="/contact"
-            className="rounded-lg bg-coral px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
-          >
-            Get in Touch
-          </Link>
+          <MagneticButton>
+            <Link
+              href="/contact"
+              className="rounded-lg bg-coral px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
+            >
+              Get in Touch
+            </Link>
+          </MagneticButton>
         </div>
 
         {/* Mobile menu button */}
         <button
           type="button"
-          className="md:hidden"
+          className="flex h-10 w-10 items-center justify-center md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
-          <svg
-            className="h-6 w-6 text-navy dark:text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-          >
-            {mobileOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            )}
-          </svg>
+          <div className="flex h-5 w-6 flex-col justify-between">
+            <motion.span
+              animate={mobileOpen ? { rotate: 45, y: 9 } : { rotate: 0, y: 0 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              className="block h-0.5 w-full origin-center bg-navy dark:bg-white"
+            />
+            <motion.span
+              animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              className="block h-0.5 w-full origin-center bg-navy dark:bg-white"
+            />
+            <motion.span
+              animate={mobileOpen ? { rotate: -45, y: -9 } : { rotate: 0, y: 0 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              className="block h-0.5 w-full origin-center bg-navy dark:bg-white"
+            />
+          </div>
         </button>
       </nav>
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import SectionDivider from "@/components/SectionDivider";
 import { LOGO_LIGHT, LOGO_DARK } from "@/lib/brand";
+import MagneticButton from "@/components/MagneticButton";
 
 interface ComingSoonProps {
   title: string;
@@ -22,12 +23,14 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
           {description}
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="rounded-lg bg-coral px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
-          >
-            Get in Touch
-          </Link>
+          <MagneticButton>
+            <Link
+              href="/contact"
+              className="rounded-lg bg-coral px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-coral-hover"
+            >
+              Get in Touch
+            </Link>
+          </MagneticButton>
           <Link
             href="/"
             className="rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-charcoal transition-colors hover:border-coral hover:text-coral dark:border-dark-border dark:text-gray-300 dark:hover:border-coral dark:hover:text-coral"

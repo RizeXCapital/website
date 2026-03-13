@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import MagneticButton from "@/components/MagneticButton";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
 import {
@@ -398,12 +399,14 @@ export default function HowItWorks() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="rounded-lg bg-coral px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-coral-hover"
-                >
-                  Request a Billing Analysis
-                </Link>
+                <MagneticButton>
+                  <Link
+                    href="/contact"
+                    className="block rounded-lg bg-coral px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-coral-hover"
+                  >
+                    Request a Billing Analysis
+                  </Link>
+                </MagneticButton>
                 <a
                   href="#pipeline"
                   className="rounded-lg border border-white/30 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-white/10"
@@ -737,12 +740,14 @@ export default function HowItWorks() {
               exactly how Sovereign RCM would process your claims.
             </p>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
-              >
-                Request a Free Product Demo
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-block rounded-lg bg-coral px-10 py-4 text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                >
+                  Request a Free Product Demo
+                </Link>
+              </MagneticButton>
             </div>
           </FadeIn>
         </div>

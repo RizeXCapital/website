@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MagneticButton from "@/components/MagneticButton";
 import SectionDivider from "@/components/SectionDivider";
 import {
   FadeIn,
@@ -38,12 +39,14 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="rounded-lg bg-coral px-8 py-4 text-center text-base font-medium text-white transition-colors hover:bg-coral-hover"
-                >
-                  Get in Touch
-                </Link>
+                <MagneticButton>
+                  <Link
+                    href="/contact"
+                    className="block rounded-lg bg-coral px-8 py-4 text-center text-base font-medium text-white transition-colors hover:bg-coral-hover"
+                  >
+                    Get in Touch
+                  </Link>
+                </MagneticButton>
                 <Link
                   href="/sovereign-rcm"
                   className="rounded-lg border border-white/20 px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-coral hover:text-coral"
@@ -284,14 +287,22 @@ export default function Home() {
                 ],
               },
             ].map((pkg, i) => (
-              <StaggerItem key={pkg.name}>
+              <StaggerItem key={pkg.name} className={i === 1 ? "relative z-10" : undefined}>
+                <div className={i === 1 ? "scale-[1.02]" : undefined}>
                 <HoverCard
-                  className={`flex h-full flex-col rounded-xl border p-8 ${
+                  className={`relative flex h-full flex-col rounded-xl border p-8 ${
                     i === 1
                       ? "border-coral bg-navy text-white shadow-lg"
-                      : "border-gray-300 bg-white transition-colors hover:border-steel dark:border-dark-border dark:bg-dark-elevated dark:hover:border-steel-light"
+                      : i === 2
+                        ? "border-steel bg-white shadow-sm shadow-steel/15 transition-colors dark:border-steel-dark dark:bg-dark-elevated"
+                        : "border-gray-300 bg-white transition-colors hover:border-steel dark:border-dark-border dark:bg-dark-elevated dark:hover:border-steel-light"
                   }`}
                 >
+                  {i === 1 && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-coral px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                      Most Practices Choose This
+                    </span>
+                  )}
                   <p
                     className={`font-heading text-sm font-bold uppercase tracking-wider ${
                       i === 1 ? "text-coral" : "text-coral dark:text-coral"
@@ -353,6 +364,7 @@ export default function Home() {
                     </Link>
                   </div>
                 </HoverCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -454,12 +466,14 @@ export default function Home() {
               about what Sovereign RCM can do for your practice.
             </p>
             <div className="mt-10">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-white px-10 py-4 text-base font-medium text-coral transition-colors hover:bg-gray-100"
-              >
-                Request a Free Product Demo
-              </Link>
+              <MagneticButton>
+                <Link
+                  href="/contact"
+                  className="inline-block rounded-lg bg-white px-10 py-4 text-base font-medium text-coral transition-colors hover:bg-gray-100"
+                >
+                  Request a Free Product Demo
+                </Link>
+              </MagneticButton>
             </div>
           </FadeIn>
         </div>
