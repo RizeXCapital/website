@@ -21,6 +21,9 @@ export const metadata: Metadata = {
       "Insights on AI medical billing, practice management, revenue cycle optimization, and healthcare technology from the Sovereign RCM team.",
     url: "https://rizexcapital.com/blog",
   },
+  alternates: {
+    canonical: "https://rizexcapital.com/blog",
+  },
 };
 
 const categories = Object.keys(categoryLabels) as BlogCategory[];

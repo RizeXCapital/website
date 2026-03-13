@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import MagneticButton from "@/components/MagneticButton";
+
+export const metadata: Metadata = {
+  title: "Sovereign RCM | Your Billing. Your Building. Your Data.",
+  description:
+    "Sovereign RCM is an on-premise AI billing appliance that keeps PHI inside your practice. No cloud. No percentage fees. Princeton, NJ.",
+  openGraph: {
+    title: "Sovereign RCM | Your Billing. Your Building. Your Data.",
+    description:
+      "Sovereign RCM is an on-premise AI billing appliance that keeps PHI inside your practice. No cloud. No percentage fees. Princeton, NJ.",
+    url: "https://rizexcapital.com",
+  },
+  alternates: {
+    canonical: "https://rizexcapital.com",
+  },
+};
 import SectionDivider from "@/components/SectionDivider";
 import {
   FadeIn,

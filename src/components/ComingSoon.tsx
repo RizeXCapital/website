@@ -15,8 +15,8 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
     <section className="flex min-h-[60vh] items-center justify-center px-6">
       <div className="max-w-lg text-center">
         <div className="mb-8 flex justify-center">
-          <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={1513} height={357} className="h-16 w-auto dark:hidden" />
-          <Image src={LOGO_DARK}  alt="Sovereign RCM" width={1495} height={348} className="h-16 w-auto hidden dark:block" />
+          <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={1258} height={342} className="h-16 w-auto dark:hidden" unoptimized />
+          <Image src={LOGO_DARK}  alt="Sovereign RCM" width={1244} height={334} className="h-16 w-auto hidden dark:block" unoptimized />
         </div>
         <h1 className="font-heading text-4xl font-bold text-navy dark:text-white">{title}</h1>
         <p className="mt-4 text-lg leading-relaxed text-charcoal-light dark:text-gray-300">

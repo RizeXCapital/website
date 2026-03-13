@@ -203,18 +203,20 @@ export default function Navigation() {
           <Image
             src={LOGO_LIGHT}
             alt="RizeX Capital"
-            width={1513}
-            height={357}
+            width={1258}
+            height={342}
             className="h-16 w-auto object-contain dark:hidden"
             priority
+            unoptimized
           />
           <Image
             src={LOGO_DARK}
             alt="RizeX Capital"
-            width={1495}
-            height={348}
+            width={1244}
+            height={334}
             className="h-16 w-auto object-contain hidden dark:block"
             priority
+            unoptimized
           />
         </Link>
 
