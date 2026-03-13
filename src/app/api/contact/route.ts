@@ -43,15 +43,31 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+// Prune stale rate-limit entries (at most once per 10 minutes)
+let lastGc = 0;
+function gcSubmissions() {
+  const now = Date.now();
+  if (now - lastGc < 10 * 60 * 1000) return;
+  lastGc = now;
+  const hour = 60 * 60 * 1000;
+  for (const [ip, times] of submissions) {
+    const recent = times.filter((t) => now - t < hour);
+    if (recent.length === 0) submissions.delete(ip);
+    else submissions.set(ip, recent);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
+    gcSubmissions();
+
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 
     if (isRateLimited(ip)) {
       return NextResponse.json(
         { error: "Too many submissions. Please try again later." },
-        { status: 429 }
+        { status: 429, headers: { "Retry-After": "3600" } }
       );
     }
 
@@ -86,7 +102,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Email format validation — reject CRLF to prevent header injection
-    const emailRegex = /^[^\s@\r\n]+@[^\s@\r\n]+\.[^\s@\r\n]+$/;
+    const emailRegex = /^[^\s@\r\n]+@[^\s@\r\n]+\.[A-Za-z]{2,}$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Please provide a valid email address." },
@@ -154,7 +170,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("Contact form error:", error instanceof Error ? error.message : "Unknown error");
     return NextResponse.json(
       { error: "Failed to send message. Please try again." },
       { status: 500 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import MagneticButton from "@/components/MagneticButton";
 
 // ---------------------------------------------------------------------------
@@ -91,11 +91,19 @@ function GateForm({ onUnlock }: { onUnlock: () => void }) {
   const [error, setError] = useState("");
   // Honeypot
   const [companyUrl, setCompanyUrl] = useState("");
+  // Bot timing check: real users take > 3 seconds to fill a form
+  const loadedAt = useRef(Date.now());
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     setLoading(true);
+
+    // Silently "succeed" for sub-3-second submissions (bot behavior)
+    if (Date.now() - loadedAt.current < 3000) {
+      onUnlock();
+      return;
+    }
 
     try {
       const res = await fetch("/api/checklist-lead", {

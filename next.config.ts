@@ -34,6 +34,9 @@ const nextConfig: NextConfig = {
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
+              ...(process.env.NODE_ENV === "production"
+                ? ["upgrade-insecure-requests"]
+                : []),
             ].join("; "),
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
@@ -48,6 +51,7 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
         ],
       },
     ];
