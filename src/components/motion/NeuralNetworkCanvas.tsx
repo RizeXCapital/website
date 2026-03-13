@@ -31,7 +31,7 @@ const EDGE_MARGIN = 50;
 
 // Surge timing (ms)
 const SURGE_CONVERGE_MS = 1800;
-const SURGE_FLASH_MS = 9000;
+const SURGE_FLASH_MS = 10000;
 const SURGE_DISPERSE_MS = 1800;
 const SURGE_TOTAL_MS = SURGE_CONVERGE_MS + SURGE_FLASH_MS + SURGE_DISPERSE_MS;
 const SURGE_COOLDOWN_MS = 12000;
@@ -395,43 +395,24 @@ function renderFrame(
       ctx.stroke();
     }
 
-    // Converge / disperse dots
-    if (phase === "converge" || phase === "disperse") {
+    // Converge dots (steel, full phase)
+    if (phase === "converge") {
       for (const nIdx of surge.neighborIndices) {
         const neighbor = nodes[nIdx];
         if (!neighbor) continue;
 
-        let fromX: number,
-          fromY: number,
-          toX: number,
-          toY: number;
-        if (phase === "converge") {
-          fromX = neighbor.x;
-          fromY = neighbor.y;
-          toX = target.x;
-          toY = target.y;
-        } else {
-          fromX = target.x;
-          fromY = target.y;
-          toX = neighbor.x;
-          toY = neighbor.y;
-        }
+        const dotX = neighbor.x + (target.x - neighbor.x) * phaseProgress;
+        const dotY = neighbor.y + (target.y - neighbor.y) * phaseProgress;
 
-        const dotX = fromX + (toX - fromX) * phaseProgress;
-        const dotY = fromY + (toY - fromY) * phaseProgress;
-
-        // Fade envelope
         const fadeIn = Math.min(phaseProgress / 0.1, 1);
         const fadeOut = Math.min((1 - phaseProgress) / 0.1, 1);
         const dotAlpha = 0.55 * fadeIn * fadeOut;
 
-        // Steel dot
         ctx.beginPath();
         ctx.arc(dotX, dotY, 2, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${STEEL.r},${STEEL.g},${STEEL.b},${dotAlpha})`;
         ctx.fill();
 
-        // Steel glow
         ctx.beginPath();
         ctx.arc(dotX, dotY, 5, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${STEEL.r},${STEEL.g},${STEEL.b},${dotAlpha * 0.15})`;
@@ -439,24 +420,27 @@ function renderFrame(
       }
     }
 
+
+
     // Golden windmill — burst scales with blade count, smooth settle, spin
     if (phase === "flash") {
       const armLength = 10;
       const burstScale = 2.0;
 
-      // 0–0.18: burst | 0.18–0.6: slow-then-fast settle | 0.6–0.62: pause | 0.62–1: spin
+      // 0–0.17: burst | 0.17–0.48: settle | 0.48–0.49: pause | 0.49–1: spin
       let rotation: number;
-      if (phaseProgress < 0.188) {
+      if (phaseProgress < 0.17) {
         rotation = 0;
-      } else if (phaseProgress < 0.6) {
-        const t = (phaseProgress - 0.18) / 0.42;
+      } else if (phaseProgress < 0.48) {
+        const t = (phaseProgress - 0.163) / 0.317;
         const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
         rotation = eased * Math.PI * 0.4;
-      } else if (phaseProgress < 0.62) {
+      } else if (phaseProgress < 0.49) {
         rotation = Math.PI * 0.4;
       } else {
-        const t = (phaseProgress - 0.62) / 0.38;
-        rotation = Math.PI * 0.4 + t * t * t * Math.PI * 4;
+        const t = (phaseProgress - 0.49) / 0.51;
+        // Two-component: t² builds steadily, t⁴ kicks in hard mid-spin
+        rotation = Math.PI * 0.4 + (t * t * 2 + t * t * t * t * 4) * Math.PI;
       }
 
       // Compute blade positions — each blade bursts to its own random distance
@@ -468,12 +452,12 @@ function renderFrame(
         let bladeRadius: number;
         let angle: number;
 
-        if (phaseProgress < 0.188) {
-          const t = phaseProgress / 0.18;
+        if (phaseProgress < 0.17) {
+          const t = phaseProgress / 0.163;
           bladeRadius = armLength * t * sparkBurstScale;
           angle = spark.burstAngle;
-        } else if (phaseProgress < 0.6) {
-          const t = (phaseProgress - 0.18) / 0.42;
+        } else if (phaseProgress < 0.48) {
+          const t = (phaseProgress - 0.163) / 0.317;
           const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
           bladeRadius = armLength * (sparkBurstScale - (sparkBurstScale - 1.0) * eased);
           let diff = spark.ringAngle - spark.burstAngle;
@@ -497,10 +481,10 @@ function renderFrame(
       }
 
       // Draw curved spokes from center to each blade (fade in during settle)
-      if (phaseProgress > 0.2) {
+      if (phaseProgress > 0.18) {
         const spokeAlpha =
-          phaseProgress < 0.6
-            ? ((phaseProgress - 0.18) / 0.42) * 0.18
+          phaseProgress < 0.48
+            ? ((phaseProgress - 0.163) / 0.317) * 0.18
             : 0.18 * Math.min((1 - phaseProgress) / 0.2, 1);
 
         for (const bp of bladePositions) {
@@ -522,7 +506,7 @@ function renderFrame(
       }
 
       // Core hub
-      const coreAlpha = 0.22 * (1 - Math.max(0, phaseProgress - 0.6) / 0.4);
+      const coreAlpha = 0.22 * (1 - Math.max(0, phaseProgress - 0.48) / 0.52);
       ctx.beginPath();
       ctx.arc(target.x, target.y, 2, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${GOLD.r},${GOLD.g},${GOLD.b},${coreAlpha})`;
@@ -538,10 +522,10 @@ function renderFrame(
 
         // Interpolate: random during burst → blade tangent during settle (cubic ease-out)
         let cRot: number;
-        if (phaseProgress < 0.18) {
+        if (phaseProgress < 0.163) {
           cRot = spark.shapeRotation;
-        } else if (phaseProgress < 0.6) {
-          const t = (phaseProgress - 0.18) / 0.42;
+        } else if (phaseProgress < 0.48) {
+          const t = (phaseProgress - 0.163) / 0.317;
           const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
           let diff = bladeRot - spark.shapeRotation;
           diff = ((diff + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
@@ -554,10 +538,10 @@ function renderFrame(
         const uniformSize = 4.5;
         const burstSize = spark.size * 1.5;
         let s: number;
-        if (phaseProgress < 0.18) {
+        if (phaseProgress < 0.163) {
           s = burstSize;
-        } else if (phaseProgress < 0.6) {
-          const t = (phaseProgress - 0.18) / 0.42;
+        } else if (phaseProgress < 0.48) {
+          const t = (phaseProgress - 0.163) / 0.317;
           const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
           s = burstSize + (uniformSize - burstSize) * eased;
         } else {
