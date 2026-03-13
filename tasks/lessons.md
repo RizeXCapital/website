@@ -108,3 +108,55 @@ Human writes: `busiest emergency departments`
 
 **The broader principle:**
 AI optimizes for information density. Humans optimize for conversational flow. When you see a cluster of hyphenated compound adjectives, it means the writing was compressed rather than composed. The fix is almost always a noun phrase or a simpler word.
+
+---
+
+### 4. Security headers that assume HTTPS will break local dev
+**Date:** 2026-03-13
+**Context:** Added `upgrade-insecure-requests` to the CSP header in `next.config.ts`. The build passed clean, but the site was completely broken on `http://localhost:3000`. The browser obeyed the directive, tried to load every resource (scripts, styles, fonts, images) over HTTPS, which doesn't exist locally, and rendered a blank page.
+**Root cause:** `upgrade-insecure-requests` tells browsers to rewrite all `http://` URLs to `https://` before fetching. On Vercel (production), everything is HTTPS so this is free security. On localhost, it's catastrophic.
+**Rule:** Any CSP directive or security header that assumes TLS must be gated behind `process.env.NODE_ENV === "production"`. This includes:
+- `upgrade-insecure-requests` (CSP)
+- `block-all-mixed-content` (CSP, deprecated but same issue)
+- `Strict-Transport-Security` (HSTS) — already present, harmless on localhost since browsers ignore HSTS for localhost, but same principle applies
+
+**The pattern to follow:**
+```ts
+...(process.env.NODE_ENV === "production"
+  ? ["upgrade-insecure-requests"]
+  : []),
+```
+
+**Why the build didn't catch it:** `npm run build` compiles and generates pages server-side. CSP is a response header; it only affects browser behavior at runtime. The build has no way to know that a header will break client-side resource loading. This is a class of bug that static analysis can never catch.
+
+**Checklist for future security header changes:**
+- After modifying headers in `next.config.ts`, always test in the browser (not just curl/build)
+- If the header references HTTPS, TLS, or mixed content, gate it behind production
+- Test both `npm run dev` (local) and `npm run build && npm start` (production-like)
+
+---
+
+### 5. Logo assets need transparent backgrounds and `unoptimized` in Next.js Image
+**Date:** 2026-03-13
+**Context:** The light-mode logo (`srcm1w.png`) had the chrome bottom-left face too bright on white backgrounds. Fix required: a new asset with transparent background, trimming dark logo padding to match, and adding `unoptimized` to every `<Image>` component rendering a logo.
+**Root cause chain:**
+1. The original asset had an opaque/near-white background baked in, making the chrome emblem wash out on white surfaces
+2. The replacement asset (`srcm1wfix.png`) used transparent background (RGBA PNG), which solved the contrast issue
+3. But Next.js Image optimization re-encodes PNGs and can strip or alter alpha channels, so `unoptimized` was required to preserve transparency
+4. The new assets had different pixel dimensions (1513x357 → 1258x342 for light, 1495x348 → 1244x334 for dark), requiring width/height updates on every `<Image>` component
+5. The padding/trim changed between old and new assets, so positioning offsets needed recalibrating (Footer: `-ml-8` → `-ml-3`)
+
+**Rules:**
+1. **Logo PNGs must have transparent backgrounds** — never bake in a white/colored background. The same logo appears on white (nav), dark navy (footer), and colored (OG image) surfaces.
+2. **Always add `unoptimized` to `<Image>` components for logos** — Next.js image optimization re-encodes PNGs and can destroy alpha transparency. This applies to any RGBA PNG, not just logos.
+3. **After swapping an image asset, update all dimensions** — check every `<Image>` component that references the logo. The `width` and `height` props must match the new file's actual pixel dimensions or the aspect ratio will be wrong.
+4. **After swapping an asset, recalibrate positioning** — negative margins (`-ml-8`), padding, and alignment offsets are calibrated to the old asset's whitespace/trim. New assets with different trim will be misaligned.
+5. **Logo paths are centralized in `src/lib/brand.ts`** — this made the swap a one-line change for the path itself, but dimensions and `unoptimized` still had to be updated per-component.
+
+**Checklist for future logo/image asset swaps:**
+- Verify the new asset has a transparent background (open in an image editor, check for alpha)
+- Get exact pixel dimensions of the new file and update all `<Image>` width/height props
+- Ensure `unoptimized` is on every `<Image>` that renders the logo
+- Check positioning offsets (negative margins, padding) against the new asset's whitespace
+- Test on both light and dark backgrounds
+- Kill dev server + `rm -rf .next` before testing (see Lesson: cache busting)
