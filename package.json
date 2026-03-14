@@ -21,6 +21,7 @@
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "nodemailer": "^8.0.1",
+    "posthog-js": "^1.360.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "rehype-sanitize": "^6.0.0",

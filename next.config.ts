@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline'", // unsafe-inline required for Tailwind/Next.js inline styles
               "img-src 'self' data: blob:",
               "font-src 'self'",
-              "connect-src 'self' https://*.ingest.sentry.io",
+              "connect-src 'self' https://*.ingest.sentry.io https://us.i.posthog.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

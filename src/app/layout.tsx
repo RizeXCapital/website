@@ -6,6 +6,7 @@ import { LOGO_LIGHT, SITE_URL } from "@/lib/brand";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import MobileCTA from "@/components/MobileCTA";
+import PostHogProvider from "@/components/PostHogProvider";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -91,12 +92,14 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
       >
-        <ScrollProgress />
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-        <BackToTop />
-        <MobileCTA />
+        <PostHogProvider>
+          <ScrollProgress />
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+          <BackToTop />
+          <MobileCTA />
+        </PostHogProvider>
       </body>
     </html>
   );
