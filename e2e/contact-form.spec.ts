@@ -35,11 +35,16 @@ test.describe("Contact form", () => {
     await expect(counter).toBeVisible();
   });
 
-  test("honeypot field is hidden from users", async ({ page }) => {
+  test("honeypot field is not visible to users", async ({ page }) => {
     await page.goto("/contact");
 
+    // Honeypot is positioned offscreen (-left-[9999px]), not display:none.
+    // Playwright considers offscreen elements "visible", so check the
+    // bounding box is outside the viewport instead.
     const honeypot = page.locator("#company_url");
-    await expect(honeypot).toBeHidden();
+    const box = await honeypot.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box!.x).toBeLessThan(0);
   });
 
   test("thank you page renders correctly", async ({ page }) => {
