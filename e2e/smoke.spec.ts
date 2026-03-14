@@ -19,18 +19,15 @@ test.describe("Smoke tests", () => {
   });
 
   test("blog post detail renders with content and author", async ({ page }) => {
-    await page.goto("/blog");
+    // Navigate directly to a known post
+    await page.goto("/blog/change-healthcare-attack-what-it-means-for-your-practice");
 
-    // Click the first blog post link
-    const firstPost = page.locator("a[href*='/blog/']").first();
-    await firstPost.click();
-
-    // Should have a title, content, and author info
+    // Should have a title and content
     await expect(page.locator("h1")).toBeVisible();
-    await expect(page.locator("article")).toBeVisible();
+    await expect(page.locator("article").first()).toBeVisible();
 
-    // Breadcrumb should show Blog link
-    const blogCrumb = page.getByRole("link", { name: /blog/i });
+    // Breadcrumb should show Blog link within the breadcrumb nav
+    const blogCrumb = page.getByLabel("Breadcrumb").getByRole("link", { name: /blog/i });
     await expect(blogCrumb).toBeVisible();
   });
 

@@ -16,12 +16,13 @@ test.describe("Mobile viewport", () => {
     await page.goto("/");
 
     // Desktop nav links should be hidden, hamburger should be visible
-    const hamburger = page.getByRole("button", { name: /menu|toggle|navigation/i });
+    const hamburger = page.getByRole("button", { name: /toggle menu/i });
     await hamburger.click();
 
-    // Nav links should now be visible
-    await expect(page.getByRole("link", { name: /about/i })).toBeVisible();
-    await expect(page.getByRole("link", { name: /blog/i })).toBeVisible();
+    // Nav links should now be visible in the mobile menu
+    const mobileMenu = page.locator("[class*='mobile'], [class*='Menu']").or(page.locator("nav"));
+    await expect(mobileMenu.getByRole("link", { name: /about/i }).first()).toBeVisible();
+    await expect(mobileMenu.getByRole("link", { name: /blog/i }).first()).toBeVisible();
   });
 
   test("contact form is usable at mobile width", async ({ page }) => {
