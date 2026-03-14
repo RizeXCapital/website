@@ -4,6 +4,7 @@ import Link from "next/link";
 import MagneticButton from "@/components/MagneticButton";
 import SectionDivider from "@/components/SectionDivider";
 import FaqItem from "@/components/FaqItem";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import {
   AnimatedHero,
   FadeIn,
@@ -381,8 +382,9 @@ export default function HowItWorks() {
       />
 
       {/* ── 1. Hero (navy) ───────────────────────────────────────── */}
-      <AnimatedHero className="bg-navy px-6 py-20 lg:py-28">
+      <AnimatedHero className="bg-navy px-6 pt-4 pb-20 lg:pt-6 lg:pb-28">
         <div className="mx-auto max-w-7xl">
+          <BreadcrumbNav />
           <div className="max-w-3xl">
             <FadeIn>
               <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">

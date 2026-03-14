@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { ChecklistGate } from "./ChecklistGate";
 
 export const metadata: Metadata = {
@@ -41,7 +42,10 @@ export default function BillingAuditChecklist() {
       />
 
       {/* Header */}
-      <section className="bg-navy px-6 py-16 lg:py-20">
+      <section className="bg-navy px-6 pt-4 pb-16 lg:pt-6 lg:pb-20">
+        <div className="mx-auto max-w-3xl">
+          <BreadcrumbNav />
+        </div>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-medium uppercase tracking-wider text-coral">
             Free Resource

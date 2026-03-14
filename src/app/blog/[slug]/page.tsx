@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import MagneticButton from "@/components/MagneticButton";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
@@ -133,26 +134,9 @@ export default async function BlogPost({
       <article className="bg-white px-6 py-16 dark:bg-dark-bg lg:py-20">
         <div className="mx-auto max-w-3xl">
           {/* Breadcrumb */}
-          <nav
-            className="mb-8 text-sm text-charcoal-light dark:text-gray-400"
-            aria-label="Breadcrumb"
-          >
-            <Link
-              href="/"
-              className="transition-colors hover:text-coral dark:hover:text-coral"
-            >
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link
-              href="/blog"
-              className="transition-colors hover:text-coral dark:hover:text-coral"
-            >
-              Blog
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-navy dark:text-white">{post.title}</span>
-          </nav>
+          <div className="mb-6">
+            <BreadcrumbNav currentLabel={post.title} variant="dark" />
+          </div>
 
           {/* Category Badge */}
           <p className="inline-block rounded-full bg-coral/10 px-2.5 py-0.5 text-xs font-medium uppercase tracking-wider text-coral dark:bg-coral/20 dark:text-coral">
