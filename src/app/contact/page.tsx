@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import SectionDivider from "@/components/SectionDivider";
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedHero } from "@/components/motion";
-import { LOGO_LIGHT, LOGO_DARK } from "@/lib/brand";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [messageLen, setMessageLen] = useState(0);
@@ -27,14 +26,14 @@ export default function Contact() {
 
     // Honeypot: if this hidden field is filled, it's a bot
     if (formData.get("company_url")) {
-      setSubmitted(true);
+      router.push("/thank-you");
       return;
     }
 
     // Time check: if form was submitted in under 3 seconds, likely a bot
     const elapsed = Date.now() - formLoadTime.current;
     if (elapsed < 3000) {
-      setSubmitted(true);
+      router.push("/thank-you");
       return;
     }
 
@@ -57,7 +56,7 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setSubmitted(true);
+        router.push("/thank-you");
       } else {
         const data = await res.json();
         setError(data.error || "Something went wrong. Please try again.");
@@ -67,47 +66,6 @@ export default function Contact() {
     } finally {
       setSubmitting(false);
     }
-  }
-
-  if (submitted) {
-    return (
-      <section className="flex min-h-[70vh] items-center justify-center px-6">
-        <FadeIn>
-        <div className="max-w-lg text-center">
-          <div className="mb-8 flex justify-center">
-            <Image src={LOGO_LIGHT} alt="Sovereign RCM" width={1258} height={342} className="h-16 w-auto dark:hidden" unoptimized />
-            <Image src={LOGO_DARK}  alt="Sovereign RCM" width={1244} height={334} className="h-16 w-auto hidden dark:block" unoptimized />
-          </div>
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-coral/10">
-            <svg
-              className="h-8 w-8 text-coral"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 12.75l6 6 9-13.5"
-              />
-            </svg>
-          </div>
-          <h1 className="mt-6 font-heading text-3xl font-bold text-navy dark:text-white">
-            Thank You
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-charcoal-light dark:text-gray-300">
-            We&apos;ve received your message. We&apos;ll respond within one
-            business day. In the meantime, explore our{" "}
-            <a href="/blog" className="font-medium text-coral hover:underline dark:text-coral">
-              blog
-            </a>{" "}
-            for insights on AI medical billing.
-          </p>
-        </div>
-        </FadeIn>
-      </section>
-    );
   }
 
   return (
