@@ -33,7 +33,8 @@ const EDGE_MARGIN = 50;
 const SURGE_CONVERGE_MS = 1800;
 const SURGE_FLASH_MS = 10000;
 const SURGE_DISPERSE_MS = 1800;
-const SURGE_TOTAL_MS = SURGE_CONVERGE_MS + SURGE_FLASH_MS + SURGE_DISPERSE_MS;
+const SURGE_RESOLVE_MS = 900;
+const SURGE_TOTAL_MS = SURGE_CONVERGE_MS + SURGE_FLASH_MS + SURGE_DISPERSE_MS + SURGE_RESOLVE_MS;
 const SURGE_COOLDOWN_MS = 12000;
 const SURGE_MIN_NEIGHBORS = 3;
 
@@ -357,7 +358,7 @@ function renderFrame(
     if (!target) return;
 
     // Derive phase and progress from elapsed time
-    let phase: "converge" | "flash" | "disperse";
+    let phase: "converge" | "flash" | "disperse" | "resolve";
     let phaseProgress: number;
     if (elapsed < SURGE_CONVERGE_MS) {
       phase = "converge";
@@ -365,10 +366,14 @@ function renderFrame(
     } else if (elapsed < SURGE_CONVERGE_MS + SURGE_FLASH_MS) {
       phase = "flash";
       phaseProgress = (elapsed - SURGE_CONVERGE_MS) / SURGE_FLASH_MS;
-    } else {
+    } else if (elapsed < SURGE_CONVERGE_MS + SURGE_FLASH_MS + SURGE_DISPERSE_MS) {
       phase = "disperse";
       phaseProgress =
         (elapsed - SURGE_CONVERGE_MS - SURGE_FLASH_MS) / SURGE_DISPERSE_MS;
+    } else {
+      phase = "resolve";
+      phaseProgress =
+        (elapsed - SURGE_CONVERGE_MS - SURGE_FLASH_MS - SURGE_DISPERSE_MS) / SURGE_RESOLVE_MS;
     }
 
     // Overall surge intensity for connection brightening
@@ -567,6 +572,24 @@ function renderFrame(
         ctx.fillStyle = `rgba(${GOLD.r},${GOLD.g},${GOLD.b},${bp.alpha})`;
         ctx.fill();
       }
+    }
+
+    // ── Resolve: ring pulse expanding outward ──
+    // Starts partway through disperse so it feels immediate after spin ends
+    const resolveStart = SURGE_CONVERGE_MS + SURGE_FLASH_MS;
+    const resolveElapsed = elapsed - resolveStart;
+    if (resolveElapsed > 0 && resolveElapsed < SURGE_RESOLVE_MS) {
+      const t = resolveElapsed / SURGE_RESOLVE_MS;
+      const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+      const maxRadius = 35;
+      const radius = maxRadius * eased;
+      const alpha = 0.12 * (1 - t);
+
+      ctx.beginPath();
+      ctx.arc(target.x, target.y, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(${GOLD.r},${GOLD.g},${GOLD.b},${alpha})`;
+      ctx.lineWidth = 1.5 * (1 - t);
+      ctx.stroke();
     }
   }
 }
