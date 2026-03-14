@@ -37,6 +37,11 @@ export const metadata: Metadata = {
     "Princeton NJ",
     "HIPAA compliant AI",
   ],
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   openGraph: {
     type: "website",
     siteName: "Sovereign RCM",
