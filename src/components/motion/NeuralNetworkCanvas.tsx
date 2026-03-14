@@ -33,7 +33,7 @@ const EDGE_MARGIN = 50;
 const SURGE_CONVERGE_MS = 1800;
 const SURGE_FLASH_MS = 10000;
 const SURGE_DISPERSE_MS = 1800;
-const SURGE_RESOLVE_MS = 900;
+const SURGE_RESOLVE_MS = 1400;
 const SURGE_TOTAL_MS = SURGE_CONVERGE_MS + SURGE_FLASH_MS + SURGE_DISPERSE_MS + SURGE_RESOLVE_MS;
 const SURGE_COOLDOWN_MS = 12000;
 const SURGE_MIN_NEIGHBORS = 3;
@@ -581,7 +581,7 @@ function renderFrame(
     if (resolveElapsed > 0 && resolveElapsed < SURGE_RESOLVE_MS) {
       const t = resolveElapsed / SURGE_RESOLVE_MS;
       const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
-      const maxRadius = 35;
+      const maxRadius = 20;
       const radius = maxRadius * eased;
       const alpha = 0.12 * (1 - t);
 
