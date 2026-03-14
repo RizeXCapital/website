@@ -428,7 +428,7 @@ export default function Home() {
                   </thead>
                   <tbody className="text-sm">
                     {[
-                      ["Pricing", "% of collections", "Monthly subscription", "Fixed CapEx"],
+                      ["Pricing", "% of collections", "Monthly subscription", "Contact for quote"],
                       ["PHI Location", "Third-party servers", "Cloud-hosted", "Your building only"],
                       ["AI Inference", "None or cloud", "Cloud-hosted", "On-premise, air-gapped"],
                       ["Evidence Trail", "Limited", "Varies", "Full rationale + spans"],

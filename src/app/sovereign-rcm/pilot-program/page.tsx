@@ -170,23 +170,7 @@ const shadowBenefits = [
   },
 ];
 
-const paymentSteps = [
-  {
-    step: "1",
-    label: "50% Deposit",
-    description: "Locks in your deployment slot and initiates hardware provisioning",
-  },
-  {
-    step: "2",
-    label: "40% at Installation",
-    description: "Appliance configured, connected to your EHR, and validated",
-  },
-  {
-    step: "3",
-    label: "10% at Acceptance",
-    description: "Final payment after you confirm everything works as expected",
-  },
-];
+const paymentSteps: { step: string; label: string; description: string }[] = [];
 
 const faqs = [
   {
@@ -422,27 +406,20 @@ export default function PilotProgram() {
                 hardware, no reconfiguration, no learning curve.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                You own the appliance outright. No monthly subscription, no
-                percentage of collections, no recurring fees. The payment
-                structure is designed so you never pay in full until you have
-                confirmed everything works.
+                Sovereign RCM does not charge a percentage of collections.
+                Contact us for pricing tailored to your practice size and
+                specialty mix.
               </p>
             </FadeIn>
             <FadeIn direction="right">
               <div className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
                 <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
-                  Payment Structure
+                  Pricing
                 </h3>
-                <AnimatedPipeline
-                  compact
-                  staticBorders
-                  className="mt-5"
-                  steps={[
-                    { label: "50% Deposit", sub: "Reserve slot + provision hardware" },
-                    { label: "40% Install", sub: "Configured + EHR connected" },
-                    { label: "10% Accept", sub: "Confirmed working" },
-                  ]}
-                />
+                <p className="mt-3 text-base text-charcoal dark:text-dark-text">
+                  Every quote is tailored to your practice size, specialty mix,
+                  and claim volume. No percentage of collections.
+                </p>
                 <Link
                   href="/sovereign-rcm/pricing"
                   className="mt-6 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"

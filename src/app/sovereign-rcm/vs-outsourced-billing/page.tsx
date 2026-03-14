@@ -15,11 +15,11 @@ import {
 export const metadata: Metadata = {
   title: "Sovereign RCM vs. Outsourced Medical Billing",
   description:
-    "Compare Sovereign RCM's on-premise AI billing appliance to traditional outsourced billing companies. Fixed cost, full visibility, no percentage of collections.",
+    "Compare Sovereign RCM's on-premise AI billing appliance to traditional outsourced billing companies. Full visibility, no percentage of collections.",
   openGraph: {
     title: "Sovereign RCM vs. Outsourced Medical Billing",
     description:
-      "Compare Sovereign RCM's on-premise AI billing appliance to traditional outsourced billing companies. Fixed cost, full visibility, no percentage of collections.",
+      "Compare Sovereign RCM's on-premise AI billing appliance to traditional outsourced billing companies. Full visibility, no percentage of collections.",
     url: "https://rizexcapital.com/sovereign-rcm/vs-outsourced-billing",
     type: "website",
   },
@@ -33,7 +33,7 @@ const outsourcedProblems = [
     icon: "📉",
     title: "Percentage Drain",
     description:
-      "Outsourced billing companies charge 4-10% of collections. The more revenue your practice generates, the more you pay, indefinitely. A 5-provider practice collecting $2.5M/yr pays $100K-$250K/yr with no path to ownership.",
+      "Outsourced billing companies charge 4-10% of collections. The more revenue your practice generates, the more you pay, indefinitely. A 5-provider practice collecting $2.5M/yr pays $100K-$250K/yr with no end in sight.",
   },
   {
     icon: "🔍",
@@ -52,14 +52,14 @@ const outsourcedProblems = [
 const comparisonRows = [
   {
     category: "Cost Model",
-    tooltip: "How you pay: fixed one-time cost vs. perpetual percentage of collections",
-    sovereign: "One-time capital expenditure, you own the appliance",
+    tooltip: "How you pay for billing services",
+    sovereign: "No percentage of collections",
     outsourced: "4–10% of collections, paid every month, indefinitely",
   },
   {
     category: "5-Year Cost Trajectory",
     tooltip: "How total billing costs change over five years as your practice grows",
-    sovereign: "Fixed hardware cost, no ongoing fees, cost decreases over time",
+    sovereign: "Designed to cost less over time as volume grows",
     outsourced:
       "Scales with revenue, a growing practice pays more every year",
   },
@@ -135,7 +135,7 @@ const faqs = [
     question:
       "We've used the same billing company for years, why switch now?",
     answer:
-      "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year, $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate, it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue when a fixed-cost alternative exists.",
+      "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year, $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate, it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue.",
   },
   {
     question: "What about complex specialty coding?",
@@ -150,7 +150,7 @@ const faqs = [
   {
     question: "Is the upfront cost worth it vs. continuing to pay a percentage?",
     answer:
-      "For most practices, the math favors ownership within 18–24 months. A 5-provider practice paying 6% of $2.5M in annual collections spends $150K per year on outsourced billing. Sovereign RCM's one-time capital cost is recovered in that timeframe, and every month after that is savings. Use our ROI calculator to model the payback period for your specific practice size and collection volume.",
+      "A 5-provider practice paying 6% of $2.5M in annual collections spends $150K per year on outsourced billing. Sovereign RCM is designed to significantly reduce that cost. Contact us or use our ROI calculator to model the savings for your specific practice size and collection volume.",
   },
 ];
 
@@ -188,8 +188,7 @@ export default function VsOutsourcedBilling() {
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300">
                 Why practices are moving away from percentage-based billing
-                companies to fixed-cost, on-premise infrastructure they own and
-                control.
+                companies to on-premise AI infrastructure they control.
               </p>
             </FadeIn>
           </div>
@@ -273,11 +272,11 @@ export default function VsOutsourcedBilling() {
                 across the industry.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                Sovereign RCM replaces that perpetual cost with a one-time
-                capital expenditure. The appliance processes claims at a fixed
-                cost regardless of volume or collections. As your practice
-                grows, your billing cost stays flat, the opposite of the
-                percentage model where success is penalized with higher fees.
+                Sovereign RCM replaces that perpetual drain with on-premise AI
+                that processes claims without taking a cut of your collections.
+                As your practice grows, your billing vendor does not grow with
+                it, the opposite of the percentage model where success is
+                penalized with higher fees.
               </p>
             </FadeIn>
             <FadeIn direction="right">
@@ -590,9 +589,9 @@ export default function VsOutsourcedBilling() {
               Ready to Stop Paying a Percentage?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-              Replace your outsourced billing company with infrastructure you own.
-              Fixed cost, full visibility, no percentage of collections, and your
-              PHI never leaves the building.
+              Replace your outsourced billing company with on-premise AI.
+              Full visibility, no percentage of collections, and your PHI
+              never leaves the building.
             </p>
             <div className="mt-8">
               <MagneticButton>

@@ -15,11 +15,11 @@ import {
 export const metadata: Metadata = {
   title: "Pricing: Sovereign RCM Packages",
   description:
-    "Three Sovereign RCM tiers for solo practices, group practices, and multi-specialty groups. Fixed cost, no percentage of collections. Contact us for a custom quote.",
+    "Three Sovereign RCM tiers for solo practices, group practices, and multi-specialty groups. No percentage of collections. Contact us for a custom quote.",
   openGraph: {
     title: "Pricing: Sovereign RCM Packages",
     description:
-      "Three Sovereign RCM tiers for solo practices, group practices, and multi-specialty groups. Fixed cost, no percentage of collections.",
+      "Three Sovereign RCM tiers for solo practices, group practices, and multi-specialty groups. No percentage of collections.",
     url: "https://rizexcapital.com/sovereign-rcm/pricing",
     type: "website",
   },
@@ -49,7 +49,7 @@ const tiers: Tier[] = [
     label: "Solo & Small Practice",
     providers: "1–3 Providers",
     description:
-      "Everything a solo or small practice needs to own its billing infrastructure. Single-specialty focus with standard support.",
+      "Everything a solo or small practice needs to run AI-powered billing in-house. Single-specialty focus with standard support.",
     features: [
       "On-premise AI appliance",
       "Air-gapped PHI processing",
@@ -147,26 +147,7 @@ interface PaymentStep {
   description: string;
 }
 
-const paymentSteps: PaymentStep[] = [
-  {
-    step: "1",
-    label: "50% Deposit",
-    description:
-      "Locks in your deployment slot and initiates hardware provisioning",
-  },
-  {
-    step: "2",
-    label: "40% at Installation",
-    description:
-      "Appliance configured, connected to your EHR, and validated",
-  },
-  {
-    step: "3",
-    label: "10% at Acceptance",
-    description:
-      "Final payment after you confirm everything works as expected",
-  },
-];
+const paymentSteps: PaymentStep[] = [];
 
 interface Faq {
   question: string;
@@ -181,14 +162,9 @@ const faqs: Faq[] = [
   },
   {
     question:
-      "Is there a monthly subscription or percentage of collections?",
+      "How does pricing work?",
     answer:
-      "No. Sovereign RCM is a one-time capital expenditure. You own the appliance outright. There are no recurring fees, no percentage of collections, and no subscription. The cost stays the same whether you process 100 claims or 10,000.",
-  },
-  {
-    question: "What does the 50/40/10 payment structure mean?",
-    answer:
-      "You pay 50% as a deposit to reserve your deployment slot and begin hardware provisioning. 40% is due at installation, after the appliance is configured and connected to your EHR. The final 10% is due at acceptance, once you've confirmed everything works as expected. You never pay in full until you have verified the system.",
+      "Pricing is tailored to your practice size, specialty mix, and claim volume. Contact us for a custom quote. We do not charge a percentage of collections.",
   },
   {
     question: "Can I start with SR-1 and upgrade later?",
@@ -302,8 +278,8 @@ export default function Pricing() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-300 sm:text-xl">
-                Three tiers. Fixed cost. No percentage of collections. Own your
-                billing infrastructure instead of renting it.
+                Three tiers. No percentage of collections. On-premise AI billing
+                tailored to your practice size.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -517,41 +493,34 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* ── 4. Payment Structure (white) ─────────────────────────── */}
+      {/* ── 4. Why Not Percentage-Based (white) ────────────────── */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
             <FadeIn direction="left">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-                Ownership, Not Subscription
+                Your Growth Shouldn&apos;t Cost More
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                Sovereign RCM is a one-time capital expenditure. You own the
-                appliance, the software runs locally, and there are no recurring
-                fees. The cost stays flat whether you process 100 claims a month
-                or 10,000.
+                Percentage-based billing punishes success. The more revenue your
+                practice generates, the more you pay your billing vendor.
+                Sovereign RCM is designed so that growing your practice does not
+                mean growing your billing costs.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                As your practice grows, your billing cost per claim decreases.
-                That is the opposite of percentage-based billing, where growing
-                revenue means growing costs.
+                Contact us for a custom quote based on your practice size,
+                specialty mix, and claim volume.
               </p>
             </FadeIn>
             <FadeIn direction="right">
               <div className="rounded-xl border border-gray-300 bg-ice p-8 dark:border-dark-border dark:bg-dark-surface">
                 <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
-                  Payment Structure
+                  Start with a 90-Day Pilot
                 </h3>
-                <AnimatedPipeline
-                  compact
-                  staticBorders
-                  className="mt-5"
-                  steps={[
-                    { label: "50% Deposit", sub: "Reserve slot + provision hardware" },
-                    { label: "40% Install", sub: "Configured + EHR connected" },
-                    { label: "10% Accept", sub: "Confirmed working" },
-                  ]}
-                />
+                <p className="mt-3 text-base text-charcoal dark:text-dark-text">
+                  Run Sovereign RCM in shadow mode alongside your existing
+                  billing process. See the results before making any commitment.
+                </p>
                 <Link
                   href="/sovereign-rcm/pilot-program"
                   className="mt-6 inline-block text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import MagneticButton from "@/components/MagneticButton";
-import Image from "next/image";
-import SectionDivider from "@/components/SectionDivider";
 import {
   FadeIn,
   StaggerContainer,
@@ -12,9 +10,9 @@ import {
 } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "About: Founders & Philosophy",
+  title: "About: Mission & Values",
   description:
-    "Meet the team behind Sovereign RCM. Three founders built on shared principles of alignment, discipline, and long-term thinking. Princeton, NJ.",
+    "The mission and values behind Sovereign RCM. On-premise AI billing built on principles of alignment, discipline, and long-term thinking. Princeton, NJ.",
 };
 
 const pillars = [
@@ -40,51 +38,20 @@ const pillars = [
   },
   {
     number: "05",
-    name: "Faith Above Outcome",
+    name: "Mission Drives Outcome",
     description: "We execute relentlessly and trust the process.",
   },
 ];
 
 const values = [
-  "We move with conviction, knowing disciplined effort yields worthy results.",
-  "Opportunity favors those who prepare with intention.",
-  "Partnership built on mutual respect and accountability.",
-  "Integrity is non-negotiable, in every decision.",
-  "We build for the long term. Systems that outlive any single project.",
+  "We move with conviction, knowing disciplined effort yields worthy results",
+  "Opportunity favors those who prepare with intention",
+  "Partnership built on mutual respect and accountability",
+  "Integrity is non-negotiable, in every decision",
+  "We build for the long term. Systems that outlive any single project",
 ];
 
-const founders = [
-  {
-    name: "Faizan G. Arif, MD",
-    role: "Chief Executive Officer",
-    credential: "Physician | AI-Clinical Strategist",
-    image: "/FaizMD.jpeg",
-    imageStyle: {} as React.CSSProperties,
-    imageObjectPosition: "40% top",
-    description:
-      "The clinical visionary behind Sovereign RCM. Board-certified EM physician who's coded, billed, and fought denials from the bedside at some of the busiest EDs in the country. Founder of ArifMED INC, bridging healthcare, AI, and research.",
-  },
-  {
-    name: "Navid M. Rahman, PE",
-    role: "Chief Operating Officer",
-    credential: "Licensed PE | Regulated Project Leader",
-    image: "/NavidHeadshot.jpeg",
-    imageStyle: { transform: "scale(2)", transformOrigin: "43% 35%" } as React.CSSProperties,
-    imageObjectPosition: "43% 35%",
-    description:
-      "The operational backbone of Sovereign RCM. 15+ years managing multi-million-dollar regulated infrastructure across three states. Translates complex compliance and procurement into structured AI deployment playbooks.",
-  },
-  {
-    name: "Ghulam Shah",
-    role: "Chief Technology Officer",
-    credential: "AI Architect | Data Strategist",
-    image: "/GhulamPhoto.jpg",
-    imageStyle: { transform: "scale(1.8)", transformOrigin: "46% top" } as React.CSSProperties,
-    imageObjectPosition: "46% 20%",
-    description:
-      "The technical force behind Sovereign RCM. Architected enterprise data platforms at scale, built ML forecasting models, and led data adoption across Fortune 500 organizations. Turns complex AI into production-grade products.",
-  },
-];
+const mission = "Medical practices shouldn't have to choose between accurate billing and data security, or pay a perpetual tax for either. Sovereign RCM is AI that runs inside your facility, codes claims from clinical notes, and keeps every byte of PHI under your roof.";
 
 export default function About() {
   return (
@@ -95,15 +62,14 @@ export default function About() {
           <div className="max-w-3xl">
             <FadeIn>
               <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                The Team Behind Sovereign RCM
+                Why Sovereign RCM Exists
               </h1>
             </FadeIn>
             <FadeIn delay={0.15}>
               <p className="mt-6 text-lg leading-relaxed text-gray-300">
-                Sovereign RCM was built by three founders who believe medical
-                billing belongs inside your building, not in the cloud. We
-                combine clinical expertise, engineering discipline, and
-                operational rigor to deliver AI that practices actually own.
+                Medical billing belongs inside your building, not in the cloud.
+                Sovereign RCM combines clinical expertise, engineering
+                discipline, and operational rigor to make that possible.
               </p>
             </FadeIn>
           </div>
@@ -140,8 +106,6 @@ export default function About() {
         </div>
       </section>
 
-      <SectionDivider variant="light" />
-
       {/* Values */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
@@ -165,72 +129,30 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founders */}
-      <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      {/* Mission */}
+      <section className="bg-navy px-6 py-20 lg:py-24">
+        <div className="mx-auto max-w-4xl text-center">
           <FadeIn>
-            <div className="text-center">
-              <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-                Meet the Founders
-              </h2>
-              <p className="mx-auto mt-4 max-w-4xl text-lg text-charcoal-light dark:text-gray-300">
-                A physician who knows the problem. An engineer who builds the solution. A PE who executes at scale
-              </p>
-            </div>
+            <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
+              Our Mission
+            </h2>
+            <p className="mx-auto mt-8 text-xl leading-relaxed text-gray-300">
+              {mission}
+            </p>
           </FadeIn>
-          <StaggerContainer className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {founders.map((founder) => (
-              <StaggerItem key={founder.name}>
-                <HoverCard className="h-full rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
-                  {founder.image ? (
-                    <div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-2 ring-steel/20 dark:ring-steel-light/30">
-                      <div className="h-full w-full" style={founder.imageStyle}>
-                        <Image
-                          src={founder.image}
-                          alt={founder.name}
-                          width={256}
-                          height={256}
-                          className="h-full w-full object-cover"
-                          style={{ objectPosition: founder.imageObjectPosition }}
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="mx-auto h-32 w-32 rounded-full bg-ice dark:bg-dark-surface" />
-                  )}
-                  <div className="mt-6 text-center">
-                    <h3 className="font-heading text-xl font-bold text-navy dark:text-white">
-                      {founder.name}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-coral dark:text-coral">
-                      {founder.role}
-                    </p>
-                    <p className="mt-1 text-xs text-charcoal-light dark:text-gray-400">
-                      {founder.credential}
-                    </p>
-                    <p className="mt-4 text-sm leading-relaxed text-charcoal-light dark:text-gray-300">
-                      {founder.description}
-                    </p>
-                  </div>
-                </HoverCard>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
 
-      <SectionDivider variant="light" />
-
       {/* CTA */}
-      <section className="bg-navy px-6 py-20">
+      <section className="bg-white px-6 py-20 dark:bg-dark-bg">
         <div className="mx-auto max-w-4xl text-center">
           <FadeIn>
-            <h2 className="font-heading text-3xl font-bold text-white">
+            <h2 className="font-heading text-3xl font-bold text-navy dark:text-white">
               Ready to Work With Us?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-charcoal-light dark:text-gray-300">
               We build for the long term. Systems that outlive any single
-              project. Let&apos;s talk.
+              project. Let&apos;s talk
             </p>
             <div className="mt-8">
               <MagneticButton>

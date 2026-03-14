@@ -127,11 +127,6 @@ const faqCategories = [
           "Pricing depends on your practice size and specialty mix. We offer three tiers: SR-1 for solo and small practices (1–3 providers), SR-2 for group practices (4–10 providers), and SR-3 for multi-specialty groups (11–25 providers). Contact us for a custom quote tailored to your practice.",
       },
       {
-        question: "What does the 50/40/10 payment structure mean?",
-        answer:
-          "You pay 50% as a deposit to reserve your deployment slot and begin hardware provisioning. 40% is due at installation, after the appliance is configured and connected to your EHR. The final 10% is due at acceptance, once you've confirmed everything works as expected. You never pay in full until you have verified the system.",
-      },
-      {
         question: "Why don't you list prices on the website?",
         answer:
           "Every practice is different. Specialty mix, provider count, claim volume, and EHR environment all affect deployment scope. We provide custom quotes so pricing reflects exactly what your practice needs, not a one-size-fits-all number.",
@@ -140,7 +135,7 @@ const faqCategories = [
         question:
           "Is there a monthly subscription or percentage of collections?",
         answer:
-          "No. Sovereign RCM is a one-time capital expenditure. You own the appliance outright. There are no recurring fees, no percentage of collections, and no subscription. The cost stays the same whether you process 100 claims or 10,000.",
+          "Sovereign RCM does not charge a percentage of collections. Pricing is tailored to your practice size and specialty mix. Contact us for a custom quote.",
       },
       {
         question: "Can I start with SR-1 and upgrade later?",
@@ -197,13 +192,13 @@ const faqCategories = [
         question:
           "We've used the same billing company for years. Why switch now?",
         answer:
-          "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year, or $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate; it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue when a fixed-cost alternative exists.",
+          "Loyalty to a billing company often masks compounding costs. If your practice collects $500K per provider annually and pays 6% of collections, you are spending $30K per provider per year, or $150K over five years for a single provider. That number grows as your collections grow. The question is not whether your current billing company is adequate; it is whether paying an escalating percentage indefinitely is the most efficient use of your revenue.",
       },
       {
         question:
           "Is the upfront cost worth it vs. continuing to pay a percentage?",
         answer:
-          "For most practices, the math favors ownership within 18–24 months. A 5-provider practice paying 6% of $2.5M in annual collections spends $150K per year on outsourced billing. Sovereign RCM's one-time capital cost is recovered in that timeframe, and every month after that is savings. Use our ROI calculator to model the payback period for your specific practice size and collection volume.",
+          "A 5-provider practice paying 6% of $2.5M in annual collections spends $150K per year on outsourced billing. Sovereign RCM is designed to significantly reduce that cost. Use our ROI calculator or contact us to model the savings for your specific practice size and collection volume.",
       },
       {
         question: "How are updates and maintenance handled?",
@@ -214,7 +209,7 @@ const faqCategories = [
         question:
           "Isn't the upfront cost of on-premise higher than starting with cloud?",
         answer:
-          "The initial capital outlay for Sovereign RCM is higher than the first monthly payment on a cloud subscription. But cloud fees never stop. Over a 3–5 year period, the total cost of a cloud platform significantly exceeds the one-time cost of owning your infrastructure. Most practices reach cost parity within 18–24 months, and everything after that is savings. Use our ROI calculator to model the numbers for your practice size.",
+          "Cloud fees never stop. Over a 3–5 year period, the total cost of a cloud platform adds up significantly. Sovereign RCM is designed to reduce your total billing cost over time. Contact us or use our ROI calculator to model the numbers for your practice size.",
       },
     ],
   },

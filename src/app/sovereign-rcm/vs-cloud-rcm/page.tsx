@@ -70,20 +70,20 @@ const comparisonRows = [
   },
   {
     category: "Cost Model",
-    tooltip: "How you pay for the billing system, one-time purchase vs. ongoing fees",
-    sovereign: "One-time capital expenditure, you own it",
+    tooltip: "How you pay for the billing system",
+    sovereign: "No percentage of collections",
     cloud: "Recurring % of collections or per-provider monthly fee",
   },
   {
     category: "5-Year Total Cost",
     tooltip: "Cumulative spend over five years including all fees, subscriptions, and maintenance",
-    sovereign: "Fixed hardware cost, no ongoing subscription",
+    sovereign: "Designed to cost less over 3–5 years",
     cloud: "$120K–$300K+ for a 5-provider practice",
   },
   {
     category: "Data Ownership",
     tooltip: "Who controls access to your billing data, claim history, and payer configurations",
-    sovereign: "You own the hardware and all data on it",
+    sovereign: "All data stays on hardware in your facility",
     cloud: "Vendor controls data access, export, and retention",
   },
   {
@@ -117,7 +117,7 @@ const faqs = [
     question:
       "Isn't the upfront cost of on-premise higher than starting with cloud?",
     answer:
-      "The initial capital outlay for Sovereign RCM is higher than the first monthly payment on a cloud subscription. But cloud fees never stop. Over a 3–5 year period, the total cost of a cloud platform significantly exceeds the one-time cost of owning your infrastructure. Most practices reach cost parity within 18–24 months, and everything after that is savings. Use our ROI calculator to model the numbers for your practice size.",
+      "Cloud fees never stop. Over a 3–5 year period, the total cost of a cloud platform adds up significantly. Sovereign RCM is designed to reduce your total billing cost over time. Contact us or use our ROI calculator to model the numbers for your practice size.",
   },
   {
     question: "We already use a cloud RCM platform. Can we switch?",
@@ -373,7 +373,7 @@ export default function VsCloudRCM() {
             </FadeIn>
             <FadeIn direction="left" className="order-1 lg:order-2">
               <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-                Cost: Ownership vs. Subscription
+                Cost: On-Premise vs. Cloud
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
                 Cloud RCM pricing is designed to be easy to start and expensive
@@ -383,12 +383,11 @@ export default function VsCloudRCM() {
                 quietly over years.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                Sovereign RCM is a one-time capital expenditure. You purchase the
-                appliance, deploy it in your facility, and own it outright. There
-                are no recurring platform fees, no percentage cuts, and no
-                surprise price increases. Most practices recover the investment
-                within 18–24 months through eliminated billing fees and
-                recaptured revenue from reduced undercoding.
+                Sovereign RCM runs inside your facility. There are no
+                percentage cuts and no surprise price increases. The appliance
+                is designed to reduce your total billing cost over time
+                through eliminated middlemen and recaptured revenue from
+                reduced undercoding.
               </p>
             </FadeIn>
           </div>

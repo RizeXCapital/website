@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Sovereign RCM: On-Premise AI Billing Appliance",
   description:
-    "Sovereign RCM is an on-premise, air-gapped AI appliance that drafts compliant 837P claims from clinical notes. No PHI leaves your building. Fixed cost, full transparency.",
+    "Sovereign RCM is an on-premise, air-gapped AI appliance that drafts compliant 837P claims from clinical notes. No PHI leaves your building. Full transparency, full control.",
   openGraph: {
     title: "Sovereign RCM: On-Premise AI Billing Appliance",
     description:
@@ -215,9 +215,9 @@ const differentiators: Differentiator[] = [
     ),
   },
   {
-    title: "Fixed Cost, Not a Tax",
+    title: "Transparent Pricing",
     description:
-      "One-time capital expenditure. No monthly subscription, no percentage of collections. Cost stays flat as your practice grows.",
+      "No percentage of collections. No surprise fee increases. Contact us for pricing tailored to your practice size and specialty mix.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -237,9 +237,9 @@ const differentiators: Differentiator[] = [
     ),
   },
   {
-    title: "Owned, Not Rented",
+    title: "No Vendor Lock-In",
     description:
-      "You own the hardware and all data on it. No vendor lock-in, no data hostage, no switching costs.",
+      "Your data stays in your building in standard formats. No data hostage, no switching costs, no export fees.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -291,7 +291,7 @@ const subPages: SubPage[] = [
   },
   {
     title: "vs. Outsourced Billing",
-    description: "Why fixed-cost AI outperforms percentage-based billing companies.",
+    description: "Why on-premise AI outperforms percentage-based billing companies.",
     href: "/sovereign-rcm/vs-outsourced-billing",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-coral">
@@ -492,8 +492,8 @@ export default function SovereignRCM() {
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-charcoal-light dark:text-gray-300">
               Sovereign RCM is not cloud software repackaged as a local install.
-              It was designed from day one to run inside your building, on hardware
-              you own.
+              It was designed from day one to run inside your building, on dedicated
+              hardware.
             </p>
           </FadeIn>
 
