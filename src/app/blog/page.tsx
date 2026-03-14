@@ -9,6 +9,7 @@ import {
   type BlogCategory,
 } from "@/lib/blog";
 import SectionDivider from "@/components/SectionDivider";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { FadeIn, StaggerContainer, StaggerItem, AnimatedHero } from "@/components/motion";
 
 export const metadata: Metadata = {
@@ -195,6 +196,10 @@ export default async function Blog({
                         Get the Free Checklist &rarr;
                       </Link>
                     </div>
+                  </FadeIn>
+
+                  <FadeIn>
+                    <NewsletterSignup />
                   </FadeIn>
 
                   <FadeIn>
