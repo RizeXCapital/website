@@ -10,7 +10,10 @@
     "audit:ai": "node scripts/scan-ai-tells.js",
     "audit:ai:fix": "node scripts/scan-ai-tells.js --fix",
     "audit:ai:deep": "node scripts/audit-ai-semantic.js",
-    "audit:ai:deep:fix": "node scripts/audit-ai-semantic.js --fix"
+    "audit:ai:deep:fix": "node scripts/audit-ai-semantic.js --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
@@ -32,9 +35,11 @@
     "@types/nodemailer": "^7.0.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^4.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.0"
   }
 }
