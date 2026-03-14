@@ -47,6 +47,26 @@ test.describe("Contact form", () => {
     expect(box!.x).toBeLessThan(0);
   });
 
+  test("submission with fake SMTP shows error gracefully", async ({ page }) => {
+    await page.goto("/contact");
+
+    // Fill valid data
+    await page.fill("#name", "Test User");
+    await page.fill("#email", "test@example.com");
+    await page.fill("#message", "Testing form submission error handling in CI");
+
+    // Wait for the 3-second bot timer to pass
+    await page.waitForTimeout(3500);
+
+    // Submit
+    await page.getByRole("button", { name: /send message/i }).click();
+
+    // SMTP will fail in CI (fake creds). Form should show an error message
+    // instead of crashing or showing a blank page.
+    const error = page.getByText(/failed|unable|error|try again/i);
+    await expect(error).toBeVisible({ timeout: 10000 });
+  });
+
   test("thank you page renders correctly", async ({ page }) => {
     await page.goto("/thank-you");
 
