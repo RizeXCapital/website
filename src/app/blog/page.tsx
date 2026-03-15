@@ -75,7 +75,7 @@ export default async function Blog({
       <section className="bg-white px-6 py-16 dark:bg-dark-bg lg:py-20">
         <div className="mx-auto max-w-7xl">
           {/* Filter Tabs */}
-          <nav className="flex flex-wrap gap-3" aria-label="Blog categories">
+          <nav className="flex flex-wrap justify-center gap-3" aria-label="Blog categories">
             <Link
               href="/blog"
               className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${

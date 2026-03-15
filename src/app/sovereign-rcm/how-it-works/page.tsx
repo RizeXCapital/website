@@ -490,7 +490,7 @@ export default function HowItWorks() {
           </StaggerContainer>
 
           <FadeIn delay={0.2}>
-            <div className="mt-10 flex flex-wrap gap-6">
+            <div className="mt-10 flex flex-wrap justify-center gap-6">
               <Link
                 href="/sovereign-rcm/security"
                 className="text-sm font-medium text-coral underline decoration-coral/30 hover:decoration-coral dark:text-coral dark:decoration-coral/30 dark:hover:decoration-coral"

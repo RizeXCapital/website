@@ -31,7 +31,7 @@ export default function FaqFilter({ categories }: FaqFilterProps) {
   return (
     <>
       {/* Filter Pills */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         {categoryNames.map((name) => {
           const isActive = active === name;
           return (
