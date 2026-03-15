@@ -61,7 +61,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "02",
     label: "Chart Reader",
     description:
-      "The first AI agent reads the full clinical note and extracts structured medical detail: diagnoses, procedures, and medical decision-making complexity.",
+      "The first AI agent reads the full clinical note and extracts structured medical detail: diagnoses, procedures, and medical decision-making complexity. When coders process 80+ charts a day, nuance gets missed. The AAFP estimates that costs $30K+ per provider annually.",
     dataIn: "Raw clinical note",
     dataOut: "Structured clinical extract",
     icon: (
@@ -76,7 +76,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "03",
     label: "Procedure Specialist",
     description:
-      "Maps the clinical extract to CPT and ICD-10 codes at the level the documentation supports, with no conservative defaults.",
+      "Maps the clinical extract to CPT and ICD-10 codes at the level the documentation supports, with no conservative defaults. The gap between a 99213 and a 99214 is $40 to $70 per visit, and across thousands of encounters, that compounds fast.",
     dataIn: "Structured clinical extract",
     dataOut: "Code assignments with rationale",
     icon: (
@@ -91,7 +91,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "04",
     label: "Payer Logic Bot",
     description:
-      "Applies carrier-specific rules: modifiers, bundling edits, frequency limits, and prior authorization requirements.",
+      "Applies carrier-specific rules: modifiers, bundling edits, frequency limits, and prior authorization requirements. These are the most preventable category of denial, and rule-based errors AI eliminates consistently.",
     dataIn: "Coded claim + payer rules",
     dataOut: "Payer-adjusted claim with corrections",
     icon: (
@@ -105,7 +105,7 @@ const pipelineSteps: PipelineStep[] = [
     number: "05",
     label: "Denial Analyst",
     description:
-      "Reviews the draft claim against your practice's historical denial data. Flags risk before submission. Predictive, not reactive.",
+      "Reviews the draft claim against your practice's historical denial data. Flags risk before submission. Industry denial rates run 5 to 10 percent at $25 to $50 per rework. Predictive, not reactive.",
     dataIn: "Adjusted claim + denial history",
     dataOut: "Final claim with risk flags",
     icon: (
@@ -131,93 +131,6 @@ const pipelineSteps: PipelineStep[] = [
   },
 ];
 
-interface AgentDeepDive {
-  name: string;
-  narrative: string;
-  whyItMatters: string;
-  inputs: string[];
-  outputs: string[];
-  bgClass: string;
-  darkBgClass: string;
-  direction: "left" | "right";
-  icon: ReactNode;
-}
-
-const agentDeepDives: AgentDeepDive[] = [
-  {
-    name: "Chart Reader",
-    narrative:
-      "The first agent in the pipeline reads the full signed clinical note: history of present illness, exam findings, medical decision-making, and plan. It extracts structured clinical detail the same way a senior coder would, but without the time pressure that causes human readers to default to conservative interpretations.",
-    whyItMatters:
-      "Undercoding starts at the reading stage. When coders are processing 80+ charts per day, nuance gets missed. The AAFP estimates this costs physicians $30K or more per provider per year in lost revenue that the documentation already supports.",
-    inputs: ["Signed clinical note", "Encounter metadata (date, provider, facility)"],
-    outputs: ["Structured clinical extract with diagnoses, procedures, and MDM complexity"],
-    bgClass: "bg-ice",
-    darkBgClass: "dark:bg-dark-surface",
-    direction: "left",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
-      </svg>
-    ),
-  },
-  {
-    name: "Procedure Specialist",
-    narrative:
-      "The second agent takes the structured clinical extract and maps it to CPT and ICD-10 codes at the level the documentation actually supports. It does not default to lower-level codes when the note justifies a higher one. It also flags when documentation falls short of what a practice might expect to bill.",
-    whyItMatters:
-      "The gap between a 99213 and a 99214 is $40 to $70 per visit. Across thousands of encounters per year, systematic undercoding compounds into significant lost revenue. The Procedure Specialist codes to documentation, not to habit.",
-    inputs: ["Structured clinical extract from Chart Reader"],
-    outputs: ["CPT/ICD-10 code assignments with rationale", "Undercoding alerts where documentation supports a higher level"],
-    bgClass: "bg-white",
-    darkBgClass: "dark:bg-dark-bg",
-    direction: "right",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
-        <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
-        <rect x="9" y="3" width="6" height="4" rx="1" />
-        <path d="M9 14l2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    name: "Payer Logic Bot",
-    narrative:
-      "The third agent applies carrier-specific rules to the coded claim. Different payers require different modifiers, have different bundling edits, enforce different frequency limits, and have different prior authorization thresholds. The Payer Logic Bot knows these rules and adjusts the claim before submission.",
-    whyItMatters:
-      "Payer-specific denials are the most preventable category of rejection. A claim that is clinically correct can still be denied because of a missing modifier or a bundling edit the coder did not catch. These are rule-based errors that AI eliminates consistently.",
-    inputs: ["Coded claim from Procedure Specialist", "Payer-specific rule sets"],
-    outputs: ["Payer-adjusted claim with applied corrections", "Modifier and bundling edit documentation"],
-    bgClass: "bg-ice",
-    darkBgClass: "dark:bg-dark-surface",
-    direction: "left",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4M6 8h.01M10 8h.01" />
-      </svg>
-    ),
-  },
-  {
-    name: "Denial Analyst",
-    narrative:
-      "The fourth and final agent reviews the draft claim against your practice's own historical denial data. It identifies patterns: specific codes that get denied by specific payers, documentation gaps that trigger reviews, modifier combinations that fail. All of that gets flagged before the claim is submitted.",
-    whyItMatters:
-      "Industry denial rates run 5 to 10 percent, with each denial costing $25 to $50 in rework. The Denial Analyst shifts your practice from reactive (appealing denials after the fact) to predictive (preventing them before submission).",
-    inputs: ["Payer-adjusted claim from Payer Logic Bot", "Practice denial history and patterns"],
-    outputs: ["Final reviewed claim with risk flags", "Per-code denial probability and mitigation notes"],
-    bgClass: "bg-white",
-    darkBgClass: "dark:bg-dark-bg",
-    direction: "right",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
-        <circle cx="11" cy="11" r="8" />
-        <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
-      </svg>
-    ),
-  },
-];
 
 interface EvidenceBenefit {
   title: string;
@@ -269,19 +182,6 @@ interface DeploymentItem {
 
 const deploymentItems: DeploymentItem[] = [
   {
-    title: "Physical Installation",
-    description:
-      "A dedicated appliance installed on-site in your facility. Standard rack-mount form factor, minimal footprint, connected to your local network.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
-        <rect x="2" y="2" width="20" height="8" rx="2" />
-        <rect x="2" y="14" width="20" height="8" rx="2" />
-        <line x1="6" y1="6" x2="6.01" y2="6" />
-        <line x1="6" y1="18" x2="6.01" y2="18" />
-      </svg>
-    ),
-  },
-  {
     title: "EHR Connection",
     description:
       "One-directional, read-only integration with your EHR. The appliance reads clinical notes and never writes back or modifies source records.",
@@ -289,17 +189,6 @@ const deploymentItems: DeploymentItem[] = [
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-      </svg>
-    ),
-  },
-  {
-    title: "Air-Gapped Processing",
-    description:
-      "All AI inference runs locally with no internet connection. Only the final 837P claim leaves your facility through your existing clearinghouse workflow.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-coral dark:text-coral">
-        <rect x="3" y="11" width="18" height="11" rx="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
   },
@@ -480,81 +369,7 @@ export default function HowItWorks() {
 
       <SectionDivider variant="light" />
 
-      {/* ── 3. Agent Deep Dives ──────────────────────────────────── */}
-      {agentDeepDives.map((agent, i) => (
-        <div key={agent.name}>
-          <section className={`${agent.bgClass} ${agent.darkBgClass} px-6 py-20 lg:py-24`}>
-            <div className="mx-auto max-w-7xl">
-              <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-                <FadeIn direction={agent.direction}>
-                  <div className="flex items-center gap-3">
-                    {agent.icon}
-                    <h2 className="font-heading text-3xl font-bold text-navy dark:text-white sm:text-4xl">
-                      {agent.name}
-                    </h2>
-                  </div>
-                  <p className="mt-6 text-lg leading-relaxed text-charcoal dark:text-dark-text">
-                    {agent.narrative}
-                  </p>
-                  <div className="mt-6 rounded-lg border-l-4 border-coral bg-white/60 px-5 py-4 dark:border-coral dark:bg-dark-elevated/60">
-                    <p className="text-sm font-semibold uppercase tracking-wider text-coral dark:text-coral">
-                      Why it matters
-                    </p>
-                    <p className="mt-2 text-base leading-relaxed text-charcoal dark:text-dark-text">
-                      {agent.whyItMatters}
-                    </p>
-                  </div>
-                </FadeIn>
-                <FadeIn direction={agent.direction === "left" ? "right" : "left"}>
-                  <div className="rounded-xl border border-gray-300 bg-white p-8 dark:border-dark-border dark:bg-dark-elevated">
-                    <h3 className="font-heading text-lg font-bold text-navy dark:text-white">
-                      Agent Specification
-                    </h3>
-                    <div className="mt-5 space-y-5">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
-                          Inputs
-                        </p>
-                        <ul className="mt-2 space-y-1.5">
-                          {agent.inputs.map((input) => (
-                            <li key={input} className="flex items-start gap-2 text-sm text-charcoal dark:text-dark-text">
-                              <svg className="mt-0.5 h-4 w-4 shrink-0 text-coral dark:text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                              </svg>
-                              {input}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="border-t border-gray-200 pt-5 dark:border-dark-border">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-coral dark:text-coral">
-                          Outputs
-                        </p>
-                        <ul className="mt-2 space-y-1.5">
-                          {agent.outputs.map((output) => (
-                            <li key={output} className="flex items-start gap-2 text-sm text-charcoal dark:text-dark-text">
-                              <svg className="mt-0.5 h-4 w-4 shrink-0 text-coral" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                <path d="M22 4L12 14.01l-3-3" />
-                              </svg>
-                              {output}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </FadeIn>
-              </div>
-            </div>
-          </section>
-          {i === 1 && <SectionDivider variant="light" />}
-        </div>
-      ))}
-
-      <SectionDivider variant="light" />
-
-      {/* ── 4. The Evidence Trail (ice) ──────────────────────────── */}
+      {/* ── 3. The Evidence Trail (ice) ──────────────────────────── */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -645,7 +460,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* ── 5. Deployment & Integration (white) ──────────────────── */}
+      {/* ── 4. Deployment & Integration (white) ──────────────────── */}
       <section className="bg-white px-6 py-20 dark:bg-dark-bg lg:py-24">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
@@ -695,7 +510,7 @@ export default function HowItWorks() {
 
       <SectionDivider variant="light" />
 
-      {/* ── 6. FAQ (ice) ─────────────────────────────────────────── */}
+      {/* ── 5. FAQ (ice) ─────────────────────────────────────────── */}
       <section className="bg-ice px-6 py-20 dark:bg-dark-surface lg:py-24">
         <div className="mx-auto max-w-3xl">
           <FadeIn>
@@ -731,7 +546,7 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      {/* ── 7. CTA (navy) ────────────────────────────────────────── */}
+      {/* ── 6. CTA (navy) ────────────────────────────────────────── */}
       <section className="bg-navy px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <FadeIn>
