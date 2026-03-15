@@ -78,14 +78,14 @@ export default function Home() {
       {/* 2a. Stats Band */}
       <section className="bg-navy px-6 py-4">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-wrap items-center justify-center gap-y-3 divide-x divide-white/10">
+          <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-0 md:divide-x md:divide-white/10">
             {[
               { stat: "≥ 95%", label: "Clean-Claim Rate" },
               { stat: "≤ 48hr", label: "Deployment" },
               { stat: "$30K+", label: "Recaptured Per Provider" },
               { stat: "0", label: "PHI in the Cloud" },
             ].map((item) => (
-              <div key={item.label} className="px-6 text-center first:pl-0 last:pr-0">
+              <div key={item.label} className="text-center md:px-6 md:first:pl-0 md:last:pr-0">
                 <span className="font-heading text-lg font-bold text-coral">
                   {item.stat}
                 </span>
@@ -100,7 +100,7 @@ export default function Home() {
       <section className="bg-white px-6 py-4 dark:bg-dark-bg">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <span className="text-xs font-medium uppercase tracking-wider text-gray-400">
                 Compatible with
               </span>
@@ -207,12 +207,12 @@ export default function Home() {
       {/* Citation Strip */}
       <section className="bg-navy px-6 py-4 dark:bg-dark-surface">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-wrap items-center justify-center gap-y-2 divide-x divide-white/10">
-            <span className="pr-6 text-xs font-medium uppercase tracking-wider text-gray-500 first:pl-0">
+          <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-0 md:divide-x md:divide-white/10">
+            <span className="text-xs font-medium uppercase tracking-wider text-gray-500 md:pr-6">
               Industry context from
             </span>
             {["MGMA", "AAFP", "AMA", "Modern Healthcare"].map((org) => (
-              <span key={org} className="px-6 text-sm font-semibold text-gray-400">
+              <span key={org} className="text-sm font-semibold text-gray-400 md:px-6">
                 {org}
               </span>
             ))}
